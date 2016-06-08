@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: 'D:\Documentos\WebDev\Symfony\DataLogger_INTI_Construcciones\app/config/routing_dev.yml'

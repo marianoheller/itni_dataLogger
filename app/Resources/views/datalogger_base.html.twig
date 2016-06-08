@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+    <title>Data Table</title>
+    {% stylesheets 'bundles/css/*' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+</head>
+
+
+<body>
+    <div class="table-title">
+        <h3>Data Table</h3>
+    </div>
+    <table class="table-fill">
+        <thead>
+        {% block dataHead %}
+        {% endblock %}
+        </thead>
+
+        <tbody class="table-hover">
+        {% block dataBody %}
+        {% endblock %}
+        </tbody>
+    </table>
+</body>
+</html>
