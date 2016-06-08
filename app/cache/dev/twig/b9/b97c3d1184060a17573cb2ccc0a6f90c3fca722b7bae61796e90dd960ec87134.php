@@ -10,6 +10,8 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
         // line 1
         $this->parent = $this->loadTemplate("datalogger_base.html.twig", "datalogger/data.html.twig", 1);
         $this->blocks = array(
+            'pageTitle' => array($this, 'block_pageTitle'),
+            'tableTitle' => array($this, 'block_tableTitle'),
             'dataHead' => array($this, 'block_dataHead'),
             'dataBody' => array($this, 'block_dataBody'),
         );
@@ -22,62 +24,90 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_02aea06ad678b708af8bf5dc1918e860790689de24204e83c07daaf0bc29743d = $this->env->getExtension("native_profiler");
-        $__internal_02aea06ad678b708af8bf5dc1918e860790689de24204e83c07daaf0bc29743d->enter($__internal_02aea06ad678b708af8bf5dc1918e860790689de24204e83c07daaf0bc29743d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "datalogger/data.html.twig"));
+        $__internal_272064e2cdc5de5fb4b503e2e0c14c9e54cb7453bc7f0234b78dc7c537b30d8c = $this->env->getExtension("native_profiler");
+        $__internal_272064e2cdc5de5fb4b503e2e0c14c9e54cb7453bc7f0234b78dc7c537b30d8c->enter($__internal_272064e2cdc5de5fb4b503e2e0c14c9e54cb7453bc7f0234b78dc7c537b30d8c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "datalogger/data.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_02aea06ad678b708af8bf5dc1918e860790689de24204e83c07daaf0bc29743d->leave($__internal_02aea06ad678b708af8bf5dc1918e860790689de24204e83c07daaf0bc29743d_prof);
+        $__internal_272064e2cdc5de5fb4b503e2e0c14c9e54cb7453bc7f0234b78dc7c537b30d8c->leave($__internal_272064e2cdc5de5fb4b503e2e0c14c9e54cb7453bc7f0234b78dc7c537b30d8c_prof);
 
     }
 
-    // line 4
+    // line 3
+    public function block_pageTitle($context, array $blocks = array())
+    {
+        $__internal_f1804f4ab1388ab72e9eacf2774f44da7002a66f40fec72507113ec44f61733e = $this->env->getExtension("native_profiler");
+        $__internal_f1804f4ab1388ab72e9eacf2774f44da7002a66f40fec72507113ec44f61733e->enter($__internal_f1804f4ab1388ab72e9eacf2774f44da7002a66f40fec72507113ec44f61733e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "pageTitle"));
+
+        // line 4
+        echo "    <title>Data Logger</title>
+";
+        
+        $__internal_f1804f4ab1388ab72e9eacf2774f44da7002a66f40fec72507113ec44f61733e->leave($__internal_f1804f4ab1388ab72e9eacf2774f44da7002a66f40fec72507113ec44f61733e_prof);
+
+    }
+
+    // line 7
+    public function block_tableTitle($context, array $blocks = array())
+    {
+        $__internal_1d948f213faaef2330c816577ea3c1ac39cd5a4580b21d3b2db8a7f23cffe44d = $this->env->getExtension("native_profiler");
+        $__internal_1d948f213faaef2330c816577ea3c1ac39cd5a4580b21d3b2db8a7f23cffe44d->enter($__internal_1d948f213faaef2330c816577ea3c1ac39cd5a4580b21d3b2db8a7f23cffe44d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tableTitle"));
+
+        // line 8
+        echo "    <h3>Data Table</h3>
+";
+        
+        $__internal_1d948f213faaef2330c816577ea3c1ac39cd5a4580b21d3b2db8a7f23cffe44d->leave($__internal_1d948f213faaef2330c816577ea3c1ac39cd5a4580b21d3b2db8a7f23cffe44d_prof);
+
+    }
+
+    // line 12
     public function block_dataHead($context, array $blocks = array())
     {
-        $__internal_d16f5d95df604874c0e65bdd6e419587f94aa125ffe63f6fbb09a7f6047d0681 = $this->env->getExtension("native_profiler");
-        $__internal_d16f5d95df604874c0e65bdd6e419587f94aa125ffe63f6fbb09a7f6047d0681->enter($__internal_d16f5d95df604874c0e65bdd6e419587f94aa125ffe63f6fbb09a7f6047d0681_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataHead"));
+        $__internal_896d0eabd683d6b22498d36a64a115879454f987a2454d59aad4cc26ec09eac1 = $this->env->getExtension("native_profiler");
+        $__internal_896d0eabd683d6b22498d36a64a115879454f987a2454d59aad4cc26ec09eac1->enter($__internal_896d0eabd683d6b22498d36a64a115879454f987a2454d59aad4cc26ec09eac1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataHead"));
 
-        // line 5
+        // line 13
         echo "    <tr>
         <th class=\"text-left\">Month</th>
         <th class=\"text-left\">Sales</th>
     </tr>
 ";
         
-        $__internal_d16f5d95df604874c0e65bdd6e419587f94aa125ffe63f6fbb09a7f6047d0681->leave($__internal_d16f5d95df604874c0e65bdd6e419587f94aa125ffe63f6fbb09a7f6047d0681_prof);
+        $__internal_896d0eabd683d6b22498d36a64a115879454f987a2454d59aad4cc26ec09eac1->leave($__internal_896d0eabd683d6b22498d36a64a115879454f987a2454d59aad4cc26ec09eac1_prof);
 
     }
 
-    // line 13
+    // line 21
     public function block_dataBody($context, array $blocks = array())
     {
-        $__internal_92eebe73d0228376bf519fe1d6b56358d523110078233298eed1a26a01fffe5f = $this->env->getExtension("native_profiler");
-        $__internal_92eebe73d0228376bf519fe1d6b56358d523110078233298eed1a26a01fffe5f->enter($__internal_92eebe73d0228376bf519fe1d6b56358d523110078233298eed1a26a01fffe5f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataBody"));
+        $__internal_7d3c0f298c350f6b204c5495a9ae1f6cc78d46d0471e52089a793398791332cd = $this->env->getExtension("native_profiler");
+        $__internal_7d3c0f298c350f6b204c5495a9ae1f6cc78d46d0471e52089a793398791332cd->enter($__internal_7d3c0f298c350f6b204c5495a9ae1f6cc78d46d0471e52089a793398791332cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataBody"));
 
-        // line 14
-        echo "    <tr>
-        <td class=\"text-left\">January</td>
-        <td class=\"text-left\">\$ 50,000.00</td>
-    </tr>
-    <tr>
-        <td class=\"text-left\">February</td>
-        <td class=\"text-left\">\$ 10,000.00</td>
-    </tr>
-    <tr>
-        <td class=\"text-left\">March</td>
-        <td class=\"text-left\">\$ 85,000.00</td>
-    </tr>
-    <tr>
-        <td class=\"text-left\">April</td>
-        <td class=\"text-left\">\$ 56,000.00</td>
-    </tr>
-    <tr>
-        <td class=\"text-left\">May</td>
-        <td class=\"text-left\">\$ 98,000.00</td>
-    </tr>
-";
+        // line 22
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listParams"]) ? $context["listParams"] : $this->getContext($context, "listParams")));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 23
+            echo "        <tr>
+            <td class=\"text-left\">";
+            // line 24
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "</td>
+            <td class=\"text-left\">";
+            // line 25
+            echo twig_escape_filter($this->env, $context["value"], "html", null, true);
+            echo "</td>
+        </tr>
+
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_92eebe73d0228376bf519fe1d6b56358d523110078233298eed1a26a01fffe5f->leave($__internal_92eebe73d0228376bf519fe1d6b56358d523110078233298eed1a26a01fffe5f_prof);
+        $__internal_7d3c0f298c350f6b204c5495a9ae1f6cc78d46d0471e52089a793398791332cd->leave($__internal_7d3c0f298c350f6b204c5495a9ae1f6cc78d46d0471e52089a793398791332cd_prof);
 
     }
 
@@ -93,10 +123,18 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
 
     public function getDebugInfo()
     {
-        return array (  58 => 14,  52 => 13,  41 => 5,  35 => 4,  11 => 1,);
+        return array (  100 => 25,  96 => 24,  93 => 23,  88 => 22,  82 => 21,  71 => 13,  65 => 12,  57 => 8,  51 => 7,  43 => 4,  37 => 3,  11 => 1,);
     }
 }
 /* {% extends 'datalogger_base.html.twig' %}*/
+/* */
+/* {% block pageTitle %}*/
+/*     <title>Data Logger</title>*/
+/* {% endblock %}*/
+/* */
+/* {% block tableTitle %}*/
+/*     <h3>Data Table</h3>*/
+/* {% endblock %}*/
 /* */
 /* */
 /* {% block dataHead %}*/
@@ -109,24 +147,11 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
 /* */
 /* */
 /* {% block dataBody %}*/
-/*     <tr>*/
-/*         <td class="text-left">January</td>*/
-/*         <td class="text-left">$ 50,000.00</td>*/
-/*     </tr>*/
-/*     <tr>*/
-/*         <td class="text-left">February</td>*/
-/*         <td class="text-left">$ 10,000.00</td>*/
-/*     </tr>*/
-/*     <tr>*/
-/*         <td class="text-left">March</td>*/
-/*         <td class="text-left">$ 85,000.00</td>*/
-/*     </tr>*/
-/*     <tr>*/
-/*         <td class="text-left">April</td>*/
-/*         <td class="text-left">$ 56,000.00</td>*/
-/*     </tr>*/
-/*     <tr>*/
-/*         <td class="text-left">May</td>*/
-/*         <td class="text-left">$ 98,000.00</td>*/
-/*     </tr>*/
+/*     {% for key,value in listParams %}*/
+/*         <tr>*/
+/*             <td class="text-left">{{ key }}</td>*/
+/*             <td class="text-left">{{ value }}</td>*/
+/*         </tr>*/
+/* */
+/*     {% endfor %}*/
 /* {% endblock %}*/

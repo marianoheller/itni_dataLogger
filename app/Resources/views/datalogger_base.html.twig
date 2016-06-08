@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
-    <title>Data Table</title>
+    {% block pageTitle %} {% endblock %}
     {% stylesheets 'bundles/css/*' filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
@@ -12,9 +12,11 @@
 
 
 <body>
+
     <div class="table-title">
-        <h3>Data Table</h3>
+        {% block tableTitle %} {% endblock %}
     </div>
+
     <table class="table-fill">
         <thead>
         {% block dataHead %}
