@@ -32,14 +32,16 @@ class DataLoggerController extends Controller
                     group by sensor_id";
             $dql = "SELECT d FROM (
                       SELECT y FROM (
-                        SELECT x FROM datalog x ORDER BY x.hora
+                        SELECT x FROM AppBundle:datalog x ORDER BY x.hora
                       )y  ORDER BY y.fecha DESC
                     ) d GROUP BY d.sensor_id";
+            $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d";
+
             $em = $this->getDoctrine()->getManager();
-            $query = $em->createQuery($dql);
+            $query = $em->createQuery($dqlSimpificada);
             $datalogArray = $query->getResult();
 
-            if (!empty($datalogArray)) {
+            if (empty($datalogArray)) {
                 throw $this->createNotFoundException(
                     'No data found'
                 );

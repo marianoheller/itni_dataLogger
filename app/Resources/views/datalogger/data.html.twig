@@ -1,5 +1,7 @@
 {% extends 'datalogger_base.html.twig' %}
 
+
+
 {% block pageTitle %}
     <title>Data Logger</title>
 {% endblock %}
@@ -11,19 +13,25 @@
 
 {% block dataHead %}
     <tr>
-        <th class="text-left">Month</th>
-        <th class="text-left">Sales</th>
+        {# @var datalogArray \AppBundle\Entity\Datalog[] #}
+        <th class="text-left">Sensor ID</th>
+        <th class="text-left">Medicion</th>
+        <th class="text-left">Hora</th>
+        <th class="text-left">Fecha</th>
     </tr>
 {% endblock %}
 
 
 
 {% block dataBody %}
-    {% for key,value in datalogArray %}
+
+    {% for datalog in datalogArray %}
+        {# @var datalog \AppBundle\Entity\Datalog #}
         <tr>
-            {% for key2,value2 in value %}
-                <td class="text-left">{{ value2 }}</td>
-            {% endfor %}
+            <td class="text-left">{{ datalog.sensorId }}</td>
+            <td class="text-left">{{ datalog.medicion }}</td>
+            <td class="text-left">{{ datalog.hora.format("H:i:s") }}</td>
+            <td class="text-left">{{ datalog.fecha.format("d-m-Y") }}</td>
         </tr>
     {% endfor %}
 {% endblock %}
