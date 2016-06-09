@@ -19,11 +19,11 @@
 
 
 {% block dataBody %}
-    {% for key,value in listParams %}
+    {% for key,value in datalogArray %}
         <tr>
-            <td class="text-left">{{ key }}</td>
-            <td class="text-left">{{ value }}</td>
+            {% for key2,value2 in value %}
+                <td class="text-left">{{ value2 }}</td>
+            {% endfor %}
         </tr>
-
     {% endfor %}
 {% endblock %}

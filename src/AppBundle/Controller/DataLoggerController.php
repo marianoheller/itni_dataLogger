@@ -8,6 +8,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
+use AppBundle\Entity\Datalog;
+
+
+const numeroDeCanales = 32;
 
 class DataLoggerController extends Controller
 {
@@ -16,17 +20,34 @@ class DataLoggerController extends Controller
      */
     public function indexAction(Request $request)
     {
-        /*if ( $request->isXmlHttpRequest() ) {
-            $ret = new Response("OK");
+        if ( $request->isXmlHttpRequest() ) {
+            $ret = new Response("Ajax request");
         }
         else {
-            $ret = $this->redirectToRoute('homepage');
+            $sql = "select * from (
+                        select * from (
+                            select * from datalog order by hora desc
+                            )horaOrdered order by fecha desc
+                        ) fechaOrdered
+                    group by sensor_id";
+            $dql = "SELECT d FROM (
+                      SELECT y FROM (
+                        SELECT x FROM datalog x ORDER BY x.hora
+                      )y  ORDER BY y.fecha DESC
+                    ) d GROUP BY d.sensor_id";
+            $em = $this->getDoctrine()->getManager();
+            $query = $em->createQuery($dql);
+            $datalogArray = $query->getResult();
+
+            if (!empty($datalogArray)) {
+                throw $this->createNotFoundException(
+                    'No data found'
+                );
+            }
+            $ret = $this->render('datalogger/data.html.twig',
+                                array ( 'datalogArray' => $datalogArray));
         }
-        return $ret;*/
-        $listParams["param1"] = $request->query->get('param1');
-        $listParams["param2"] = $request->request->get("param2",'default value if does not exist');
-        return $this->render('datalogger/data.html.twig',
-            array( "listParams" => $listParams));
+        return $ret;
     }
 
     /**
@@ -52,25 +73,38 @@ class DataLoggerController extends Controller
      */
 
     public function logDataAction(Request $request) {
-
-        $content = $request->getContent();
-        if (!empty($content)) {
-            //$params = json_decode($content, true); // 2nd param to get as array
-            $params = $content;
-        }
-        else {
-            $params = "Params Empty";
-        }
-
-
         //Respuesta
         $response = new Response(
             'Content',
             Response::HTTP_OK,
             array('content-type' => 'text/html')
         );
-        $response->setStatusCode(Response::HTTP_OK);
-        $response->setContent($params);
+
+        $content = $request->getContent();
+        if (!empty($content)) {
+            $paramsArray = json_decode($content, true);
+            $params = $content;
+
+            $datalog = new Datalog();
+            $datalog->setSensorId(intval($paramsArray['sensor_id']));
+            $datalog->setMedicion($paramsArray['medicion']);
+            $newDate = date("m-d-Y", strtotime($paramsArray['fecha']));
+            $fecha=new \DateTime($newDate);
+            $datalog->setFecha($fecha);
+            $hora=new \DateTime($paramsArray['hora']);
+            $datalog->setHora($hora);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($datalog);
+            $em->flush();
+            $response->setContent('Saved new product with id '.$datalog->getId());
+        }
+        else {
+            $params = "Params Empty";
+            $response->setContent($params);
+        }
+
+
         return $response;
     }
 }
