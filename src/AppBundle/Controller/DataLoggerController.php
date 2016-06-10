@@ -30,24 +30,12 @@ class DataLoggerController extends Controller
                     FROM    datalog a
                             INNER JOIN
                             (
-                                SELECT sensor_id, MAX(fecha) max_date
+                                SELECT sensor_id, MAX(fecha)as max_fecha
                                 FROM    datalog
                                 GROUP BY sensor_id
                             ) b ON a.sensor_id = b.sensor_id AND
-                    a.fecha = b.max_date
-                    ORDER BY sensor_id ASC";
-
-
-            $dql = "SELECT a, b
-                    FROM AppBundle:Datalog a
-                    JOIN
-                    (
-                        SELECT b.sensorId, MAX(fecha) max_date
-                        FROM AppBundle:Datalog b
-                        GROUP BY b.sensorId
-                    ) b ON a.sensorId = b=sensorId AND
-                    a.fecha = b.max_date
-                    ORDER BY d.sensorId ASC";
+                                    a.fecha = b.max_fecha
+                    GROUP BY sensor_id ORDER BY a.sensor_id  ASC";
 
             $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d ORDER BY d.fecha DESC ";
 

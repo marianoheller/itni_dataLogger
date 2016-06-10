@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" line="53" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" line="41" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
@@ -9,7 +9,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/03/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/03/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/a4/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/a4/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b9/b97c3d1184060a17573cb2ccc0a6f90c3fca722b7bae61796e90dd960ec87134.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b9/b97c3d1184060a17573cb2ccc0a6f90c3fca722b7bae61796e90dd960ec87134.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" />
     </list>
@@ -51,18 +50,17 @@
       <file leaf-file-name="DataLoggerController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28671327">
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="37" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.6433566">
+              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
-                <element signature="e#2607#2634#0#PHP" expanded="true" />
-                <marker date="1465590382039" expanded="true" signature="749:1185" placeholder="SELECT a.* F..datalog..." />
-                <marker date="1465590382039" expanded="true" signature="900:1036" placeholder="SELECT senso..datalog..." />
-                <marker date="1465590382039" expanded="true" signature="1210:1609" placeholder="SELECT a, b ..AppBundle..." />
-                <marker date="1465590382039" expanded="true" signature="1609:1898" placeholder="SELECT y FRO..x..." />
-                <marker date="1465590382039" expanded="true" signature="1644:1677" placeholder="SELECT d FRO..AppBundle..." />
-                <marker date="1465590382039" expanded="true" signature="1644:1689" placeholder="SELECT d FRO..AppBundle..." />
-                <marker date="1465590382039" expanded="true" signature="1644:1699" placeholder="SELECT d FRO..AppBundle..." />
+                <element signature="e#2225#2252#0#PHP" expanded="true" />
+                <marker date="1465591620007" expanded="true" signature="749:1227" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1465591620007" expanded="true" signature="900:1039" placeholder="SELECT senso..datalog..." />
+                <marker date="1465591620007" expanded="true" signature="1229:1516" placeholder="SELECT y FRO..x..." />
+                <marker date="1465591620007" expanded="true" signature="1262:1295" placeholder="SELECT d FRO..AppBundle..." />
+                <marker date="1465591620007" expanded="true" signature="1262:1307" placeholder="SELECT d FRO..AppBundle..." />
+                <marker date="1465591620007" expanded="true" signature="1262:1317" placeholder="SELECT d FRO..AppBundle..." />
               </folding>
             </state>
           </provider>
@@ -476,7 +474,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465588753019</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Native SQL working!!.">
+      <created>1465590547741</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1465590547741</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -522,7 +526,8 @@
     <MESSAGE value="Working Homepage." />
     <MESSAGE value="Added json parsing and device validation." />
     <MESSAGE value="Unified fecha y hora." />
-    <option name="LAST_COMMIT_MESSAGE" value="Unified fecha y hora." />
+    <MESSAGE value="Native SQL working!!." />
+    <option name="LAST_COMMIT_MESSAGE" value="Native SQL working!!." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -545,14 +550,13 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#2607#2634#0#PHP" expanded="true" />
-            <marker date="1465590382039" expanded="true" signature="749:1185" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465590382039" expanded="true" signature="900:1036" placeholder="SELECT senso..datalog..." />
-            <marker date="1465590382039" expanded="true" signature="1210:1609" placeholder="SELECT a, b ..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1609:1898" placeholder="SELECT y FRO..x..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1677" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1689" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1699" placeholder="SELECT d FRO..AppBundle..." />
+            <element signature="e#2225#2252#0#PHP" expanded="true" />
+            <marker date="1465591620007" expanded="true" signature="749:1227" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465591620007" expanded="true" signature="900:1039" placeholder="SELECT senso..datalog..." />
+            <marker date="1465591620007" expanded="true" signature="1229:1516" placeholder="SELECT y FRO..x..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1295" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1307" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1317" placeholder="SELECT d FRO..AppBundle..." />
           </folding>
         </state>
       </provider>
@@ -594,14 +598,13 @@
           <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#2607#2634#0#PHP" expanded="true" />
-            <marker date="1465590382039" expanded="true" signature="749:1185" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465590382039" expanded="true" signature="900:1036" placeholder="SELECT senso..datalog..." />
-            <marker date="1465590382039" expanded="true" signature="1210:1609" placeholder="SELECT a, b ..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1609:1898" placeholder="SELECT y FRO..x..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1677" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1689" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1699" placeholder="SELECT d FRO..AppBundle..." />
+            <element signature="e#2225#2252#0#PHP" expanded="true" />
+            <marker date="1465591620007" expanded="true" signature="749:1227" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465591620007" expanded="true" signature="900:1039" placeholder="SELECT senso..datalog..." />
+            <marker date="1465591620007" expanded="true" signature="1229:1516" placeholder="SELECT y FRO..x..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1295" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1307" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1317" placeholder="SELECT d FRO..AppBundle..." />
           </folding>
         </state>
       </provider>
@@ -807,18 +810,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28671327">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="37" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.6433566">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#2607#2634#0#PHP" expanded="true" />
-            <marker date="1465590382039" expanded="true" signature="749:1185" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465590382039" expanded="true" signature="900:1036" placeholder="SELECT senso..datalog..." />
-            <marker date="1465590382039" expanded="true" signature="1210:1609" placeholder="SELECT a, b ..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1609:1898" placeholder="SELECT y FRO..x..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1677" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1689" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465590382039" expanded="true" signature="1644:1699" placeholder="SELECT d FRO..AppBundle..." />
+            <element signature="e#2225#2252#0#PHP" expanded="true" />
+            <marker date="1465591620007" expanded="true" signature="749:1227" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465591620007" expanded="true" signature="900:1039" placeholder="SELECT senso..datalog..." />
+            <marker date="1465591620007" expanded="true" signature="1229:1516" placeholder="SELECT y FRO..x..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1295" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1307" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465591620007" expanded="true" signature="1262:1317" placeholder="SELECT d FRO..AppBundle..." />
           </folding>
         </state>
       </provider>
