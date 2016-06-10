@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\Datalog;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 
 const numeroDeCanales = 32;
@@ -29,11 +30,11 @@ class DataLoggerController extends Controller
                     FROM    datalog a
                             INNER JOIN
                             (
-                                SELECT sensor_id, MAX(hora) max_date
+                                SELECT sensor_id, MAX(fecha) max_date
                                 FROM    datalog
                                 GROUP BY sensor_id
                             ) b ON a.sensor_id = b.sensor_id AND
-                    a.hora = b.max_date
+                    a.fecha = b.max_date
                     ORDER BY sensor_id ASC";
 
 
@@ -41,30 +42,33 @@ class DataLoggerController extends Controller
                     FROM AppBundle:Datalog a
                     JOIN
                     (
-                        SELECT b.sensorId, MAX(hora) max_date
+                        SELECT b.sensorId, MAX(fecha) max_date
                         FROM AppBundle:Datalog b
                         GROUP BY b.sensorId
                     ) b ON a.sensorId = b=sensorId AND
-                    a.hora = b.max_date
+                    a.fecha = b.max_date
                     ORDER BY d.sensorId ASC";
 
-            $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d ORDER BY d.fecha DESC";
+            $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d ORDER BY d.fecha DESC ";
 
             $em = $this->getDoctrine()->getManager();
 
-/*            $subquery = $em->createQueryBuilder()
-                ->select('b.sensorId', 'MAX(b.hora) as max_date')
-                ->from('AppBundle:Datalog', 'b')
-                ->groupBy('b.sensorId')
-                ->getDQL();
-            $qb = $em->createQueryBuilder();
-            $qb->select('a')
-                ->from('AppBundle:Datalog', 'a')
-                ->where($qb->expr()->notIn('a.id', $subquery));*/
+            $stmt = $em->getConnection()->prepare($sql);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
 
 
-            $query = $em->createQuery($dqlSimpificada);
-            $datalogArray = $query->getResult();
+            //$query = $em->createQuery($dqlSimpificada);
+            //$datalogArray = $query->getResult();
+            $datalogArray = [];
+            foreach ($arrayQueryResult as $item) {
+                $dataAux = new Datalog();
+                $dataAux->setSensorId($item['sensor_id']);
+                $dataAux->setMedicion($item['medicion']);
+                $d1 = new \DateTime($item['fecha']);
+                $dataAux->setFecha($d1);
+                array_push($datalogArray,$dataAux);
+            }
 
             if (empty($datalogArray)) {
                 throw $this->createNotFoundException(
