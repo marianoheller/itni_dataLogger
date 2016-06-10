@@ -24,48 +24,48 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_eecfef3125b773169973c618569dd3274d083da8b5b76bdb3f72178a85f23ddd = $this->env->getExtension("native_profiler");
-        $__internal_eecfef3125b773169973c618569dd3274d083da8b5b76bdb3f72178a85f23ddd->enter($__internal_eecfef3125b773169973c618569dd3274d083da8b5b76bdb3f72178a85f23ddd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "datalogger/data.html.twig"));
+        $__internal_fb6d9f79fdcfcd7b49eaab8589c3fa2f936b91d2256cc9a7a35dfd6ee382c5b1 = $this->env->getExtension("native_profiler");
+        $__internal_fb6d9f79fdcfcd7b49eaab8589c3fa2f936b91d2256cc9a7a35dfd6ee382c5b1->enter($__internal_fb6d9f79fdcfcd7b49eaab8589c3fa2f936b91d2256cc9a7a35dfd6ee382c5b1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "datalogger/data.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_eecfef3125b773169973c618569dd3274d083da8b5b76bdb3f72178a85f23ddd->leave($__internal_eecfef3125b773169973c618569dd3274d083da8b5b76bdb3f72178a85f23ddd_prof);
+        $__internal_fb6d9f79fdcfcd7b49eaab8589c3fa2f936b91d2256cc9a7a35dfd6ee382c5b1->leave($__internal_fb6d9f79fdcfcd7b49eaab8589c3fa2f936b91d2256cc9a7a35dfd6ee382c5b1_prof);
 
     }
 
     // line 5
     public function block_pageTitle($context, array $blocks = array())
     {
-        $__internal_29b2aef177cb74c985a926addec353e5193443f4ae0759e235bd73a9d30c6e68 = $this->env->getExtension("native_profiler");
-        $__internal_29b2aef177cb74c985a926addec353e5193443f4ae0759e235bd73a9d30c6e68->enter($__internal_29b2aef177cb74c985a926addec353e5193443f4ae0759e235bd73a9d30c6e68_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "pageTitle"));
+        $__internal_223497d4911df39f81d165fe002d0f56710a4bb4225ad489f571b66539e03525 = $this->env->getExtension("native_profiler");
+        $__internal_223497d4911df39f81d165fe002d0f56710a4bb4225ad489f571b66539e03525->enter($__internal_223497d4911df39f81d165fe002d0f56710a4bb4225ad489f571b66539e03525_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "pageTitle"));
 
         // line 6
         echo "    <title>Data Logger</title>
 ";
         
-        $__internal_29b2aef177cb74c985a926addec353e5193443f4ae0759e235bd73a9d30c6e68->leave($__internal_29b2aef177cb74c985a926addec353e5193443f4ae0759e235bd73a9d30c6e68_prof);
+        $__internal_223497d4911df39f81d165fe002d0f56710a4bb4225ad489f571b66539e03525->leave($__internal_223497d4911df39f81d165fe002d0f56710a4bb4225ad489f571b66539e03525_prof);
 
     }
 
     // line 9
     public function block_tableTitle($context, array $blocks = array())
     {
-        $__internal_ac8e0f7966a452f2b12422d1d4ea756ad0c4c07b0a16f8807dbb7196eeeb300c = $this->env->getExtension("native_profiler");
-        $__internal_ac8e0f7966a452f2b12422d1d4ea756ad0c4c07b0a16f8807dbb7196eeeb300c->enter($__internal_ac8e0f7966a452f2b12422d1d4ea756ad0c4c07b0a16f8807dbb7196eeeb300c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tableTitle"));
+        $__internal_5c6356b3c71c1bdf465292ed9a7963b1489d8b62ab41d4490fa63a5060025049 = $this->env->getExtension("native_profiler");
+        $__internal_5c6356b3c71c1bdf465292ed9a7963b1489d8b62ab41d4490fa63a5060025049->enter($__internal_5c6356b3c71c1bdf465292ed9a7963b1489d8b62ab41d4490fa63a5060025049_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "tableTitle"));
 
         // line 10
         echo "    <h3>Data Table</h3>
 ";
         
-        $__internal_ac8e0f7966a452f2b12422d1d4ea756ad0c4c07b0a16f8807dbb7196eeeb300c->leave($__internal_ac8e0f7966a452f2b12422d1d4ea756ad0c4c07b0a16f8807dbb7196eeeb300c_prof);
+        $__internal_5c6356b3c71c1bdf465292ed9a7963b1489d8b62ab41d4490fa63a5060025049->leave($__internal_5c6356b3c71c1bdf465292ed9a7963b1489d8b62ab41d4490fa63a5060025049_prof);
 
     }
 
     // line 14
     public function block_dataHead($context, array $blocks = array())
     {
-        $__internal_3db5b5cfea3cda7e61ded09848d87fb7e172be351e73e94416cc322173cec1c3 = $this->env->getExtension("native_profiler");
-        $__internal_3db5b5cfea3cda7e61ded09848d87fb7e172be351e73e94416cc322173cec1c3->enter($__internal_3db5b5cfea3cda7e61ded09848d87fb7e172be351e73e94416cc322173cec1c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataHead"));
+        $__internal_071f22472cdbfdbfd1d76ad7f41fb18e74f417084443d5aec47975a356200d60 = $this->env->getExtension("native_profiler");
+        $__internal_071f22472cdbfdbfd1d76ad7f41fb18e74f417084443d5aec47975a356200d60->enter($__internal_071f22472cdbfdbfd1d76ad7f41fb18e74f417084443d5aec47975a356200d60_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataHead"));
 
         // line 15
         echo "    <tr>
@@ -78,15 +78,15 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
     </tr>
 ";
         
-        $__internal_3db5b5cfea3cda7e61ded09848d87fb7e172be351e73e94416cc322173cec1c3->leave($__internal_3db5b5cfea3cda7e61ded09848d87fb7e172be351e73e94416cc322173cec1c3_prof);
+        $__internal_071f22472cdbfdbfd1d76ad7f41fb18e74f417084443d5aec47975a356200d60->leave($__internal_071f22472cdbfdbfd1d76ad7f41fb18e74f417084443d5aec47975a356200d60_prof);
 
     }
 
     // line 26
     public function block_dataBody($context, array $blocks = array())
     {
-        $__internal_fbf2c0281cf9a9c9c1dbcfaf74572f103923c2fc940b0c9e22e65d5ab7cbb28b = $this->env->getExtension("native_profiler");
-        $__internal_fbf2c0281cf9a9c9c1dbcfaf74572f103923c2fc940b0c9e22e65d5ab7cbb28b->enter($__internal_fbf2c0281cf9a9c9c1dbcfaf74572f103923c2fc940b0c9e22e65d5ab7cbb28b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataBody"));
+        $__internal_7fc654206811ef7b75d4c6f25bcf6e302afccdbaa6a114f72765c7f8e341788a = $this->env->getExtension("native_profiler");
+        $__internal_7fc654206811ef7b75d4c6f25bcf6e302afccdbaa6a114f72765c7f8e341788a->enter($__internal_7fc654206811ef7b75d4c6f25bcf6e302afccdbaa6a114f72765c7f8e341788a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "dataBody"));
 
         // line 27
         echo "
@@ -109,7 +109,7 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
             echo "</td>
             <td class=\"text-left\">";
             // line 33
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["datalog"], "hora", array()), "format", array(0 => "H:i:s"), "method"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["datalog"], "fecha", array()), "format", array(0 => "H:i:s"), "method"), "html", null, true);
             echo "</td>
             <td class=\"text-left\">";
             // line 34
@@ -122,7 +122,7 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['datalog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_fbf2c0281cf9a9c9c1dbcfaf74572f103923c2fc940b0c9e22e65d5ab7cbb28b->leave($__internal_fbf2c0281cf9a9c9c1dbcfaf74572f103923c2fc940b0c9e22e65d5ab7cbb28b_prof);
+        $__internal_7fc654206811ef7b75d4c6f25bcf6e302afccdbaa6a114f72765c7f8e341788a->leave($__internal_7fc654206811ef7b75d4c6f25bcf6e302afccdbaa6a114f72765c7f8e341788a_prof);
 
     }
 
@@ -173,7 +173,7 @@ class __TwigTemplate_d216b61eaa40726ce2913421f75d379eca3916d9052102483c08a4783a3
 /*         <tr>*/
 /*             <td class="text-left">{{ datalog.sensorId }}</td>*/
 /*             <td class="text-left">{{ datalog.medicion }}</td>*/
-/*             <td class="text-left">{{ datalog.hora.format("H:i:s") }}</td>*/
+/*             <td class="text-left">{{ datalog.fecha.format("H:i:s") }}</td>*/
 /*             <td class="text-left">{{ datalog.fecha.format("d-m-Y") }}</td>*/
 /*         </tr>*/
 /*     {% endfor %}*/

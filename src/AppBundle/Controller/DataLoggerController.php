@@ -48,7 +48,7 @@ class DataLoggerController extends Controller
                     a.hora = b.max_date
                     ORDER BY d.sensorId ASC";
 
-            $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d ORDER BY d.hora DESC";
+            $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d ORDER BY d.fecha DESC";
 
             $em = $this->getDoctrine()->getManager();
 
@@ -138,11 +138,9 @@ class DataLoggerController extends Controller
                             $datalog = new Datalog();
                             $datalog->setSensorId(intval($entry->canal));
                             $datalog->setMedicion($entry->temperatura);
-                            $newDate = date("m-d-Y", strtotime($entry->fecha));
+                            $newDate = date("m-d-Y H:i:s", strtotime($entry->fecha));
                             $fecha=new \DateTime($newDate);
                             $datalog->setFecha($fecha);
-                            $hora=new \DateTime($entry->hora);
-                            $datalog->setHora($hora);
 
                             $contItemsAdded++;
                             $em->persist($datalog);

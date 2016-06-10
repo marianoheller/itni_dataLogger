@@ -38,17 +38,9 @@ class Datalog
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha", type="date")
+     * @ORM\Column(name="fecha", type="datetime")
      */
     private $fecha;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="hora", type="time")
-     */
-    private $hora;
-
 
     /**
      * Get id
@@ -127,28 +119,5 @@ class Datalog
     public function getFecha()
     {
         return $this->fecha;
-    }
-
-    /**
-     * Set hora
-     *
-     * @param \DateTime $hora
-     * @return Datalog
-     */
-    public function setHora($hora)
-    {
-        $this->hora = $hora;
-
-        return $this;
-    }
-
-    /**
-     * Get hora
-     *
-     * @return \DateTime 
-     */
-    public function getHora()
-    {
-        return $this->hora;
     }
 }
