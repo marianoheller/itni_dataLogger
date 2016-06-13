@@ -22,11 +22,7 @@ class DataLoggerController extends Controller
      */
     public function indexAction(Request $request)
     {
-        if ( $request->isXmlHttpRequest() ) {
-            $ret = new Response("Ajax request");
-        }
-        else {
-            $sql = "SELECT  a.*
+        $sql = "SELECT  a.*
                     FROM    datalog a
                             INNER JOIN
                             (
@@ -37,32 +33,33 @@ class DataLoggerController extends Controller
                                     a.fecha = b.max_fecha
                     GROUP BY sensor_id ORDER BY a.sensor_id  ASC";
 
-            $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d ORDER BY d.fecha DESC ";
+        $dqlSimpificada = "SELECT d FROM AppBundle:Datalog d ORDER BY d.fecha DESC ";
 
-            $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+        $datalogArray = [];
+        foreach ($arrayQueryResult as $item) {
+            $dataAux = new Datalog();
+            $dataAux->setSensorId($item['sensor_id']);
+            $dataAux->setMedicion($item['medicion']);
+            $d1 = new \DateTime($item['fecha']);
+            $dataAux->setFecha($d1);
+            array_push($datalogArray,$dataAux);
+        }
+        if (empty($datalogArray)) {
+            throw $this->createNotFoundException(
+                'No data found'
+            );
+        }
 
-            $stmt = $em->getConnection()->prepare($sql);
-            $stmt->execute();
-            $arrayQueryResult = $stmt->fetchAll();
-
-
-            //$query = $em->createQuery($dqlSimpificada);
-            //$datalogArray = $query->getResult();
-            $datalogArray = [];
-            foreach ($arrayQueryResult as $item) {
-                $dataAux = new Datalog();
-                $dataAux->setSensorId($item['sensor_id']);
-                $dataAux->setMedicion($item['medicion']);
-                $d1 = new \DateTime($item['fecha']);
-                $dataAux->setFecha($d1);
-                array_push($datalogArray,$dataAux);
-            }
-
-            if (empty($datalogArray)) {
-                throw $this->createNotFoundException(
-                    'No data found'
-                );
-            }
+        if ( $request->isXmlHttpRequest() ) {
+            $ret =  new JsonResponse(
+                array ( 'datalogArray' => $datalogArray)
+            );
+        }
+        else {
             $ret = $this->render('datalogger/data.html.twig',
                                 array ( 'datalogArray' => $datalogArray));
         }
@@ -70,8 +67,8 @@ class DataLoggerController extends Controller
     }
 
     /**
-     * @Route("/testing", name="testing")
-     */
+ * @Route("/testing", name="testing")
+ */
 
 
     public function updateDataAction(Request $request){
@@ -96,8 +93,46 @@ class DataLoggerController extends Controller
         }
         $jsonString = json_encode($arrayQueryResult);
 
+        $fieldColumnNames = array("sensor_id","medicion","hora","fecha");
+
+        if ( $request->isXmlHttpRequest() ) {
+            $ret =  new JsonResponse(
+                array ( 'jsonString' => $jsonString)
+            );
+        }
+        else {
+            $ret = $this->render('datalogger/data_jquery.html.twig',
+                array ( 'jsonString' => $jsonString,
+                    'fieldNames' => $fieldColumnNames));
+        }
+        return $ret;
+
+    }
+
+
+    /**
+     * @Route("/promedio", name="promedio")
+     */
+
+
+    public function promedioAction(Request $request){
+        $sql = "SELECT id, sensor_id, AVG(medicion)as promedio, fecha  FROM datalog GROUP BY sensor_id ORDER BY sensor_id ASC";
+        $em = $this->getDoctrine()->getManager();
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+        for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+            $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+            $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
+            $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
+        }
+        $jsonString = json_encode($arrayQueryResult);
+
+        $fieldColumnNames = array("sensor_id","promedio","hora","fecha");
+
         return $this->render('datalogger/data_jquery.html.twig',
-                    array ( 'jsonString' => $jsonString));
+            array ( 'jsonString' => $jsonString,
+                    'fieldNames' => $fieldColumnNames));
     }
 
     /**

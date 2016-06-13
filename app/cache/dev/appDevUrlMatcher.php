@@ -132,6 +132,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::updateDataAction',  '_route' => 'testing',);
         }
 
+        // promedio
+        if ($pathinfo === '/promedio') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::promedioAction',  '_route' => 'promedio',);
+        }
+
         // logData
         if ($pathinfo === '/logdata') {
             return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::logDataAction',  '_route' => 'logData',);

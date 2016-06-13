@@ -1,46 +1,108 @@
 {% extends 'datalogger_jquery_base.html.twig' %}
 
 
+{% block navbar %}
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">INTI - Datalogger</a>
+        </div>
+        <ul class="nav navbar-nav">
+
+            {% if fieldNames[1] == "medicion" %}
+                <li class="active"><a href="/testing">Estado actual</a></li>
+            {% else %}
+                <li><a href="/testing">Estado actual</a></li>
+            {% endif %}
+
+            {% if fieldNames[1] == "promedio" %}
+                <li class="active"><a href="/promedio">Promedio</a></li>
+            {% else %}
+                <li><a href="/promedio">Promedio</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+{% endblock %}
+
+
+{% block titulo %}
+    {% if fieldNames[1] == "medicion" %}
+        <h3 class="text-left col-md-12">Ultimas mediciones:</h3>
+    {% else %}
+        <h3 class="text-left col-md-12">Promedio historico:</h3>
+    {% endif %}
+{% endblock %}
+
 
 {% block javascripts %}
     <script>
-        $( document ).ready(function() {
-            ;
-        });
+        var stringAux = $.parseJSON( '{{ jsonString | raw }}');
+        var fieldTags = {{ fieldNames|json_encode|raw }};
+
+        String.prototype.capitalizeFirstLetter = function() {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        }
     </script>
+
     <script>
-
-        $(function(){
-            var stringAux = $.parseJSON( '{{ jsonString | raw }}');
-            console.log( stringAux);
-            $('#example').dataTable({
-                "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "Todos"]],
-                "pageLength": 25,
-                "oLanguage": {
-                    "sUrl": "media/language/spanish.json"
+        var table = $('#example').dataTable({
+            /* "ajax": {
+             "url": "/testing",
+             "type": "POST"
+             },*/
+            "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "Todos"]],
+            "pageLength": 25,
+            "oLanguage": {
+                "sUrl": "media/language/spanish.json"
+            },
+            "aaSorting": [[ 0, "asc" ]], //asc or desc
+            "aaData": stringAux,
+            "aoColumns": [
+                {
+                    "sTitle":"Sensor ID",
+                    "mDataProp": fieldTags[0]
                 },
-                "aaSorting": [[ 0, "asc" ]], //asc or desc
-                "aaData": stringAux,
-                "aoColumns": [
-                    {
-                        "sTitle":"Sensor ID",
-                        "mDataProp": "sensor_id"
-                    },
-                    {
-                        "sTitle":"Medicion",
-                        "mDataProp": "medicion"
-                    },
-                    {
+                {
+                    "sTitle":fieldTags[1].capitalizeFirstLetter(),
+                    "mDataProp": fieldTags[1]
+                },
+                {
 
-                        "sTitle":"Hora",
-                        "mDataProp": "hora"
-                    },
-                    {
-                        "sTitle":"Fecha",
-                        "mDataProp": "fecha"
-                    }
-                ]
-            });
+                    "sTitle":"Hora",
+                    "mDataProp": fieldTags[2]
+                },
+                {
+                    "sTitle":"Fecha",
+                    "mDataProp": fieldTags[3]
+                }
+            ]
+        });
+        $(function(){
+
         })
     </script>
+
+    <script>
+        var set_delay = 3000,
+        getDataFromServer = function () {
+            $.ajax({
+                    url : '/testing',
+                    type: 'POST'
+                })
+                .done(function (response) {
+                    table.api().clear().draw();
+                    table.api().rows.add(response).draw();
+                })
+                .always(function () {
+                    setTimeout(getDataFromServer, set_delay);
+                });
+        };
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            setTimeout(getDataFromServer, set_delay);
+        });
+    </script>
+
 {% endblock %}
