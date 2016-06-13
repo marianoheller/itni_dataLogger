@@ -127,9 +127,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::indexAction',  '_route' => 'homepage',);
         }
 
-        // update
-        if ($pathinfo === '/update') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::updateDataAction',  '_route' => 'update',);
+        // testing
+        if ($pathinfo === '/testing') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::updateDataAction',  '_route' => 'testing',);
         }
 
         // logData

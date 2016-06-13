@@ -70,21 +70,34 @@ class DataLoggerController extends Controller
     }
 
     /**
-     * @Route("/update", name="update")
+     * @Route("/testing", name="testing")
      */
 
 
     public function updateDataAction(Request $request){
-        $param1 = $request->query->get('param1');
-        $param2 = $request->query->get('param2');
+        $sql = "SELECT  a.*
+                    FROM    datalog a
+                            INNER JOIN
+                            (
+                                SELECT sensor_id, MAX(fecha)as max_fecha
+                                FROM    datalog
+                                GROUP BY sensor_id
+                            ) b ON a.sensor_id = b.sensor_id AND
+                                    a.fecha = b.max_fecha
+                    GROUP BY sensor_id ORDER BY a.sensor_id  ASC";
+        $em = $this->getDoctrine()->getManager();
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+        for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+            $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+            $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
+            $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
+        }
+        $jsonString = json_encode($arrayQueryResult);
 
-
-        $response = new JsonResponse();
-        $response->setData(array(
-            'param1' => $param1,
-            'param2' => $param2
-        ));
-        return $response;
+        return $this->render('datalogger/data_jquery.html.twig',
+                    array ( 'jsonString' => $jsonString));
     }
 
     /**

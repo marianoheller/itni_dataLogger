@@ -1,0 +1,46 @@
+{% extends 'datalogger_jquery_base.html.twig' %}
+
+
+
+{% block javascripts %}
+    <script>
+        $( document ).ready(function() {
+            ;
+        });
+    </script>
+    <script>
+
+        $(function(){
+            var stringAux = $.parseJSON( '{{ jsonString | raw }}');
+            console.log( stringAux);
+            $('#example').dataTable({
+                "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "Todos"]],
+                "pageLength": 25,
+                "oLanguage": {
+                    "sUrl": "media/language/spanish.json"
+                },
+                "aaSorting": [[ 0, "asc" ]], //asc or desc
+                "aaData": stringAux,
+                "aoColumns": [
+                    {
+                        "sTitle":"Sensor ID",
+                        "mDataProp": "sensor_id"
+                    },
+                    {
+                        "sTitle":"Medicion",
+                        "mDataProp": "medicion"
+                    },
+                    {
+
+                        "sTitle":"Hora",
+                        "mDataProp": "hora"
+                    },
+                    {
+                        "sTitle":"Fecha",
+                        "mDataProp": "fecha"
+                    }
+                ]
+            });
+        })
+    </script>
+{% endblock %}
