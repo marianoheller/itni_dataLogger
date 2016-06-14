@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" line="61" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" line="63" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/datalogger/data_jquery.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/datalogger/data_jquery.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/datalogger_jquery_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/datalogger_jquery_base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/03/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/03/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/a4/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/a4/5b5b435d41707042756e646c655c436f6e74726f6c6c65725c446174614c6f67676572436f6e74726f6c6c657223696e646578416374696f6e405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/78/7852d60a232b09b11e91d6d2f3373e8c2eccb53887c84538af0d79adb0f71b2c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/78/7852d60a232b09b11e91d6d2f3373e8c2eccb53887c84538af0d79adb0f71b2c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b9/b97c3d1184060a17573cb2ccc0a6f90c3fca722b7bae61796e90dd960ec87134.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b9/b97c3d1184060a17573cb2ccc0a6f90c3fca722b7bae61796e90dd960ec87134.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" />
     </list>
@@ -56,11 +51,19 @@
       <file leaf-file-name="data_jquery.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/datalogger/data_jquery.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.256993">
-              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-              <folding>
-                <element signature="e#12#44#0#Twig" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.55497384">
+              <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="json_test_data.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/json_test_data.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,19 +71,16 @@
       <file leaf-file-name="DataLoggerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="57.53846">
-              <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+            <state vertical-scroll-proportion="-12.884615">
+              <caret line="104" column="56" selection-start-line="104" selection-start-column="56" selection-end-line="104" selection-end-column="56" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
-                <element signature="e#2094#2121#0#PHP" expanded="true" />
-                <element signature="e#3625#3659#0#PHP" expanded="true" />
-                <element signature="e#4658#4692#0#PHP" expanded="true" />
-                <marker date="1465851928510" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
-                <marker date="1465851928510" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
-                <marker date="1465851928510" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
-                <marker date="1465851928510" expanded="true" signature="2360:2838" placeholder="SELECT a.* F..datalog..." />
-                <marker date="1465851928510" expanded="true" signature="2511:2650" placeholder="SELECT senso..datalog..." />
-                <marker date="1465851928510" expanded="true" signature="3943:4052" placeholder="SELECT id, s..datalog..." />
+                <marker date="1465921951842" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1465921951842" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
+                <marker date="1465921951842" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
+                <marker date="1465921951842" expanded="true" signature="2480:2958" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1465921951842" expanded="true" signature="2631:2770" placeholder="SELECT senso..datalog..." />
+                <marker date="1465921951842" expanded="true" signature="4184:4293" placeholder="SELECT id, s..datalog..." />
               </folding>
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="Datalog.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Datalog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.76923">
+            <state vertical-scroll-proportion="0.0">
               <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
               <folding />
             </state>
@@ -539,23 +539,29 @@
       <option name="project" value="LOCAL" />
       <updated>1465840752778</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ajax request works. Client side doesnt.">
+      <created>1465852494286</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1465852494286</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26865673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27132195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5170576" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5191898" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.48081023" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -589,7 +595,8 @@
     <MESSAGE value="Native SQL working!!." />
     <MESSAGE value="Fixed SQL query. Now table shows last data adquired." />
     <MESSAGE value="Working on testins route." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on testins route." />
+    <MESSAGE value="Ajax request works. Client side doesnt." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajax request works. Client side doesnt." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -598,11 +605,50 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/datalogger_jquery_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/datalogger/data_jquery.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
+          <folding>
+            <element signature="e#40#99#0#PHP" expanded="true" />
+            <marker date="1465921951842" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465921951842" expanded="true" signature="2480:2958" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="2631:2770" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="4184:4293" placeholder="SELECT id, s..datalog..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Datalog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/datalogger/data.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="18" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,15 +658,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#2094#2121#0#PHP" expanded="true" />
-            <element signature="e#3625#3659#0#PHP" expanded="true" />
-            <element signature="e#4658#4692#0#PHP" expanded="true" />
-            <marker date="1465851928510" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465851928510" expanded="true" signature="2360:2838" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="2511:2650" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="3943:4052" placeholder="SELECT id, s..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465921951842" expanded="true" signature="2480:2958" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="2631:2770" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="4184:4293" placeholder="SELECT id, s..datalog..." />
           </folding>
         </state>
       </provider>
@@ -637,7 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,15 +689,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#2094#2121#0#PHP" expanded="true" />
-            <element signature="e#3625#3659#0#PHP" expanded="true" />
-            <element signature="e#4658#4692#0#PHP" expanded="true" />
-            <marker date="1465851928510" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465851928510" expanded="true" signature="2360:2838" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="2511:2650" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="3943:4052" placeholder="SELECT id, s..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465921951842" expanded="true" signature="2480:2958" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="2631:2770" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="4184:4293" placeholder="SELECT id, s..datalog..." />
           </folding>
         </state>
       </provider>
@@ -685,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,15 +733,12 @@
           <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#2094#2121#0#PHP" expanded="true" />
-            <element signature="e#3625#3659#0#PHP" expanded="true" />
-            <element signature="e#4658#4692#0#PHP" expanded="true" />
-            <marker date="1465851928510" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465851928510" expanded="true" signature="2360:2838" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="2511:2650" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="3943:4052" placeholder="SELECT id, s..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465921951842" expanded="true" signature="2480:2958" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="2631:2770" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="4184:4293" placeholder="SELECT id, s..datalog..." />
           </folding>
         </state>
       </provider>
@@ -742,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -867,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
           <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4458042">
           <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,7 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.423077">
           <caret line="30" column="56" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,13 +927,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68356645">
           <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Datalog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.76923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
           <folding />
         </state>
@@ -913,9 +940,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/json_test_data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4755245">
-          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.884615">
+          <caret line="104" column="56" selection-start-line="104" selection-start-column="56" selection-end-line="104" selection-end-column="56" />
+          <folding>
+            <element signature="e#40#99#0#PHP" expanded="true" />
+            <marker date="1465921951842" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1465921951842" expanded="true" signature="2480:2958" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="2631:2770" placeholder="SELECT senso..datalog..." />
+            <marker date="1465921951842" expanded="true" signature="4184:4293" placeholder="SELECT id, s..datalog..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -927,32 +970,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="57.53846">
-          <caret line="107" column="20" selection-start-line="107" selection-start-column="20" selection-end-line="107" selection-end-column="20" />
-          <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#2094#2121#0#PHP" expanded="true" />
-            <element signature="e#3625#3659#0#PHP" expanded="true" />
-            <element signature="e#4658#4692#0#PHP" expanded="true" />
-            <marker date="1465851928510" expanded="true" signature="625:1103" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="776:915" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="1134:1189" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1465851928510" expanded="true" signature="2360:2838" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="2511:2650" placeholder="SELECT senso..datalog..." />
-            <marker date="1465851928510" expanded="true" signature="3943:4052" placeholder="SELECT id, s..datalog..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/datalogger/data_jquery.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.256993">
-          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-          <folding>
-            <element signature="e#12#44#0#Twig" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.55497384">
+          <caret line="102" column="67" selection-start-line="102" selection-start-column="67" selection-end-line="102" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>

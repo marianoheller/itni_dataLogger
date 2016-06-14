@@ -83,6 +83,7 @@
     </script>
 
     <script>
+
         var set_delay = 3000,
         getDataFromServer = function () {
             $.ajax({
@@ -90,8 +91,23 @@
                     type: 'POST'
                 })
                 .done(function (response) {
-                    table.api().clear().draw();
-                    table.api().rows.add(response).draw();
+                    console.log("AJAX Response:");
+                    console.log("Raw: ",response);
+                    var result = [];
+                    for(var i in response)
+                        result.push([i, response [i]]);
+                    console.log("Stringifyed: ");
+                    console.log(result[0][1]);
+                    var dataObject = $.parseJSON(result[0][1]);
+                    var dataArraytoDraw = [];
+                    console.log("Parsed as Array: (read to draw)");
+                    $.each(dataObject, function (i,v)
+                    {
+                        console.log(i,v);
+                        dataArraytoDraw.push(v);
+                    });
+                    table.api().clear();
+                    table.api().rows.add(dataArraytoDraw).draw();
                 })
                 .always(function () {
                     setTimeout(getDataFromServer, set_delay);

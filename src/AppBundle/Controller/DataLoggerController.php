@@ -53,8 +53,10 @@ class DataLoggerController extends Controller
                 'No data found'
             );
         }
-
         if ( $request->isXmlHttpRequest() ) {
+            for ($i=0 ; $i<sizeof($datalogArray) ; $i++) {
+                unset($datalogArray[$i]['id']);
+            }
             $ret =  new JsonResponse(
                 array ( 'datalogArray' => $datalogArray)
             );
@@ -91,13 +93,16 @@ class DataLoggerController extends Controller
             $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
             $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
         }
+        for ($i=0 ; $i<sizeof($arrayQueryResult) ; $i++) {
+            unset($arrayQueryResult[$i]['id']);
+        }
         $jsonString = json_encode($arrayQueryResult);
 
         $fieldColumnNames = array("sensor_id","medicion","hora","fecha");
 
         if ( $request->isXmlHttpRequest() ) {
             $ret =  new JsonResponse(
-                array ( 'jsonString' => $jsonString)
+                array ( 'jsonStringAjax' => $jsonString)
             );
         }
         else {
