@@ -118,18 +118,18 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // old_index
+        if ($pathinfo === '/old_index') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::indexAction',  '_route' => 'old_index',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'homepage');
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::indexAction',  '_route' => 'homepage',);
-        }
-
-        // testing
-        if ($pathinfo === '/testing') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::updateDataAction',  '_route' => 'testing',);
+            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::lastDataAction',  '_route' => 'homepage',);
         }
 
         // promedio

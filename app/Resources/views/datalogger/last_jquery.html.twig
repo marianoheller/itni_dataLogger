@@ -7,37 +7,22 @@
             <a class="navbar-brand" href="/">INTI - Datalogger</a>
         </div>
         <ul class="nav navbar-nav">
-
-            {% if fieldNames[1] == "medicion" %}
-                <li class="active"><a href="/testing">Estado actual</a></li>
-            {% else %}
-                <li><a href="/testing">Estado actual</a></li>
-            {% endif %}
-
-            {% if fieldNames[1] == "promedio" %}
-                <li class="active"><a href="/promedio">Promedio</a></li>
-            {% else %}
+                <li class="active"><a href="/">Estado actual</a></li>
                 <li><a href="/promedio">Promedio</a></li>
-            {% endif %}
-
         </ul>
     </div>
 {% endblock %}
 
 
 {% block titulo %}
-    {% if fieldNames[1] == "medicion" %}
         <h3 class="text-left col-md-12">Ultimas mediciones:</h3>
-    {% else %}
-        <h3 class="text-left col-md-12">Promedio historico:</h3>
-    {% endif %}
 {% endblock %}
 
 
 {% block javascripts %}
+    {#var fieldTags = {{ fieldNames|json_encode|raw }};#}
     <script>
         var stringAux = $.parseJSON( '{{ jsonString | raw }}');
-        var fieldTags = {{ fieldNames|json_encode|raw }};
 
         String.prototype.capitalizeFirstLetter = function() {
             return this.charAt(0).toUpperCase() + this.slice(1);
@@ -50,8 +35,9 @@
              "url": "/testing",
              "type": "POST"
              },*/
-            "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "Todos"]],
-            "pageLength": 25,
+            "aLengthMenu": [[32, 64, 128, -1], [32, 64, 128, "Todos"]],
+            "pageLength": 32,
+            "bLengthChange": false,
             "oLanguage": {
                 "sUrl": "media/language/spanish.json"
             },
@@ -60,20 +46,20 @@
             "aoColumns": [
                 {
                     "sTitle":"Sensor ID",
-                    "mDataProp": fieldTags[0]
+                    "mDataProp": "sensor_id"
                 },
                 {
-                    "sTitle":fieldTags[1].capitalizeFirstLetter(),
-                    "mDataProp": fieldTags[1]
+                    "sTitle":"Medicion",
+                    "mDataProp": "medicion"
                 },
                 {
 
                     "sTitle":"Hora",
-                    "mDataProp": fieldTags[2]
+                    "mDataProp": "hora"
                 },
                 {
                     "sTitle":"Fecha",
-                    "mDataProp": fieldTags[3]
+                    "mDataProp": "fecha"
                 }
             ]
         });
@@ -84,7 +70,7 @@
 
     <script>
 
-        var set_delay = 3000,
+        var set_delay = 5000,
         getDataFromServer = function () {
             $.ajax({
                     url : '/testing',

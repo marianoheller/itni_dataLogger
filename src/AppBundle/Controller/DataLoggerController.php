@@ -18,7 +18,7 @@ const passwordDevice = "INTI1957";
 class DataLoggerController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/old_index", name="old_index")
      */
     public function indexAction(Request $request)
     {
@@ -69,11 +69,11 @@ class DataLoggerController extends Controller
     }
 
     /**
- * @Route("/testing", name="testing")
+ * @Route("/", name="homepage")
  */
 
 
-    public function updateDataAction(Request $request){
+    public function lastDataAction(Request $request){
         $sql = "SELECT  a.*
                     FROM    datalog a
                             INNER JOIN
@@ -98,17 +98,14 @@ class DataLoggerController extends Controller
         }
         $jsonString = json_encode($arrayQueryResult);
 
-        $fieldColumnNames = array("sensor_id","medicion","hora","fecha");
-
         if ( $request->isXmlHttpRequest() ) {
             $ret =  new JsonResponse(
                 array ( 'jsonStringAjax' => $jsonString)
             );
         }
         else {
-            $ret = $this->render('datalogger/data_jquery.html.twig',
-                array ( 'jsonString' => $jsonString,
-                    'fieldNames' => $fieldColumnNames));
+            $ret = $this->render('datalogger/last_jquery.html.twig',
+                array ( 'jsonString' => $jsonString));
         }
         return $ret;
 
@@ -131,13 +128,21 @@ class DataLoggerController extends Controller
             $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
             $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
         }
+        for ($i=0 ; $i<sizeof($arrayQueryResult) ; $i++) {
+            unset($arrayQueryResult[$i]['id']);
+        }
         $jsonString = json_encode($arrayQueryResult);
 
-        $fieldColumnNames = array("sensor_id","promedio","hora","fecha");
-
-        return $this->render('datalogger/data_jquery.html.twig',
-            array ( 'jsonString' => $jsonString,
-                    'fieldNames' => $fieldColumnNames));
+        if ( $request->isXmlHttpRequest() ) {
+            $ret =  new JsonResponse(
+                array ( 'jsonStringAjax' => $jsonString)
+            );
+        }
+        else {
+            $ret = $this->render('datalogger/prom_jquery.html.twig',
+                array ( 'jsonString' => $jsonString) );
+        }
+        return $ret;
     }
 
     /**
