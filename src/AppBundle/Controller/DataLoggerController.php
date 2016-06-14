@@ -145,6 +145,45 @@ class DataLoggerController extends Controller
         return $ret;
     }
 
+
+
+    /**
+     * @Route("/historial", name="historial")
+     */
+
+
+    public function histDataAction(Request $request){
+        $sql = "SELECT  * FROM datalog ORDER BY sensor_id  ASC";
+        $em = $this->getDoctrine()->getManager();
+        $stmt = $em->getConnection()->prepare($sql);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+        for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+            $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+            $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
+            $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
+        }
+        for ($i=0 ; $i<sizeof($arrayQueryResult) ; $i++) {
+            unset($arrayQueryResult[$i]['id']);
+        }
+        $jsonString = json_encode($arrayQueryResult);
+
+        if ( $request->isXmlHttpRequest() ) {
+            $ret =  new JsonResponse(
+                array ( 'jsonStringAjax' => $jsonString)
+            );
+        }
+        else {
+            $ret = $this->render('datalogger/hist_jquery.html.twig',
+                array ( 'jsonString' => $jsonString));
+        }
+        return $ret;
+
+    }
+
+
+
+
     /**
      * @Route("/logdata", name="logData")
      */

@@ -7,20 +7,21 @@
             <a class="navbar-brand" href="/">INTI - Datalogger</a>
         </div>
         <ul class="nav navbar-nav">
-                <li><a href="/">Estado actual</a></li>
-                <li class="active"><a href="/promedio">Promedio</a></li>
-                <li><a href="/historial">Historial</a></li>
+            <li><a href="/">Estado actual</a></li>
+            <li><a href="/promedio">Promedio</a></li>
+            <li class="active"><a href="/historial">Historial</a></li>
         </ul>
     </div>
 {% endblock %}
 
 
 {% block titulo %}
-        <h3 class="text-left col-md-12">Promedio historico:</h3>
+    <h3 class="text-left col-md-12">Ultimas mediciones:</h3>
 {% endblock %}
 
 
 {% block javascripts %}
+    {#var fieldTags = {{ fieldNames|json_encode|raw }};#}
     <script>
         var stringAux = $.parseJSON( '{{ jsonString | raw }}');
 
@@ -35,15 +36,12 @@
              "url": "/testing",
              "type": "POST"
              },*/
-            "aLengthMenu": [[32, 64, 128, -1], [32, 64, 128, "Todos"]],
-            "pageLength": 32,
-            "bLengthChange": false,
-            bFilter: false, //Campo de busqueda
-            "bPaginate": false,     //paginacion
+            "aLengthMenu": [[32, 64, 128, -1], [32, 64, 128, "Todos"]],//combobox
+            "pageLength": 32,   //default entries to show
             "oLanguage": {
                 "sUrl": "media/language/spanish.json"
             },
-            "aaSorting": [[ 0, "asc" ]], //asc or desc
+            "aaSorting": [[ 3, "asc" ]], //asc or desc
             "aaData": stringAux,
             "aoColumns": [
                 {
@@ -51,8 +49,8 @@
                     "mDataProp": "sensor_id"
                 },
                 {
-                    "sTitle":"Promedio",
-                    "mDataProp": "promedio"
+                    "sTitle":"Medicion",
+                    "mDataProp": "medicion"
                 },
                 {
 
@@ -72,10 +70,10 @@
 
     <script>
 
-        var set_delay = 5000,
+        var set_delay = 25000,
                 getDataFromServer = function () {
                     $.ajax({
-                                url : '/promedio',
+                                url : '/historial',
                                 type: 'POST'
                             })
                             .done(function (response) {

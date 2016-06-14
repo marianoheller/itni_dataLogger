@@ -9,6 +9,7 @@
         <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Estado actual</a></li>
                 <li><a href="/promedio">Promedio</a></li>
+                <li><a href="/historial">Historial</a></li>
         </ul>
     </div>
 {% endblock %}
@@ -35,9 +36,11 @@
              "url": "/testing",
              "type": "POST"
              },*/
-            "aLengthMenu": [[32, 64, 128, -1], [32, 64, 128, "Todos"]],
-            "pageLength": 32,
-            "bLengthChange": false,
+            "aLengthMenu": [[32, 64, 128, -1], [32, 64, 128, "Todos"]],//combobox
+            "pageLength": 32,   //default entries to show
+            "bLengthChange": false, //entries to show combobox
+            bFilter: false, //Campo de busqueda
+            "bPaginate": false,     //paginacion
             "oLanguage": {
                 "sUrl": "media/language/spanish.json"
             },
@@ -73,7 +76,7 @@
         var set_delay = 5000,
         getDataFromServer = function () {
             $.ajax({
-                    url : '/testing',
+                    url : '/',
                     type: 'POST'
                 })
                 .done(function (response) {
