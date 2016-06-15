@@ -4,12 +4,12 @@
 {% block navbar %}
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">INTI - Datalogger</a>
+            <a class="navbar-brand" href="">INTI - Datalogger</a>
         </div>
         <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Estado actual</a></li>
-                <li><a href="/promedio">Promedio</a></li>
-                <li><a href="/historial">Historial</a></li>
+                <li class="active"><a href="">Estado actual</a></li>
+                <li><a href="promedio">Promedio</a></li>
+                <li><a href="historial">Historial</a></li>
         </ul>
     </div>
 {% endblock %}
@@ -39,7 +39,7 @@
             "aLengthMenu": [[32, 64, 128, -1], [32, 64, 128, "Todos"]],//combobox
             "pageLength": 32,   //default entries to show
             "bLengthChange": false, //entries to show combobox
-            bFilter: false, //Campo de busqueda
+            //bFilter: false, //Campo de busqueda
             "bPaginate": false,     //paginacion
             "oLanguage": {
                 "sUrl": "media/language/spanish.json"
@@ -56,15 +56,14 @@
                     "mDataProp": "medicion"
                 },
                 {
-
-                    "sTitle":"Hora",
-                    "mDataProp": "hora"
-                },
-                {
-                    "sTitle":"Fecha",
+                    "sTitle":"Timestamp",
                     "mDataProp": "fecha"
                 }
-            ]
+            ],
+            /*columnDefs: [ {
+                targets: 3,
+                render: $.fn.dataTable.render.moment( 'DD-MM-YYYYY','DD-MM-YYYYY' )
+            } ]*/
         });
         $(function(){
 
@@ -73,7 +72,7 @@
 
     <script>
 
-        var set_delay = 5000,
+        var set_delay = 10000,
         getDataFromServer = function () {
             $.ajax({
                     url : '/',
@@ -97,6 +96,9 @@
                     });
                     table.api().clear();
                     table.api().rows.add(dataArraytoDraw).draw();
+                    console.log("");
+                    console.log("==================================================================");
+                    console.log("");
                 })
                 .always(function () {
                     setTimeout(getDataFromServer, set_delay);

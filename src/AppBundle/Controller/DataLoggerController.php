@@ -68,11 +68,10 @@ class DataLoggerController extends Controller
         return $ret;
     }
 
+
     /**
  * @Route("/", name="homepage")
  */
-
-
     public function lastDataAction(Request $request){
         $sql = "SELECT  a.*
                     FROM    datalog a
@@ -88,11 +87,18 @@ class DataLoggerController extends Controller
         $stmt = $em->getConnection()->prepare($sql);
         $stmt->execute();
         $arrayQueryResult = $stmt->fetchAll();
+        //ReFormateo la fecha
         for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+            $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+            $arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');
+        }
+        //Separo fecha y hora
+        /*for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
             $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
             $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
             $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
-        }
+        }*/
+        //Elimino id del array q voy a mandar
         for ($i=0 ; $i<sizeof($arrayQueryResult) ; $i++) {
             unset($arrayQueryResult[$i]['id']);
         }
@@ -123,11 +129,18 @@ class DataLoggerController extends Controller
         $stmt = $em->getConnection()->prepare($sql);
         $stmt->execute();
         $arrayQueryResult = $stmt->fetchAll();
+        //ReFormateo la fecha
         for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+            $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+            $arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');
+        }
+        //Separo fecha y hora
+        /*for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
             $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
             $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
             $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
-        }
+        }*/
+        //Elimino id del array q voy a mandar
         for ($i=0 ; $i<sizeof($arrayQueryResult) ; $i++) {
             unset($arrayQueryResult[$i]['id']);
         }
@@ -158,11 +171,18 @@ class DataLoggerController extends Controller
         $stmt = $em->getConnection()->prepare($sql);
         $stmt->execute();
         $arrayQueryResult = $stmt->fetchAll();
+        //ReFormateo la fecha
         for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+            $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+            $arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');
+        }
+        //Separo fecha y hora
+        /*for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
             $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
             $arrayQueryResult[$i]['hora'] = $d1->format('H:i:s');
             $arrayQueryResult[$i]['fecha'] = $d1->format('d-m-Y');
-        }
+        }*/
+        //Elimino id del array q voy a mandar
         for ($i=0 ; $i<sizeof($arrayQueryResult) ; $i++) {
             unset($arrayQueryResult[$i]['id']);
         }
@@ -179,6 +199,90 @@ class DataLoggerController extends Controller
         }
         return $ret;
 
+    }
+
+    /**
+     * @Route("/hist_update", name="historial_update")
+     */
+
+
+    public function histUpdateDataAction(Request $request){
+        $ret = new Response("Error en controlador");
+
+
+
+        if ( !$request->isXmlHttpRequest() ) {
+            throw $this->createNotFoundException(
+                'No data found');
+        }
+        else {
+            //First get json data
+            $content = $request->getContent();
+            $data = json_decode($content);
+            var_dump($data);
+
+            /*foreach ($data as $name => $value) {
+                if ( $name == "data") {
+                    foreach ($value as $entry) {
+                        $datalog = new Datalog();
+                        $datalog->setSensorId(intval($entry->canal));
+                        $datalog->setMedicion($entry->temperatura);
+
+
+                        $fecha = new \DateTime();
+                        $fecha = $fecha->createFromFormat('d/m/Y H:i:s', $entry->fecha);
+                        $datalog->setFecha($fecha);
+
+                        $contItemsAdded++;
+                        $em->persist($datalog);
+                        $em->flush();
+                    }
+                }
+            }*/
+
+
+            //==================================================================
+            $jsonTest = [];
+            $jsonTest["draw"]=1;
+            $jsonTest["recordsTotal"]=5;
+            $jsonTest["recordsFiltered"]=3;
+            $data = [];
+            for( $i=0 ; $i<3 ;$i++) {
+                $item = [];
+                $item["fecha"]="15/06/2016 11:37:48";
+                $item["temperatura"]="3.23";
+                $item["canal"]="2";
+                array_push($data,$item);
+            }
+            $jsonTest["data"]=$data;
+            $ret = new JsonResponse();
+            $ret->setData($jsonTest);
+
+
+
+            //Now do the queries
+            /*$sql = "SELECT  * FROM datalog ORDER BY sensor_id  ASC";
+            $sqlTotalRegistros = "SELECT  COUNT(*) FROM datalog";
+            $em = $this->getDoctrine()->getManager();
+            $stmt = $em->getConnection()->prepare($sql);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+            //ReFormateo la fecha
+            for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+                $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+                $arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');
+            }
+            //Elimino id del array q voy a mandar
+            for ($i=0 ; $i<sizeof($arrayQueryResult) ; $i++) {
+                unset($arrayQueryResult[$i]['id']);
+            }
+            $jsonString = json_encode($arrayQueryResult);
+
+            $ret =  new JsonResponse(
+                array ( 'jsonStringAjax' => $jsonString)
+            );*/
+        }
+        return $ret;
     }
 
 
@@ -207,6 +311,7 @@ class DataLoggerController extends Controller
         else {
             $em = $this->getDoctrine()->getManager();
             $data = json_decode($content);
+            $password = "";
 
             foreach ($data as $name => $value) {
                 if ( $name == "LOGIN") {
@@ -227,8 +332,20 @@ class DataLoggerController extends Controller
                             $datalog = new Datalog();
                             $datalog->setSensorId(intval($entry->canal));
                             $datalog->setMedicion($entry->temperatura);
-                            $newDate = date("m-d-Y H:i:s", strtotime($entry->fecha));
-                            $fecha=new \DateTime($newDate);
+
+                            echo "$contItemsAdded)Nuevo registro";
+                            echo "<br>";
+                            echo "Fecha: ".$entry->fecha;
+                            echo "<br>";
+                            echo "Canal: ".$entry->canal;
+                            echo "<br>";
+                            echo "Medicion: ".$entry->temperatura;
+                            echo "<br>";
+                            echo "==================================================";
+                            echo "<br>";
+
+                            $fecha = new \DateTime();
+                            $fecha = $fecha->createFromFormat('d/m/Y H:i:s', $entry->fecha);
                             $datalog->setFecha($fecha);
 
                             $contItemsAdded++;

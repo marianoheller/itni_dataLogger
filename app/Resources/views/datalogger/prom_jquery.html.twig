@@ -8,8 +8,8 @@
         </div>
         <ul class="nav navbar-nav">
                 <li><a href="/">Estado actual</a></li>
-                <li class="active"><a href="/promedio">Promedio</a></li>
-                <li><a href="/historial">Historial</a></li>
+                <li class="active"><a href="promedio">Promedio</a></li>
+                <li><a href="historial">Historial</a></li>
         </ul>
     </div>
 {% endblock %}
@@ -38,7 +38,7 @@
             "aLengthMenu": [[32, 64, 128, -1], [32, 64, 128, "Todos"]],
             "pageLength": 32,
             "bLengthChange": false,
-            bFilter: false, //Campo de busqueda
+            //bFilter: false, //Campo de busqueda
             "bPaginate": false,     //paginacion
             "oLanguage": {
                 "sUrl": "media/language/spanish.json"
@@ -56,11 +56,7 @@
                 },
                 {
 
-                    "sTitle":"Hora",
-                    "mDataProp": "hora"
-                },
-                {
-                    "sTitle":"Fecha",
+                    "sTitle":"Timestamp",
                     "mDataProp": "fecha"
                 }
             ]
@@ -72,7 +68,7 @@
 
     <script>
 
-        var set_delay = 5000,
+        var set_delay = 30000,
                 getDataFromServer = function () {
                     $.ajax({
                                 url : '/promedio',
@@ -96,6 +92,9 @@
                                 });
                                 table.api().clear();
                                 table.api().rows.add(dataArraytoDraw).draw();
+                                console.log("");
+                                console.log("==================================================================");
+                                console.log("");
                             })
                             .always(function () {
                                 setTimeout(getDataFromServer, set_delay);
