@@ -1,0 +1,14 @@
+{% extends 'accounts/login/login_base.html.twig' %}
+
+{% set maxPostsPerPage = 3 %}
+
+
+{% block login_alert %}
+    {# TODO ARREGLAR EL CLOSING DE LA ALERT#}
+    {% if flagDataErronea == true %}
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Datos incorrectos!
+    </div>
+    {% endif %}
+{% endblock %}

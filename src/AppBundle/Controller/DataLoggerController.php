@@ -70,7 +70,7 @@ class DataLoggerController extends Controller
 
 
     /**
- * @Route("/", name="homepage")
+ * @Route("/old_homepage", name="main")
  */
     public function lastDataAction(Request $request){
         $sql = "SELECT  a.*

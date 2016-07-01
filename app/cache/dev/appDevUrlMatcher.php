@@ -118,18 +118,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // old_index
-        if ($pathinfo === '/old_index') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::indexAction',  '_route' => 'old_index',);
+        // login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'AppBundle\\Controller\\AccountController::loginAction',  '_route' => 'login',);
         }
 
-        // homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
+        if (0 === strpos($pathinfo, '/re')) {
+            // register
+            if ($pathinfo === '/register') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AccountController::registerAction',  '_route' => 'register',);
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::lastDataAction',  '_route' => 'homepage',);
+            // reset
+            if ($pathinfo === '/reset') {
+                return array (  '_controller' => 'AppBundle\\Controller\\AccountController::resetAction',  '_route' => 'reset',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/old_')) {
+            // old_index
+            if ($pathinfo === '/old_index') {
+                return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::indexAction',  '_route' => 'old_index',);
+            }
+
+            // main
+            if ($pathinfo === '/old_homepage') {
+                return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::lastDataAction',  '_route' => 'main',);
+            }
+
         }
 
         // promedio
@@ -155,9 +172,18 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::logDataAction',  '_route' => 'logData',);
         }
 
-        // homepage_old
-        if ($pathinfo === '/wiwiwi') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage_old',);
+        // homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'homepage');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::homepageAction',  '_route' => 'homepage',);
+        }
+
+        // sensores
+        if ($pathinfo === '/sensores') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::sensoresAction',  '_route' => 'sensores',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

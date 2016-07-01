@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ asset('media/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('media/css/login.css') }}">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class='col-md-3'></div>
+                <div class="col-md-6">
+                    <div class="login-box well">
+                        <form method="post">
+                            {% block login_alert %}
+                            {% endblock %}
+                            <legend>Ingresar al sistema</legend>
+                            <div class="form-group">
+                                <label for="username-email">E-mail o Usuario</label>
+                                <input value='' name="username" id="username-email" placeholder="E-mail o Usuario" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input id="password" name="password" value='' placeholder="Contraseña" type="password" class="form-control" />
+                            </div>
+                            <div class="input-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Recordarme
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Ingresar" />
+                            </div>
+                            <span class='text-center'><a href="/reset" class="text-sm">Olvidé mi contraseña</a></span>
+                            <div class="form-group">
+                                <p class="text-center m-t-xs text-sm">¿No posee una cuenta?</p>
+                                <a href="/register" class="btn btn-default btn-block m-t-md">Crear una cuenta</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class='col-md-3'></div>
+            </div>
+        </div>
+
+    </body>
+
+<!-- END # MODAL LOGIN -->
+</html>
