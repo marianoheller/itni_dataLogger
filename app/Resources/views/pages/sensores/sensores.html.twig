@@ -5,15 +5,24 @@
         #tablaStatusSensores thead tr th{text-align: center;}   {#Para los headers#}
         #tablaStatusSensores tbody th{text-align: center;}      {#Para el loading#}
         #tablaStatusSensores tbody {text-align: center;}        {#Para los items#}
+
+        #refreshButton {margin-bottom: 15px;}
+
     </style>
 {% endblock %}
 
 {% block statusActual %}
-    <div class="container  col-md-3 col-md-offset-6">
-        <button type="button" class="btn btn-primary">
-            Refrescar datos
-        </button>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="singlebutton"></label>
+        <div class="col-md-4 center-block">
+            {#TODO#}
+            <button id="refreshButton" name="refreshButton" class="btn btn-primary center-block">
+                Refrescar ahora
+            </button>
+        </div>
     </div>
+
 
     <div class="container col-md-offset-3">
         <table class="table table-hover" id="tablaStatusSensores">
@@ -33,6 +42,14 @@
 
 {% endblock %}
 {% block javascripts %}
+    <script>
+        function refreshButtonClicked() {
+            $(this).removeClass("inactive");
+            $(this).addClass("active");
+        }
+    </script>
+
+
     <script>
         var set_delay = 60000,
         getDataFromServer = function () {

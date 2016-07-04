@@ -46,7 +46,7 @@ class PagesController extends Controller
     {
         $session = new Session();
         if ( $session->get("username") )
-            return $this->render("pages/ensayo_base.html.twig");
+            return $this->render("pages/ensayo/ensayo_config.html.twig");
         else
             return $this->redirectToRoute("login");
     }
@@ -59,6 +59,18 @@ class PagesController extends Controller
         $session = new Session();
         if ( $session->get("username") )
             return $this->render("pages/about_base.html.twig");
+        else
+            return $this->redirectToRoute("login");
+    }
+
+    /**
+     * @Route("/ensayo/now", name="ensayoNow")
+     */
+    public function ensayoNowAction(Request $request)
+    {
+        $session = new Session();
+        if ( $session->get("username") )
+            return $this->render("pages/ensayo/ensayo.html.twig");
         else
             return $this->redirectToRoute("login");
     }

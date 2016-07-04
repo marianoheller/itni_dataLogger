@@ -201,6 +201,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\PagesController::aboutAction',  '_route' => 'about',);
         }
 
+        // ensayoNow
+        if ($pathinfo === '/ensayo/now') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::ensayoNowAction',  '_route' => 'ensayoNow',);
+        }
+
         // getSensoresStatus
         if ($pathinfo === '/getSensoresStatus') {
             return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getSensoresStatusAction',  '_route' => 'getSensoresStatus',);
