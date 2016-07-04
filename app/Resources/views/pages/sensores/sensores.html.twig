@@ -1,0 +1,96 @@
+{% extends 'pages/sensores_base.html.twig' %}
+
+{% block extraCss %}
+    <style>
+        #tablaStatusSensores thead tr th{text-align: center;}   {#Para los headers#}
+        #tablaStatusSensores tbody th{text-align: center;}      {#Para el loading#}
+        #tablaStatusSensores tbody {text-align: center;}        {#Para los items#}
+    </style>
+{% endblock %}
+
+{% block statusActual %}
+    <div class="container  col-md-3 col-md-offset-6">
+        <button type="button" class="btn btn-primary">
+            Refrescar datos
+        </button>
+    </div>
+
+    <div class="container col-md-offset-3">
+        <table class="table table-hover" id="tablaStatusSensores">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ultima medición</th>
+                    <th>Fecha</th>
+                    <th>Alias</th>
+                </tr>
+            </thead>
+            <tbody id="dataStatusSensores">
+                <th colspan="4">Cargando datos...</th>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        var set_delay = 60000,
+        getDataFromServer = function () {
+            $.ajax({
+                        url : '/getSensoresStatus',
+                        type: 'POST'
+                    })
+                    .done(function (response) {
+                        console.log("AJAX Response:");
+                        console.log("Raw: ",response);
+                        var result = [];
+                        for(var i in response)
+                            result.push([i, response [i]]);
+                        console.log("Stringifyed: ");
+                        console.log(result[0][1]);
+                        var dataObject = $.parseJSON(result[0][1]);
+                        var dataArraytoDraw = [];
+                        console.log("Parsed as Array: (read to draw)");
+                        var trHTML = '';
+                        $.each(dataObject, function (i,v) {
+                            console.log(i,v);
+                            dataArraytoDraw.push(v);    //Obsolete
+                            trHTML += "<tr>";
+                            trHTML +="<td>";
+                            trHTML += v["sensor_id"];
+                            trHTML +="</td>";
+                            trHTML +="<td>";
+                            trHTML += v["medicion"];
+                            trHTML +="</td>";
+                            trHTML +="<td>";
+                            trHTML += v["fecha"];
+                            trHTML +="</td>";
+                            trHTML +="<td>";
+                            trHTML += "NO ALIAS";
+                            trHTML +="</td>";
+                            trHTML +="</tr>";
+                        });
+                        $('#dataStatusSensores').empty();
+                        $('#dataStatusSensores').append(trHTML);
+                        console.log("");
+                        console.log("==================================================================");
+                        console.log("");
+                    })
+                    .fail(function() {
+                        console.log("Failed AJAX request.");
+                    })
+                    .always(function () {
+                        var lastTimeOut = setTimeout(getDataFromServer, set_delay);
+                    });
+        };
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            getDataFromServer();
+        });
+    </script>
+
+{% endblock %}
+
+

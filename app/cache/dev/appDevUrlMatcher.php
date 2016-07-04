@@ -136,6 +136,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // logout
+        if ($pathinfo === '/logout') {
+            return array (  '_controller' => 'AppBundle\\Controller\\AccountController::logoutAction',  '_route' => 'logout',);
+        }
+
         if (0 === strpos($pathinfo, '/old_')) {
             // old_index
             if ($pathinfo === '/old_index') {
@@ -184,6 +189,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // sensores
         if ($pathinfo === '/sensores') {
             return array (  '_controller' => 'AppBundle\\Controller\\PagesController::sensoresAction',  '_route' => 'sensores',);
+        }
+
+        // ensayo
+        if ($pathinfo === '/ensayo') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::ensayoAction',  '_route' => 'ensayo',);
+        }
+
+        // about
+        if ($pathinfo === '/about') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::aboutAction',  '_route' => 'about',);
+        }
+
+        // getSensoresStatus
+        if ($pathinfo === '/getSensoresStatus') {
+            return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getSensoresStatusAction',  '_route' => 'getSensoresStatus',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

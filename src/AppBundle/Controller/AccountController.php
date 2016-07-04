@@ -54,5 +54,16 @@ class AccountController extends Controller
         //return $this->render("login.html.twig");
         return $this->redirectToRoute("login");
     }
+
+
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutAction(Request $request)
+    {
+        $session = new Session();
+        $session->remove('username');
+        return $this->redirectToRoute("login");
+    }
 }
 

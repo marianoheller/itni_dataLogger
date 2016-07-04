@@ -34,10 +34,33 @@ class PagesController extends Controller
     {
         $session = new Session();
         if ( $session->get("username") )
-            return $this->render("pages/sensores_base.html.twig");
+            return $this->render("pages/sensores/sensores.html.twig");
         else
             return $this->redirectToRoute("login");
     }
 
+    /**
+     * @Route("/ensayo", name="ensayo")
+     */
+    public function ensayoAction(Request $request)
+    {
+        $session = new Session();
+        if ( $session->get("username") )
+            return $this->render("pages/ensayo_base.html.twig");
+        else
+            return $this->redirectToRoute("login");
+    }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function aboutAction(Request $request)
+    {
+        $session = new Session();
+        if ( $session->get("username") )
+            return $this->render("pages/about_base.html.twig");
+        else
+            return $this->redirectToRoute("login");
+    }
 }
 
