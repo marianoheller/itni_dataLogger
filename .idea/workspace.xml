@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,13 +85,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="66" selection-start-line="72" selection-start-column="66" selection-end-line="72" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.7622378">
+              <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
+                <element signature="e#2065#2096#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,13 +112,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.06993007">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="19" />
+            <state vertical-scroll-proportion="-8.269231">
+              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="71" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataLoggerController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+              <folding>
+                <marker date="1467741989979" expanded="true" signature="603:1081" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1467741989979" expanded="true" signature="754:893" placeholder="SELECT senso..datalog..." />
+                <marker date="1467741989979" expanded="true" signature="1112:1167" placeholder="SELECT d FRO..AppBundle..." />
+                <marker date="1467741989979" expanded="true" signature="2457:2935" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1467741989979" expanded="true" signature="2608:2747" placeholder="SELECT senso..datalog..." />
+                <marker date="1467741989979" expanded="true" signature="4351:4460" placeholder="SELECT id, s..datalog..." />
+                <marker date="1467741989979" expanded="true" signature="5879:5925" placeholder="SELECT a.* F..datalog..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="20" />
+              <folding>
+                <element signature="e#6#89#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,7 +195,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig" />
         <option value="$PROJECT_DIR$/web/media/css/homepage.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/homepage/homepage_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php" />
@@ -178,11 +203,13 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/config.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
   </component>
@@ -761,7 +788,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467734841401</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added DeviceController.">
+      <created>1467741644965</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1467741644965</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -829,7 +862,8 @@
     <MESSAGE value="Added  sensores page." />
     <MESSAGE value="Working on ensayo's page." />
     <MESSAGE value="Fixed pills on ensayo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed pills on ensayo." />
+    <MESSAGE value="Added DeviceController." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DeviceController." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -838,22 +872,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-          <folding>
-            <marker date="1467406075539" expanded="true" signature="635:1113" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="786:925" placeholder="SELECT senso..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="1144:1199" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1467406075539" expanded="true" signature="2489:2967" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="2640:2779" placeholder="SELECT senso..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="4383:4492" placeholder="SELECT id, s..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="5911:5957" placeholder="SELECT a.* F..datalog..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json_test_data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1150,16 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="66" selection-start-line="72" selection-start-column="66" selection-end-line="72" selection-end-column="66" />
-          <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
@@ -1215,26 +1223,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DataLoggerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23776224">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="34" />
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
           <folding>
-            <marker date="1467406075539" expanded="true" signature="635:1113" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="786:925" placeholder="SELECT senso..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="1144:1199" placeholder="SELECT d FRO..AppBundle..." />
-            <marker date="1467406075539" expanded="true" signature="2489:2967" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="2640:2779" placeholder="SELECT senso..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="4383:4492" placeholder="SELECT id, s..datalog..." />
-            <marker date="1467406075539" expanded="true" signature="5911:5957" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1467741989979" expanded="true" signature="603:1081" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1467741989979" expanded="true" signature="754:893" placeholder="SELECT senso..datalog..." />
+            <marker date="1467741989979" expanded="true" signature="1112:1167" placeholder="SELECT d FRO..AppBundle..." />
+            <marker date="1467741989979" expanded="true" signature="2457:2935" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1467741989979" expanded="true" signature="2608:2747" placeholder="SELECT senso..datalog..." />
+            <marker date="1467741989979" expanded="true" signature="4351:4460" placeholder="SELECT id, s..datalog..." />
+            <marker date="1467741989979" expanded="true" signature="5879:5925" placeholder="SELECT a.* F..datalog..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.06993007">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="19" />
+        <state vertical-scroll-proportion="-8.269231">
+          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="71" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7622378">
+          <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+          <folding>
+            <element signature="e#40#99#0#PHP" expanded="true" />
+            <element signature="e#2065#2096#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -69,10 +69,13 @@ class PagesController extends Controller
     public function ensayoNowAction(Request $request)
     {
         $session = new Session();
-        if ( $session->get("username") )
+        if ( $session->get("username") ) {
+            $success = apc_store(EnsayoStartAPC, true);
             return $this->render("pages/ensayo/ensayo.html.twig");
-        else
+        }
+        else {
             return $this->redirectToRoute("login");
+        }
     }
 }
 

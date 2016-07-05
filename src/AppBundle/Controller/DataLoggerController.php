@@ -12,8 +12,7 @@ use AppBundle\Entity\Datalog;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 
-const numeroDeCanales = 32;
-const passwordDevice = "INTI1957";
+require_once("../config.php");
 
 class DataLoggerController extends Controller
 {

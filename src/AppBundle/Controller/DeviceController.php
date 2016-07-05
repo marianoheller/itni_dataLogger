@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 //use Symfony\Component\Validator\Constraints\DateTime;
 
-
+require_once("../config.php");
 
 
 class DeviceController extends Controller
@@ -53,7 +53,7 @@ class DeviceController extends Controller
                 $response->setContent($params);
             } else {                    //ELSE -> PARSEO LA DATA
                 $success = false;
-                $flagEnsayoStart = apc_fetch("flagEnsayoStart", $success);
+                $flagEnsayoStart = apc_fetch(EnsayoStartAPC, $success);
                 if ($success && $flagEnsayoStart) {
                     $response->setStatusCode(Response::HTTP_OK);
                     $response->setContent("Ensayo iniciado!");
@@ -62,7 +62,6 @@ class DeviceController extends Controller
                     $response->setStatusCode(Response::HTTP_PRECONDITION_FAILED);
                     $response->setContent("Ensayo no iniciado...");
                 }
-
             }
         }
         return $response;
