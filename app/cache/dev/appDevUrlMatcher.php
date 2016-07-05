@@ -177,6 +177,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::logDataAction',  '_route' => 'logData',);
         }
 
+        // checkEnsayoStart
+        if ($pathinfo === '/checkEnsayoStart') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DeviceController::checkEnsayoStartAction',  '_route' => 'checkEnsayoStart',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

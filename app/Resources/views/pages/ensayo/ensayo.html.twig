@@ -15,71 +15,47 @@
             <li><a href="#tab_{{i}}" data-toggle="pill">Nº {{i}}</a></li>
         {% endfor %}
     </ul>
-    <div class="tab-content col-md-10">
+    <div class="tab-content col-md-11">
     {% for i in 1..32 %}
-            <div class="tab-pane" id="tab_{{ i|raw }}">
-                <h4>Pane {{ i | raw }}</h4>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                    ac turpis egestas.</p>
+            <div class="tab-pane" id="tab_{{i}}">
+                <h4>Canal {{i}}</h4>
+                <div class="container col-md-1">
+
+                </div>
+                <div class="container col-md-8">
+                    <canvas id="graph_{{i}}"></canvas>
+                </div>
             </div>
     {% endfor %}
     </div><!-- tab content -->
-
-
-
 {% endblock %}
 
 
+{% block ensayoJavascript %}
+    <script src="{{ asset('media/js/charts/Chart.js') }}"></script>
 
-{# WORKING PILLS EXAMPLE  --->     http://tutsme-webdesign.info/bootstrap-3-toggable-tabs-and-pills/
+    <script>
+        {% for i in 1..32 %}
+            var graph_{{i}}_data = {
+                labels : ["January","February","March","April","May","June"],
+                datasets : [
+                    {
+                        fillColor : "rgba(172,194,132,0.4)",
+                        strokeColor : "#ACC26D",
+                        pointColor : "#fff",
+                        pointStrokeColor : "#9DB86D",
+                        data : [203,23,99,251,305,247]
+                    }
+                ]
+            }
 
-<ul class="nav nav-pills nav-stacked col-md-1">
-        <li><a href="#tab_1" data-toggle="pill">1</a></li>
-        <li><a href="#tab_b" data-toggle="pill">2</a></li>
-        <li><a href="#tab_c" data-toggle="pill">3</a></li>
-        <li><a href="#tab_d" data-toggle="pill">4</a></li>
-    </ul>
-    <div class="tab-content col-md-10">
-        <div class="tab-pane" id="tab_1">
-            <h4>asdasdasd</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                ac turpis egestas.</p>
-        </div>
-        <div class="tab-pane" id="tab_2">
-            <h4>asdasd</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                ac turpis egestas.</p>
-        </div>
-        <div class="tab-pane" id="tab_3">
-            <h4>AAasdasd</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                ac turpis egestas.</p>
-        </div>
-        <div class="tab-pane" id="tab_4">
-            <h4>Pasdasd</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                ac turpis egestas.</p>
-        </div>
-    </div><!-- tab content -->
+            var graph_{{i}} = document.getElementById('graph_{{i}}').getContext('2d');
+            var Chart_{{i}} = new Chart(graph_{{i}} , {
+                type: "line",
+                data: graph_{{i}}_data,
+            });
+        {% endfor %}
 
-#}
+    </script>
 
-
-{#<ul class="nav nav-pills nav-stacked col-md-1">
-    <li id="brand-nav-canales"><b>Canal #</b></li>
-    {% for i in 1..32 %}
-        <li><a href="#tab_{{i}}" data-toggle="pill">{{ i | raw }}</a></li>
-    {% endfor %}
-</ul>
-
-{% for i in 1..32 %}
-    <div class="tab-content col-md-10">
-        <div class="tab-pane" id="tab_{{ i|raw }}">
-            <h4>Pane {{ i | raw }}</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                ac turpis egestas.</p>
-        </div>
-    </div><!-- tab content -->
-{% endfor %}#}
-
-
+{% endblock %}
