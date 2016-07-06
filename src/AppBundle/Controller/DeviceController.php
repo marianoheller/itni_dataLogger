@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 //use Symfony\Component\Validator\Constraints\DateTime;
 
-require_once("../config.php");
+use AppBundle\Entity\Ensayo;
 
 
 class DeviceController extends Controller
@@ -52,9 +52,20 @@ class DeviceController extends Controller
                 $params = "Params Empty or not json. Content type: " . $contentType;
                 $response->setContent($params);
             } else {                    //ELSE -> PARSEO LA DATA
-                $success = false;
-                $flagEnsayoStart = apc_fetch(EnsayoStartAPC, $success);
-                if ($success && $flagEnsayoStart) {
+                $sql = "SELECT *
+                        FROM ensayo WHERE t_inicio IN (
+                            SELECT MAX( t_inicio )
+                            FROM ensayo
+                        ) AND t_fin is NULL";
+
+                $asd="SELECT TIMESTAMPDIFF(SECOND, lastPing, NOW()) FROM ensayo";
+                $em = $this->getDoctrine()->getManager();
+                $stmt = $em->getConnection()->prepare($sql);
+                $stmt->execute();
+                $arrayQueryResult = $stmt->fetchAll();
+
+
+                if ( !empty($arrayQueryResult) ) {
                     $response->setStatusCode(Response::HTTP_OK);
                     $response->setContent("Ensayo iniciado!");
                 }

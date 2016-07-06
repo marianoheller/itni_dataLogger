@@ -9,7 +9,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-//use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints\DateTime;
+
+use AppBundle\Entity\Ensayo;
 
 
 class PagesController extends Controller
@@ -70,7 +72,26 @@ class PagesController extends Controller
     {
         $session = new Session();
         if ( $session->get("username") ) {
-            $success = apc_store(EnsayoStartAPC, true);
+            //Generate Ensayo for database
+            $ensayoObj = new Ensayo();
+            $ensayoObj->setTitulo($request->request->get("Titulo"));
+            $ensayoObj->setResponsable($request->request->get("Responsable"));
+            $ensayoObj->setCliente($request->request->get("Cliente"));
+            $ensayoObj->setOT($request->request->get("OT"));
+            $ensayoObj->setSOT($request->request->get("SOT"));
+            $ensayoObj->setDescripcion($request->request->get("Descripcion"));
+            $timezone = new \DateTimeZone("America/Argentina/Buenos_Aires");
+            $dateTimeInicio = new \DateTime("now",$timezone);
+            echo $dateTimeInicio->format('Y-m-d H:i:s');
+            $ensayoObj->setTInicio($dateTimeInicio);
+            $ensayoObj->setTFin();
+            $ensayoObj->setLastPing($dateTimeInicio);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($ensayoObj);
+            $em->flush();
+            //
+            $success = true;
             if ( $success ) {
                 return $this->render("pages/ensayo/ensayo.html.twig");
             }

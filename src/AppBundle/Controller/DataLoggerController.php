@@ -12,7 +12,6 @@ use AppBundle\Entity\Datalog;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 
-require_once("../config.php");
 
 class DataLoggerController extends Controller
 {
