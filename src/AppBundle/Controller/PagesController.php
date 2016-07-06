@@ -72,7 +72,7 @@ class PagesController extends Controller
     {
         $session = new Session();
         if ( $session->get("username") ) {
-            //Generate Ensayo for database
+            //Generate Ensayo for database % flush
             $ensayoObj = new Ensayo();
             $ensayoObj->setTitulo($request->request->get("Titulo"));
             $ensayoObj->setResponsable($request->request->get("Responsable"));
@@ -82,7 +82,7 @@ class PagesController extends Controller
             $ensayoObj->setDescripcion($request->request->get("Descripcion"));
             $timezone = new \DateTimeZone("America/Argentina/Buenos_Aires");
             $dateTimeInicio = new \DateTime("now",$timezone);
-            echo $dateTimeInicio->format('Y-m-d H:i:s');
+            //echo $dateTimeInicio->format('Y-m-d H:i:s');  //Time debug
             $ensayoObj->setTInicio($dateTimeInicio);
             $ensayoObj->setTFin();
             $ensayoObj->setLastPing($dateTimeInicio);

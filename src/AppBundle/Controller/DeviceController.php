@@ -51,16 +51,20 @@ class DeviceController extends Controller
                 $response->setStatusCode(Response::HTTP_FORBIDDEN);
                 $params = "Params Empty or not json. Content type: " . $contentType;
                 $response->setContent($params);
-            } else {                    //ELSE -> PARSEO LA DATA
-                $sql = "SELECT *
-                        FROM ensayo WHERE t_inicio IN (
-                            SELECT MAX( t_inicio )
-                            FROM ensayo
-                        ) AND t_fin is NULL";
+            }
+            else {                    //ELSE -> PARSEO LA DATA
 
-                $asd="SELECT TIMESTAMPDIFF(SECOND, lastPing, NOW()) FROM ensayo";
+                $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
+                                    FROM ensayo
+                                    HAVING diff = (
+                                        SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
+                                        FROM ensayo
+                                        HAVING diffAux<(5*60)
+                                        AND diffAux>= 0
+                                        )";
+
                 $em = $this->getDoctrine()->getManager();
-                $stmt = $em->getConnection()->prepare($sql);
+                $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
                 $stmt->execute();
                 $arrayQueryResult = $stmt->fetchAll();
 

@@ -61,5 +61,51 @@ class SensoresController extends Controller
             return $this->redirectToRoute("login");
     }
 
+
+    /**
+     * @Route("/getGraphData", name="getGraphData")
+     */
+    public function getGraphDataAction(Request $request)
+    {
+        $session = new Session();
+        if ( $session->get("username") ) {
+            if ( !$request->isXmlHttpRequest() ) {
+                echo "asdad";
+                throw $this->createAccessDeniedException(
+                    'Acceso prohibido');
+            }
+            else {
+                //First get json data
+                $content = $request->getContent();
+                $data = json_decode($content);
+
+                foreach ($data as $name => $value) {
+                    if ($name == "timeStamp") {
+                        foreach ($value as $entry) {
+                            $lastTimeStamp = $entry->lastTimeStamp;
+                            $firstTimeStamp = $entry->firstTimeStamp;
+                            $currentTime = $entry->currentTime;
+                        }
+                    }
+                }
+
+                $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastTimeStamp' ORDER BY fecha DESC ";
+                $em = $this->getDoctrine()->getManager();
+                $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
+                $stmt->execute();
+                $arrayQueryResult = $stmt->fetchAll();
+                for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+                    $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+                    $arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');
+                }
+
+                $ret = new JsonResponse();
+                return $ret;
+            }
+        }
+        else
+            return $this->redirectToRoute("login");
+    }
+
 }
 

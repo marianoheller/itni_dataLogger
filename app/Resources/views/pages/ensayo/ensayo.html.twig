@@ -32,10 +32,187 @@
 
 
 {% block ensayoJavascript %}
+
+
     <script src="{{ asset('media/js/charts/Chart.js') }}"></script>
 
+
     <script>
-        {% for i in 1..32 %}
+        $(document).ready(function() {
+            {% for i in 1..32 %}
+            var graph_{{i}}_data = {
+                labels : [],
+                datasets : [
+                    {
+                        fillColor : "rgba(172,194,132,0.4)",
+                        strokeColor : "#ACC26D",
+                        pointColor : "#fff",
+                        pointStrokeColor : "#9DB86D",
+                        data : []
+                    }
+                ]
+            }
+
+            var graph_{{i}} = document.getElementById('graph_{{i}}').getContext('2d');
+            var Chart_{{i}} = new Chart(graph_{{i}} , {
+                type: "line",
+                data: graph_{{i}}_data,
+            });
+            getGraphData();
+            {% endfor %}
+        });
+    </script>
+
+
+    <script>
+        var set_delay = 5000;
+
+        function getGraphData() {
+            // Add a helper to format timestamp data
+            Date.prototype.formatMMDDYYYY = function () {
+                return (this.getMonth() + 1) +
+                        "/" + this.getDate() +
+                        "/" + this.getFullYear();
+            }
+
+            var jsonData = $.ajax({
+                url: '/getGraphData',
+                type:'POST',
+                dataType: 'json',
+            })
+            .done(function (results) {
+                console.log(results);
+                {% for i in 1..32 %}
+                    // Split timestamp and data into separate arrays
+                    var labels_{{i}} = [], data_{{i}} = [];
+                    results["packets_{{i}}"].forEach(function (packet) {
+                        labels_{{i}}.push(new Date(packet.timestamp).formatMMDDYYYY());
+                        data_{{i}}.push(parseFloat(packet.payloadString));
+                    });
+
+                    //Add data
+                    for (i=0 ; i<data__{{i}}.lenght ; i++) {
+                        Chart_{{i}}.addData(data__{{i}}, labels__{{i}});
+                    }
+
+                {% endfor %}
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                console.log("Failed AJAX request.");
+                console.log("Status: "+textStatus);
+                console.log("Error thrown: "+errorThrown);
+                console.log("--------------");
+            })
+            .always(function () {
+                var lastTimeOut = setTimeout(getGraphData, set_delay);
+            });
+        };
+
+    </script>
+
+{% endblock %}
+
+
+{#
+
+
+    <script>
+        var set_delay = 5000;
+
+        var canvas = document.getElementById('updating-chart'),
+                ctx = canvas.getContext('2d'),
+                startingData = {
+                    labels: [1, 2, 3, 4, 5, 6, 7],
+                    datasets: [
+                        {
+                            fillColor: "rgba(220,220,220,0.2)",
+                            strokeColor: "rgba(220,220,220,1)",
+                            pointColor: "rgba(220,220,220,1)",
+                            pointStrokeColor: "#fff",
+                            data: [65, 59, 80, 81, 56, 55, 40]
+                        },
+                        {
+                            fillColor: "rgba(151,187,205,0.2)",
+                            strokeColor: "rgba(151,187,205,1)",
+                            pointColor: "rgba(151,187,205,1)",
+                            pointStrokeColor: "#fff",
+                            data: [28, 48, 40, 19, 86, 27, 90]
+                        }
+                    ]
+                },
+                latestLabel = startingData.labels[6];
+
+        // Reduce the animation steps for demo clarity.
+        var myLiveChart = new Chart(ctx).Line(startingData, {animationSteps: 15});
+
+
+        setInterval(function(){
+            // Add two random numbers for each dataset
+            myLiveChart.addData([Math.random() * 100, Math.random() * 100], ++latestLabel);
+            // Remove the first point so we dont just add values forever
+            myLiveChart.removeData();
+        }, set_delay);
+
+//========================== El de arriba funca- el de abajo es mas completo pero no anda todavia
+
+        function getGraphData() {
+            // Add a helper to format timestamp data
+            Date.prototype.formatMMDDYYYY = function () {
+                return (this.getMonth() + 1) +
+                        "/" + this.getDate() +
+                        "/" + this.getFullYear();
+            }
+
+            var jsonData = $.ajax({
+                url: '/getGraphData',
+                dataType: 'json',
+            }).done(function (results) {
+                        console.log(results);
+                        // Split timestamp and data into separate arrays
+                        var labels = [], data = [];
+                        results["packets"].forEach(function (packet) {
+                            labels.push(new Date(packet.timestamp).formatMMDDYYYY());
+                            data.push(parseFloat(packet.payloadString));
+                        });
+
+                        // Create the chart.js data structure using 'labels' and 'data'
+                        var tempData = {
+                            labels: labels,
+                            datasets: [{
+                                fillColor: "rgba(151,187,205,0.2)",
+                                strokeColor: "rgba(151,187,205,1)",
+                                pointColor: "rgba(151,187,205,1)",
+                                pointStrokeColor: "#fff",
+                                pointHighlightFill: "#fff",
+                                pointHighlightStroke: "rgba(151,187,205,1)",
+                                data: data
+                            }]
+                        };
+
+                        // Get the context of the canvas element we want to select
+                        var ctx = document.getElementById("myLineChart").getContext("2d");
+
+                        // Instantiate a new chart
+                        var myLineChart = new Chart(ctx).Line(tempData);
+                    })
+                    .error(function () {
+                        console.log("Failed AJAX request.");
+                    })
+                    .always(function () {
+                        var lastTimeOut = setTimeout(getGraphData, set_delay);
+                    });
+            };
+
+    </script>
+
+
+#}
+
+{#      OLD STUFF
+
+ <script>
+        $(document).ready(function() {
+            {% for i in 1..32 %}
             var graph_{{i}}_data = {
                 labels : ["January","February","March","April","May","June"],
                 datasets : [
@@ -54,8 +231,9 @@
                 type: "line",
                 data: graph_{{i}}_data,
             });
-        {% endfor %}
-
+            getGraphData();
+            {% endfor %}
+        });
     </script>
 
-{% endblock %}
+#}

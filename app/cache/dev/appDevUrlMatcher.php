@@ -211,9 +211,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\PagesController::ensayoNowAction',  '_route' => 'ensayoNow',);
         }
 
-        // getSensoresStatus
-        if ($pathinfo === '/getSensoresStatus') {
-            return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getSensoresStatusAction',  '_route' => 'getSensoresStatus',);
+        if (0 === strpos($pathinfo, '/get')) {
+            // getSensoresStatus
+            if ($pathinfo === '/getSensoresStatus') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getSensoresStatusAction',  '_route' => 'getSensoresStatus',);
+            }
+
+            // getGraphData
+            if ($pathinfo === '/getGraphData') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getGraphDataAction',  '_route' => 'getGraphData',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -1,5 +1,8 @@
 <?php
 
+const numeroDeCanales = 32;
+const passwordDevice = "INTI1957";
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
 

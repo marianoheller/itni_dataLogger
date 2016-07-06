@@ -2,6 +2,9 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
+const numeroDeCanales = 32;
+const passwordDevice = "INTI1957";
+
 /**
  * @var Composer\Autoload\ClassLoader
  */
