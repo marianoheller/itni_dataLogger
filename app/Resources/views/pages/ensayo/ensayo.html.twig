@@ -65,19 +65,34 @@
 
 
     <script>
-        var set_delay = 5000;
+        var set_delay = 10000;
 
         function getGraphData() {
-            // Add a helper to format timestamp data
-            Date.prototype.formatMMDDYYYY = function () {
-                return (this.getMonth() + 1) +
-                        "/" + this.getDate() +
-                        "/" + this.getFullYear();
+            function convertDate(inputFormat) {
+                function pad(s) { return (s < 10) ? '0' + s : s; }
+                var d = new Date(inputFormat);
+                var date =  [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+                var time = [d.getHours(), d.getMinutes(), d.getSeconds].join(':');
+                return  [date,time].join(" ");
             }
+
+            var myObject = new Object();
+            myObject.lastTimeStamp = "07/07/2016 10:00:00";
+            myObject.age = 12;
+            myObject.pets = ["cat", "dog"];
+            var myString = JSON.stringify(myObject);
+
+            var timetampsToSend = '{ "timeStamp": [' +
+                '{ "lastTimeStamp": "07/07/2016 10:00:00", "firstTimeStamp": "07/07/2016 09:00:00", "currentTime": "07/07/2016 10:10:23"}' +
+            ']}';
+            var jsonToSend = JSON.stringify(JSON.parse(timetampsToSend));
+
 
             var jsonData = $.ajax({
                 url: '/getGraphData',
                 type:'POST',
+                contentType: "application/json; charset=utf-8",
+                data: jsonToSend,
                 dataType: 'json',
             })
             .done(function (results) {
@@ -85,14 +100,17 @@
                 {% for i in 1..32 %}
                     // Split timestamp and data into separate arrays
                     var labels_{{i}} = [], data_{{i}} = [];
-                    results["packets_{{i}}"].forEach(function (packet) {
-                        labels_{{i}}.push(new Date(packet.timestamp).formatMMDDYYYY());
-                        data_{{i}}.push(parseFloat(packet.payloadString));
-                    });
+                    if ( ("packets_{{i}}" in results) ) {
+                        //TODO HAY QUE CONVERTIR EL OBJETO A ARRAY
+                        results["packets_{{i}}"].forEach(function (packet) {
+                            labels_{{i}}.push(packet.timestamp);
+                            data_{{i}}.push(parseFloat(packet.payloadString));
+                        });
+                    }
 
                     //Add data
-                    for (i=0 ; i<data__{{i}}.lenght ; i++) {
-                        Chart_{{i}}.addData(data__{{i}}, labels__{{i}});
+                    for (i=0 ; i<data_{{i}}.lenght ; i++) {
+                        Chart_{{i}}.addData(data_{{i}}, labels_{{i}});
                     }
 
                 {% endfor %}

@@ -69,10 +69,9 @@ class SensoresController extends Controller
     {
         $session = new Session();
         if ( $session->get("username") ) {
-            if ( !$request->isXmlHttpRequest() ) {
-                echo "asdad";
-                throw $this->createAccessDeniedException(
-                    'Acceso prohibido');
+            if ( $request->getContentType() != "json" ) {
+                throw $this->createAccessDeniedException('Acceso prohibido');
+                //return new JsonResponse( array( "Content type sent" => $request->getContentType()));
             }
             else {
                 //First get json data
@@ -88,8 +87,9 @@ class SensoresController extends Controller
                         }
                     }
                 }
-
-                $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastTimeStamp' ORDER BY fecha DESC ";
+                $lastFecha = (new \DateTime())->createFromFormat('d/m/Y H:i:s', $lastTimeStamp);
+                $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
+                $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY fecha DESC ";
                 $em = $this->getDoctrine()->getManager();
                 $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
                 $stmt->execute();
@@ -99,7 +99,32 @@ class SensoresController extends Controller
                     $arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');
                 }
 
-                $ret = new JsonResponse();
+                //TODO SOLO MANDA UN PACKET POR CANAL!! (XQ SI HAY VARIOS SE PISAN)
+                // Parse to packets per channel
+                usort($arrayQueryResult, function ($i, $j) {
+                    $a = ($i['sensor_id']);
+                    $b = ($j['sensor_id']);
+                    if ($a == $b) {
+                        return 0;
+                    }
+                    return ($a < $b) ? -1 : 1;
+                });
+
+                $arrayReturn = [];
+                foreach ($arrayQueryResult as $item) {
+                    $arrayAux = [];
+                    foreach ($item as $key => $value) {
+                        if ( $key == "fecha")
+                            $arrayAux["timestamp"] = $value;
+                        elseif ( $key == "medicion" )
+                            $arrayAux["payloadString"] = $value;
+                    }
+                    $arrayReturn["packets_".$item["sensor_id"]] = $arrayAux;
+                }
+
+
+                //Ready to send
+                $ret = new JsonResponse($arrayReturn);
                 return $ret;
             }
         }
