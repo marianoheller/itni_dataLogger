@@ -89,17 +89,16 @@ class SensoresController extends Controller
                 }
                 $lastFecha = (new \DateTime())->createFromFormat('d/m/Y H:i:s', $lastTimeStamp);
                 $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
-                $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY fecha DESC ";
+                $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY fecha DESC, sensor_id ASC";
                 $em = $this->getDoctrine()->getManager();
                 $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
                 $stmt->execute();
                 $arrayQueryResult = $stmt->fetchAll();
                 for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
                     $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
-                    $arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');
+                    //$arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');        //Comment to disable reformateo de fecha
                 }
 
-                //TODO SOLO MANDA UN PACKET POR CANAL!! (XQ SI HAY VARIOS SE PISAN)
                 // Parse to packets per channel
                 usort($arrayQueryResult, function ($i, $j) {
                     $a = ($i['sensor_id']);
@@ -111,6 +110,10 @@ class SensoresController extends Controller
                 });
 
                 $arrayReturn = [];
+                $arrayPerChannel = [];
+                foreach ($arrayQueryResult as $item) {
+                    $arrayPerChannel[$item["sensor_id"]] = [];
+                }
                 foreach ($arrayQueryResult as $item) {
                     $arrayAux = [];
                     foreach ($item as $key => $value) {
@@ -119,7 +122,10 @@ class SensoresController extends Controller
                         elseif ( $key == "medicion" )
                             $arrayAux["payloadString"] = $value;
                     }
-                    $arrayReturn["packets_".$item["sensor_id"]] = $arrayAux;
+                    array_push($arrayPerChannel[$item["sensor_id"]],$arrayAux);
+                }
+                foreach ($arrayPerChannel as $keyAux => $itemsPerChannel) {
+                    $arrayReturn["packets_".$keyAux] = $itemsPerChannel;
                 }
 
 

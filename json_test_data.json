@@ -7,13 +7,13 @@
   { "password": "INTI1957"}
  ],
 "CANALES": [
-  { "canal": "0", "temperatura": "43", "fecha": "09/06/2016 10:32" },
+  { "canal": "1", "temperatura": "43", "fecha": "09/06/2016 10:32" },
   { "canal": "23", "temperatura": "43", "fecha": "09/06/2016 10:32" },
   { "canal": "5", "temperatura": "43", "fecha": "09/06/2016 10:32" },
   { "canal": "3", "temperatura": "43", "fecha": "09/06/2016 10:32" },
   { "canal": "4", "temperatura": "43", "fecha": "09/06/2016 10:32" },
   { "canal": "6", "temperatura": "43", "fecha": "09/06/2016 10:32" },
-  { "canal": "0", "temperatura": "43", "fecha": "09/06/2016 10:32" }
+  { "canal": "1", "temperatura": "43", "fecha": "09/06/2016 10:32" }
  ]
 }
 

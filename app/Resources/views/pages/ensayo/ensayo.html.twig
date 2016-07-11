@@ -33,33 +33,64 @@
 
 {% block ensayoJavascript %}
 
-
-    <script src="{{ asset('media/js/charts/Chart.js') }}"></script>
+    <script src="{{ asset('media/js/moment/moment.js') }}"></script>
+    <script src="{{ asset('media/js/charts/Chart.bundle.js') }}"></script>
 
 
     <script>
+        var timeFormat = 'HH:mm:ss DD-MM-YYYY';
         $(document).ready(function() {
             {% for i in 1..32 %}
             var graph_{{i}}_data = {
                 labels : [],
                 datasets : [
-                    {
-                        fillColor : "rgba(172,194,132,0.4)",
-                        strokeColor : "#ACC26D",
-                        pointColor : "#fff",
-                        pointStrokeColor : "#9DB86D",
-                        data : []
-                    }
-                ]
-            }
+                {
+                    label: "Canal {{ i }}",
+                    fillColor : "rgba(172,194,132,0.4)",
+                    strokeColor : "#ACC26D",
+                    pointColor : "#fff",
+                    pointStrokeColor : "#9DB86D",
+                    data : [],
+                    options: {
+                        responsive: true,
+                        title: {
+                            display: true,
+                            text: "Canal {{i}}"
+                        },
+                        scales: {
+                            xAxes: [{
+                                type: "time",
+                                time: {
+                                    format: timeFormat,
+                                    // round: 'day'
+                                    tooltipFormat: 'll HH:mm'
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Date'
+                                }
+                            }],
+                            yAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'value'
+                                }
+                            }]
+                        }
+                    },
+                    fill: false
+                }]
+            };
 
             var graph_{{i}} = document.getElementById('graph_{{i}}').getContext('2d');
-            var Chart_{{i}} = new Chart(graph_{{i}} , {
+            window.Chart_{{i}} = new Chart(graph_{{i}} , {
                 type: "line",
                 data: graph_{{i}}_data,
             });
-            getGraphData();
+            //console.log(window.Chart_{{i}});
             {% endfor %}
+
+            getGraphData();
         });
     </script>
 
@@ -76,16 +107,12 @@
                 return  [date,time].join(" ");
             }
 
-            var myObject = new Object();
-            myObject.lastTimeStamp = "07/07/2016 10:00:00";
-            myObject.age = 12;
-            myObject.pets = ["cat", "dog"];
-            var myString = JSON.stringify(myObject);
 
             var timetampsToSend = '{ "timeStamp": [' +
                 '{ "lastTimeStamp": "07/07/2016 10:00:00", "firstTimeStamp": "07/07/2016 09:00:00", "currentTime": "07/07/2016 10:10:23"}' +
             ']}';
             var jsonToSend = JSON.stringify(JSON.parse(timetampsToSend));
+            //console.log("Sending: ",jsonToSend);
 
 
             var jsonData = $.ajax({
@@ -101,18 +128,45 @@
                     // Split timestamp and data into separate arrays
                     var labels_{{i}} = [], data_{{i}} = [];
                     if ( ("packets_{{i}}" in results) ) {
-                        //TODO HAY QUE CONVERTIR EL OBJETO A ARRAY
-                        results["packets_{{i}}"].forEach(function (packet) {
-                            labels_{{i}}.push(packet.timestamp);
-                            data_{{i}}.push(parseFloat(packet.payloadString));
+
+                        // ABAJO DOS INTENTOS DE CICLAR SOBRE VARIOS PACKETS DEL MISMO CHANNEL
+                        Object.keys(results["packets_{{i}}"]).forEach(function (key) {
+                            var value = results["packets_{{i}}"][key];
+                            /*console.log("Index: ", {{ i }});
+                            console.log("Key: ", key);
+                            console.log("Data: ", value);
+                            console.log("-----------------");*/
+                            labels_{{i}}.push(value.timestamp);
+                            data_{{i}}.push(parseFloat(value.payloadString));
                         });
                     }
+                {% endfor %}
 
+
+                {% for i in 1..32 %}
+                    console.log("Channel: ", {{i}});
+                    console.log("Labels: ", labels_{{i}});
+                    console.log("Data: ", data_{{i}});
                     //Add data
-                    for (i=0 ; i<data_{{i}}.lenght ; i++) {
-                        Chart_{{i}}.addData(data_{{i}}, labels_{{i}});
-                    }
+                    /*for (var i=0 ; i< data_{{i}}.length ; i++) {
+                        window.Chart_{{i}}.data.labels.push(moment(labels_{{i}}[i]).format(timeFormat));
+                        window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]);
+                    }*/
+                    //Add data (esta version es de un ejemplo,  la que yo hice arriba tmb anda ok)
+                    for (var i=0 ; i< data_{{i}}.length ; i++) {
+                        window.Chart_{{i}}.data.labels.push(moment(labels_{{i}}[i]).toDate());
 
+                        if (typeof window.Chart_{{i}}.data.datasets[0].data[0] === "object") {
+                            window.Chart_{{i}}.data.datasets[0].data.push({
+                                x: moment(labels_{{i}}[i]).format(timeFormat),
+                                y: data_{{i}}[i]
+                            });
+                        } else {
+                            window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]);
+                        }
+                    }
+                    window.Chart_{{i}}.update();
+                    //window.Chart_{{i}}.addData(data_{{i}}, labels_{{i}});
                 {% endfor %}
             })
             .fail(function (jqXHR, textStatus, errorThrown) {
