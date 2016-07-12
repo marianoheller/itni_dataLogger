@@ -97,6 +97,7 @@ class SensoresController extends Controller
                 for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
                     $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
                     //$arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');        //Comment to disable reformateo de fecha
+                    $arrayQueryResult[$i]['fecha'] = $d1->getTimestamp();        //Comment to disable reformateo de fecha
                 }
 
                 // Parse to packets per channel

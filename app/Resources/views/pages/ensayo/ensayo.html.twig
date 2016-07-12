@@ -33,12 +33,58 @@
 
 {% block ensayoJavascript %}
 
-    <script src="{{ asset('media/js/moment/moment.js') }}"></script>
-    <script src="{{ asset('media/js/charts/Chart.bundle.js') }}"></script>
+    {#<script src="{{ asset('media/js/moment/moment.js') }}"></script>
+    <script src="{{ asset('media/js/charts/Chart.bundle.js') }}"></script>#}
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
 
 
     <script>
-        var timeFormat = 'HH:mm:ss DD-MM-YYYY';
+        //var timeFormat = 'HH:mm:ss DD-MM-YYYY';
+        var timeFormat = 'MM/DD/YYYY HH:mm';
+
+        function randomInt() {
+            return Math.round(Math.random() * 10);
+        }
+
+        function counterTimestamp() {
+            if ( typeof counterTimestamp.counter == 'undefined' ) {
+                // It has not... perform the initialization
+                counterTimestamp.counter = randomInt();
+            }
+            else {
+                counterTimestamp.counter += randomInt();
+            }
+            return counterTimestamp.counter;
+        }
+
+        function randomScalingFactor() {
+            return Math.round(Math.random() * 100 * (Math.random() > 0.5 ? -1 : 1));
+        }
+
+        function randomColorFactor() {
+            return Math.round(Math.random() * 255);
+        }
+
+        function randomColor(opacity) {
+            return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+        }
+
+        function newDate(days) {
+            return moment().add(days, 'd').toDate();
+        }
+
+        function newDateString(days) {
+            return moment().add(days, 'd').format(timeFormat);
+        }
+
+        function newTimestamp(days) {
+            return moment().add(days, 'd').unix();
+        }
+
+
+
         $(document).ready(function() {
             {% for i in 1..32 %}
             var graph_{{i}}_data = {
@@ -46,10 +92,11 @@
                 datasets : [
                 {
                     label: "Canal {{ i }}",
-                    fillColor : "rgba(172,194,132,0.4)",
-                    strokeColor : "#ACC26D",
-                    pointColor : "#fff",
-                    pointStrokeColor : "#9DB86D",
+                    borderColor : randomColor(0.4),
+                    backgroundColor : randomColor(0.5),
+                    pointBorderColor : randomColor(0.7),
+                    pointBackgroundColor : randomColor(0.5),
+                    pointBorderWidth : 1,
                     data : [],
                     options: {
                         responsive: true,
@@ -59,33 +106,33 @@
                         },
                         scales: {
                             xAxes: [{
-                                type: "time",
+                                type: 'time',
                                 time: {
-                                    format: timeFormat,
-                                    // round: 'day'
-                                    tooltipFormat: 'll HH:mm'
-                                },
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Date'
+                                    format: "HH:mm",
+                                    unit: 'hour',
+                                    unitStepSize: 2,
+                                    displayFormats: {
+                                        'minute': 'HH:mm',
+                                        'hour': 'HH:mm',
+                                    }
                                 }
                             }],
                             yAxes: [{
                                 scaleLabel: {
                                     display: true,
-                                    labelString: 'value'
+                                    labelString: 'Valor'
                                 }
                             }]
                         }
-                    },
-                    fill: false
+                    }
+
                 }]
             };
 
             var graph_{{i}} = document.getElementById('graph_{{i}}').getContext('2d');
             window.Chart_{{i}} = new Chart(graph_{{i}} , {
                 type: "line",
-                data: graph_{{i}}_data,
+                data: graph_{{i}}_data
             });
             //console.log(window.Chart_{{i}});
             {% endfor %}
@@ -120,7 +167,7 @@
                 type:'POST',
                 contentType: "application/json; charset=utf-8",
                 data: jsonToSend,
-                dataType: 'json',
+                dataType: 'json'
             })
             .done(function (results) {
                 console.log(results);
@@ -148,13 +195,18 @@
                     console.log("Labels: ", labels_{{i}});
                     console.log("Data: ", data_{{i}});
                     //Add data
-                    /*for (var i=0 ; i< data_{{i}}.length ; i++) {
-                        window.Chart_{{i}}.data.labels.push(moment(labels_{{i}}[i]).format(timeFormat));
-                        window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]);
-                    }*/
-                    //Add data (esta version es de un ejemplo,  la que yo hice arriba tmb anda ok)
                     for (var i=0 ; i< data_{{i}}.length ; i++) {
-                        window.Chart_{{i}}.data.labels.push(moment(labels_{{i}}[i]).toDate());
+                        var myDate =  moment.unix(labels_{{i}}[i]+counterTimestamp()).toDate();
+                        console.log(myDate);
+                        window.Chart_{{i}}.data.labels.push(myDate);
+                        //window.Chart_{{i}}.data.labels.push(new Date(labels_{{i}}[i]*1000));
+
+                        window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]*randomScalingFactor());
+                    }
+                    //Add data (esta version es de un ejemplo,  la que yo hice arriba tmb anda ok)
+                    /*for (var i=0 ; i< data_{{i}}.length ; i++) {
+                        //window.Chart_{{i}}.data.labels.push(moment.unix(labels_{{i}}[i]).toDate());
+                        window.Chart_{{i}}.data.labels.push(new Date(labels_{{i}}[i]*1000));
 
                         if (typeof window.Chart_{{i}}.data.datasets[0].data[0] === "object") {
                             window.Chart_{{i}}.data.datasets[0].data.push({
@@ -162,12 +214,13 @@
                                 y: data_{{i}}[i]
                             });
                         } else {
-                            window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]);
+                            window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]*randomScalingFactor());
                         }
-                    }
+                    }*/
                     window.Chart_{{i}}.update();
                     //window.Chart_{{i}}.addData(data_{{i}}, labels_{{i}});
                 {% endfor %}
+                console.log("============================");
             })
             .fail(function (jqXHR, textStatus, errorThrown) {
                 console.log("Failed AJAX request.");
