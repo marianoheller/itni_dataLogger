@@ -61,6 +61,11 @@ class SensoresController extends Controller
             return $this->redirectToRoute("login");
     }
 
+    /*
+     * TODO GENERAR task schedull
+     * TODO agregar boton de ensayo andando y cancelar
+     * TODO ARMAR SIMULADOR
+    */
 
     /**
      * @Route("/getGraphData", name="getGraphData")
