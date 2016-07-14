@@ -63,8 +63,7 @@ class SensoresController extends Controller
 
     /*
      * TODO GENERAR task schedull
-     * TODO agregar boton de ensayo andando y cancelar
-     * TODO ARMAR SIMULADOR
+     * TODO agregar boton de ensayo andando y cancelar ensayo
     */
 
     /**

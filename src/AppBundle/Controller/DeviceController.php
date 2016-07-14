@@ -55,13 +55,13 @@ class DeviceController extends Controller
             else {                    //ELSE -> PARSEO LA DATA
 
                 $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
-                                    FROM ensayo
-                                    HAVING diff = (
-                                        SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
-                                        FROM ensayo
-                                        HAVING diffAux<(5*60)
-                                        AND diffAux>= 0
-                                        )";
+                                                FROM ensayo
+                                                HAVING diff = (
+                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
+                                                    FROM ensayo
+                                                    HAVING diffAux<(5*60)
+                                                    AND diffAux>= 0
+                                                    )";
 
                 $em = $this->getDoctrine()->getManager();
                 $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
