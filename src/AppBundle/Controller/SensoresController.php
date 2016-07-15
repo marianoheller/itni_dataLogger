@@ -62,7 +62,6 @@ class SensoresController extends Controller
     }
 
     /*
-     * TODO GENERAR task schedull
      * TODO agregar boton de ensayo andando y cancelar ensayo
     */
 
@@ -138,6 +137,25 @@ class SensoresController extends Controller
                 $ret = new JsonResponse($arrayReturn);
                 return $ret;
             }
+        }
+        else
+            return $this->redirectToRoute("login");
+    }
+
+    /**
+     * @Route("/ensayo/cancel/all", name="cancelEnsayo")
+     */
+    public function cancelEnsayoAction(Request $request)
+    {
+        $session = new Session();
+        if ( $session->get("username") ) {
+            $sqlCancelEnsayos = "UPDATE ensayo
+                                SET t_fin = lastPing";
+            $em = $this->getDoctrine()->getManager();
+            $count = $em->getConnection()->executeUpdate($sqlCancelEnsayos);
+            return new JsonResponse( array(
+                "count" => $count
+            ));
         }
         else
             return $this->redirectToRoute("login");

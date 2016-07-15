@@ -224,6 +224,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // cancelEnsayo
+        if ($pathinfo === '/ensayo/cancel/all') {
+            return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::cancelEnsayoAction',  '_route' => 'cancelEnsayo',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

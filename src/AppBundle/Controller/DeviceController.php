@@ -61,6 +61,7 @@ class DeviceController extends Controller
                                                     FROM ensayo
                                                     HAVING diffAux<(5*60)
                                                     AND diffAux>= 0
+                                                    AND t_fin IS NULL
                                                     )";
 
                 $em = $this->getDoctrine()->getManager();
