@@ -7,10 +7,9 @@
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scheduleQuery.sql" afterPath="$PROJECT_DIR$/scheduleQuery.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
@@ -41,14 +40,29 @@
       <file leaf-file-name="SensoresController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="54" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
+            <state vertical-scroll-proportion="2.5769231">
+              <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
-                <marker date="1468857987053" expanded="true" signature="745:1223" placeholder="SELECT a.* F..datalog..." />
-                <marker date="1468857987053" expanded="true" signature="896:1035" placeholder="SELECT senso..datalog..." />
-                <marker date="1468857987053" expanded="true" signature="3847:3934" placeholder="SELECT * FRO..datalog..." />
-                <marker date="1468857987053" expanded="true" signature="6319:6385" placeholder="UPDATE ensay..." />
+                <marker date="1468947560166" expanded="true" signature="745:1223" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1468947560166" expanded="true" signature="896:1035" placeholder="SELECT senso..datalog..." />
+                <marker date="1468947560166" expanded="true" signature="3825:4628" placeholder="UPDATE ensay..." />
+                <marker date="1468947560166" expanded="true" signature="3825:4645" placeholder="UPDATE ensay..." />
+                <marker date="1468947560166" expanded="true" signature="5067:5154" placeholder="SELECT * FRO..datalog..." />
+                <marker date="1468947560166" expanded="true" signature="7539:7605" placeholder="UPDATE ensay..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.3076923">
+              <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+              <folding>
+                <marker date="1468604956771" expanded="true" signature="1917:2540" placeholder="SELECT *,TIM..ensayo..." />
+                <marker date="1468604956771" expanded="true" signature="2149:2486" placeholder="SELECT MIN(T..ensayo..." />
               </folding>
             </state>
           </provider>
@@ -67,8 +81,8 @@
       <file leaf-file-name="ensayo.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33280507">
-              <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+            <state vertical-scroll-proportion="4.561905">
+              <caret line="292" column="10" selection-start-line="292" selection-start-column="10" selection-end-line="292" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -801,7 +815,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468605839138</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Chart js CRASH.&#10;Cuando hago update dibuja muchos puntos. Inusable..&#10;La unica forma es forzando &quot;unit&quot; pero de esta forma se amontonan todos los labels del xAxis.">
+      <created>1468945420181</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1468945420181</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -819,14 +839,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31876332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26737967" sideWeight="0.5490405" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.5490405" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.4914712" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26737967" sideWeight="0.45095947" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.45095947" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -851,7 +871,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Init 2" />
     <MESSAGE value="Added entity, mapping. Logdata working. Homepage not." />
     <MESSAGE value="Working Homepage." />
     <MESSAGE value="Added json parsing and device validation." />
@@ -876,7 +895,8 @@
     <MESSAGE value="Added TODO." />
     <MESSAGE value="Added scheduler." />
     <MESSAGE value="Added cancel button." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added cancel button." />
+    <MESSAGE value="Chart js CRASH.&#10;Cuando hago update dibuja muchos puntos. Inusable..&#10;La unica forma es forzando &quot;unit&quot; pero de esta forma se amontonan todos los labels del xAxis." />
+    <option name="LAST_COMMIT_MESSAGE" value="Chart js CRASH.&#10;Cuando hago update dibuja muchos puntos. Inusable..&#10;La unica forma es forzando &quot;unit&quot; pero de esta forma se amontonan todos los labels del xAxis." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1099,6 +1119,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7132867">
           <caret line="75" column="92" selection-start-line="75" selection-start-column="92" selection-end-line="75" selection-end-column="92" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,6 +1169,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36300173">
           <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1193,13 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2857143">
-          <caret line="63" column="69" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.4571428">
@@ -1218,13 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0">
-          <caret line="122" column="93" selection-start-line="122" selection-start-column="93" selection-end-line="122" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json_test_data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1233,24 +1241,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3076923">
+          <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+          <folding>
+            <marker date="1468604956771" expanded="true" signature="1917:2540" placeholder="SELECT *,TIM..ensayo..." />
+            <marker date="1468604956771" expanded="true" signature="2149:2486" placeholder="SELECT MIN(T..ensayo..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16349207">
+          <caret line="59" column="53" selection-start-line="51" selection-start-column="44" selection-end-line="59" selection-end-column="53" />
+          <folding>
+            <marker date="1468612003275" expanded="true" signature="1424:2047" placeholder="SELECT *,TIM..ensayo..." />
+            <marker date="1468612003275" expanded="true" signature="1656:1993" placeholder="SELECT MIN(T..ensayo..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="54" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
+        <state vertical-scroll-proportion="2.5769231">
+          <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
-            <marker date="1468857987053" expanded="true" signature="745:1223" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1468857987053" expanded="true" signature="896:1035" placeholder="SELECT senso..datalog..." />
-            <marker date="1468857987053" expanded="true" signature="3847:3934" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1468857987053" expanded="true" signature="6319:6385" placeholder="UPDATE ensay..." />
+            <marker date="1468947560166" expanded="true" signature="745:1223" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1468947560166" expanded="true" signature="896:1035" placeholder="SELECT senso..datalog..." />
+            <marker date="1468947560166" expanded="true" signature="3825:4628" placeholder="UPDATE ensay..." />
+            <marker date="1468947560166" expanded="true" signature="3825:4645" placeholder="UPDATE ensay..." />
+            <marker date="1468947560166" expanded="true" signature="5067:5154" placeholder="SELECT * FRO..datalog..." />
+            <marker date="1468947560166" expanded="true" signature="7539:7605" placeholder="UPDATE ensay..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33280507">
-          <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
+        <state vertical-scroll-proportion="4.561905">
+          <caret line="292" column="10" selection-start-line="292" selection-start-column="10" selection-end-line="292" selection-end-column="10" />
           <folding />
         </state>
       </provider>

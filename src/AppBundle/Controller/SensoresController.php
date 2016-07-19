@@ -85,15 +85,36 @@ class SensoresController extends Controller
                     if ($name == "timeStamp") {
                         foreach ($value as $entry) {
                             $lastTimeStamp = $entry->lastTimeStamp;
-                            $firstTimeStamp = $entry->firstTimeStamp;
-                            $currentTime = $entry->currentTime;
+                            $firstTimeStamp = $entry->firstTimeStamp;   //unused -> sends initial t_inicio
+                            $currentTime = $entry->currentTime;     //unused
                         }
                     }
                 }
                 /*
-                 * TODO hacer que solo agarre las ultimas mediciones
                  * TODO actualizar lastPing on ajax call
                  */
+                //UPDATE lastPing
+                $lastPingObj = new \DateTime("now",new \DateTimeZone("America/Argentina/Buenos_Aires"));
+                $lastPingString = $lastPingObj->format("Y-m-d H:i:s");
+                $qlUpdateLastPing = "UPDATE ensayo a
+                                    JOIN (
+                                        SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
+                                        FROM ensayo
+                                        HAVING diff = (
+                                            SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
+                                            FROM ensayo
+                                            HAVING diffAux<(5*60)
+                                            AND diffAux>= 0
+                                            AND t_fin IS NULL
+                                            )
+                                    ) b
+                                    ON a.id = b.id
+                                    SET a.lastPing = '$lastPingString'";
+                $em = $this->getDoctrine()->getManager();
+                $count = $em->getConnection()->executeUpdate($qlUpdateLastPing);
+
+
+                // GET DATA
                 $lastFecha = new \DateTime();
                 $lastFecha = $lastFecha->createFromFormat('Y-m-d H:i:s', $lastTimeStamp);
                 $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
