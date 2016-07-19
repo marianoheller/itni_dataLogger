@@ -9,24 +9,26 @@
 
 
 {% block ensayo %}
-    <ul class="nav nav-pills nav-stacked col-md-1">
+    <ul id="pillsCanales" class="nav nav-pills nav-stacked col-md-1">
         <li id="brand-nav-canales"><b>Canal #</b></li>
         {% for i in 1..32 %}
-            <li><a href="#tab_{{i}}" data-toggle="pill">Nº {{i}}</a></li>
+            <li><a id="{{i}}" href="#tab_{{i}}" data-toggle="pill">Nº {{i}}</a></li>
         {% endfor %}
     </ul>
     <div class="tab-content col-md-11">
-    {% for i in 1..32 %}
-            <div class="tab-pane" id="tab_{{i}}">
-                <h4>Canal {{i}}</h4>
-                <div class="container col-md-1">
 
-                </div>
-                <div class="container col-md-8">
-                    <canvas id="graph_{{i}}"></canvas>
-                </div>
+    {% for i in 1..32 %}
+        <div class="tab-pane" id="tab_{{i}}">
+            <h4>Canal {{i}}</h4>
+            <div class="container col-md-1">
+
             </div>
+            <div class="container col-md-10">
+                <canvas id="graph_{{i}}"></canvas>
+            </div>
+        </div>
     {% endfor %}
+
     </div><!-- tab content -->
 {% endblock %}
 
@@ -37,12 +39,12 @@
     <script src="{{ asset('media/js/charts/Chart.bundle.js') }}"></script>#}
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
 
 
     <script>
         //var timeFormat = 'HH:mm:ss DD-MM-YYYY';
-        var timeFormat = 'MM/DD/YYYY HH:mm';
+        var timeFormat = 'DD/MM/YYYY HH:mm';
 
         function randomInt() {
             return Math.round(Math.random() * 10);
@@ -85,81 +87,135 @@
 
 
 
+        {% for i in 1..32 %}
+
+        var config_{{ i }} = {
+            type: 'line',
+            data: {
+                labels: [moment("{{t_inicio}}", "YYYY-MM-DD HH:mm:ss").toDate()], // Date Objects
+                datasets: [{
+                    label: "Canal {{ i }}",
+                    data: [0],
+                    fill: false,
+                    //lineTension: 0,
+                    pointRadius: 0,
+                    borderColor: randomColor(0.4),
+                    backgroundColor : randomColor(0.5),
+                    pointBorderColor: randomColor(0.7),
+                    pointBackgroundColor : randomColor(0.5),
+                    pointBorderWidth : 1
+                }]
+            },
+            options: {
+                responsive: true,
+                title:{
+                    display:true,
+                    text:"Chart"
+                },
+                scales: {
+                    xAxes: [{
+                        type: "time",
+                        time: {
+                            format: timeFormat,
+                            //unit: 'second',
+                            //unitStepSize: 10,
+                            round: 'minute',
+                            tooltipFormat: 'll HH:mm',
+                            displayFormats: {
+                                millisecond: 'mm:ss',
+                                second: 'mm:ss',
+                                minute: 'mm:ss',
+                                hour: 'HH:mm',
+                                day: 'HH:mm'
+                            }
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Fecha'
+                        }
+                    }, ],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Valor'
+                        }
+                    }]
+                },
+            }
+        };
+
+        {% endfor %}
+
+
         $(document).ready(function() {
             {% for i in 1..32 %}
-            var graph_{{i}}_data = {
-                labels : [],
-                datasets : [
-                {
-                    label: "Canal {{ i }}",
-                    borderColor : randomColor(0.4),
-                    backgroundColor : randomColor(0.5),
-                    pointBorderColor : randomColor(0.7),
-                    pointBackgroundColor : randomColor(0.5),
-                    pointBorderWidth : 1,
-                    data : [],
-                    options: {
-                        responsive: true,
-                        title: {
-                            display: true,
-                            text: "Canal {{i}}"
-                        },
-                        scales: {
-                            xAxes: [{
-                                type: 'time',
-                                time: {
-                                    format: "HH:mm",
-                                    unit: 'hour',
-                                    unitStepSize: 2,
-                                    displayFormats: {
-                                        'minute': 'HH:mm',
-                                        'hour': 'HH:mm',
-                                    }
-                                }
-                            }],
-                            yAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Valor'
-                                }
-                            }]
-                        }
-                    }
-
-                }]
-            };
-
             var graph_{{i}} = document.getElementById('graph_{{i}}').getContext('2d');
-            window.Chart_{{i}} = new Chart(graph_{{i}} , {
-                type: "line",
-                data: graph_{{i}}_data
-            });
-            //console.log(window.Chart_{{i}});
+            window.Chart_{{i}} =  new Chart(graph_{{i}}, config_{{ i }});
             {% endfor %}
-
-            getGraphData();
         });
+
+        window.onload = function() {
+            getGraphData();
+        };
+
+
+
+
     </script>
 
 
     <script>
         var set_delay = 10000;
 
+
+
+
+        function convertDate(inputFormat) {
+            function pad(s) { return (s < 10) ? '0' + s : s; }
+            var d = new Date(inputFormat);
+            var date =  [d.getFullYear(), pad(d.getMonth()+1),pad(d.getDate()) ].join('-');
+            var time = [pad(d.getHours()), pad(d.getMinutes()), pad(d.getSeconds())].join(':');
+            return  [date,time].join(" ");
+        }
+
+        /*
+         * TODO Hacer andar el tema fecha...
+         */
+
+        function toTimeString( secs ) {
+            var days, hours, minutes, seconds;
+
+            if( secs == null )
+                return "";
+
+            days = ( secs / 86400 ) >> 0;
+            hours = ( secs % 86400 / 3600 ) >> 0;
+            minutes = ( secs % 3600 / 60 ) >> 0;
+            seconds = ( secs % 60 );
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            hours = hours && hours < 10 ? "0" + hours : hours;
+
+            return "" + ( days ? days+" - " : "" ) + ( hours ? hours+":" : "" ) + minutes + ":" + seconds;
+        };
+
+
         function getGraphData() {
-            function convertDate(inputFormat) {
-                function pad(s) { return (s < 10) ? '0' + s : s; }
-                var d = new Date(inputFormat);
-                var date =  [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-                var time = [d.getHours(), d.getMinutes(), d.getSeconds].join(':');
-                return  [date,time].join(" ");
+            var lastTimeStampLocal = "";
+            var len = window.Chart_1.data.labels.length;
+            if ( len == 0 ) {
+                lastTimeStampLocal = "{{ t_inicio }}";
+            }
+            else {
+                lastTimeStampLocal = window.Chart_1.data.labels[len - 1];
+                lastTimeStampLocal = moment(lastTimeStampLocal).format("YYYY-MM-DD HH:mm:ss");
             }
 
-
             var timetampsToSend = '{ "timeStamp": [' +
-                '{ "lastTimeStamp": "07/07/2016 10:00:00", "firstTimeStamp": "07/07/2016 09:00:00", "currentTime": "07/07/2016 10:10:23"}' +
+                '{ "lastTimeStamp": "'+lastTimeStampLocal+'", "firstTimeStamp": "{{ t_inicio }}", "currentTime": "01-01-1970 00:00:01"}' +
             ']}';
             var jsonToSend = JSON.stringify(JSON.parse(timetampsToSend));
-            //console.log("Sending: ",jsonToSend);
+            console.log("Sending data: ",jsonToSend);
 
 
             var jsonData = $.ajax({
@@ -175,52 +231,31 @@
                     // Split timestamp and data into separate arrays
                     var labels_{{i}} = [], data_{{i}} = [];
                     if ( ("packets_{{i}}" in results) ) {
-
                         // ABAJO DOS INTENTOS DE CICLAR SOBRE VARIOS PACKETS DEL MISMO CHANNEL
                         Object.keys(results["packets_{{i}}"]).forEach(function (key) {
                             var value = results["packets_{{i}}"][key];
-                            /*console.log("Index: ", {{ i }});
-                            console.log("Key: ", key);
-                            console.log("Data: ", value);
-                            console.log("-----------------");*/
                             labels_{{i}}.push(value.timestamp);
                             data_{{i}}.push(parseFloat(value.payloadString));
                         });
                     }
                 {% endfor %}
 
-
+                console.log("Adding data");
                 {% for i in 1..32 %}
-                    console.log("Channel: ", {{i}});
-                    console.log("Labels: ", labels_{{i}});
-                    console.log("Data: ", data_{{i}});
                     //Add data
                     for (var i=0 ; i< data_{{i}}.length ; i++) {
-                        var myDate =  moment.unix(labels_{{i}}[i]+counterTimestamp()).toDate();
-                        console.log(myDate);
+
+                        var myDate =  moment.unix(labels_{{i}}[i]).toDate();
+
                         window.Chart_{{i}}.data.labels.push(myDate);
-                        //window.Chart_{{i}}.data.labels.push(new Date(labels_{{i}}[i]*1000));
-
-                        window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]*randomScalingFactor());
+                        window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]);
                     }
-                    //Add data (esta version es de un ejemplo,  la que yo hice arriba tmb anda ok)
-                    /*for (var i=0 ; i< data_{{i}}.length ; i++) {
-                        //window.Chart_{{i}}.data.labels.push(moment.unix(labels_{{i}}[i]).toDate());
-                        window.Chart_{{i}}.data.labels.push(new Date(labels_{{i}}[i]*1000));
-
-                        if (typeof window.Chart_{{i}}.data.datasets[0].data[0] === "object") {
-                            window.Chart_{{i}}.data.datasets[0].data.push({
-                                x: moment(labels_{{i}}[i]).format(timeFormat),
-                                y: data_{{i}}[i]
-                            });
-                        } else {
-                            window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]*randomScalingFactor());
-                        }
-                    }*/
-                    window.Chart_{{i}}.update();
-                    //window.Chart_{{i}}.addData(data_{{i}}, labels_{{i}});
+                    window.Chart_{{i}}.update(0);
                 {% endfor %}
-                console.log("============================");
+                //window.Chart_1.update(0);
+
+
+
             })
             .fail(function (jqXHR, textStatus, errorThrown) {
                 console.log("Failed AJAX request.");
@@ -235,130 +270,37 @@
 
     </script>
 
+    <script>
+
+        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("id");
+            var targetString = "Chart_"+target;
+            //eval("window."+targetString+".update(0);");
+        });
+
+
+        window.onbeforeunload = function (e) {
+            var e = e || window.event;
+            var msg = "¿Esta seguro que desea abandonar la página?"
+
+            // For IE and Firefox
+            if (e) {
+                e.returnValue = msg;
+            }
+
+            // For Safari / chrome
+            return msg;
+        };
+
+        /*
+         TODO hacer que ande cuando aprieten el boton de atras.
+          */
+
+
+    </script>
+
+
+
+
 {% endblock %}
 
-
-{#
-
-
-    <script>
-        var set_delay = 5000;
-
-        var canvas = document.getElementById('updating-chart'),
-                ctx = canvas.getContext('2d'),
-                startingData = {
-                    labels: [1, 2, 3, 4, 5, 6, 7],
-                    datasets: [
-                        {
-                            fillColor: "rgba(220,220,220,0.2)",
-                            strokeColor: "rgba(220,220,220,1)",
-                            pointColor: "rgba(220,220,220,1)",
-                            pointStrokeColor: "#fff",
-                            data: [65, 59, 80, 81, 56, 55, 40]
-                        },
-                        {
-                            fillColor: "rgba(151,187,205,0.2)",
-                            strokeColor: "rgba(151,187,205,1)",
-                            pointColor: "rgba(151,187,205,1)",
-                            pointStrokeColor: "#fff",
-                            data: [28, 48, 40, 19, 86, 27, 90]
-                        }
-                    ]
-                },
-                latestLabel = startingData.labels[6];
-
-        // Reduce the animation steps for demo clarity.
-        var myLiveChart = new Chart(ctx).Line(startingData, {animationSteps: 15});
-
-
-        setInterval(function(){
-            // Add two random numbers for each dataset
-            myLiveChart.addData([Math.random() * 100, Math.random() * 100], ++latestLabel);
-            // Remove the first point so we dont just add values forever
-            myLiveChart.removeData();
-        }, set_delay);
-
-//========================== El de arriba funca- el de abajo es mas completo pero no anda todavia
-
-        function getGraphData() {
-            // Add a helper to format timestamp data
-            Date.prototype.formatMMDDYYYY = function () {
-                return (this.getMonth() + 1) +
-                        "/" + this.getDate() +
-                        "/" + this.getFullYear();
-            }
-
-            var jsonData = $.ajax({
-                url: '/getGraphData',
-                dataType: 'json',
-            }).done(function (results) {
-                        console.log(results);
-                        // Split timestamp and data into separate arrays
-                        var labels = [], data = [];
-                        results["packets"].forEach(function (packet) {
-                            labels.push(new Date(packet.timestamp).formatMMDDYYYY());
-                            data.push(parseFloat(packet.payloadString));
-                        });
-
-                        // Create the chart.js data structure using 'labels' and 'data'
-                        var tempData = {
-                            labels: labels,
-                            datasets: [{
-                                fillColor: "rgba(151,187,205,0.2)",
-                                strokeColor: "rgba(151,187,205,1)",
-                                pointColor: "rgba(151,187,205,1)",
-                                pointStrokeColor: "#fff",
-                                pointHighlightFill: "#fff",
-                                pointHighlightStroke: "rgba(151,187,205,1)",
-                                data: data
-                            }]
-                        };
-
-                        // Get the context of the canvas element we want to select
-                        var ctx = document.getElementById("myLineChart").getContext("2d");
-
-                        // Instantiate a new chart
-                        var myLineChart = new Chart(ctx).Line(tempData);
-                    })
-                    .error(function () {
-                        console.log("Failed AJAX request.");
-                    })
-                    .always(function () {
-                        var lastTimeOut = setTimeout(getGraphData, set_delay);
-                    });
-            };
-
-    </script>
-
-
-#}
-
-{#      OLD STUFF
-
- <script>
-        $(document).ready(function() {
-            {% for i in 1..32 %}
-            var graph_{{i}}_data = {
-                labels : ["January","February","March","April","May","June"],
-                datasets : [
-                    {
-                        fillColor : "rgba(172,194,132,0.4)",
-                        strokeColor : "#ACC26D",
-                        pointColor : "#fff",
-                        pointStrokeColor : "#9DB86D",
-                        data : [203,23,99,251,305,247]
-                    }
-                ]
-            }
-
-            var graph_{{i}} = document.getElementById('graph_{{i}}').getContext('2d');
-            var Chart_{{i}} = new Chart(graph_{{i}} , {
-                type: "line",
-                data: graph_{{i}}_data,
-            });
-            getGraphData();
-            {% endfor %}
-        });
-    </script>
-
-#}

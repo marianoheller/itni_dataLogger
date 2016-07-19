@@ -90,7 +90,12 @@ class SensoresController extends Controller
                         }
                     }
                 }
-                $lastFecha = (new \DateTime())->createFromFormat('d/m/Y H:i:s', $lastTimeStamp);
+                /*
+                 * TODO hacer que solo agarre las ultimas mediciones
+                 * TODO actualizar lastPing on ajax call
+                 */
+                $lastFecha = new \DateTime();
+                $lastFecha = $lastFecha->createFromFormat('Y-m-d H:i:s', $lastTimeStamp);
                 $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
                 $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY fecha DESC, sensor_id ASC";
                 $em = $this->getDoctrine()->getManager();
@@ -98,7 +103,7 @@ class SensoresController extends Controller
                 $stmt->execute();
                 $arrayQueryResult = $stmt->fetchAll();
                 for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
-                    $d1 = new \DateTime($arrayQueryResult[$i]['fecha']);
+                    $d1 = new \DateTime($arrayQueryResult[$i]['fecha'],new \DateTimeZone("America/Argentina/Buenos_Aires"));
                     //$arrayQueryResult[$i]['fecha'] = $d1->format('H:i:s - d-m-Y');        //Comment to disable reformateo de fecha
                     $arrayQueryResult[$i]['fecha'] = $d1->getTimestamp();        //Comment to disable reformateo de fecha
                 }

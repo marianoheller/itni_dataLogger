@@ -26,6 +26,7 @@
                                     <li class="list-group-item list-group-item-info">Ultima actualización: {{ arrayQueryResult[0]["lastPing"] }}</li>
                                     <li class="list-group-item list-group-item-info">Titulo: {{ arrayQueryResult[0]["titulo"] }}</li>
                                     <li class="list-group-item list-group-item-info">Responsable: {{ arrayQueryResult[0]["responsable"] }}</li>
+                                    <li class="list-group-item list-group-item-info">Cliente: {{ arrayQueryResult[0]["cliente"] }}</li>
                                     <li class="list-group-item list-group-item-info">OT: {{ arrayQueryResult[0]["OT"] }}</li>
                                     <li class="list-group-item list-group-item-info">SOT: {{ arrayQueryResult[0]["SOT"] }}</li>
                                     <li class="list-group-item list-group-item-info">Descripción: {{ arrayQueryResult[0]["descripcion"] }}</li>
@@ -83,7 +84,7 @@
             <textarea name="Descripcion" class="form-control" id="inputDescripcion" rows="3" placeholder="Descripcion"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Comenzar ensayo</button>
+        <button id="buttonComenzarEnsayo" type="submit" class="btn btn-primary">Comenzar ensayo</button>
     </form>
 {% endblock %}
 
@@ -99,6 +100,7 @@
             })
             $('#modalEnsayoRunning').modal('show');
             $('#alertFailedCancel').hide();
+            document.getElementById("buttonComenzarEnsayo").disabled = true;
         });
 
         function goBack() {
@@ -123,6 +125,7 @@
                     })
                     .done(function (results) {
                         $('#modalEnsayoRunning').modal('hide');
+                        document.getElementById("buttonComenzarEnsayo").disabled = false;
                     })
                     .fail(function (jqXHR, textStatus, errorThrown) {
                         $('#alertFailedCancel').show();

@@ -48,6 +48,7 @@ class PagesController extends Controller
     {
         $session = new Session();
         if ( $session->get("username") ) {
+            //Check if ensayo is running
             $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
                                                 FROM ensayo
                                                 HAVING diff = (
@@ -116,10 +117,14 @@ class PagesController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($ensayoObj);
             $em->flush();
-            //
-            $success = true;
+            //TODO check if persisted data went OK
+            $success = true; // <---- and affect success flag
             if ( $success ) {
-                return $this->render("pages/ensayo/ensayo.html.twig");
+                //TODO hacer select de ultimo ensayo y usear esa info para mandar al template
+                return $this->render("pages/ensayo/ensayo.html.twig", array (
+                    "lastPing" => $dateTimeInicio->format("Y-m-d H:i:s"),
+                    "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
+                ));
             }
             else {
                 return $this->render("pages/ensayo/ensayo_config.html.twig");
