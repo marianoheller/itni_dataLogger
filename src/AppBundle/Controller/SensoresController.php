@@ -90,9 +90,7 @@ class SensoresController extends Controller
                         }
                     }
                 }
-                /*
-                 * TODO actualizar lastPing on ajax call
-                 */
+
                 //UPDATE lastPing
                 $lastPingObj = new \DateTime("now",new \DateTimeZone("America/Argentina/Buenos_Aires"));
                 $lastPingString = $lastPingObj->format("Y-m-d H:i:s");
@@ -113,12 +111,14 @@ class SensoresController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $count = $em->getConnection()->executeUpdate($qlUpdateLastPing);
 
+                //TODO arreglar la hora a display -> guardar last time stamp en window.lastTimeStamp
+
 
                 // GET DATA
                 $lastFecha = new \DateTime();
                 $lastFecha = $lastFecha->createFromFormat('Y-m-d H:i:s', $lastTimeStamp);
                 $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
-                $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY fecha DESC, sensor_id ASC";
+                $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY sensor_id ASC, fecha ASC";
                 $em = $this->getDoctrine()->getManager();
                 $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
                 $stmt->execute();
@@ -130,20 +130,22 @@ class SensoresController extends Controller
                 }
 
                 // Parse to packets per channel
-                usort($arrayQueryResult, function ($i, $j) {
+                /*usort($arrayQueryResult, function ($i, $j) {
                     $a = ($i['sensor_id']);
                     $b = ($j['sensor_id']);
                     if ($a == $b) {
                         return 0;
                     }
                     return ($a < $b) ? -1 : 1;
-                });
+                });*/
 
                 $arrayReturn = [];
                 $arrayPerChannel = [];
+                //Init arrays per channel
                 foreach ($arrayQueryResult as $item) {
                     $arrayPerChannel[$item["sensor_id"]] = [];
                 }
+                //Push data
                 foreach ($arrayQueryResult as $item) {
                     $arrayAux = [];
                     foreach ($item as $key => $value) {
@@ -154,11 +156,10 @@ class SensoresController extends Controller
                     }
                     array_push($arrayPerChannel[$item["sensor_id"]],$arrayAux);
                 }
+                //Final parse of array
                 foreach ($arrayPerChannel as $keyAux => $itemsPerChannel) {
                     $arrayReturn["packets_".$keyAux] = $itemsPerChannel;
                 }
-
-
                 //Ready to send
                 $ret = new JsonResponse($arrayReturn);
                 return $ret;

@@ -4,18 +4,84 @@
 {% block extraCss %}
     <style>
         /*#brand-nav-canales{}*/
+        .chart{
+            width: 100%;
+            height: 100%;
+        }
+        #contenido-fluid {
+            padding-left: 0px;
+            /*margin-left: 0px;*/
+        }
+        #pillsCanales {
+            padding-left: 10px;
+            margin-left: 0px;
+        }
+        .channel-number-selector {
+            padding-left: 5px;
+        }
+        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+            color: #FFFFFF;
+            /*background-color: #fca200;*/
+        }
+        .nav-pills > li#brand-nav-canales{
+            color: #ffffff;
+        }
+        .nav-pills > li > a {
+            color: #8c918d;
+        }
+        #pillsCanales{
+            padding-bottom: 8px;
+            padding-top: 4px;
+        }
+        #tablaStatusSensores thead tr th{text-align: center;}   {#Para los headers#}
+        #tablaStatusSensores tbody th{text-align: center;}      {#Para el loading#}
+        #tablaStatusSensores tbody {text-align: center;}        {#Para los items#}
     </style>
 {% endblock %}
 
 
 {% block ensayo %}
-    <ul id="pillsCanales" class="nav nav-pills nav-stacked col-md-1">
-        <li id="brand-nav-canales"><b>Canal #</b></li>
+    <ul id="pillsCanales" class="nav nav-pills nav-stacked col-md-1 navbar-dark bg-inverse">
+        <li><a id="" href="#tab_status" data-toggle="pill">Status</a></li>
+        <li id="brand-nav-canales">Canal #</li>
         {% for i in 1..32 %}
-            <li><a id="{{i}}" href="#tab_{{i}}" data-toggle="pill">Nº {{i}}</a></li>
+            <li><a class="channel-number-selector" id="{{i}}" href="#tab_{{i}}" data-toggle="pill"><small>Nº {{i}}</small></a></li>
         {% endfor %}
     </ul>
     <div class="tab-content col-md-11">
+
+        <div class="tab-pane" id="tab_status">
+            <h4>Status</h4>
+
+            <div class="container col-md-1">
+
+            </div>
+
+            <div class="container col-md-10">
+
+
+                <small>
+                    <table class="table table-condensed" id="tablaStatusSensores">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Medición</th>
+                            <th>Tiempo</th>
+                        </tr>
+                        </thead>
+                        <tbody id="dataStatusSensores">
+                        <th colspan="4">Esperando datos...</th>
+                        </tbody>
+                    </table>
+                </small>
+
+            </div>
+
+            <div class="container col-md-2">
+
+            </div>
+
+        </div>
 
     {% for i in 1..32 %}
         <div class="tab-pane" id="tab_{{i}}">
@@ -24,7 +90,7 @@
 
             </div>
             <div class="container col-md-10">
-                <canvas id="graph_{{i}}"></canvas>
+                <div id="chart_div_{{ i }}" class="chart"></div>
             </div>
         </div>
     {% endfor %}
@@ -38,13 +104,52 @@
     {#<script src="{{ asset('media/js/moment/moment.js') }}"></script>
     <script src="{{ asset('media/js/charts/Chart.bundle.js') }}"></script>#}
 
+
+
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+    {#<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>#}
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
+
+    <script src="{{ asset('media/js/polyfill.js') }}"></script>
 
 
     <script>
-        //var timeFormat = 'HH:mm:ss DD-MM-YYYY';
-        var timeFormat = 'DD/MM/YYYY HH:mm';
+        var set_delay = 10000;
+
+        var t_inicio_unix = moment('{{ t_inicio }}').unix();
+
+        var timeFormat = 'HH:mm:ss';
+
+        var options = {
+            //both dygraphs and Google
+            width: 1200,
+            height: 500,
+
+            //dygraphs
+            rollPeriod: 1,
+            showRoller: false,
+            fillGraph: true,
+
+            //Google charts
+            curveType: "function",
+            hAxis: {
+                format: timeFormat,
+                gridlines: {count: 8}
+            },
+            vAxis: {
+                //minValue: 0,
+                gridlines: {count: 8},
+                viewWindow: {
+                    min: 0
+                }
+            },
+            explorer: {
+                actions: ['dragToZoom', 'rightClickToReset'],
+                axis: 'vertical'
+            }
+        };
 
         function randomInt() {
             return Math.round(Math.random() * 10);
@@ -87,87 +192,6 @@
 
 
 
-        {% for i in 1..32 %}
-
-        var config_{{ i }} = {
-            type: 'line',
-            data: {
-                labels: [moment("{{t_inicio}}", "YYYY-MM-DD HH:mm:ss").toDate()], // Date Objects
-                datasets: [{
-                    label: "Canal {{ i }}",
-                    data: [0],
-                    fill: false,
-                    //lineTension: 0,
-                    pointRadius: 0,
-                    borderColor: randomColor(0.4),
-                    backgroundColor : randomColor(0.5),
-                    pointBorderColor: randomColor(0.7),
-                    pointBackgroundColor : randomColor(0.5),
-                    pointBorderWidth : 1
-                }]
-            },
-            options: {
-                responsive: true,
-                title:{
-                    display:true,
-                    text:"Chart"
-                },
-                scales: {
-                    xAxes: [{
-                        type: "time",
-                        time: {
-                            format: timeFormat,
-                            //unit: 'second',
-                            //unitStepSize: 10,
-                            round: 'minute',
-                            tooltipFormat: 'll HH:mm',
-                            displayFormats: {
-                                millisecond: 'mm:ss',
-                                second: 'mm:ss',
-                                minute: 'mm:ss',
-                                hour: 'HH:mm',
-                                day: 'HH:mm'
-                            }
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Fecha'
-                        }
-                    }, ],
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Valor'
-                        }
-                    }]
-                },
-            }
-        };
-
-        {% endfor %}
-
-
-        $(document).ready(function() {
-            {% for i in 1..32 %}
-            var graph_{{i}} = document.getElementById('graph_{{i}}').getContext('2d');
-            window.Chart_{{i}} =  new Chart(graph_{{i}}, config_{{ i }});
-            {% endfor %}
-        });
-
-        window.onload = function() {
-            getGraphData();
-        };
-
-
-
-
-    </script>
-
-
-    <script>
-        var set_delay = 10000;
-
-
         function convertDate(inputFormat) {
             function pad(s) { return (s < 10) ? '0' + s : s; }
             var d = new Date(inputFormat);
@@ -198,14 +222,52 @@
         };
 
 
+
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+
+
+            {% for i in 1..32 %}
+            window.dataTable_{{ i }} = new google.visualization.DataTable();
+            window.dataTable_{{ i }}.addColumn('datetime', 'Fecha');
+            window.dataTable_{{ i }}.addColumn('number', 'Medicion');
+
+            var element_{{ i }} = document.getElementById('chart_div_{{ i }}');
+
+            /*var chart_{{ i }} = new google.visualization.LineChart(element_{{ i }});
+            chart_{{ i }}.draw(window.dataTable_{{ i }}, options);*/
+
+            window.chart_{{ i }} = new Dygraph(
+                    document.getElementById("chart_div_{{ i }}"),
+                    window.dataTable_{{ i }},
+                    options
+            );
+
+            {% endfor %}
+
+
+            getGraphData();
+        }
+
+
+    </script>
+
+
+    <script>
+
+
+
         function getGraphData() {
             var lastTimeStampLocal = "";
-            var len = window.Chart_1.data.labels.length;
+            var len = window.dataTable_1.getNumberOfRows();
             if ( len == 0 ) {
                 lastTimeStampLocal = "{{ t_inicio }}";
             }
             else {
-                lastTimeStampLocal = window.Chart_1.data.labels[len - 1];
+                lastTimeStampLocal = window.dataTable_1.getValue(len-1, 0) //get fecha
                 lastTimeStampLocal = moment(lastTimeStampLocal).format("YYYY-MM-DD HH:mm:ss");
             }
 
@@ -224,12 +286,12 @@
                 dataType: 'json'
             })
             .done(function (results) {
-                console.log(results);
+                console.log("RX: ",results);
+                //console.log("t_inicio: ",t_inicio_unix);
                 {% for i in 1..32 %}
                     // Split timestamp and data into separate arrays
                     var labels_{{i}} = [], data_{{i}} = [];
                     if ( ("packets_{{i}}" in results) ) {
-                        // ABAJO DOS INTENTOS DE CICLAR SOBRE VARIOS PACKETS DEL MISMO CHANNEL
                         Object.keys(results["packets_{{i}}"]).forEach(function (key) {
                             var value = results["packets_{{i}}"][key];
                             labels_{{i}}.push(value.timestamp);
@@ -238,21 +300,35 @@
                     }
                 {% endfor %}
 
-                console.log("Adding data");
+                //console.log("Adding data");
+
+                //Add data
                 {% for i in 1..32 %}
-                    //Add data
                     for (var i=0 ; i< data_{{i}}.length ; i++) {
 
                         var myDate =  moment.unix(labels_{{i}}[i]).toDate();
-
-                        window.Chart_{{i}}.data.labels.push(myDate);
-                        window.Chart_{{i}}.data.datasets[0].data.push(data_{{i}}[i]);
+                        var obj = [
+                            [myDate,   data_{{i}}[i]]
+                        ];
+                        window.dataTable_{{ i }}.addRows(obj);
                     }
-                    window.Chart_{{i}}.update(0);
                 {% endfor %}
-                //window.Chart_1.update(0);
+
+                //REDRAW
+                {% for i in 1..32 %}
+                window.chart_{{ i }}.updateOptions( { 'file': window.dataTable_{{ i }} } );
+                {% endfor %}
 
 
+                var lenAux = 0;
+                {% for i in 1..32 %}
+                if (window.dataTable_{{ i }}.getNumberOfRows() > lenAux) {
+                    lenAux = window.dataTable_{{ i }}.getNumberOfRows();
+                }
+                {% endfor %}
+                if ( lenAux > 0 ) {
+                    updateStatusInfo();
+                }
 
             })
             .fail(function (jqXHR, textStatus, errorThrown) {
@@ -262,24 +338,63 @@
                 console.log("--------------");
             })
             .always(function () {
-                var lastTimeOut = setTimeout(getGraphData, set_delay);
+                setTimeout(getGraphData, set_delay);
             });
         };
+
+
+        function updateStatusInfo(  )  {
+            var trHTML = '';
+
+
+            {% for i in 1..32 %}
+                var lenAux = window.dataTable_{{ i }}.getNumberOfRows();
+                var lastLabel_{{ i }} = window.dataTable_{{ i }}.getValue(lenAux-1, 0)
+                var medicion_{{ i }} = window.dataTable_{{ i }}.getValue(lenAux-1, 1);
+                 //get fecha
+                trHTML += "<tr "
+                if (medicion_{{ i }} < 30) {
+                    trHTML += "class='info'";
+                }
+                else if (medicion_{{ i }} > 500) {
+                    trHTML += "class='warning'";
+                }
+                else if (medicion_{{ i }} > 900) {
+                    trHTML += "class='danger'";
+                }
+                trHTML +=">";
+                trHTML +="<td>";
+                trHTML += {{ i }};
+                trHTML +="</td>";
+                trHTML +="<td>";
+                trHTML += medicion_{{ i }};
+                trHTML +="</td>";
+                trHTML +="<td>";
+                trHTML += moment(lastLabel_{{ i }}).format("YYYY-MM-DD HH:mm:ss");
+                trHTML +="</td>";
+                trHTML +="</tr>";
+            {% endfor %}
+            $('#dataStatusSensores').empty();
+            $('#dataStatusSensores').append(trHTML);
+        }
 
     </script>
 
     <script>
 
         $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
-            var target = $(e.target).attr("id");
-            var targetString = "Chart_"+target;
-            //eval("window."+targetString+".update(0);");
+            /*var target = $(e.target).attr("id");
+            var targetString = "Chart_"+target;*/
+            $(window).trigger('resize');
+            window.dispatchEvent(new Event('resize'));
+            //console.log("resize Triggered");
         });
+
 
 
         window.onbeforeunload = function (e) {
             var e = e || window.event;
-            var msg = "¿Esta seguro que desea abandonar la página?"
+            var msg = "¿Esta seguro que desea abandonar la página?";
 
             // For IE and Firefox
             if (e) {
