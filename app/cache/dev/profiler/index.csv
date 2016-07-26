@@ -18062,3 +18062,5 @@ dae6fd,127.0.0.1,GET,http://localhost:8000/ensayo,1469552654,,200
 745129,127.0.0.1,POST,http://localhost:8000/getSensoresStatus,1469552658,,200
 4898f9,127.0.0.1,GET,http://localhost:8000/about,1469552660,,200
 382208,127.0.0.1,GET,http://localhost:8000/ensayo,1469552661,,200
+7f08f0,127.0.0.1,GET,http://localhost:8000/ensayo,1469554937,,200
+75ee32,127.0.0.1,GET,http://localhost:8000/ensayo,1469554975,,200

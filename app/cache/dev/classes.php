@@ -86,7 +86,7 @@ return $this->connections;
 }
 public function getConnections()
 {
-$connections = [];
+$connections = array();
 foreach ($this->connections as $name => $id) {
 $connections[$name] = $this->getService($id);
 }
@@ -136,7 +136,7 @@ return $this->managers;
 }
 public function getManagers()
 {
-$dms = [];
+$dms = array();
 foreach ($this->managers as $name => $id) {
 $dms[$name] = $this->getService($id);
 }
