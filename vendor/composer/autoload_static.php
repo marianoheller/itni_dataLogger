@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
+class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
 {
     public static $files = array (
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
@@ -14,8 +14,8 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'edc6464955a37aa4d5fbf39d40fb6ee7' => __DIR__ . '/..' . '/symfony/polyfill-php55/bootstrap.php',
-        '3e2471375464aac821502deb0ac64275' => __DIR__ . '/..' . '/symfony/polyfill-php54/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '3e2471375464aac821502deb0ac64275' => __DIR__ . '/..' . '/symfony/polyfill-php54/bootstrap.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '32dcc8afd4335739640db7d200c1971d' => __DIR__ . '/..' . '/symfony/polyfill-apcu/bootstrap.php',
         'ce89ac35a6c330c55f4710717db9ff78' => __DIR__ . '/..' . '/kriswallsmith/assetic/src/functions.php',
@@ -42,6 +42,7 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'Sensio\\Bundle\\GeneratorBundle\\' => 30,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
         ),
@@ -55,9 +56,7 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
         ),
         'D' => 
         array (
-            'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Cache\\' => 22,
-            'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
@@ -136,6 +135,10 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Bridge/Doctrine',
         ),
+        'Sensio\\Bundle\\GeneratorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensio/generator-bundle',
+        ),
         'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle',
@@ -152,17 +155,9 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
         ),
-        'Doctrine\\Instantiator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
-        ),
         'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
-        ),
-        'Doctrine\\Common\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
         ),
         'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 
         array (
@@ -188,10 +183,6 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
         ),
         'S' => 
         array (
-            'Sensio\\Bundle\\GeneratorBundle' => 
-            array (
-                0 => __DIR__ . '/..' . '/sensio/generator-bundle',
-            ),
             'SensioLabs\\Security' => 
             array (
                 0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
@@ -230,6 +221,10 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
+            'Doctrine\\Common\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/common/lib',
+            ),
         ),
         'A' => 
         array (
@@ -262,11 +257,11 @@ class ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit6e39e16d27915b3bf57b5ed4fe59f85a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9fa1501aec7345494267c0bb474ec352::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9fa1501aec7345494267c0bb474ec352::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit9fa1501aec7345494267c0bb474ec352::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit9fa1501aec7345494267c0bb474ec352::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit9fa1501aec7345494267c0bb474ec352::$classMap;
 
         }, null, ClassLoader::class);
     }

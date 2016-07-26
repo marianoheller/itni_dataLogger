@@ -29,6 +29,14 @@
         .nav-pills > li > a {
             color: #8c918d;
         }
+
+        .nav-pills .divider-vertical {
+            height: 5px;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            border-top: 1px solid #8c918d;
+        }
+
         #pillsCanales{
             padding-bottom: 8px;
             padding-top: 4px;
@@ -41,17 +49,29 @@
 
 
 {% block ensayo %}
+
     <ul id="pillsCanales" class="nav nav-pills nav-stacked col-md-1 navbar-dark bg-inverse">
-        <li><a id="" href="#tab_status" data-toggle="pill">Status</a></li>
+
+        <li><a id="" href="#tab_status" data-toggle="pill">Estado</a></li>
+
         <li id="brand-nav-canales">Canal #</li>
+
         {% for i in 1..32 %}
-            <li><a class="channel-number-selector" id="{{i}}" href="#tab_{{i}}" data-toggle="pill"><small>Nº {{i}}</small></a></li>
+        <li><a class="channel-number-selector" id="{{i}}" href="#tab_{{i}}" data-toggle="pill"><small>Nº {{i}}</small></a></li>
         {% endfor %}
-    </ul>
+
+        <li class="divider-vertical"></li>
+
+        <li><a href="#tab_config" data-toggle="pill">Configuracion</a></li>
+
+    </ul> <!-- nav pills -->
+
+
+
     <div class="tab-content col-md-11">
 
         <div class="tab-pane" id="tab_status">
-            <h4>Status</h4>
+            <h4>Estado</h4>
 
             <div class="container col-md-1">
 
@@ -61,8 +81,8 @@
 
 
                 <small>
-                    <table class="table table-condensed" id="tablaStatusSensores">
-                        <thead>
+                    <table class="table table-sm" id="tablaStatusSensores">
+                        <thead class="thead-inverse">
                         <tr>
                             <th>#</th>
                             <th>Medición</th>
@@ -354,14 +374,15 @@
                  //get fecha
                 trHTML += "<tr "
                 if (medicion_{{ i }} < 30) {
-                    trHTML += "class='info'";
-                }
-                else if (medicion_{{ i }} > 500) {
-                    trHTML += "class='warning'";
+                    trHTML += "class='table-info'";
                 }
                 else if (medicion_{{ i }} > 900) {
-                    trHTML += "class='danger'";
+                    trHTML += "class='table-danger'";
                 }
+                else if (medicion_{{ i }} > 500) {
+                    trHTML += "class='table-warning'";
+                }
+
                 trHTML +=">";
                 trHTML +="<td>";
                 trHTML += {{ i }};
