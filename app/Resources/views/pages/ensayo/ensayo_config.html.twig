@@ -1,6 +1,19 @@
 {% extends 'pages/ensayo_base.html.twig' %}
 
 
+{% block extraCss %}
+    <style>
+        @media (max-width: 767px) {
+            .modal-footer .btn{
+                margin-left: 0;
+                margin-bottom: 8px;
+                display: block;
+            }
+        }
+
+    </style>
+{% endblock %}
+
 {% block configEnsayo %}
     {% if flagEnsayoRunning == true %}
         <!-- Modal -->
@@ -36,9 +49,9 @@
                         <p>¿Que desea hacer?</p>
                     </div>
                     <div class="modal-footer">
-                        <button  onclick="goHome()" type="button" class="btn btn-default" data-dismiss="modal">Inicio</button>
-                        <button onclick="cancelarEnsayo()" type="button" class="btn btn-danger">Cancelar ensayo</button>
-                        <button onclick="resumirEnsayo()" type="button" class="btn btn-primary">Resumir ensayo</button>
+                        <button  onclick="goHome()" type="button" class="btn btn-default m-x-auto" data-dismiss="modal">Inicio</button>
+                        <button onclick="cancelarEnsayo()" type="button" class="btn btn-danger m-x-auto">Cancelar ensayo</button>
+                        <button onclick="resumirEnsayo()" type="button" class="btn btn-primary m-x-auto">Resumir ensayo</button>
                     </div>
                 </div>
 

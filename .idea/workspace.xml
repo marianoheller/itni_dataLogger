@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" line="20" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" line="33" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DataLogger_INTI_Construcciones.iml" afterPath="$PROJECT_DIR$/.idea/DataLogger_INTI_Construcciones.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/05/5b5b435d53796d666f6e795c42756e646c655c5477696742756e646c655c436f6e74726f6c6c65725c457863657074696f6e436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/05/5b5b435d53796d666f6e795c42756e646c655c5477696742756e646c655c436f6e74726f6c6c65725c457863657074696f6e436f6e74726f6c6c6572405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/27/_272832dc2a906a4942a336d2ab7e2c2c8cd85f50e28a784cbcbc110d4dd08e6d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/27/_272832dc2a906a4942a336d2ab7e2c2c8cd85f50e28a784cbcbc110d4dd08e6d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,11 +63,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ensayo_config.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ensayo_config.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="161" column="37" selection-start-line="161" selection-start-column="37" selection-end-line="161" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.78253967">
+              <caret line="53" column="95" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
+              <folding>
+                <element signature="e#1384#1408#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage_base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -97,7 +88,7 @@
       <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.461538">
+            <state vertical-scroll-proportion="-9.846154">
               <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
               <folding>
                 <marker date="1469721600688" expanded="true" signature="1424:2047" placeholder="SELECT *,TIM..ensayo..." />
@@ -105,16 +96,6 @@
                 <marker date="1469721600688" expanded="true" signature="3519:4142" placeholder="SELECT *,TIM..ensayo..." />
                 <marker date="1469721600688" expanded="true" signature="3751:4088" placeholder="SELECT MIN(T..ensayo..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ensayo_base.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.12698413">
-              <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -175,12 +156,12 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores/sensores.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
       </list>
     </option>
   </component>
@@ -739,7 +720,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469555033754</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added navbar  compat..">
+      <created>1469726460496</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1469726460496</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -757,6 +744,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35980812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.5660981" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.4914712" order="7" side_tool="false" content_ui="tabs" />
@@ -764,7 +752,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.4339019" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -789,7 +776,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Native SQL working!!." />
     <MESSAGE value="Fixed SQL query. Now table shows last data adquired." />
     <MESSAGE value="Working on testins route." />
     <MESSAGE value="Ajax request works. Client side doesnt." />
@@ -814,7 +800,8 @@
     <MESSAGE value="Added status page on ensayo." />
     <MESSAGE value="Added Config pill and Formated table on status." />
     <MESSAGE value="Added required form fields on ensayo form." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added required form fields on ensayo form." />
+    <MESSAGE value="Added navbar  compat.." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added navbar  compat.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -827,7 +814,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1384#1408#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1149,22 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="161" column="37" selection-start-line="161" selection-start-column="37" selection-end-line="161" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10793651">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="65" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5952381">
@@ -1181,9 +1154,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0238096">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.461538">
+        <state vertical-scroll-proportion="-9.846154">
           <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
           <folding>
             <marker date="1469721600688" expanded="true" signature="1424:2047" placeholder="SELECT *,TIM..ensayo..." />
@@ -1194,11 +1175,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.12698413">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78253967">
+          <caret line="53" column="95" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
+          <folding>
+            <element signature="e#1384#1408#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
