@@ -36,7 +36,7 @@
                         <p>¿Que desea hacer?</p>
                     </div>
                     <div class="modal-footer">
-                        <button  onclick="goHome()" type="button" class="btn btn-default" data-dismiss="modal">Atrás</button>
+                        <button  onclick="goHome()" type="button" class="btn btn-default" data-dismiss="modal">Inicio</button>
                         <button onclick="cancelarEnsayo()" type="button" class="btn btn-danger">Cancelar ensayo</button>
                         <button onclick="resumirEnsayo()" type="button" class="btn btn-primary">Resumir ensayo</button>
                     </div>
@@ -49,7 +49,7 @@
     <h1>Generar ensayo</h1>
     <p class="lead">Selecciones la configuracion deseada e inicie el ensayo.</p>
 
-    <form class="form-horizontal" method="post" action="/ensayo/now">
+    <form class="form-horizontal" method="post" action="/ensayo/1">
 
         <div class="form-group">
             <label for="inputTitulo">Titulo ensayo</label>
@@ -65,7 +65,7 @@
 
         <div class="form-group">
             <label for="inputCliente">Cliente</label>
-            <input name="Cliente" type="text" class="form-control" id="inputCliente" placeholder="Cliente" required>
+            <input name="Cliente" type="text" class="form-control" id="inputCliente" placeholder="Cliente">
             {#<small class="text-muted">We'll never share your email with anyone else.</small>#}
         </div>
 
@@ -111,6 +111,31 @@
             window.location.replace("/");
         }
 
+        function post(path, params, method) {
+            method = method || "post"; // Set method to post by default if not specified.
+
+            // The rest of this code assumes you are not using a library.
+            // It can be made less wordy if you use one.
+            var form = document.createElement("form");
+            form.setAttribute("method", method);
+            form.setAttribute("action", path);
+
+            for(var key in params) {
+                if(params.hasOwnProperty(key)) {
+                    var hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("type", "hidden");
+                    hiddenField.setAttribute("name", key);
+                    hiddenField.setAttribute("value", params[key]);
+
+                    form.appendChild(hiddenField);
+                }
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+
         function hideFailedCancelAlert(){
             $('#alertFailedCancel').hide();
         }
@@ -133,8 +158,11 @@
         }
 
         function resumirEnsayo() {
-            goHome();
+            //window.location.replace("/ensayo/2");
+            post("/ensayo/2",{name: 'INTI-Construcciones'});
         }
+
+
 
         {% endif %}
     </script>

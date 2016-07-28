@@ -37,6 +37,8 @@
             border-top: 1px solid #8c918d;
         }
 
+
+
         #pillsCanales{
             padding-bottom: 8px;
             padding-top: 4px;
@@ -44,6 +46,25 @@
         #tablaStatusSensores thead tr th{text-align: center;}   {#Para los headers#}
         #tablaStatusSensores tbody th{text-align: center;}      {#Para el loading#}
         #tablaStatusSensores tbody {text-align: center;}        {#Para los items#}
+
+
+        .divider-text {
+            height: 5px;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            border-top: 1px solid #c4c4c4;
+        }
+
+        .config-text {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .config-button {
+            display: inline-block;
+            text-align: right;
+        }
+
     </style>
 {% endblock %}
 
@@ -52,7 +73,7 @@
 
     <ul id="pillsCanales" class="nav nav-pills nav-stacked col-md-1 navbar-dark bg-inverse">
 
-        <li><a id="" href="#tab_status" data-toggle="pill">Estado</a></li>
+        <li><a id="link-tab-status" href="#tab_status" data-toggle="pill">Estado</a></li>
 
         <li id="brand-nav-canales">Canal #</li>
 
@@ -74,12 +95,9 @@
             <h4>Estado</h4>
 
             <div class="container col-md-1">
-
             </div>
 
             <div class="container col-md-10">
-
-
                 <small>
                     <table class="table table-sm" id="tablaStatusSensores">
                         <thead class="thead-inverse">
@@ -94,14 +112,12 @@
                         </tbody>
                     </table>
                 </small>
-
             </div>
 
             <div class="container col-md-2">
-
             </div>
 
-        </div>
+        </div> <!-- status content -->
 
     {% for i in 1..32 %}
         <div class="tab-pane" id="tab_{{i}}">
@@ -115,11 +131,30 @@
         </div>
     {% endfor %}
 
+        <div class="tab-pane" id="tab_config">
+            <h4>Configuración</h4>
+
+            <div class="container col-md-1">
+            </div>
+
+            <div class="container col-md-10">
+                <div class="divider-text"></div>
+                <p class="pull-md-left"><strong>Finalizar el ensayo</strong></p>
+                <button onclick="cancelarEnsayo()" id="button-finnish-ensayo" type="button" class="btn btn-secondary pull-md-right">Finalizar</button>
+            </div>
+
+            <div class="container col-md-2">
+            </div>
+
+        </div> <!-- status content -->
+
     </div><!-- tab content -->
 {% endblock %}
 
 
 {% block ensayoJavascript %}
+
+
 
     {#<script src="{{ asset('media/js/moment/moment.js') }}"></script>
     <script src="{{ asset('media/js/charts/Chart.bundle.js') }}"></script>#}
@@ -210,6 +245,23 @@
             return moment().add(days, 'd').unix();
         }
 
+        function cancelarEnsayo() {
+            $.ajax({
+                        url: '/ensayo/cancel/all',
+                        type:'POST',
+                        contentType: "application/json; charset=utf-8",
+                        //data: jsonToSend,
+                        dataType: 'json'
+                    })
+                    .done(function (results) {
+                        window.location.replace("/");
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) {
+                        {# TODO mejorar lo q se hace en failure#}
+                        window.location.replace("/");
+                    });
+        }
+
 
 
         function convertDate(inputFormat) {
@@ -268,9 +320,12 @@
 
             {% endfor %}
 
-
             getGraphData();
         }
+
+        $(document).ready(function(){
+            document.getElementById('link-tab-status').click();
+        });
 
 
     </script>
@@ -288,7 +343,15 @@
             }
             else {
                 lastTimeStampLocal = window.dataTable_1.getValue(len-1, 0) //get fecha
-                lastTimeStampLocal = moment(lastTimeStampLocal).format("YYYY-MM-DD HH:mm:ss");
+
+                var momentAux = moment(lastTimeStampLocal);
+                var momentAuxInicio = moment.unix(t_inicio_unix);
+                momentAux.add(momentAuxInicio.seconds(),"seconds");
+                momentAux.add(momentAuxInicio.minutes(),"minutes");
+                momentAux.add(momentAuxInicio.hours(),"hours");
+                lastTimeStampLocal = momentAux.format("YYYY-MM-DD HH:mm:ss");
+
+                //lastTimeStampLocal = moment(lastTimeStampLocal).format("YYYY-MM-DD HH:mm:ss");
             }
 
             var timetampsToSend = '{ "timeStamp": [' +
@@ -326,7 +389,15 @@
                 {% for i in 1..32 %}
                     for (var i=0 ; i< data_{{i}}.length ; i++) {
 
-                        var myDate =  moment.unix(labels_{{i}}[i]).toDate();
+                        //var myDate =  moment.unix(labels_{{i}}[i]).toDate();
+
+                        var momentAux = moment.unix(labels_{{i}}[i])
+                        var momentAuxInicio = moment.unix(t_inicio_unix);
+                        momentAux.subtract(momentAuxInicio.seconds(),"seconds");
+                        momentAux.subtract(momentAuxInicio.minutes(),"minutes");
+                        momentAux.subtract(momentAuxInicio.hours(),"hours");
+                        var myDate = momentAux.toDate();
+
                         var obj = [
                             [myDate,   data_{{i}}[i]]
                         ];
@@ -413,7 +484,7 @@
 
 
 
-        window.onbeforeunload = function (e) {
+        /*window.onbeforeunload = function (e) {
             var e = e || window.event;
             var msg = "¿Esta seguro que desea abandonar la página?";
 
@@ -424,11 +495,9 @@
 
             // For Safari / chrome
             return msg;
-        };
+        };*/
 
-        /*
-         TODO hacer que ande cuando aprieten el boton de atras.
-          */
+         {#TODO hacer que ande cuando aprieten el boton de atras.#}
 
 
     </script>
