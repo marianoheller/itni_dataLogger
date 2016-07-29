@@ -123,24 +123,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\AccountController::loginAction',  '_route' => 'login',);
         }
 
-        if (0 === strpos($pathinfo, '/re')) {
-            // register
-            if ($pathinfo === '/register') {
-                return array (  '_controller' => 'AppBundle\\Controller\\AccountController::registerAction',  '_route' => 'register',);
-            }
-
-            // reset
-            if ($pathinfo === '/reset') {
-                return array (  '_controller' => 'AppBundle\\Controller\\AccountController::resetAction',  '_route' => 'reset',);
-            }
-
-        }
-
-        // logout
-        if ($pathinfo === '/logout') {
-            return array (  '_controller' => 'AppBundle\\Controller\\AccountController::logoutAction',  '_route' => 'logout',);
-        }
-
         if (0 === strpos($pathinfo, '/old_')) {
             // old_index
             if ($pathinfo === '/old_index') {
@@ -227,6 +209,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // cancelEnsayo
         if ($pathinfo === '/ensayo/cancel/all') {
             return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::cancelEnsayoAction',  '_route' => 'cancelEnsayo',);
+        }
+
+        // logout
+        if ($pathinfo === '/logout') {
+            return array('_route' => 'logout');
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

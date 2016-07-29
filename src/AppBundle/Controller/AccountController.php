@@ -19,10 +19,18 @@ class AccountController extends Controller
      */
     public function loginAction(Request $request)
     {
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
         $f_dataErronea=false;
-        if ($request->isMethod("POST")) {
+        /*if ($request->isMethod("POST")) {
             $_POST=$request->request;
-            if( ($_POST->get("password")== "admin") && ($_POST->get("username")== "admin") ) {
+            if( ($_POST->get("_password")== "admin") && ($_POST->get("_username")== "admin") ) {
                 $session = new Session();
                 $session->set('username', $_POST->get("username"));
                 $f_dataErronea=false;
@@ -30,40 +38,18 @@ class AccountController extends Controller
             }
             else
                 $f_dataErronea=true;
-        }
+        }*/
 
         return $this->render("accounts/login/login.html.twig",
-            array( "flagDataErronea" => $f_dataErronea));
-    }
-
-    /**
-     * @Route("/register", name="register")
-     */
-    public function registerAction(Request $request)
-    {
-        //return $this->render("login.html.twig");
-        return $this->redirectToRoute("login");
-    }
-
-
-    /**
-     * @Route("/reset", name="reset")
-     */
-    public function resetAction(Request $request)
-    {
-        //return $this->render("login.html.twig");
-        return $this->redirectToRoute("login");
-    }
-
-
-    /**
-     * @Route("/logout", name="logout")
-     */
-    public function logoutAction(Request $request)
-    {
-        $session = new Session();
-        $session->remove('username');
-        return $this->redirectToRoute("login");
+            array(
+                "flagDataErronea" => $f_dataErronea,
+                // last username entered by the user
+                'last_username' => $lastUsername,
+                'error'         => $error,
+            ));
     }
 }
+
+
+
 

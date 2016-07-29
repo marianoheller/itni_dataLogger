@@ -3,7 +3,17 @@
 {% set maxPostsPerPage = 3 %}
 
 
+
+
 {% block login_alert %}
+
+    {% if error %}
+        <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+
     {# TODO ARREGLAR EL CLOSING DE LA ALERT#}
     {% if flagDataErronea == true %}
     <div class="alert alert-danger fade in">

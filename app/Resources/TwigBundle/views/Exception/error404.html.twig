@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pagina no encontrada</h1>
+
+    {# example security usage, see below #}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        {# ... #}
+    {% endif %}
+
+    <p>
+        La pagina no pudo ser localizada. Revise errores de ortografia
+        o <a href="{{ path('homepage') }}">vuelva a la pagina principal</a>.
+    </p>
+{% endblock %}
