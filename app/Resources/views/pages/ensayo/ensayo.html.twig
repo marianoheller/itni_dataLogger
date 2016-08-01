@@ -154,18 +154,12 @@
 
 {% block ensayoJavascript %}
 
-
-
-    {#<script src="{{ asset('media/js/moment/moment.js') }}"></script>
-    <script src="{{ asset('media/js/charts/Chart.bundle.js') }}"></script>#}
-
-
-
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-    {#<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>#}
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
+    {#<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>#}
+    <script src="{{ asset('media/js/moment/moment.min.js') }}"></script>
+    {#<script type="text/javascript" src="https://www.google.com/jsapi"></script>#}
+    <script src="{{ asset('media/js/jsapi.js') }}"></script>
+    {#<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>#}
+    <script src="{{ asset('media/js/dygraph-combined.js') }}"></script>
 
     <script src="{{ asset('media/js/polyfill.js') }}"></script>
 

@@ -5,67 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/media/js/bootstrap/3.3.6/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/media/js/dygraph-combined.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/media/js/jsapi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/media/js/moment/moment.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/media/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/media/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/media/js/moment/moment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/media/js/npm.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="$PROJECT_DIR$/web/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.map" afterPath="$PROJECT_DIR$/app/cache/dev/classes.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.php" afterPath="$PROJECT_DIR$/app/cache/dev/classes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/classes.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/00/00db04ed1a73281de2f230f8b152f054a6dc83ed04d4615eda35c918a50dc910.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/00/00db04ed1a73281de2f230f8b152f054a6dc83ed04d4615eda35c918a50dc910.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/08/08b4e6f86c3b833f0cbc39ccecc1d1cf05c0f59926b41f7b80bb7b55b7a80013.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/08/08b4e6f86c3b833f0cbc39ccecc1d1cf05c0f59926b41f7b80bb7b55b7a80013.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c6d21a0284e89a6462f643ea486584bcd7ac528970dfb514af65f2eed3b72c5.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c6d21a0284e89a6462f643ea486584bcd7ac528970dfb514af65f2eed3b72c5.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0d/0dedf4e04314370a59f96f2af764028828a05133c7526bec9c8942ec8926f343.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0d/0dedf4e04314370a59f96f2af764028828a05133c7526bec9c8942ec8926f343.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/17/17f61189c96cb8c3aa22a465c448d4ecc3268f500a07ebbb52b245563533b724.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/17/17f61189c96cb8c3aa22a465c448d4ecc3268f500a07ebbb52b245563533b724.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/20/20aa8de2bdebef24c10d9b339429d81ce8a8bc656b360a6b7859ef8e701cf039.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/20/20aa8de2bdebef24c10d9b339429d81ce8a8bc656b360a6b7859ef8e701cf039.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/22/223270526d4bff029fba89df46a5e4e8f0fc236fcae14cf04ab08e9cdcd3b61d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/22/223270526d4bff029fba89df46a5e4e8f0fc236fcae14cf04ab08e9cdcd3b61d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/2d/2de6c6e3c79001c857a39e620d4c61526d20eacf20eb0dc69fabfc24000082e8.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/2d/2de6c6e3c79001c857a39e620d4c61526d20eacf20eb0dc69fabfc24000082e8.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/33/332a70cee8f00e23ea4fea39a6cd388564e3f35413c48ba20ccfdd79e5fd32d3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/33/332a70cee8f00e23ea4fea39a6cd388564e3f35413c48ba20ccfdd79e5fd32d3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/33/33ff98b921703909eddbc4a2d36509d065d873dec35bfa91e88955a8f6b96d0f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/33/33ff98b921703909eddbc4a2d36509d065d873dec35bfa91e88955a8f6b96d0f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/49/4967cc0217fcaa20b23e33d065bdf27249628624abef3f958e8e640ca72e1494.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/49/4967cc0217fcaa20b23e33d065bdf27249628624abef3f958e8e640ca72e1494.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/58/58c661c93f33ad9a3ec23abd0e90ee278a99e423cada9335b43b4282fc5e5c2f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/58/58c661c93f33ad9a3ec23abd0e90ee278a99e423cada9335b43b4282fc5e5c2f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5c/5ccacd98f7db4647b1be7d7c8f4dbf22e6253d70a3f1d80864ad7f46cadb03f9.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5c/5ccacd98f7db4647b1be7d7c8f4dbf22e6253d70a3f1d80864ad7f46cadb03f9.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5f/5ff99f9ec9f3b693bb851c009d2c6ca6e8a16b9610b3857759d948fc462ae7e3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5f/5ff99f9ec9f3b693bb851c009d2c6ca6e8a16b9610b3857759d948fc462ae7e3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/72/72e88184ebba0430cc37424e759efcff773cd2ebf9fa58e03894017cf1260f88.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/72/72e88184ebba0430cc37424e759efcff773cd2ebf9fa58e03894017cf1260f88.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/7e/7e7a807843a8e2f4045b9244545fcbce3b8391a8bd802b34e30f9fb53fefcb72.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/7e/7e7a807843a8e2f4045b9244545fcbce3b8391a8bd802b34e30f9fb53fefcb72.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/94/94094af0c2ed45a16bb83a9f151ea50895568c8fa9e986a09bc6b2dec41260f7.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/94/94094af0c2ed45a16bb83a9f151ea50895568c8fa9e986a09bc6b2dec41260f7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/95/95655b0c0ac1392e2076c6892dbf7bd8ef208edfccf589496bb50fc6d1e6b45f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/95/95655b0c0ac1392e2076c6892dbf7bd8ef208edfccf589496bb50fc6d1e6b45f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/99/997b2c9a089085ee6606d4fcdfe92be3d70187d9b7549a4fc6c75a8e5041b4be.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/99/997b2c9a089085ee6606d4fcdfe92be3d70187d9b7549a4fc6c75a8e5041b4be.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a0/a077d9202e8285836316a553c03f428a2d43515a5ba5746118163fb36e52caef.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a0/a077d9202e8285836316a553c03f428a2d43515a5ba5746118163fb36e52caef.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ac/ac01fc4735562c43ffee480b81444b5110ac32a37df3b5b718cb1ca41a73509c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ac/ac01fc4735562c43ffee480b81444b5110ac32a37df3b5b718cb1ca41a73509c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bb/bbc311b4f0d1e771193ac3fd7db3b4ae633f0cf968ec4649b9fab9db51136686.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bb/bbc311b4f0d1e771193ac3fd7db3b4ae633f0cf968ec4649b9fab9db51136686.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bc/bc601fafc69e736e97acd25fa48d820d09f61f878d83ef5ec790966879679d5a.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bc/bc601fafc69e736e97acd25fa48d820d09f61f878d83ef5ec790966879679d5a.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7169f11e6646d567b8ab00f0d4e141a4b5dc2a3f00cebdc98762d8e0af3a48c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7169f11e6646d567b8ab00f0d4e141a4b5dc2a3f00cebdc98762d8e0af3a48c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/df/dffc371314efaa45376c17d36562aa362139a392b4ae8802cf3f1fc910da3841.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/df/dffc371314efaa45376c17d36562aa362139a392b4ae8802cf3f1fc910da3841.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/e9/e9678daee9c37582e267007387e7fff53690345b02bacfb9baff9708fd90fa0f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/e9/e9678daee9c37582e267007387e7fff53690345b02bacfb9baff9708fd90fa0f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ef/ef942e2e5eb916327b455746bd101a26aae30ee0ecadd73ee487235ca48fe97d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ef/ef942e2e5eb916327b455746bd101a26aae30ee0ecadd73ee487235ca48fe97d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fc/fc8506ad99968fbebf5e687f8a096317792a6477d8ed5d45c5f87b73a94b630f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fc/fc8506ad99968fbebf5e687f8a096317792a6477d8ed5d45c5f87b73a94b630f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fe/feefa8eba7f087b7d5feb5c69c4ddcd6af5490ce24f82b7c4068d74997b7ec1c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fe/feefa8eba7f087b7d5feb5c69c4ddcd6af5490ce24f82b7c4068d74997b7ec1c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,53 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <file leaf-file-name="ensayo_config.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42987806">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.423077">
-              <caret line="46" column="30" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="30" />
-              <folding>
-                <element signature="e#1401#1433#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login_base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.615385">
-              <caret line="28" column="81" selection-start-line="28" selection-start-column="81" selection-end-line="28" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            <state vertical-scroll-proportion="2.8019018">
+              <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -195,11 +113,6 @@
         <option value="$PROJECT_DIR$/web/media/js/polyfill.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores/sensores.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
@@ -209,7 +122,13 @@
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig" />
       </list>
     </option>
   </component>
@@ -295,6 +214,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -377,6 +298,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -417,7 +364,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -454,6 +401,92 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sensores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ensayo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -537,8 +570,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -814,7 +845,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469727874142</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Added security bundle.">
+      <created>1469814840434</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1469814840434</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -828,15 +865,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36353946" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3672708" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.57036245" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26737967" sideWeight="0.5724947" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.4914712" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.42963752" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26737967" sideWeight="0.42750534" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -864,7 +901,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Ajax request works. Client side doesnt." />
     <MESSAGE value="Working ajax on testing." />
     <MESSAGE value="Working ajax on promedio.&#10;Changed /testing to /" />
     <MESSAGE value="Added historial." />
@@ -889,7 +925,8 @@
     <MESSAGE value="Added navbar  compat.." />
     <MESSAGE value="Chenged buttons on ensayo running alert." />
     <MESSAGE value="Added security bundle." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added security bundle." />
+    <MESSAGE value="Added local script files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added local script files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -898,17 +935,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/datalogger/data.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="75" selection-end-column="14" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,24 +1111,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/sensores/sensores.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13843648">
           <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08306189">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1122,49 +1139,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5952381">
-          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6761905">
-          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0238096">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-117.69231">
-          <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.85518295">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1172,15 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6206349">
           <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026984127">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,13 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-          <folding>
-            <marker date="1469808603104" expanded="true" signature="664:1142" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1469808603104" expanded="true" signature="815:954" placeholder="SELECT senso..datalog..." />
-            <marker date="1469808603104" expanded="true" signature="3325:4145" placeholder="UPDATE ensay..." />
-            <marker date="1469808603104" expanded="true" signature="4637:4723" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1469808603104" expanded="true" signature="6891:6957" placeholder="UPDATE ensay..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1202,7 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35238096">
           <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,7 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13492064">
           <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,7 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1226,9 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1247,42 +1203,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.12957317">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08095238">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.423077">
+        <state vertical-scroll-proportion="0.59587955">
           <caret line="46" column="30" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="30" />
-          <folding>
-            <element signature="e#1401#1433#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.615385">
-          <caret line="28" column="81" selection-start-line="28" selection-start-column="81" selection-end-line="28" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42987806">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.37899545">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.769231">
+          <caret line="496" column="10" selection-start-line="496" selection-start-column="10" selection-end-line="496" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/sensores/sensores.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0570523">
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/about_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83835185">
+          <caret line="86" column="80" selection-start-line="86" selection-start-column="80" selection-end-line="86" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/sensores_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6497623">
+          <caret line="97" column="80" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/homepage_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54199684">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38034865">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="91" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48494452">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.42789224">
+          <caret line="3" column="89" selection-start-line="3" selection-start-column="89" selection-end-line="3" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8019018">
+          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
           <folding />
         </state>
       </provider>
