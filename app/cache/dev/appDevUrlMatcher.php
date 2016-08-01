@@ -123,45 +123,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\AccountController::loginAction',  '_route' => 'login',);
         }
 
-        if (0 === strpos($pathinfo, '/old_')) {
-            // old_index
-            if ($pathinfo === '/old_index') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::indexAction',  '_route' => 'old_index',);
-            }
-
-            // main
-            if ($pathinfo === '/old_homepage') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::lastDataAction',  '_route' => 'main',);
-            }
-
-        }
-
-        // promedio
-        if ($pathinfo === '/promedio') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::promedioAction',  '_route' => 'promedio',);
-        }
-
-        if (0 === strpos($pathinfo, '/hist')) {
-            // historial
-            if ($pathinfo === '/historial') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::histDataAction',  '_route' => 'historial',);
-            }
-
-            // historial_update
-            if ($pathinfo === '/hist_update') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::histUpdateDataAction',  '_route' => 'historial_update',);
-            }
-
+        // checkEnsayoStart
+        if ($pathinfo === '/checkEnsayoStart') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DeviceController::checkEnsayoStartAction',  '_route' => 'checkEnsayoStart',);
         }
 
         // logData
         if ($pathinfo === '/logdata') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DataLoggerController::logDataAction',  '_route' => 'logData',);
-        }
-
-        // checkEnsayoStart
-        if ($pathinfo === '/checkEnsayoStart') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DeviceController::checkEnsayoStartAction',  '_route' => 'checkEnsayoStart',);
+            return array (  '_controller' => 'AppBundle\\Controller\\DeviceController::logDataAction',  '_route' => 'logData',);
         }
 
         // homepage
