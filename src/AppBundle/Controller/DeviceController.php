@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 //use Symfony\Component\Validator\Constraints\DateTime;
 
 use AppBundle\Entity\Ensayo;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 
 class DeviceController extends Controller
@@ -43,7 +44,9 @@ class DeviceController extends Controller
             foreach ($data as $name => $value) {
                 if ($name == "LOGIN") {
                     foreach ($value as $entry) {
-                        $password = $entry->password;
+                        if (isset($entry->password)) {
+                            $password = $entry->password;
+                        }
                     }
                 }
             }
@@ -69,10 +72,13 @@ class DeviceController extends Controller
                 $stmt->execute();
                 $arrayQueryResult = $stmt->fetchAll();
 
+                $timezone = new \DateTimeZone("America/Argentina/Buenos_Aires");
+                $now = new \DateTime("now",$timezone);
+
 
                 if ( !empty($arrayQueryResult) ) {
                     $response->setStatusCode(Response::HTTP_OK);
-                    $response->setContent("Ensayo iniciado!");
+                    $response->setContent($now->format('H:i:s d-m-Y'));
                 }
                 else {
                     $response->setStatusCode(Response::HTTP_PRECONDITION_FAILED);
