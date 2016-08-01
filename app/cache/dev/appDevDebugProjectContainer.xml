@@ -226,7 +226,12 @@
     <parameter key="security.http_utils.class">Symfony\Component\Security\Http\HttpUtils</parameter>
     <parameter key="security.validator.user_password.class">Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator</parameter>
     <parameter key="security.expression_language.class">Symfony\Component\Security\Core\Authorization\ExpressionLanguage</parameter>
-    <parameter key="security.role_hierarchy.roles" type="collection"/>
+    <parameter key="security.role_hierarchy.roles" type="collection">
+      <parameter key="ROLE_ADMIN" type="collection">
+        <parameter>ROLE_USER</parameter>
+        <parameter>ROLE_DEVICE</parameter>
+      </parameter>
+    </parameter>
     <parameter key="security.authentication.retry_entry_point.class">Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint</parameter>
     <parameter key="security.channel_listener.class">Symfony\Component\Security\Http\Firewall\ChannelListener</parameter>
     <parameter key="security.authentication.form_entry_point.class">Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint</parameter>
@@ -1869,7 +1874,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>579bb3a5061d66.65684830</argument>
+            <argument>579f7569bbdcb2.73777976</argument>
           </service>
         </argument>
       </argument>
@@ -1893,8 +1898,9 @@
       <call method="setVoters">
         <argument type="collection">
           <argument type="service">
-            <service class="Symfony\Component\Security\Core\Authorization\Voter\RoleVoter" public="false">
+            <service class="Symfony\Component\Security\Core\Authorization\Voter\RoleHierarchyVoter" public="false">
               <tag name="security.voter" priority="245"/>
+              <argument type="service" id="security.role_hierarchy"/>
             </service>
           </argument>
           <argument type="service">
@@ -1917,7 +1923,12 @@
       </call>
     </service>
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="ROLE_ADMIN" type="collection">
+          <argument>ROLE_USER</argument>
+          <argument>ROLE_DEVICE</argument>
+        </argument>
+      </argument>
     </service>
     <service id="security.firewall" class="Symfony\Component\Security\Http\Firewall">
       <tag name="kernel.event_subscriber"/>
@@ -1987,6 +1998,17 @@
       <call method="createUser">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\User\User" public="false">
+            <argument>device</argument>
+            <argument>INTI1957</argument>
+            <argument type="collection">
+              <argument>ROLE_DEVICE</argument>
+            </argument>
+          </service>
+        </argument>
+      </call>
+      <call method="createUser">
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\User\User" public="false">
             <argument>admin</argument>
             <argument>admin</argument>
             <argument type="collection">
@@ -2015,6 +2037,17 @@
                   </argument>
                   <argument type="collection">
                     <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/logdata</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_DEVICE</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2162,7 +2195,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>579bb3a5061d66.65684830</argument>
+            <argument>579f7569bbdcb2.73777976</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2182,6 +2215,17 @@
                   </argument>
                   <argument type="collection">
                     <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/logdata</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_DEVICE</argument>
                   </argument>
                   <argument>null</argument>
                 </call>

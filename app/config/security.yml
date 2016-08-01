@@ -10,6 +10,9 @@ security:
                     invitado:
                         password: invitado
                         roles: 'ROLE_INVITADO'
+                    device:
+                        password: INTI1957
+                        roles: 'ROLE_DEVICE'
                     admin:
                         password: admin
                         roles: 'ROLE_ADMIN'
@@ -36,6 +39,11 @@ security:
 
     access_control:
             - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/logdata, roles: ROLE_DEVICE }
+            - { path: ^/checkEnsayoStart, roles: ROLE_DEVICE }
             - { path: ^/, roles: ROLE_ADMIN }
+
+    role_hierarchy:
+            ROLE_ADMIN: [ROLE_USER, ROLE_DEVICE]
 
 
