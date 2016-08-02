@@ -1,0 +1,13 @@
+prod:
+  host: domain.com
+  user: www
+  identity_file: ~
+  stage: production
+  deploy_path: /home/www/
+
+prod.local:
+  host: localhost
+  user: www
+  stage: local
+  local: true
+  deploy_path: C:\xampp\htdocs
