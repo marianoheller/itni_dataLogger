@@ -56,9 +56,6 @@ class SensoresController extends Controller
         }
     }
 
-    /*
-     * TODO agregar boton de ensayo andando y cancelar ensayo
-    */
 
     /**
      * @Route("/getGraphData", name="getGraphData")
@@ -104,7 +101,6 @@ class SensoresController extends Controller
             $em = $this->getDoctrine()->getManager();
             $count = $em->getConnection()->executeUpdate($qlUpdateLastPing);
 
-            //TODO arreglar la hora a display -> guardar last time stamp en window.lastTimeStamp
 
 
             // GET DATA

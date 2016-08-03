@@ -21,12 +21,24 @@ class PagesController extends Controller
      */
     public function homepageAction(Request $request)
     {
-        return $this->render("pages/homepage_base.html.twig");
-        /*$session = new Session();
-        if ( $session->get("username") )
-            return $this->render("pages/homepage_base.html.twig");
-        else
-            return $this->redirectToRoute("login");*/
+        //Check if ensayo is running
+        $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
+                                                FROM ensayo
+                                                HAVING diff = (
+                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
+                                                    FROM ensayo
+                                                    HAVING diffAux<(5*60)
+                                                    AND diffAux>= 0
+                                                    AND t_fin IS NULL
+                                                    )";
+        $em = $this->getDoctrine()->getManager();
+        $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+
+        return $this->render("pages/homepage/homepage.html.twig", array (
+            'isEnsayoRunning' =>  !empty($arrayQueryResult)
+        ));
     }
 
 
@@ -35,7 +47,25 @@ class PagesController extends Controller
      */
     public function sensoresAction(Request $request)
     {
-        return $this->render("pages/sensores/sensores.html.twig");
+        //Check if ensayo is running
+        $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
+                                                FROM ensayo
+                                                HAVING diff = (
+                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
+                                                    FROM ensayo
+                                                    HAVING diffAux<(5*60)
+                                                    AND diffAux>= 0
+                                                    AND t_fin IS NULL
+                                                    )";
+        $em = $this->getDoctrine()->getManager();
+        $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+
+
+        return $this->render("pages/sensores/sensores.html.twig", array (
+            'isEnsayoRunning' =>  !empty($arrayQueryResult)
+        ));
     }
 
     /**

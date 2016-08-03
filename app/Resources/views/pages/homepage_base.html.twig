@@ -33,6 +33,9 @@
             }
         }
     </style>
+
+    {% block extraCss %}
+    {% endblock %}
 </head>
 
 <body>
@@ -57,16 +60,19 @@
                 <a class="nav-link" href="{{ path('about') }}">Acerca de</a>
             </li>
         </ul>
+
         <ul class="nav navbar-nav navbar-right pull-xs-right">
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link" href="{{ path('logout') }}">Cerrar sesión</a>
             </li>
         </ul>
     </div>
 </nav>
 
-<div class="container">
+{% block ensayoRunningAlert %}
+{% endblock %}
 
+<div class="container">
     <div class="starter-template">
         <h1>Pagina principal</h1>
         <p class="lead">Descripcion de la plataforma.<br> To do.</p>

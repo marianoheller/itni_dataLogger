@@ -151,25 +151,42 @@ class DeviceController extends Controller
                 $arrayQueryResult = $stmt->fetchAll();
 
                 //SI HAY ENSAYO CORRIENDO
+                $stringResponse = "";
                 if ( !empty($arrayQueryResult) ) {
                     $contItemsAdded = 0;
                     foreach ($data as $name => $value) {
                         if ($name == "CANALES") {
+                            $stringResponse .= "<table border='1' style='text-align: center;'>";
+                            $stringResponse .= "<thead>";
+                            $stringResponse .= "<tr>";
+                            $stringResponse .= "<th>";
+                            $stringResponse .= "Fecha";
+                            $stringResponse .= "</th>";
+                            $stringResponse .= "<th>";
+                            $stringResponse .= "Canal";
+                            $stringResponse .= "</th>";
+                            $stringResponse .= "<th>";
+                            $stringResponse .= "Medicion";
+                            $stringResponse .= "</th>";
+                            $stringResponse .= "</tr>";
+                            $stringResponse .= "</thead>";
+                            $stringResponse .= "<tbody>";
                             foreach ($value as $entry) {
                                 $datalog = new Datalog();
                                 $datalog->setSensorId(intval($entry->canal));
                                 $datalog->setMedicion($entry->temperatura);
 
-                                echo "$contItemsAdded)Nuevo registro";
-                                echo "<br>";
-                                echo "Fecha: " . $entry->fecha;
-                                echo "<br>";
-                                echo "Canal: " . $entry->canal;
-                                echo "<br>";
-                                echo "Medicion: " . $entry->temperatura;
-                                echo "<br>";
-                                echo "==================================================";
-                                echo "<br>";
+                                $stringResponse .= "<tr>";
+                                $stringResponse .= "<td>";
+                                $stringResponse .=  $entry->fecha;
+                                $stringResponse .= "</td>";
+                                $stringResponse .= "<td>";
+                                $stringResponse .= $entry->canal;
+                                $stringResponse .= "</td>";
+                                $stringResponse .= "<td>";
+                                $stringResponse .= $entry->temperatura;
+                                $stringResponse .= "</td>";
+                                $stringResponse .= "</tr>";
 
                                 $fecha = new \DateTime();
                                 $fecha = $fecha->createFromFormat('d/m/Y H:i:s', $entry->fecha);
@@ -181,7 +198,11 @@ class DeviceController extends Controller
                             }
                         }
                     }
-                    $stringResponse = 'Recibidas ' . $contItemsAdded . ' mediciones nuevas<br/>';
+                    $stringResponse .= "</tbody>";
+                    $stringResponse .= "</table>";
+                    $stringResponse .= "<p>";
+                    $stringResponse .= 'Recibidas ' . $contItemsAdded . ' mediciones nuevas.';
+                    $stringResponse .= "</p>";
                     $response->setContent($stringResponse);
                 }
                 else {
@@ -189,7 +210,6 @@ class DeviceController extends Controller
                     $response->setContent("Ensayo no iniciado.");
                 }
             }
-            //TODO Mejor respuesta al recibir datos. Por ej una tabla con la data recibida.
         }
         return $response;
     }

@@ -11,6 +11,17 @@
     </style>
 {% endblock %}
 
+{% block ensayoRunningAlert %}
+
+    {% if isEnsayoRunning == true  %}
+
+        <div class="alert alert-warning col-md-10 offset-md-1" role="alert">
+            <strong>Ensayo iniciado!</strong> Recuerde finalizarlo una vez concluido en ensayo.
+        </div>
+
+    {% endif %}
+{% endblock %}
+
 {% block statusActual %}
 
     <div class="form-group">

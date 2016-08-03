@@ -1,0 +1,20 @@
+{% extends 'pages/homepage_base.html.twig' %}
+
+{% block extraCss %}
+    {% if isEnsayoRunning == true  %}
+        <style>
+
+        </style>
+    {% endif %}
+{% endblock %}
+
+{% block ensayoRunningAlert %}
+
+    {% if isEnsayoRunning == true  %}
+
+    <div class="alert alert-warning col-md-10 offset-md-1" role="alert">
+        <strong>Ensayo iniciado!</strong> Recuerde finalizarlo una vez concluido en ensayo.
+    </div>
+
+    {% endif %}
+{% endblock %}
