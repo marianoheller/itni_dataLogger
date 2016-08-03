@@ -172,18 +172,12 @@ class PagesController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($ensayoObj);
             $em->flush();
-            //TODO check if persisted data went OK
-            $success = true; // <---- and affect success flag
-            if ( $success ) {
-                //TODO hacer select de ultimo ensayo y usear esa info para mandar al template
-                return $this->render("pages/ensayo/ensayo.html.twig", array (
-                    "lastPing" => $dateTimeInicio->format("Y-m-d H:i:s"),
-                    "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
-                ));
-            }
-            else {
-                return $this->redirectToRoute("ensayo");
-            }
+
+            //TODO hacer select de ultimo ensayo y usear esa info para mandar al template
+            return $this->render("pages/ensayo/ensayo.html.twig", array (
+                "lastPing" => $dateTimeInicio->format("Y-m-d H:i:s"),
+                "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
+            ));
         }
         else {
             return $this->redirectToRoute("ensayo");
