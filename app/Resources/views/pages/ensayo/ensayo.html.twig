@@ -65,6 +65,10 @@
             text-align: right;
         }
 
+        .hidden {
+            display: none;
+        }
+
     </style>
 {% endblock %}
 
@@ -132,6 +136,10 @@
     {% endfor %}
 
         <div class="tab-pane" id="tab_config">
+            <div id="alert-finalize-fail" class="alert alert-warning col-md-10 offset-md-1 hidden" role="alert">
+                <strong>Error de finalizacion!</strong> Vuelva a intentarlo en 1 min.
+            </div>
+
             <h4>Configuración</h4>
 
             <div class="container col-md-1">
@@ -251,8 +259,7 @@
                         window.location.replace("/");
                     })
                     .fail(function (jqXHR, textStatus, errorThrown) {
-                        {# TODO mejorar lo q se hace en failure#}
-                        window.location.replace("/");
+                        $('#alert-finalize-fail').removeClass('hidden');
                     });
         }
 
@@ -475,23 +482,6 @@
             window.dispatchEvent(new Event('resize'));
             //console.log("resize Triggered");
         });
-
-
-
-        /*window.onbeforeunload = function (e) {
-            var e = e || window.event;
-            var msg = "¿Esta seguro que desea abandonar la página?";
-
-            // For IE and Firefox
-            if (e) {
-                e.returnValue = msg;
-            }
-
-            // For Safari / chrome
-            return msg;
-        };*/
-
-         {#TODO hacer que ande cuando aprieten el boton de atras.#}
 
 
     </script>

@@ -173,7 +173,6 @@ class PagesController extends Controller
             $em->persist($ensayoObj);
             $em->flush();
 
-            //TODO hacer select de ultimo ensayo y usear esa info para mandar al template
             return $this->render("pages/ensayo/ensayo.html.twig", array (
                 "lastPing" => $dateTimeInicio->format("Y-m-d H:i:s"),
                 "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
@@ -184,6 +183,8 @@ class PagesController extends Controller
         }
     }
 }
+
+    /* TODO hacer Historial page*/
 
 
 
