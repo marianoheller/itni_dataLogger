@@ -25,18 +25,13 @@ class DeviceController extends Controller
     public function checkEnsayoStartAction(Request $request)
     {
         //Respuesta
-        $response = new Response(
-            'Content',
-            Response::HTTP_OK,
-            array('content-type' => 'text/html')
-        );
+        $response = new Response();
 
         $content = $request->getContent();
         $contentType = $request->getContentType();
 
         if ( $contentType != "json" || empty($content) ) {          //CONTENIDO NOT JSON
-            $params = "Params Empty or not json. Content type: ".$contentType;
-            $response->setContent($params);
+            $response->setContent("Params Empty or not json. Content type: ".$contentType);
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
         }
         else {
@@ -54,31 +49,18 @@ class DeviceController extends Controller
             }
             if ($password != passwordDevice) {          //PASSWORD ERRONEO
                 $response->setStatusCode(Response::HTTP_FORBIDDEN);
-                $params = "Params Empty or not json. Content type: " . $contentType;
-                $response->setContent($params);
+                $response->setContent("Params Empty or not json. Content type: " . $contentType);
             }
             else {                    //ELSE -> PARSEO LA DATA
 
-                $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
-                                                FROM ensayo
-                                                HAVING diff = (
-                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
-                                                    FROM ensayo
-                                                    HAVING diffAux<(5*60)
-                                                    AND diffAux>= 0
-                                                    AND t_fin IS NULL
-                                                    )";
-
                 $em = $this->getDoctrine()->getManager();
-                $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-                $stmt->execute();
-                $arrayQueryResult = $stmt->fetchAll();
+                $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
 
-                $timezone = new \DateTimeZone("America/Argentina/Buenos_Aires");
-                $now = new \DateTime("now",$timezone);
+                if ( $isEnsayoRunning ) {
 
+                    $timezone = new \DateTimeZone("America/Argentina/Buenos_Aires");
+                    $now = new \DateTime("now",$timezone);
 
-                if ( !empty($arrayQueryResult) ) {
                     $response->setStatusCode(Response::HTTP_OK);
                     $response->setContent($now->format('H:i:s d-m-Y'));
                 }
@@ -135,24 +117,12 @@ class DeviceController extends Controller
             }
             else {
                 //ELSE -> checkeo si hay ensayo running
-                $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
-                                                FROM ensayo
-                                                HAVING diff = (
-                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
-                                                    FROM ensayo
-                                                    HAVING diffAux<(5*60)
-                                                    AND diffAux>= 0
-                                                    AND t_fin IS NULL
-                                                    )";
-
                 $em = $this->getDoctrine()->getManager();
-                $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-                $stmt->execute();
-                $arrayQueryResult = $stmt->fetchAll();
+                $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
 
                 //SI HAY ENSAYO CORRIENDO
                 $stringResponse = "";
-                if ( !empty($arrayQueryResult) ) {
+                if ( $isEnsayoRunning ) {
                     $contItemsAdded = 0;
                     foreach ($data as $name => $value) {
                         if ($name == "CANALES") {
