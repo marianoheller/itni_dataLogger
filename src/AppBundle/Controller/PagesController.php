@@ -22,22 +22,10 @@ class PagesController extends Controller
     public function homepageAction(Request $request)
     {
         //Check if ensayo is running
-        $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
-                                                FROM ensayo
-                                                HAVING diff = (
-                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
-                                                    FROM ensayo
-                                                    HAVING diffAux<(5*60)
-                                                    AND diffAux>= 0
-                                                    AND t_fin IS NULL
-                                                    )";
         $em = $this->getDoctrine()->getManager();
-        $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
-
+        $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
         return $this->render("pages/homepage/homepage.html.twig", array (
-            'isEnsayoRunning' =>  !empty($arrayQueryResult)
+            'isEnsayoRunning' =>  $isEnsayoRunning
         ));
     }
 
@@ -48,23 +36,10 @@ class PagesController extends Controller
     public function sensoresAction(Request $request)
     {
         //Check if ensayo is running
-        $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
-                                                FROM ensayo
-                                                HAVING diff = (
-                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
-                                                    FROM ensayo
-                                                    HAVING diffAux<(5*60)
-                                                    AND diffAux>= 0
-                                                    AND t_fin IS NULL
-                                                    )";
         $em = $this->getDoctrine()->getManager();
-        $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
-
-
+        $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
         return $this->render("pages/sensores/sensores.html.twig", array (
-            'isEnsayoRunning' =>  !empty($arrayQueryResult)
+            'isEnsayoRunning' =>  $isEnsayoRunning
         ));
     }
 
@@ -74,29 +49,13 @@ class PagesController extends Controller
     public function ensayoAction(Request $request)
     {
         //Check if ensayo is running
-        $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
-                                                FROM ensayo
-                                                HAVING diff = (
-                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
-                                                    FROM ensayo
-                                                    HAVING diffAux<(5*60)
-                                                    AND diffAux>= 0
-                                                    AND t_fin IS NULL
-                                                    )";
         $em = $this->getDoctrine()->getManager();
-        $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+        $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
+        $arrayQueryResult = $em->getRepository('AppBundle:Ensayo')->getEnsayoActual();
 
 
-        if ( !empty($arrayQueryResult) ) {
-            $flagEnsayoRunning = true;
-        }
-        else {
-            $flagEnsayoRunning = false;
-        }
         return $this->render("pages/ensayo/ensayo_config.html.twig", array (
-            "flagEnsayoRunning" => $flagEnsayoRunning,
+            "flagEnsayoRunning" => $isEnsayoRunning,
             "arrayQueryResult" => $arrayQueryResult
         ));
     }
@@ -118,21 +77,12 @@ class PagesController extends Controller
         if ($slug == 2) {
             //if there is POST data
             if ( $request->request->count() != 0) {
-                $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
-                                                FROM ensayo
-                                                HAVING diff = (
-                                                    SELECT MIN(TIMESTAMPDIFF(SECOND, lastPing, NOW())) as diffAux
-                                                    FROM ensayo
-                                                    HAVING diffAux<(5*60)
-                                                    AND diffAux>= 0
-                                                    AND t_fin IS NULL
-                                                    )";
                 $em = $this->getDoctrine()->getManager();
-                $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-                $stmt->execute();
-                $arrayQueryResult = $stmt->fetchAll();
+                $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
+                $arrayQueryResult = $em->getRepository('AppBundle:Ensayo')->getEnsayoActual();
+
                 //if NO hay ensayo andando
-                if ( empty($arrayQueryResult)) {
+                if ( !$isEnsayoRunning) {
                     return $this->redirectToRoute("ensayo");
                 }
                 //else ALL GOOD
@@ -184,7 +134,7 @@ class PagesController extends Controller
     }
 }
 
-    /* TODO hacer Historial page*/
+    /* TODO hacer Historial de ensayos page*/
 
 
 

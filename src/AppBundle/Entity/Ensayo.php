@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Ensayo
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EnsayoRepository")
  */
 class Ensayo
 {
@@ -310,5 +310,7 @@ class Ensayo
     {
         return $this->lastPing;
     }
+
+
 }
 
