@@ -4,6 +4,8 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
+
+    providers:
         in_memory:
             memory:
                 users:

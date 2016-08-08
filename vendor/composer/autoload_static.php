@@ -95,10 +95,6 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         array (
             'GuzzleHttp\\Psr7\\' => 16,
         ),
-        'F' => 
-        array (
-            'FOS\\UserBundle\\' => 15,
-        ),
         'D' => 
         array (
             'Doctrine\\DBAL\\Migrations\\' => 25,
@@ -275,10 +271,6 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'FOS\\UserBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
         ),
         'Doctrine\\DBAL\\Migrations\\' => 
         array (

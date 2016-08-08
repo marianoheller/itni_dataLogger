@@ -20505,3 +20505,14 @@ a5dca5,127.0.0.1,POST,http://localhost:8000/getGraphData,1470415547,,200
 ddaa56,127.0.0.1,POST,http://localhost:8000/getGraphData,1470415559,,200
 47e890,127.0.0.1,POST,http://localhost:8000/getGraphData,1470415570,,200
 ccf2ae,127.0.0.1,POST,http://localhost:8000/getGraphData,1470415581,,200
+723207,127.0.0.1,GET,http://localhost:8000/,1470667021,,200
+8dabd8,127.0.0.1,GET,http://localhost:8000/logout,1470667025,,302
+1dff09,127.0.0.1,GET,http://localhost:8000/login,1470667026,,200
+126381,127.0.0.1,POST,http://localhost:8000/login,1470667029,,302
+6bff55,127.0.0.1,GET,http://localhost:8000/login,1470667030,,200
+702005,127.0.0.1,GET,http://localhost:8000/,1470667189,,302
+30fd95,127.0.0.1,GET,http://localhost:8000/login,1470667190,,200
+70ee8d,127.0.0.1,POST,http://localhost:8000/login,1470667193,,302
+2f6693,127.0.0.1,GET,http://localhost:8000/,1470667194,,200
+25a53c,127.0.0.1,GET,http://localhost:8000/logout,1470667196,,302
+7e2d19,127.0.0.1,GET,http://localhost:8000/login,1470667197,,200
