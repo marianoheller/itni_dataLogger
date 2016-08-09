@@ -3,24 +3,30 @@
 security:
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
-    providers:
+
 
     providers:
+        my_db_provider:
+            entity:
+                class: AppBundle:User
+                property: username
         in_memory:
             memory:
                 users:
-                    invitado:
-                        password: invitado
-                        roles: 'ROLE_INVITADO'
                     device:
                         password: INTI1957
                         roles: 'ROLE_DEVICE'
+                    user:
+                        password: user
+                        roles: 'ROLE_USER'
                     admin:
                         password: admin
                         roles: 'ROLE_ADMIN'
 
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        AppBundle\Entity\User:
+            algorithm: bcrypt
 
 
     firewalls:
@@ -31,6 +37,7 @@ security:
         main:
             anonymous: ~
             pattern: ^/
+            provider: my_db_provider
             form_login:
                 login_path: login
                 check_path: login
@@ -43,7 +50,9 @@ security:
             - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/logdata, roles: ROLE_DEVICE }
             - { path: ^/checkEnsayoStart, roles: ROLE_DEVICE }
-            - { path: ^/, roles: ROLE_ADMIN }
+            - { path: ^/admin, roles: ROLE_ADMIN }
+            - { path: ^/, roles: ROLE_USER }
+
 
     role_hierarchy:
             ROLE_ADMIN: [ROLE_USER, ROLE_DEVICE]

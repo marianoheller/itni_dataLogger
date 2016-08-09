@@ -132,11 +132,13 @@ class PagesController extends Controller
             return $this->redirectToRoute("ensayo");
         }
     }
+
+
 }
 
     /* TODO hacer Historial de ensayos page*/
 
 
 
-//TODO FOSUser
+
 //TODO Deployer bundle (linux aparentemente)
