@@ -21,6 +21,6 @@ class PagesAdminController extends Controller
      */
     public function adminAction(Request $request)
     {
-        return $this->render("admin/admin_base.html.twig");
+        return $this->render("admin/admin.html.twig");
     }
 }

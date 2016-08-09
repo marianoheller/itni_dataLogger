@@ -1,0 +1,51 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block content_admin %}
+
+    <div class="container col-md-1"></div>
+    <div class="container-fluid">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#cuentas" role="tab">Cuentas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" data-toggle="tab" href="#otros" role="tab">Otros</a>
+            </li>
+        </ul>
+
+
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="cuentas" role="tabpanel">
+
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-xs-2 col-form-label">Username</label>
+                    <div class="col-xs-10">
+                        <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
+                    <div class="col-xs-10">
+                        <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
+                    <div class="col-xs-10">
+                        <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="otros" role="tabpanel">
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container col-md-1"></div>
+
+{% endblock %}
