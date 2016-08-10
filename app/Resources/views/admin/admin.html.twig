@@ -13,30 +13,54 @@
             </li>
         </ul>
 
-
-
         <!-- Tab panes -->
         <div class="tab-content">
-            <div class="tab-pane active" id="cuentas" role="tabpanel">
+            <div class="tab-pane active m-t-2" id="cuentas" role="tabpanel">
 
-                <div class="form-group row">
-                    <label for="example-text-input" class="col-xs-2 col-form-label">Username</label>
-                    <div class="col-xs-10">
-                        <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+                <div class="col-md-5 offset-md-1">
+                    <div id="alert-user-existente" class="alert alert-danger" role="alert">
+                        <small><strong>Error!</strong> Nombre de usuario ya existente.</small>
                     </div>
+                    <h4 class="m-b-2">Agregar usuario</h4>
+                    <form method="post" name="register_form" onsubmit="return validateUserAvailability();">
+                        <div class="form-group row">
+                            <label for="register-username-input" class="col-xs-2 col-form-label">Username</label>
+                            <div class="col-xs-10">
+                                <input name="add-username" class="form-control" type="text"  id="register-username-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for=register-email-input" class="col-xs-2 col-form-label">Email</label>
+                            <div class="col-xs-10">
+                                <input name="add-email" class="form-control" type="email" id="register-email-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="register-password-input" class="col-xs-2 col-form-label">Password</label>
+                            <div class="col-xs-10">
+                                <input name="add-password" class="form-control" type="password"  id="register-password-input" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-secondary pull-md-right">Agregar</button>
+                    </form>
                 </div>
-                <div class="form-group row">
-                    <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
-                    <div class="col-xs-10">
-                        <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-                    </div>
+                <div class="col-md-5 offset-md-6 m-l-1">
+                    <h4 class="m-b-2">Eliminar usuario</h4>
+                    <form>
+
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-md-2 col-form-label">Usuario: </label>
+                            <select class="custom-select" name="username-eliminar">
+                                <option value="-1" selected>Seleccionar usuario</option>
+                                {% for user in arrayUsers %}
+                                <option value="{{ user.username }}">{{ user.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-secondary pull-md-right">Eliminar</button>
+                    </form>
                 </div>
-                <div class="form-group row">
-                    <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-                    <div class="col-xs-10">
-                        <input class="form-control" type="password" value="hunter2" id="example-password-input">
-                    </div>
-                </div>
+
             </div>
 
             <div class="tab-pane" id="otros" role="tabpanel">
@@ -48,4 +72,26 @@
     </div>
     <div class="container col-md-1"></div>
 
+{% endblock %}
+
+
+{% block javascript %}
+    <script>
+        function validateUserAvailability() {
+            var username = document.forms["register_form"]["username"].value;
+            {% for user in arrayUsers %}
+            if (username == "{{ user.username }}") {
+                $('#alert-user-existente').show();
+                return false;
+            }
+            {% endfor %}
+            return true;
+        }
+
+        $(document).ready(function() {
+            $('#alert-user-existente').hide();
+        });
+
+
+    </script>
 {% endblock %}

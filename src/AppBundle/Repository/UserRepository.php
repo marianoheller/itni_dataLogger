@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use AppBundle\Entity\User;
 
 /**
  * UserRepository
@@ -12,5 +13,24 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+    public function getAllUsersNonAdmin() {
+        $sqlGetAllNonAdmin = "SELECT * FROM `user` WHERE is_admin!=1";
+        $em = $this->getEntityManager();
+        $stmt = $em->getConnection()->prepare($sqlGetAllNonAdmin);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+
+        return $arrayQueryResult;
+    }
+
+    public function addUser($userObj) {
+        $em = $this->getEntityManager();
+        $em->persist($userObj);
+        $em->flush();
+    }
+
+    public function deleteUserWithUsername($username) {
+        $sqlAddUser = "DELETE FROM table_name [WHERE Clause]";
+    }
 
 }

@@ -35,7 +35,7 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Email()
      */
@@ -52,12 +52,15 @@ class User implements UserInterface, \Serializable
     private $active;
 
 
-    public function __construct()
+    public function __construct($username,$email)
     {
         $this->active = true;
         $this->admin = false;
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
+
+        $this->username = $username;
+        $this->email = $email;
     }
 
     public function getUsername()
@@ -111,6 +114,15 @@ class User implements UserInterface, \Serializable
     {
         return $this->isActive;
     }
+
+
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+
 
     /** @see \Serializable::serialize() */
     public function serialize()
