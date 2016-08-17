@@ -48,6 +48,26 @@ class EnsayoRepository extends EntityRepository
         return $arrayQueryResult;
     }
 
+    public function getAll() {
+        $sqlGetAll =   "SELECT * from ensayo";
+        $em = $this->getEntityManager();
+        $stmt = $em->getConnection()->prepare($sqlGetAll);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+
+        return $arrayQueryResult;
+    }
+
+    public function getAllOrderedLastFirst() {
+        $sqlGetAll =   "SELECT * from ensayo ORDER BY t_inicio DESC";
+        $em = $this->getEntityManager();
+        $stmt = $em->getConnection()->prepare($sqlGetAll);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+
+        return $arrayQueryResult;
+    }
+
     public function updateLastPing() {
         $lastPingObj = new \DateTime("now",new \DateTimeZone("America/Argentina/Buenos_Aires"));
         $lastPingString = $lastPingObj->format("Y-m-d H:i:s");
@@ -81,5 +101,9 @@ class EnsayoRepository extends EntityRepository
 
         //Affected rows
         return $count;
+    }
+
+    public function findOneByID($id) {
+        return $this->findOneBy(array("id" => $id));
     }
 }

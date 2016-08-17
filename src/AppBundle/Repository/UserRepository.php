@@ -13,6 +13,10 @@ use AppBundle\Entity\User;
  */
 class UserRepository extends EntityRepository
 {
+    public function findOneByUsername($username) {
+        return $this->findOneBy(array("username" => $username));
+    }
+
     public function getAllUsersNonAdmin() {
         $sqlGetAllNonAdmin = "SELECT * FROM `user` WHERE is_admin!=1";
         $em = $this->getEntityManager();
@@ -29,8 +33,10 @@ class UserRepository extends EntityRepository
         $em->flush();
     }
 
-    public function deleteUserWithUsername($username) {
-        $sqlAddUser = "DELETE FROM table_name [WHERE Clause]";
+    public function deleteUser($userObj) {
+        $em = $this->getEntityManager();
+        $em->remove($userObj);
+        $em->flush();
     }
 
 }

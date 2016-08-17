@@ -24,8 +24,16 @@ class PagesAdminController extends Controller
 
         //Remove user
         $usernameDeleteTarget = $request->request->get("username-eliminar");
-        if ( isset($usernameDeleteTarget)) {
+        $flagUserDeleted = false;
+        $userDeletedName = "";
+        if ( isset($usernameDeleteTarget) && $usernameDeleteTarget != "-1") {
+            $em = $this->getDoctrine()->getManager();
+            $repo = $em->getRepository('AppBundle:User');
+            $userObj2Delete = $repo->findOneByUsername($usernameDeleteTarget);
+            $repo->deleteUser($userObj2Delete);
 
+            $flagUserDeleted = true;
+            $userDeletedName = $usernameDeleteTarget;
         }
 
         //Add user
@@ -33,6 +41,7 @@ class PagesAdminController extends Controller
         $add_password = $request->request->get("add-password");
         $add_email = $request->request->get("add-email");
         $flagUserAdded = false;
+        $userAddedName = "";
         if (  isset($add_email) && isset($add_username) && isset($add_password)) {
             $userObj = new User($add_username,$add_email);
             $encoder = $this->container->get('security.password_encoder');
@@ -41,7 +50,9 @@ class PagesAdminController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->getRepository('AppBundle:User')->addUser($userObj);
+
             $flagUserAdded = true;
+            $userAddedName = $add_username;
         }
 
 
@@ -52,7 +63,10 @@ class PagesAdminController extends Controller
 
         return $this->render("admin/admin.html.twig", array(
             "arrayUsers" => $arrayResults,
-            "flagUserAdded" => $flagUserAdded
+            "flagUserAdded" => $flagUserAdded,
+            "userAddedName" => $userAddedName,
+            "flagUserDeleted" => $flagUserDeleted,
+            "userDeletedName" => $userDeletedName
         ));
     }
 }

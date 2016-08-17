@@ -18,8 +18,16 @@
             <div class="tab-pane active m-t-2" id="cuentas" role="tabpanel">
 
                 <div class="col-md-5 offset-md-1">
-                    <div id="alert-user-existente" class="alert alert-danger" role="alert">
-                        <small><strong>Error!</strong> Nombre de usuario ya existente.</small>
+                    {% if flagUserAdded == true %}
+                        <div class="alert alert-success alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Exito!</strong> Usuario <strong>"{{ userAddedName }}"</strong> agregado.
+                        </div>
+                    {% endif %}
+                    <div id="alert-user-existente" class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <small><strong>Error!</strong> Nombre de usuario o mail ya existente.</small>
                     </div>
                     <h4 class="m-b-2">Agregar usuario</h4>
                     <form method="post" name="register_form" onsubmit="return validateUserAvailability();">
@@ -45,19 +53,26 @@
                     </form>
                 </div>
                 <div class="col-md-5 offset-md-6 m-l-1">
+                    {% if flagUserDeleted == true %}
+                        <div class="alert alert-success alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Exito!</strong> Usuario <strong>"{{ userDeletedName }}"</strong> borrado.
+                        </div>
+                    {% endif %}
                     <h4 class="m-b-2">Eliminar usuario</h4>
-                    <form>
-
+                    <form method="post" name="delete-form">
                         <div class="form-group row">
                             <label for="example-text-input" class="col-md-2 col-form-label">Usuario: </label>
-                            <select class="custom-select" name="username-eliminar">
-                                <option value="-1" selected>Seleccionar usuario</option>
+                            <select id="delete-user-select" class="custom-select" name="username-eliminar">
+                                <option  value="-1" selected>Seleccionar usuario</option>
                                 {% for user in arrayUsers %}
                                 <option value="{{ user.username }}">{{ user.username }}</option>
                                 {% endfor %}
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-secondary pull-md-right">Eliminar</button>
+                        <button id="deleteButton" type="submit" class="btn btn-secondary pull-md-right" disabled>Eliminar</button>
                     </form>
                 </div>
 
@@ -78,9 +93,14 @@
 {% block javascript %}
     <script>
         function validateUserAvailability() {
-            var username = document.forms["register_form"]["username"].value;
+            var username = document.forms["register_form"]["add-username"].value;
+            var email = document.forms["register_form"]["add-email"].value;
             {% for user in arrayUsers %}
             if (username == "{{ user.username }}") {
+                $('#alert-user-existente').show();
+                return false;
+            }
+            if (email == "{{ user.email }}") {
                 $('#alert-user-existente').show();
                 return false;
             }
@@ -90,6 +110,16 @@
 
         $(document).ready(function() {
             $('#alert-user-existente').hide();
+        });
+
+        $('#delete-user-select').on('change', function() {
+            var val = document.forms["delete-form"]["username-eliminar"].value;
+            if (val == "-1") {
+                $('#deleteButton').prop('disabled', true);
+            }
+            else{
+                $('#deleteButton').prop('disabled', false);
+            }
         });
 
 

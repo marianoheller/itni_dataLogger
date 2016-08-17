@@ -56,7 +56,7 @@
                 <a class="nav-link" href="{{ path('sensores') }}">Sensores</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ path('about') }}">Acerca de</a>
+                <a class="nav-link" href="{{ path('avanzado') }}">Avanzado</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right pull-xs-right">
@@ -68,10 +68,10 @@
 </nav>
 
 <div class="container">
-
+    {% block export_content %}
+    {% endblock %}
     <div class="starter-template">
-        <h1>Pagina acerca de..</h1>
-        <p class="lead">To do.<br> ...</p>
+
     </div>
 
 </div><!-- /.container -->
@@ -85,6 +85,9 @@
 
 {#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>#}
 <script src="{{ asset('media/js/bootstrap/3.3.6/bootstrap.min.js') }}"></script>
+
+{% block javascript %}
+{% endblock %}
 
 
 </body>

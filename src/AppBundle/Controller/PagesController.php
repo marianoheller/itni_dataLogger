@@ -8,10 +8,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 use Symfony\Component\Validator\Constraints\DateTime;
 
 use AppBundle\Entity\Ensayo;
+use AppBundle\Entity\Datalog;
 
 
 class PagesController extends Controller
@@ -58,14 +60,6 @@ class PagesController extends Controller
             "flagEnsayoRunning" => $isEnsayoRunning,
             "arrayQueryResult" => $arrayQueryResult
         ));
-    }
-
-    /**
-     * @Route("/about", name="about")
-     */
-    public function aboutAction(Request $request)
-    {
-        return $this->render("pages/about_base.html.twig");
     }
 
     /**
@@ -133,12 +127,68 @@ class PagesController extends Controller
         }
     }
 
+    /**
+     * @Route("/avanzado", name="avanzado")
+     */
+    public function exportarAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
+        return $this->render("pages/avanzado/avanzado.html.twig", array(
+            "ensayos" => $ensayosAll
+        ));
+    }
+
+    /**
+     * @Route("/generateCSV", name="generateCSV")
+     */
+    public function generateCsvAction(Request $request)
+    {
+        $idEnsayo = $request->request->get("ensayoID");
+        $intervalo = $request->request->get("intervalo");
+        if ( !isset($idEnsayo) || !isset($intervalo)) {
+            return $this->redirectToRoute("avanzado");
+        }
+        $em = $this->getDoctrine()->getManager();
+        /**@var $ensayoObj Ensayo*/
+        $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
+        $t_inicio = $ensayoObj->getTInicio()->format('Y-m-d H:i:s');
+        $t_fin = $ensayoObj->getTFin()->format('Y-m-d H:i:s');;
+
+        $response = new StreamedResponse();
+        $response->setCallback(function () use($t_inicio,$t_fin){
+            $handle = fopen('php://output', 'w+');
+
+            // Add the header of the CSV file
+            fputcsv($handle, array('Canal', 'Medicion', 'Timestamp'), ';');
+            // Query data from database
+            $em = $this->getDoctrine()->getManager();
+            $results = $em->getRepository('AppBundle:Datalog')->getDataInTimeRange($t_inicio, $t_fin);
+
+            // Add the data queried from database
+            while ($row = $results->fetch()) {
+                fputcsv(
+                    $handle, // The file pointer
+                    array($row['sensor_id'], $row['medicion'], $row['fecha']), // The fields
+                    ';' // The delimiter
+                );
+            }
+            fclose($handle);
+        });
+
+        $response->setStatusCode(200);
+        $response->headers->set('Content-Type', 'text/csv; charset=utf-8');
+        $response->headers->set('Content-Disposition', 'attachment; filename="export.csv"');
+
+        return $response;
+    }
 
 }
 
-    /* TODO hacer Historial de ensayos page*/
 
 
-
-
+//TODO lifecycle LOG
+/* TODO hacer Historial de ensayos page*/
+//TODO Rehacer views y corregir herencia
+//TODO glyphicon
 //TODO Deployer bundle (linux aparentemente)

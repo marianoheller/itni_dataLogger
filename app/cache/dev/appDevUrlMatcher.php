@@ -152,30 +152,41 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\PagesController::sensoresAction',  '_route' => 'sensores',);
         }
 
-        // ensayo
-        if ($pathinfo === '/ensayo') {
-            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::ensayoAction',  '_route' => 'ensayo',);
-        }
-
-        // about
-        if ($pathinfo === '/about') {
-            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::aboutAction',  '_route' => 'about',);
-        }
-
-        // ensayoRun
-        if (0 === strpos($pathinfo, '/ensayo') && preg_match('#^/ensayo(?:/(?P<slug>[^/]++))?$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ensayoRun')), array (  'slug' => 1,  '_controller' => 'AppBundle\\Controller\\PagesController::ensayoNowAction',));
-        }
-
-        if (0 === strpos($pathinfo, '/get')) {
-            // getSensoresStatus
-            if ($pathinfo === '/getSensoresStatus') {
-                return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getSensoresStatusAction',  '_route' => 'getSensoresStatus',);
+        if (0 === strpos($pathinfo, '/ensayo')) {
+            // ensayo
+            if ($pathinfo === '/ensayo') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PagesController::ensayoAction',  '_route' => 'ensayo',);
             }
 
-            // getGraphData
-            if ($pathinfo === '/getGraphData') {
-                return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getGraphDataAction',  '_route' => 'getGraphData',);
+            // ensayoRun
+            if (preg_match('#^/ensayo(?:/(?P<slug>[^/]++))?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ensayoRun')), array (  'slug' => 1,  '_controller' => 'AppBundle\\Controller\\PagesController::ensayoNowAction',));
+            }
+
+        }
+
+        // avanzado
+        if ($pathinfo === '/avanzado') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::exportarAction',  '_route' => 'avanzado',);
+        }
+
+        if (0 === strpos($pathinfo, '/ge')) {
+            // generateCSV
+            if ($pathinfo === '/generateCSV') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PagesController::generateCsvAction',  '_route' => 'generateCSV',);
+            }
+
+            if (0 === strpos($pathinfo, '/get')) {
+                // getSensoresStatus
+                if ($pathinfo === '/getSensoresStatus') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getSensoresStatusAction',  '_route' => 'getSensoresStatus',);
+                }
+
+                // getGraphData
+                if ($pathinfo === '/getGraphData') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getGraphDataAction',  '_route' => 'getGraphData',);
+                }
+
             }
 
         }
