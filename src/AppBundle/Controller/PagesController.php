@@ -185,8 +185,11 @@ class PagesController extends Controller
 
 }
 
+//TODO canales virtuales
+//TODO patron
+//TODO Historial
 
-
+//TODO server Validation on everything
 //TODO lifecycle LOG
 /* TODO hacer Historial de ensayos page*/
 //TODO Rehacer views y corregir herencia

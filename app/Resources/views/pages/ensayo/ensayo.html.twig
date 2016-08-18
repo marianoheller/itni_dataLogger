@@ -69,6 +69,12 @@
             display: none;
         }
 
+        .gauge {
+            width: 250px;
+            height: 250px;
+            display: inline-block;
+        }
+
     </style>
 {% endblock %}
 
@@ -132,6 +138,10 @@
             <div class="container col-md-10">
                 <div id="chart_div_{{ i }}" class="chart"></div>
             </div>
+            <div class="container pull-md-right col-md-2">
+                <div id="gauge_{{ i }}" class="gauge"></div>
+            </div>
+
         </div>
     {% endfor %}
 
@@ -170,6 +180,9 @@
     <script src="{{ asset('media/js/dygraph-combined.js') }}"></script>
 
     <script src="{{ asset('media/js/polyfill.js') }}"></script>
+
+    <script src="{{ asset('media/js/justgage-1.2.2/raphael-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('media/js/justgage-1.2.2/justgage.js') }}"></script>
 
 
     <script>
@@ -296,6 +309,8 @@
 
 
 
+
+
         google.load("visualization", "1", {packages:["corechart"]});
         google.setOnLoadCallback(drawChart);
 
@@ -326,6 +341,17 @@
 
         $(document).ready(function(){
             document.getElementById('link-tab-status').click();
+
+            {% for i in 1..32 %}
+            window.gauge_{{ i }} = new JustGage({
+                id: "gauge_{{ i }}",
+                value: 67,
+                min: 0,
+                max: 1000,
+                decimals: 1,
+                title: "Temp. actual"
+            });
+            {% endfor %}
         });
 
 
@@ -404,6 +430,10 @@
                         ];
                         window.dataTable_{{ i }}.addRows(obj);
                     }
+
+                    //Refresh gauge
+                    var gaugeValue = data_{{i}}[data_{{i}}.length-1];
+                    window.gauge_{{ i }}.refresh(gaugeValue);
                 {% endfor %}
 
                 //REDRAW
