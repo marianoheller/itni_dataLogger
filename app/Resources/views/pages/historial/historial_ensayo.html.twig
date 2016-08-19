@@ -101,6 +101,13 @@
 
 
     <div class="tab-content col-md-11">
+        <div class="alert alert-info" role="alert">
+            <strong>Atencion!</strong> Este <strong>NO</strong> es un ensayo en progreso.
+            Ensayo realizado el <strong>{{ t_inicio }}</strong> con titulo <strong>"{{ titulo }}"</strong>.
+        </div>
+    </div>
+
+    <div class="tab-content col-md-11">
 
         <div class="tab-pane" id="tab_status">
             <h4>Estado</h4>
@@ -157,7 +164,9 @@
             <div class="container col-md-10">
                 <div class="divider-text"></div>
                 <p class="pull-md-left"><strong>Finalizar el ensayo</strong></p>
-                <button onclick="salirDelEnsayo()" id="button-finnish-ensayo" type="button" class="btn btn-secondary pull-md-right">Finalizar</button>
+                <button onclick="salirDelEnsayo()" id="button-finnish-ensayo" type="button" class="btn btn-secondary pull-md-right">
+                    <i class="fa fa-ban" aria-hidden="true"></i>  Finalizar
+                </button>
             </div>
 
             <div class="container col-md-2">

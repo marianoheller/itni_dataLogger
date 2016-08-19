@@ -35,7 +35,7 @@ class PagesController extends Controller
     /**
      * @Route("/sensores", name="sensores")
      */
-    public function sensoresAction(Request $request)
+    public function sensoresAction()
     {
         //Check if ensayo is running
         $em = $this->getDoctrine()->getManager();
@@ -48,7 +48,7 @@ class PagesController extends Controller
     /**
      * @Route("/ensayo", name="ensayo")
      */
-    public function ensayoAction(Request $request)
+    public function ensayoAction()
     {
         //Check if ensayo is running
         $em = $this->getDoctrine()->getManager();
@@ -130,7 +130,7 @@ class PagesController extends Controller
     /**
      * @Route("/historial", name="historial")
      */
-    public function historialAction(Request $request)
+    public function historialAction()
     {
         $em = $this->getDoctrine()->getManager();
         $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
@@ -155,7 +155,8 @@ class PagesController extends Controller
         $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
         return $this->render(":pages/historial:historial_ensayo.html.twig", array(
             "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
-            "t_fin" => $ensayoObj->getTFin()->format($dateFormat)
+            "t_fin" => $ensayoObj->getTFin()->format($dateFormat),
+            "titulo" => $ensayoObj->getTitulo()
         ));
     }
 
@@ -208,23 +209,22 @@ class PagesController extends Controller
             fclose($handle);
         });
 
+        $filenameExport = $ensayoObj->getTFin()->format('Ymd_His');
         $response->setStatusCode(200);
         $response->headers->set('Content-Type', 'text/csv; charset=utf-8');
-        $response->headers->set('Content-Disposition', 'attachment; filename="export.csv"');
+        $response->headers->set('Content-Disposition', "attachment; filename=$filenameExport.csv");
 
         return $response;
     }
 
 }
 
-//TODO agregar advertencia de que se esta viendo el historial ( quizas cambiar el esquema de colores??)
+//TODO arreglar el export CSV asi el tiempo figura bien (como en el ensayo)
 //TODO canales virtuales
 
 //TODO patron
 
 //TODO server Validation on everything
 //TODO lifecycle LOG
-/* TODO hacer Historial de ensayos page*/
-//TODO Rehacer views y corregir herencia
 //TODO glyphicon
 //TODO Deployer bundle (linux aparentemente)
