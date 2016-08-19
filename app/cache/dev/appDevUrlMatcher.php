@@ -165,6 +165,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // historial
+        if ($pathinfo === '/historial') {
+            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::historialAction',  '_route' => 'historial',);
+        }
+
         // avanzado
         if ($pathinfo === '/avanzado') {
             return array (  '_controller' => 'AppBundle\\Controller\\PagesController::exportarAction',  '_route' => 'avanzado',);

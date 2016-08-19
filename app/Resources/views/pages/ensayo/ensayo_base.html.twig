@@ -1,0 +1,34 @@
+{% extends "pages/base.html.twig" %}
+
+{% block extraCss %}
+{% endblock %}
+
+
+{% block contentUnderNavBar %}
+
+
+    <div id="contenido-fluid" class="container-fluid">
+        {% block ensayo %}
+        {% endblock %}
+    </div>
+
+    <div class="container">
+        <div class="starter-template">
+            {% block configEnsayo %}
+            {% endblock %}
+        </div>
+    </div><!-- /.container -->
+
+
+{% endblock %}
+
+
+
+
+{% block extraJavaScript %}
+
+    {% block ensayoJavascript %}
+    {% endblock %}
+
+{% endblock %}
+

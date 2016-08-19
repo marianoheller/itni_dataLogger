@@ -128,6 +128,18 @@ class PagesController extends Controller
     }
 
     /**
+     * @Route("/historial", name="historial")
+     */
+    public function historialAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
+        return $this->render("pages/avanzado/avanzado.html.twig", array(
+            "ensayos" => $ensayosAll
+        ));
+    }
+
+    /**
      * @Route("/avanzado", name="avanzado")
      */
     public function exportarAction(Request $request)
