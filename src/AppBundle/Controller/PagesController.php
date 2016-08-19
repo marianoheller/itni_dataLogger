@@ -134,7 +134,7 @@ class PagesController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
-        return $this->render("pages/avanzado/avanzado.html.twig", array(
+        return $this->render("pages/historial/historial_select.html.twig", array(
             "ensayos" => $ensayosAll
         ));
     }

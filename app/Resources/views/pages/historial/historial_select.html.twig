@@ -1,0 +1,95 @@
+{% extends 'pages/historial/historial_base.html.twig' %}
+
+{% block selectHistorial %}
+
+    <div class="container">
+        <h2>Historial de ensayos</h2>
+        <br>
+
+
+        <div class="container-fluid">
+            <form name="historialEnsayo" id="historialEnsayo" method="post" onsubmit="return validateUserAvailability();">
+
+                <div class="form-group row">
+                    <label for="selectEnsayo" class="col-xs-2 col-form-label">Ensayo</label>
+                    <div class="col-xs-10">
+                        <select name="ensayoID" class="form-control" id="selectEnsayo">
+                            <option value="-1">Seleccionar ensayo...</option>
+                            {% for ensayo in ensayos  %}
+                                <option value="{{ ensayo.id }}">{{ ensayo.t_inicio }} - {{ ensayo.titulo }} - {{ ensayo.responsable }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <button id="verButton" type="submit" class="btn btn-primary">Ver</button>
+            </form>
+        </div>
+
+        <br>
+
+        <small>
+            <div class="container text-md-left" id="ensayoDetails">
+
+            </div>
+        </small>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+{% block historialJavascript %}
+
+    <script>
+
+        function validateUserAvailability() {
+            var val = document.forms["historialEnsayo"]["ensayoID"].value;
+            if (val == "-1") {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+        $(document).ready(function() {
+            $('#ensayoDetails').hide();
+            $('#verButton').prop('disabled', true);
+        });
+
+        $('#selectEnsayo').on('change', function() {
+            var val = document.forms["historialEnsayo"]["ensayoID"].value;
+            if (val == "-1") {
+                $('#ensayoDetails').hide();
+                $('#verButton').prop('disabled', true);
+            }
+            else{
+                $('#ensayoDetails').show();
+                $('#ensayoDetails').html("");
+                $('#verButton').prop('disabled', false);
+                {% for ensayo in ensayos %}
+                if( val == {{ ensayo.id }} ) {
+                    var htmlDetalles = "";
+                    htmlDetalles  += '<ul class="list-group">';
+                    htmlDetalles  += '<li class="list-group-item list-group-item-info">Iniciado: {{ ensayo.t_inicio }}</li>';
+                    htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Finalizado: {{ ensayo.t_fin }}</li>';
+                    htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Titulo: {{ ensayo.titulo }}</li>';
+                    htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Responsable: {{ ensayo.responsable }}</li>';
+                    htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Cliente: {{ ensayo.cliente }}</li>';
+                    htmlDetalles  +=  '<li class="list-group-item list-group-item-info">OT: {{ ensayo.OT }}</li>';
+                    htmlDetalles  +=  '<li class="list-group-item list-group-item-info">SOT: {{ ensayo.SOT }}</li>';
+                    htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Descripción: {{ ensayo.descripcion }}</li>';
+                    htmlDetalles  +=  '</ul>';
+                    $('#ensayoDetails').html(htmlDetalles);
+                }
+                {% endfor %}
+            }
+        });
+
+    </script>
+
+{% endblock %}
