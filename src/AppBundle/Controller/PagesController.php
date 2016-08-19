@@ -139,6 +139,26 @@ class PagesController extends Controller
         ));
     }
 
+
+    /**
+     * @Route("/historial/ver", name="historialVer")
+     */
+    public function historialVerAction(Request $request)
+    {
+        $dateFormat = "Y-m-d H:i:s";
+        $idEnsayo = $request->request->get("ensayoID");
+        if ( !isset($idEnsayo) ) {
+            return $this->redirectToRoute("historial");
+        }
+        $em = $this->getDoctrine()->getManager();
+        /**@var $ensayoObj Ensayo*/
+        $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
+        return $this->render(":pages/historial:historial_ensayo.html.twig", array(
+            "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
+            "t_fin" => $ensayoObj->getTFin()->format($dateFormat)
+        ));
+    }
+
     /**
      * @Route("/avanzado", name="avanzado")
      */

@@ -1,0 +1,479 @@
+{% extends 'pages/historial/historial_base.html.twig' %}
+
+
+{% block extraCss %}
+
+    <style>
+        .chart{
+            width: 100%;
+            height: 100%;
+        }
+        #contenido-fluid {
+            padding-left: 0px;
+            /*margin-left: 0px;*/
+        }
+        #pillsCanales {
+            padding-left: 10px;
+            margin-left: 0px;
+        }
+        .channel-number-selector {
+            padding-left: 5px;
+        }
+        .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+            color: #FFFFFF;
+            /*background-color: #fca200;*/
+        }
+        .nav-pills > li#brand-nav-canales{
+            color: #ffffff;
+        }
+        .nav-pills > li > a {
+            color: #8c918d;
+        }
+
+        .nav-pills .divider-vertical {
+            height: 5px;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            border-top: 1px solid #8c918d;
+        }
+
+
+
+        #pillsCanales{
+            padding-bottom: 8px;
+            padding-top: 4px;
+        }
+        #tablaStatusSensores thead tr th{text-align: center;}   {#Para los headers#}
+        #tablaStatusSensores tbody th{text-align: center;}      {#Para el loading#}
+        #tablaStatusSensores tbody {text-align: center;}        {#Para los items#}
+
+
+        .divider-text {
+            height: 5px;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            border-top: 1px solid #c4c4c4;
+        }
+
+        .config-text {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .config-button {
+            display: inline-block;
+            text-align: right;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+/*        .gauge {
+            width: 250px;
+            height: 250px;
+            display: inline-block;
+        }*/
+
+    </style>
+{% endblock %}
+
+
+
+{% block ensayoHistorial %}
+
+    <ul id="pillsCanales" class="nav nav-pills nav-stacked col-md-1 navbar-dark bg-inverse">
+
+        <li><a id="link-tab-status" href="#tab_status" data-toggle="pill">Estado</a></li>
+
+        <li id="brand-nav-canales">Canal #</li>
+
+        {% for i in 1..32 %}
+            <li><a class="channel-number-selector" id="{{i}}" href="#tab_{{i}}" data-toggle="pill"><small>Nº {{i}}</small></a></li>
+        {% endfor %}
+
+        <li class="divider-vertical"></li>
+
+        <li><a href="#tab_config" data-toggle="pill">Configuracion</a></li>
+
+    </ul> <!-- nav pills -->
+
+
+
+    <div class="tab-content col-md-11">
+
+        <div class="tab-pane" id="tab_status">
+            <h4>Estado</h4>
+
+            <div class="container col-md-1">
+            </div>
+
+            <div class="container col-md-10">
+                <small>
+                    <table class="table table-sm" id="tablaStatusSensores">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th>#</th>
+                            <th>Medición</th>
+                            <th>Tiempo</th>
+                        </tr>
+                        </thead>
+                        <tbody id="dataStatusSensores">
+                        <th colspan="4">Esperando datos...</th>
+                        </tbody>
+                    </table>
+                </small>
+            </div>
+
+            <div class="container col-md-2">
+            </div>
+
+        </div> <!-- status content -->
+
+        {% for i in 1..32 %}
+            <div class="tab-pane" id="tab_{{i}}">
+
+                <h4>Canal {{i}}</h4>
+                <div class="container col-md-1">
+
+                </div>
+                <div class="container col-md-10">
+                    <div id="chart_div_{{ i }}" class="chart"></div>
+                </div>
+
+            </div>
+        {% endfor %}
+
+        <div class="tab-pane" id="tab_config">
+            <div id="alert-finalize-fail" class="alert alert-warning col-md-10 offset-md-1 hidden" role="alert">
+                <strong>Error de finalizacion!</strong> Vuelva a intentarlo en 1 min.
+            </div>
+
+            <h4>Configuración</h4>
+
+            <div class="container col-md-1">
+            </div>
+
+            <div class="container col-md-10">
+                <div class="divider-text"></div>
+                <p class="pull-md-left"><strong>Finalizar el ensayo</strong></p>
+                <button onclick="salirDelEnsayo()" id="button-finnish-ensayo" type="button" class="btn btn-secondary pull-md-right">Finalizar</button>
+            </div>
+
+            <div class="container col-md-2">
+            </div>
+
+        </div> <!-- status content -->
+
+    </div><!-- tab content -->
+
+{% endblock %}
+
+
+
+
+
+{% block javascript %}
+
+    {#<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>#}
+    <script src="{{ asset('media/js/moment/moment.min.js') }}"></script>
+    {#<script type="text/javascript" src="https://www.google.com/jsapi"></script>#}
+    <script src="{{ asset('media/js/jsapi.js') }}"></script>
+    {#<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>#}
+    <script src="{{ asset('media/js/dygraph-combined.js') }}"></script>
+
+    <script src="{{ asset('media/js/polyfill.js') }}"></script>
+
+
+    <script>
+        var set_delay = 10000;
+
+        var t_inicio_unix = moment('{{ t_inicio }}').unix();
+
+        var timeFormat = 'HH:mm:ss';
+
+        var options = {
+            //both dygraphs and Google
+            width: 1200,
+            height: 500,
+
+            //dygraphs
+            rollPeriod: 1,
+            showRoller: false,
+            fillGraph: true,
+
+            //Google charts
+            curveType: "function",
+            hAxis: {
+                format: timeFormat,
+                gridlines: {count: 8}
+            },
+            vAxis: {
+                //minValue: 0,
+                gridlines: {count: 8},
+                viewWindow: {
+                    min: 0
+                }
+            },
+            explorer: {
+                actions: ['dragToZoom', 'rightClickToReset'],
+                axis: 'vertical'
+            }
+        };
+
+        function randomInt() {
+            return Math.round(Math.random() * 10);
+        }
+
+        function counterTimestamp() {
+            if ( typeof counterTimestamp.counter == 'undefined' ) {
+                // It has not... perform the initialization
+                counterTimestamp.counter = randomInt();
+            }
+            else {
+                counterTimestamp.counter += randomInt();
+            }
+            return counterTimestamp.counter;
+        }
+
+        function randomScalingFactor() {
+            return Math.round(Math.random() * 100 * (Math.random() > 0.5 ? -1 : 1));
+        }
+
+        function randomColorFactor() {
+            return Math.round(Math.random() * 255);
+        }
+
+        function randomColor(opacity) {
+            return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+        }
+
+        function newDate(days) {
+            return moment().add(days, 'd').toDate();
+        }
+
+        function newDateString(days) {
+            return moment().add(days, 'd').format(timeFormat);
+        }
+
+        function newTimestamp(days) {
+            return moment().add(days, 'd').unix();
+        }
+
+        function salirDelEnsayo() {
+            window.location.replace("/");
+        }
+
+
+
+        function convertDate(inputFormat) {
+            function pad(s) { return (s < 10) ? '0' + s : s; }
+            var d = new Date(inputFormat);
+            var date =  [d.getFullYear(), pad(d.getMonth()+1),pad(d.getDate()) ].join('-');
+            var time = [pad(d.getHours()), pad(d.getMinutes()), pad(d.getSeconds())].join(':');
+            return  [date,time].join(" ");
+        }
+
+        /*
+         * TODO Hacer andar el tema fecha...
+         */
+
+        function toTimeString( secs ) {
+            var days, hours, minutes, seconds;
+
+            if( secs == null )
+                return "";
+
+            days = ( secs / 86400 ) >> 0;
+            hours = ( secs % 86400 / 3600 ) >> 0;
+            minutes = ( secs % 3600 / 60 ) >> 0;
+            seconds = ( secs % 60 );
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            hours = hours && hours < 10 ? "0" + hours : hours;
+
+            return "" + ( days ? days+" - " : "" ) + ( hours ? hours+":" : "" ) + minutes + ":" + seconds;
+        };
+
+
+
+
+
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+
+
+            {% for i in 1..32 %}
+            window.dataTable_{{ i }} = new google.visualization.DataTable();
+            window.dataTable_{{ i }}.addColumn('datetime', 'Fecha');
+            window.dataTable_{{ i }}.addColumn('number', 'Medicion');
+
+            var element_{{ i }} = document.getElementById('chart_div_{{ i }}');
+
+            /*var chart_{{ i }} = new google.visualization.LineChart(element_{{ i }});
+             chart_{{ i }}.draw(window.dataTable_{{ i }}, options);*/
+
+            window.chart_{{ i }} = new Dygraph(
+                    document.getElementById("chart_div_{{ i }}"),
+                    window.dataTable_{{ i }},
+                    options
+            );
+
+            {% endfor %}
+
+            getGraphData();
+        }
+
+        $(document).ready(function(){
+            document.getElementById('link-tab-status').click();
+        });
+
+
+    </script>
+
+
+    <script>
+
+
+
+        function getGraphData() {
+            var lastTimeStampLocal =  "{{ t_inicio }}";
+
+            var timetampsToSend = '{ "timeStamp": [' +
+                    '{ "t_inicio": "{{ t_inicio }}", "t_fin": "{{ t_fin }}"}' +
+                    ']}';
+            var jsonToSend = JSON.stringify(JSON.parse(timetampsToSend));
+            console.log("Sending data: ",jsonToSend);
+
+
+            var jsonData = $.ajax({
+                        url: '/getHistGraphData',
+                        type:'POST',
+                        contentType: "application/json; charset=utf-8",
+                        data: jsonToSend,
+                        dataType: 'json'
+                    })
+                    .done(function (results) {
+                        console.log("RX: ",results);
+                        //console.log("t_inicio: ",t_inicio_unix);
+                        {% for i in 1..32 %}
+                        // Split timestamp and data into separate arrays
+                        var labels_{{i}} = [], data_{{i}} = [];
+                        if ( ("packets_{{i}}" in results) ) {
+                            Object.keys(results["packets_{{i}}"]).forEach(function (key) {
+                                var value = results["packets_{{i}}"][key];
+                                labels_{{i}}.push(value.timestamp);
+                                data_{{i}}.push(parseFloat(value.payloadString));
+                            });
+                        }
+                        {% endfor %}
+
+                        //console.log("Adding data");
+
+                        //Add data
+                        {% for i in 1..32 %}
+                        for (var i=0 ; i< data_{{i}}.length ; i++) {
+
+                            //var myDate =  moment.unix(labels_{{i}}[i]).toDate();
+
+                            var momentAux = moment.unix(labels_{{i}}[i])
+                            var momentAuxInicio = moment.unix(t_inicio_unix);
+                            momentAux.subtract(momentAuxInicio.seconds(),"seconds");
+                            momentAux.subtract(momentAuxInicio.minutes(),"minutes");
+                            momentAux.subtract(momentAuxInicio.hours(),"hours");
+                            var myDate = momentAux.toDate();
+
+                            var obj = [
+                                [myDate,   data_{{i}}[i]]
+                            ];
+                            window.dataTable_{{ i }}.addRows(obj);
+                        }
+
+                        {% endfor %}
+
+                        //REDRAW
+                        {% for i in 1..32 %}
+                        window.chart_{{ i }}.updateOptions( { 'file': window.dataTable_{{ i }} } );
+                        {% endfor %}
+
+
+                        var lenAux = 0;
+                        {% for i in 1..32 %}
+                        if (window.dataTable_{{ i }}.getNumberOfRows() > lenAux) {
+                            lenAux = window.dataTable_{{ i }}.getNumberOfRows();
+                        }
+                        {% endfor %}
+                        if ( lenAux > 0 ) {
+                            updateStatusInfo();
+                        }
+
+                    })
+                    .fail(function (jqXHR, textStatus, errorThrown) {
+                        console.log("Failed AJAX request.");
+                        console.log("Status: "+textStatus);
+                        console.log("Error thrown: "+errorThrown);
+                        console.log("--------------");
+                    })
+                    .always(function () {
+                        //setTimeout(getGraphData, set_delay);
+                    });
+        };
+
+
+        function updateStatusInfo(  )  {
+            var trHTML = '';
+
+
+            {% for i in 1..32 %}
+            var lenAux = window.dataTable_{{ i }}.getNumberOfRows();
+            var lastLabel_{{ i }} = window.dataTable_{{ i }}.getValue(lenAux-1, 0)
+            var medicion_{{ i }} = window.dataTable_{{ i }}.getValue(lenAux-1, 1);
+            //get fecha
+            trHTML += "<tr "
+            if (medicion_{{ i }} < 30) {
+                trHTML += "class='table-info'";
+            }
+            else if (medicion_{{ i }} > 900) {
+                trHTML += "class='table-danger'";
+            }
+            else if (medicion_{{ i }} > 500) {
+                trHTML += "class='table-warning'";
+            }
+
+            trHTML +=">";
+            trHTML +="<td>";
+            trHTML += {{ i }};
+            trHTML +="</td>";
+            trHTML +="<td>";
+            trHTML += medicion_{{ i }};
+            trHTML +="</td>";
+            trHTML +="<td>";
+            trHTML += moment(lastLabel_{{ i }}).format("YYYY-MM-DD HH:mm:ss");
+            trHTML +="</td>";
+            trHTML +="</tr>";
+            {% endfor %}
+            $('#dataStatusSensores').empty();
+            $('#dataStatusSensores').append(trHTML);
+        }
+
+    </script>
+
+    <script>
+
+        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            /*var target = $(e.target).attr("id");
+             var targetString = "Chart_"+target;*/
+            $(window).trigger('resize');
+            window.dispatchEvent(new Event('resize'));
+            //console.log("resize Triggered");
+        });
+
+
+    </script>
+
+
+
+{% endblock %}

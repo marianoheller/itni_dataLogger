@@ -8,7 +8,7 @@
 
 
         <div class="container-fluid">
-            <form name="historialEnsayo" id="historialEnsayo" method="post" onsubmit="return validateUserAvailability();">
+            <form name="historialEnsayo" id="historialEnsayo" method="post" action="{{ path('historialVer') }}" onsubmit="return validateUserAvailability();">
 
                 <div class="form-group row">
                     <label for="selectEnsayo" class="col-xs-2 col-form-label">Ensayo</label>
@@ -42,7 +42,7 @@
 
 
 
-{% block historialJavascript %}
+{% block javascript %}
 
     <script>
 

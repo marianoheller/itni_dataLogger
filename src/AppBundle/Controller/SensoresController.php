@@ -86,5 +86,39 @@ class SensoresController extends Controller
         ));
     }
 
+
+
+    /**
+     * @Route("/getHistGraphData", name="getHistGraphData")
+     */
+    public function getHistGraphDataAction(Request $request)
+    {
+        if ( $request->getContentType() != "json" ) {
+            throw $this->createAccessDeniedException('Acceso prohibido');
+        }
+        else {
+            //First get json data
+            $content = $request->getContent();
+            $data = json_decode($content);
+
+            foreach ($data as $name => $value) {
+                if ($name == "timeStamp") {
+                    foreach ($value as $entry) {
+                        $t_inicio = $entry->t_inicio;
+                        $t_fin = $entry->t_fin;
+                    }
+                }
+            }
+
+            $em = $this->getDoctrine()->getManager();
+
+            // GET DATA to send
+            $arrayReturn = $em->getRepository('AppBundle:Datalog')->getPacketsInTimeRange($t_inicio, $t_fin);
+
+            //Ready to send
+            $ret = new JsonResponse($arrayReturn);
+            return $ret;
+        }
+    }
 }
 

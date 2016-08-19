@@ -165,9 +165,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // historial
-        if ($pathinfo === '/historial') {
-            return array (  '_controller' => 'AppBundle\\Controller\\PagesController::historialAction',  '_route' => 'historial',);
+        if (0 === strpos($pathinfo, '/historial')) {
+            // historial
+            if ($pathinfo === '/historial') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PagesController::historialAction',  '_route' => 'historial',);
+            }
+
+            // historialVer
+            if ($pathinfo === '/historial/ver') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PagesController::historialVerAction',  '_route' => 'historialVer',);
+            }
+
         }
 
         // avanzado
@@ -199,6 +207,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // cancelEnsayo
         if ($pathinfo === '/ensayo/cancel/all') {
             return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::cancelEnsayoAction',  '_route' => 'cancelEnsayo',);
+        }
+
+        // getHistGraphData
+        if ($pathinfo === '/getHistGraphData') {
+            return array (  '_controller' => 'AppBundle\\Controller\\SensoresController::getHistGraphDataAction',  '_route' => 'getHistGraphData',);
         }
 
         // logout
