@@ -8,20 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_select.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_select.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.692307">
-              <caret line="157" column="65" selection-start-line="157" selection-start-column="65" selection-end-line="157" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.5990566">
+              <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
                 <element signature="e#815#833#1#PHP" expanded="true" />
@@ -73,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="historial_ensayo.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="historial_ensayo.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.44339624">
-              <caret line="262" column="25" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
+            <state vertical-scroll-proportion="-17.923077">
+              <caret line="475" column="0" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
               <folding>
                 <element signature="e#12#52#0#Twig" expanded="true" />
               </folding>
@@ -179,11 +168,11 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_view.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_select.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
   </component>
@@ -729,12 +718,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00010" summary="Ajax request works. Client side doesnt.">
-      <created>1465852494286</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1465852494286</updated>
-    </task>
     <task id="LOCAL-00011" summary="Working ajax on testing.">
       <created>1465922845653</created>
       <option name="number" value="00011" />
@@ -1023,7 +1006,13 @@
       <option name="project" value="LOCAL" />
       <updated>1471614208361</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Added vista de ensayo en historial.">
+      <created>1471618248601</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1471618248601</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1074,7 +1063,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added Config pill and Formated table on status." />
     <MESSAGE value="Added required form fields on ensayo form." />
     <MESSAGE value="Added navbar  compat.." />
     <MESSAGE value="Chenged buttons on ensayo running alert." />
@@ -1099,7 +1087,8 @@
     <MESSAGE value="Borrado views datalogger viejas." />
     <MESSAGE value="Corregida herencia de views y mejor ordenado." />
     <MESSAGE value="Added historial form. Falta la vista del ensayo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added historial form. Falta la vista del ensayo." />
+    <MESSAGE value="Added vista de ensayo en historial." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added vista de ensayo en historial." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1464,29 +1453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.692307">
-          <caret line="157" column="65" selection-start-line="157" selection-start-column="65" selection-end-line="157" selection-end-column="65" />
-          <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#815#833#1#PHP" expanded="true" />
-            <element signature="e#1252#1270#1#PHP" expanded="true" />
-            <element signature="e#1682#1700#1#PHP" expanded="true" />
-            <element signature="e#1769#1787#1#PHP" expanded="true" />
-            <element signature="e#2424#2442#1#PHP" expanded="true" />
-            <element signature="e#2519#2537#1#PHP" expanded="true" />
-            <element signature="e#5004#5022#1#PHP" expanded="true" />
-            <element signature="e#5080#5124#0#PHP" expanded="true" />
-            <element signature="e#5642#5660#1#PHP" expanded="true" />
-            <element signature="e#5716#5761#0#PHP" expanded="true" />
-            <element signature="e#6138#6156#1#PHP" expanded="true" />
-            <element signature="e#6803#6821#1#PHP" expanded="true" />
-            <element signature="e#7402#7421#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.423077">
@@ -1524,10 +1490,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.44339624">
-          <caret line="262" column="25" selection-start-line="262" selection-start-column="25" selection-end-line="262" selection-end-column="25" />
+        <state vertical-scroll-proportion="-17.923077">
+          <caret line="475" column="0" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
           <folding>
             <element signature="e#12#52#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5990566">
+          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#99#0#PHP" expanded="true" />
+            <element signature="e#815#833#1#PHP" expanded="true" />
+            <element signature="e#1252#1270#1#PHP" expanded="true" />
+            <element signature="e#1682#1700#1#PHP" expanded="true" />
+            <element signature="e#1769#1787#1#PHP" expanded="true" />
+            <element signature="e#2424#2442#1#PHP" expanded="true" />
+            <element signature="e#2519#2537#1#PHP" expanded="true" />
+            <element signature="e#5004#5022#1#PHP" expanded="true" />
+            <element signature="e#5080#5124#0#PHP" expanded="true" />
+            <element signature="e#5642#5660#1#PHP" expanded="true" />
+            <element signature="e#5716#5761#0#PHP" expanded="true" />
+            <element signature="e#6138#6156#1#PHP" expanded="true" />
+            <element signature="e#6803#6821#1#PHP" expanded="true" />
+            <element signature="e#7402#7421#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

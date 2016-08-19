@@ -217,9 +217,10 @@ class PagesController extends Controller
 
 }
 
+//TODO agregar advertencia de que se esta viendo el historial ( quizas cambiar el esquema de colores??)
 //TODO canales virtuales
+
 //TODO patron
-//TODO Historial
 
 //TODO server Validation on everything
 //TODO lifecycle LOG
