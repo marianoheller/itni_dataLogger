@@ -22229,3 +22229,14 @@ ac938f,127.0.0.1,GET,http://localhost:8000/historial,1471627309,,200
 7c3ad0,127.0.0.1,POST,http://localhost:8000/historial/ver,1471627312,,200
 57cf2a,127.0.0.1,POST,http://localhost:8000/getHistGraphData,1471627316,,200
 43b7bf,127.0.0.1,GET,http://localhost:8000/,1471627355,,200
+9ff28c,127.0.0.1,GET,http://localhost:8000/,1471628497,,200
+6efc6b,127.0.0.1,GET,http://localhost:8000/,1471628532,,200
+131a5b,127.0.0.1,GET,http://localhost:8000/,1471629032,,200
+283c46,127.0.0.1,GET,http://localhost:8000/,1471629124,,200
+2ea7bf,127.0.0.1,GET,http://localhost:8000/,1471629142,,200
+6c697b,127.0.0.1,GET,http://localhost:8000/,1471629203,,200
+7892a4,127.0.0.1,GET,http://localhost:8000/,1471629220,,200
+a94e65,127.0.0.1,GET,http://localhost:8000/,1471629236,,200
+30b8d1,127.0.0.1,GET,http://localhost:8000/,1471629247,,200
+bd2f33,127.0.0.1,GET,http://localhost:8000/,1471629344,,200
+637506,127.0.0.1,GET,http://localhost:8000/ensayo,1471629356,,200

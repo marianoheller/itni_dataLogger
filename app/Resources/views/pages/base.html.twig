@@ -35,6 +35,12 @@
                 color: #FFFFFF;
             }
         }
+
+        #inti_logo{
+            width:30px;
+            height:30px;
+            display: inline;
+        }
     </style>
 
     {% block extraCss %}
@@ -47,7 +53,7 @@
     <button class='navbar-toggler hidden-md-up pull-xs-right' data-target='#collapsenav' data-toggle='collapse' type='button'>
         &#9776;
     </button>
-    <a class="navbar-brand" href="{{ path('homepage') }}">INTI - Construcciones</a>
+    <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ asset('media/img/inti_logo.png') }}" id="inti_logo"> INTI - Construcciones</a>
     <div class='collapse navbar-toggleable-sm pull-xs-left pull-md-none' id='collapsenav'>
 
 
@@ -71,7 +77,7 @@
 
         <ul class="nav navbar-nav navbar-right pull-xs-right">
             <li class="nav-item ">
-                <a class="nav-link" href="{{ path('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
+                <a class="nav-link" href="{{ path('logout') }}"><i class="fa fa-sign-out fa-fw"></i> {{ app.user.username }}, Salir</a>
             </li>
         </ul>
 
