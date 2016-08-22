@@ -27,6 +27,16 @@ class UserRepository extends EntityRepository
         return $arrayQueryResult;
     }
 
+    public function getAllDevices() {
+        $sqlGetAllNonAdmin = "SELECT * FROM `user` WHERE is_device=1";
+        $em = $this->getEntityManager();
+        $stmt = $em->getConnection()->prepare($sqlGetAllNonAdmin);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+
+        return $arrayQueryResult;
+    }
+
     public function addUser($userObj) {
         $em = $this->getEntityManager();
         $em->persist($userObj);

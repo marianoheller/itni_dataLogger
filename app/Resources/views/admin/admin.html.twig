@@ -1,12 +1,28 @@
 {% extends 'admin/admin_base.html.twig' %}
 
+
+
+{% block extraCss %}
+    <style>
+        .divider-text {
+            height: 5px;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            border-top: 1px solid #c4c4c4;
+        }
+    </style>
+{% endblock %}
+
 {% block content_admin %}
 
     <div class="container col-md-1"></div>
     <div class="container-fluid">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#cuentas" role="tab">Cuentas</a>
+                <a class="nav-link active" data-toggle="tab" href="#usuarios" role="tab"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#dispositivos" role="tab"><i class="fa fa-server fa-fw" aria-hidden="true"></i>Dispositivos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" data-toggle="tab" href="#otros" role="tab">Otros</a>
@@ -15,8 +31,8 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-            <div class="tab-pane active m-t-2" id="cuentas" role="tabpanel">
 
+            <div class="tab-pane active m-t-2" id="usuarios" role="tabpanel">
                 <div class="col-md-5 offset-md-1">
                     {% if flagUserAdded == true %}
                         <div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -38,17 +54,13 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for=register-email-input" class="col-xs-2 col-form-label">Email</label>
-                            <div class="col-xs-10">
-                                <input name="add-email" class="form-control" type="email" id="register-email-input" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label for="register-password-input" class="col-xs-2 col-form-label">Password</label>
                             <div class="col-xs-10">
                                 <input name="add-password" class="form-control" type="password"  id="register-password-input" required>
                             </div>
                         </div>
+                        <input type="hidden" name="is_device" value="0">
+                        <input type="hidden" name="is_admin" value="0">
                         <button type="submit" class="btn btn-secondary pull-md-right">Agregar</button>
                     </form>
                 </div>
@@ -72,7 +84,66 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <button id="deleteButton" type="submit" class="btn btn-secondary pull-md-right" disabled>Eliminar</button>
+                        <button id="deleteUserButton" type="submit" class="btn btn-secondary pull-md-right" disabled>Eliminar</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="tab-pane m-t-2" id="dispositivos" role="tabpanel">
+
+                <div class="col-md-5 offset-md-1">
+                    {% if flagDeviceAdded == true %}
+                        <div class="alert alert-success alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Exito!</strong> Dispositivo <strong>"{{ userAddedName }}"</strong> agregado.
+                        </div>
+                    {% endif %}
+                    <div id="alert-device-existente" class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <small><strong>Error!</strong> Nombre de device ya existente.</small>
+                    </div>
+                    <h4 class="m-b-2">Agregar dispositivo</h4>
+                    <form method="post" name="register_device_form" onsubmit="return validateDeviceAvailability();">
+                        <div class="form-group row">
+                            <label for="register-devicename-input" class="col-xs-2 col-form-label">Nombre</label>
+                            <div class="col-xs-10">
+                                <input name="add-username" class="form-control" type="text"  id="register-devicename-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="register-devicepassword-input" class="col-xs-2 col-form-label">Password</label>
+                            <div class="col-xs-10">
+                                <input name="add-password" class="form-control" type="password"  id="register-devicepassword-input" required>
+                            </div>
+                        </div>
+                        <input type="hidden" name="is_device" value="1">
+                        <input type="hidden" name="is_admin" value="0">
+                        <button type="submit" class="btn btn-secondary pull-md-right">Agregar</button>
+                    </form>
+                </div>
+                <div class="col-md-5 offset-md-6 m-l-1">
+                    {% if flagUserDeleted == true %}
+                        <div class="alert alert-success alert-dismissible fade in" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Exito!</strong> Dispositivo <strong>"{{ userDeletedName }}"</strong> borrado.
+                        </div>
+                    {% endif %}
+                    <h4 class="m-b-2">Eliminar dispositivo</h4>
+                    <form method="post" name="delete-device-form">
+                        <div class="form-group row">
+                            <label for="delete-device-select" class="col-md-2 col-form-label">Dispositivo: </label>
+                            <select id="delete-device-select" class="custom-select" name="device-eliminar">
+                                <option  value="-1" selected>Seleccionar dispositivo</option>
+                                {% for device in arrayDevices %}
+                                    <option value="{{ device.username }}">{{ device.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button id="deleteDeviceButton" type="submit" class="btn btn-secondary pull-md-right" disabled>Eliminar</button>
                     </form>
                 </div>
 
@@ -100,25 +171,33 @@
                 $('#alert-user-existente').show();
                 return false;
             }
-            if (email == "{{ user.email }}") {
-                $('#alert-user-existente').show();
-                return false;
-            }
             {% endfor %}
             return true;
         }
 
+
         $(document).ready(function() {
             $('#alert-user-existente').hide();
+            $('#alert-device-existente').hide();
         });
 
         $('#delete-user-select').on('change', function() {
             var val = document.forms["delete-form"]["username-eliminar"].value;
             if (val == "-1") {
-                $('#deleteButton').prop('disabled', true);
+                $('#deleteUserButton').prop('disabled', true);
             }
             else{
-                $('#deleteButton').prop('disabled', false);
+                $('#deleteUserButton').prop('disabled', false);
+            }
+        });
+
+        $('#delete-device-select').on('change', function() {
+            var val = document.forms["delete-device-form"]["device-eliminar"].value;
+            if (val == "-1") {
+                $('#deleteDeviceButton').prop('disabled', true);
+            }
+            else{
+                $('#deleteDeviceButton').prop('disabled', false);
             }
         });
 

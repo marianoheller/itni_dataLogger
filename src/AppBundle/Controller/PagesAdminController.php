@@ -36,22 +36,30 @@ class PagesAdminController extends Controller
             $userDeletedName = $usernameDeleteTarget;
         }
 
+
         //Add user
         $add_username = $request->request->get("add-username");
         $add_password = $request->request->get("add-password");
-        $add_email = $request->request->get("add-email");
         $flagUserAdded = false;
+        $flagDeviceAdded = false;
         $userAddedName = "";
-        if (  isset($add_email) && isset($add_username) && isset($add_password)) {
-            $userObj = new User($add_username,$add_email);
+        if (  isset($add_username) && isset($add_password)) {
+            $userObj = new User($add_username);
             $encoder = $this->container->get('security.password_encoder');
             $encoded = $encoder->encodePassword($userObj, $add_password);
             $userObj->setPassword($encoded);
 
+            $isDevice = $request->request->get("is_device");
+            if ($isDevice == "1") {
+                $userObj->setDevice(true);
+                $flagDeviceAdded = true;
+            }
+            else {
+                $flagUserAdded = true;
+            }
             $em = $this->getDoctrine()->getManager();
             $em->getRepository('AppBundle:User')->addUser($userObj);
 
-            $flagUserAdded = true;
             $userAddedName = $add_username;
         }
 
@@ -59,13 +67,18 @@ class PagesAdminController extends Controller
 
         //Get all for show
         $em = $this->getDoctrine()->getManager();
-        $arrayResults = $em->getRepository('AppBundle:User')->getAllUsersNonAdmin();
+        $arrayUsers = $em->getRepository('AppBundle:User')->getAllUsersNonAdmin();
+        $arrayDevices = $em->getRepository('AppBundle:User')->getAllDevices();
 
         return $this->render("admin/admin.html.twig", array(
-            "arrayUsers" => $arrayResults,
+            "arrayUsers" => $arrayUsers,
+            "arrayDevices" => $arrayDevices,
+
             "flagUserAdded" => $flagUserAdded,
-            "userAddedName" => $userAddedName,
             "flagUserDeleted" => $flagUserDeleted,
+            "flagDeviceAdded" => $flagDeviceAdded,
+
+            "userAddedName" => $userAddedName,
             "userDeletedName" => $userDeletedName
         ));
     }

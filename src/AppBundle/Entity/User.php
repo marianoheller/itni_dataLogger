@@ -31,15 +31,10 @@ class User implements UserInterface, \Serializable
      * the password, but this works well with bcrypt.
      *
      * @ORM\Column(type="string", length=64)
+     * @Assert\NotBlank()
      */
     private $password;
 
-    /**
-     * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank()
-     * @Assert\Email()
-     */
-    private $email;
 
 
     /**
@@ -59,7 +54,7 @@ class User implements UserInterface, \Serializable
     private $active;
 
 
-    public function __construct($username,$email)
+    public function __construct($username)
     {
         $this->active = true;
         $this->admin = false;
@@ -69,8 +64,9 @@ class User implements UserInterface, \Serializable
         // $this->salt = md5(uniqid(null, true));
 
         $this->username = $username;
-        $this->email = $email;
     }
+
+
 
     public function getUsername()
     {
@@ -125,6 +121,14 @@ class User implements UserInterface, \Serializable
     public function isEnabled()
     {
         return $this->active;
+    }
+
+    public function setDevice($isDevice) {
+        $this->device = $isDevice;
+    }
+
+    public function setAdmin($isAdmin) {
+        $this->admin = $isAdmin;
     }
 
 
