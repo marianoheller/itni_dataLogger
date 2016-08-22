@@ -118,3 +118,10 @@ ab649a,127.0.0.1,GET,http://localhost:8000/logout,1471887485,,302
 738495,127.0.0.1,GET,http://localhost:8000/login,1471887488,,200
 42c10c,127.0.0.1,POST,http://localhost:8000/login,1471887517,,302
 8108b7,127.0.0.1,GET,http://localhost:8000/,1471887520,,200
+f005fc,127.0.0.1,GET,http://localhost:8000/logout,1471887631,,302
+286c60,127.0.0.1,GET,http://localhost:8000/login,1471887632,,200
+af8efa,127.0.0.1,POST,http://localhost:8000/login,1471887640,,302
+a9acb1,127.0.0.1,GET,http://localhost:8000/,1471887642,,200
+099d74,127.0.0.1,GET,http://localhost:8000/admin,1471887656,,200
+a0a4e6,127.0.0.1,POST,http://localhost:8000/admin,1471887662,,200
+8e2317,127.0.0.1,GET,http://localhost:8000/avanzado,1471887670,,200
