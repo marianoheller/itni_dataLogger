@@ -73,6 +73,11 @@
             <li class="nav-item {% if app.request.attributes.get('_route') matches '/avanzado.*$/' %}active{% endif %}">
                 <a class="nav-link" href="{{ path('avanzado') }}"><i class="fa fa-wrench fa-fw"></i> Avanzado</a>
             </li>
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item {% if app.request.attributes.get('_route') matches '/admin.*$/' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('admin') }}"><i class="fa fa-users fa-fw" aria-hidden="true"></i> Administracion</a>
+                </li>
+            {% endif %}
         </ul>
 
         <ul class="nav navbar-nav navbar-right pull-xs-right">
