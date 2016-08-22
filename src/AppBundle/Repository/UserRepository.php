@@ -18,7 +18,7 @@ class UserRepository extends EntityRepository
     }
 
     public function getAllUsersNonAdmin() {
-        $sqlGetAllNonAdmin = "SELECT * FROM `user` WHERE is_admin!=1";
+        $sqlGetAllNonAdmin = "SELECT * FROM `user` WHERE is_admin!=1 AND is_device!=1";
         $em = $this->getEntityManager();
         $stmt = $em->getConnection()->prepare($sqlGetAllNonAdmin);
         $stmt->execute();

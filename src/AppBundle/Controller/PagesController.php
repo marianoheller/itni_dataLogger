@@ -227,6 +227,8 @@ class PagesController extends Controller
 }
 
 
+//TODO crear cuentas de devices
+//TODO arreglar templates en la pagina de admin (herencia y icons)
 
 //TODO canales virtuales
 //TODO patron

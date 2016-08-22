@@ -21,7 +21,7 @@ class User implements UserInterface, \Serializable
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=30, unique=true)
      * @Assert\NotBlank()
      */
     private $username;
@@ -35,16 +35,23 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=100)
      * @Assert\NotBlank()
      * @Assert\Email()
      */
     private $email;
 
+
+    /**
+     * @ORM\Column(name="is_device", type="boolean", options={"default":false})
+     */
+    private $device;
+
     /**
      * @ORM\Column(name="is_admin", type="boolean", options={"default":false})
      */
     private $admin;
+
 
     /**
      * @ORM\Column(name="is_active", type="boolean", options={"default":true})
@@ -56,6 +63,8 @@ class User implements UserInterface, \Serializable
     {
         $this->active = true;
         $this->admin = false;
+        $this->device = false;
+
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
 
@@ -82,7 +91,10 @@ class User implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        if ( $this->admin == true) {
+        if ( $this->device == true) {
+            return array('ROLE_DEVICE');
+        }
+        else if ( $this->admin == true) {
             return array('ROLE_ADMIN');
         }
         else {
@@ -112,7 +124,7 @@ class User implements UserInterface, \Serializable
 
     public function isEnabled()
     {
-        return $this->isActive;
+        return $this->active;
     }
 
 
@@ -134,6 +146,7 @@ class User implements UserInterface, \Serializable
             // see section on salt below
             // $this->salt,
             $this->active,
+            $this->device,
             $this->admin
         ));
     }
@@ -148,6 +161,7 @@ class User implements UserInterface, \Serializable
             // see section on salt below
             // $this->salt
             $this->active,
+            $this->device,
             $this->admin
             ) = unserialize($serialized);
     }
