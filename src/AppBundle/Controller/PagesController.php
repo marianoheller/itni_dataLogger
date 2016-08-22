@@ -199,7 +199,14 @@ class PagesController extends Controller
             $results = $em->getRepository('AppBundle:Datalog')->getDataInTimeRange($t_inicio, $t_fin);
 
             // Add the data queried from database
+            $timezoneArg = new \DateTimeZone("America/Argentina/Buenos_Aires");
+            $timezoneGMT = new \DateTimeZone('GMT');
+            $fechaInicio = new \DateTime("now", $timezoneArg);
+            $timestampInicio = $fechaInicio->createFromFormat('Y-m-d H:i:s', $t_inicio,$timezoneArg)->getTimestamp();
             while ($row = $results->fetch()) {
+                $fechaPunto = new \DateTime("now",$timezoneArg);
+                $timestampPunto = $fechaPunto->createFromFormat('Y-m-d H:i:s', $row['fecha'],$timezoneArg)->getTimestamp();
+                $row['fecha'] = $fechaPunto->setTimestamp($timestampPunto-$timestampInicio)->setTimezone($timezoneGMT)->format('H:i:s');
                 fputcsv(
                     $handle, // The file pointer
                     array($row['sensor_id'], $row['medicion'], $row['fecha']), // The fields
@@ -219,12 +226,11 @@ class PagesController extends Controller
 
 }
 
-//TODO arreglar el export CSV asi el tiempo figura bien (como en el ensayo)
-//TODO canales virtuales
 
+
+//TODO canales virtuales
 //TODO patron
 
 //TODO server Validation on everything
 //TODO lifecycle LOG
-//TODO glyphicon
 //TODO Deployer bundle (linux aparentemente)
