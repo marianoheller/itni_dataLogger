@@ -28,93 +28,49 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $request = $this->request;
 
         if (0 === strpos($pathinfo, '/assetic')) {
-            if (0 === strpos($pathinfo, '/assetic/bootstrap_css')) {
-                // _assetic_bootstrap_css
-                if ($pathinfo === '/assetic/bootstrap_css.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
-                }
-
-                // _assetic_bootstrap_css_0
-                if ($pathinfo === '/assetic/bootstrap_css_bootstrap_1.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css_0',);
-                }
-
+            // _assetic_jquery_js
+            if ($pathinfo === '/assetic/jquery_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
             }
 
-            if (0 === strpos($pathinfo, '/assetic/jquery_js')) {
-                // _assetic_jquery_js
-                if ($pathinfo === '/assetic/jquery_js.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
-                }
-
-                // _assetic_jquery_js_0
-                if ($pathinfo === '/assetic/jquery_js_jquery.min_1.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_jquery_js_0',);
-                }
-
+            // _assetic_tether_js
+            if ($pathinfo === '/assetic/tether_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_tether_js',);
             }
 
-            if (0 === strpos($pathinfo, '/assetic/tether_js')) {
-                // _assetic_tether_js
-                if ($pathinfo === '/assetic/tether_js.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_tether_js',);
-                }
-
-                // _assetic_tether_js_0
-                if ($pathinfo === '/assetic/tether_js_tether.min_1.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_tether_js_0',);
-                }
-
-            }
-
-            if (0 === strpos($pathinfo, '/assetic/bootstrap_js')) {
+            if (0 === strpos($pathinfo, '/assetic/bootstrap_')) {
                 // _assetic_bootstrap_js
                 if ($pathinfo === '/assetic/bootstrap_js.js') {
                     return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
                 }
 
-                // _assetic_bootstrap_js_0
-                if ($pathinfo === '/assetic/bootstrap_js_bootstrap.min_1.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_0',);
+                // _assetic_bootstrap_css
+                if ($pathinfo === '/assetic/bootstrap_css.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
                 }
 
             }
 
-            if (0 === strpos($pathinfo, '/assetic/fontawesome_css')) {
-                // _assetic_fontawesome_css
-                if ($pathinfo === '/assetic/fontawesome_css.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css',);
-                }
-
-                // _assetic_fontawesome_css_0
-                if ($pathinfo === '/assetic/fontawesome_css_font-awesome_1.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css_0',);
-                }
-
+            // _assetic_fontawesome_css
+            if ($pathinfo === '/assetic/fontawesome_css.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css',);
             }
 
         }
 
         if (0 === strpos($pathinfo, '/fonts')) {
-            if (0 === strpos($pathinfo, '/fonts/fontawesome-webfont')) {
-                // _assetic_fontawesome_woff2
-                if ($pathinfo === '/fonts/fontawesome-webfont.woff2') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff2',  'pos' => NULL,  '_format' => 'woff2',  '_route' => '_assetic_fontawesome_woff2',);
-                }
+            if (0 === strpos($pathinfo, '/fonts/fontawesome-webfont.')) {
+                if (0 === strpos($pathinfo, '/fonts/fontawesome-webfont.woff')) {
+                    // _assetic_fontawesome_woff2
+                    if ($pathinfo === '/fonts/fontawesome-webfont.woff2') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff2',  'pos' => NULL,  '_format' => 'woff2',  '_route' => '_assetic_fontawesome_woff2',);
+                    }
 
-                // _assetic_fontawesome_woff2_0
-                if ($pathinfo === '/fonts/fontawesome-webfont_fontawesome-webfont_1.woff2') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff2',  'pos' => 0,  '_format' => 'woff2',  '_route' => '_assetic_fontawesome_woff2_0',);
-                }
+                    // _assetic_fontawesome_woff
+                    if ($pathinfo === '/fonts/fontawesome-webfont.woff') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff',  'pos' => NULL,  '_format' => 'woff',  '_route' => '_assetic_fontawesome_woff',);
+                    }
 
-                // _assetic_fontawesome_woff
-                if ($pathinfo === '/fonts/fontawesome-webfont.woff') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff',  'pos' => NULL,  '_format' => 'woff',  '_route' => '_assetic_fontawesome_woff',);
-                }
-
-                // _assetic_fontawesome_woff_0
-                if ($pathinfo === '/fonts/fontawesome-webfont_fontawesome-webfont_1.woff') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff',  'pos' => 0,  '_format' => 'woff',  '_route' => '_assetic_fontawesome_woff_0',);
                 }
 
                 // _assetic_fontawesome_ttf
@@ -122,120 +78,36 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_ttf',  'pos' => NULL,  '_format' => 'ttf',  '_route' => '_assetic_fontawesome_ttf',);
                 }
 
-                // _assetic_fontawesome_ttf_0
-                if ($pathinfo === '/fonts/fontawesome-webfont_fontawesome-webfont_1.ttf') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_ttf',  'pos' => 0,  '_format' => 'ttf',  '_route' => '_assetic_fontawesome_ttf_0',);
-                }
-
             }
 
-            if (0 === strpos($pathinfo, '/fonts/FontAwesome')) {
-                // _assetic_fontawesome_otf
-                if ($pathinfo === '/fonts/FontAwesome.otf') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_otf',  'pos' => NULL,  '_format' => 'otf',  '_route' => '_assetic_fontawesome_otf',);
-                }
-
-                // _assetic_fontawesome_otf_0
-                if ($pathinfo === '/fonts/FontAwesome_FontAwesome_1.otf') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_otf',  'pos' => 0,  '_format' => 'otf',  '_route' => '_assetic_fontawesome_otf_0',);
-                }
-
+            // _assetic_fontawesome_otf
+            if ($pathinfo === '/fonts/FontAwesome.otf') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_otf',  'pos' => NULL,  '_format' => 'otf',  '_route' => '_assetic_fontawesome_otf',);
             }
 
         }
 
         if (0 === strpos($pathinfo, '/css')) {
-            if (0 === strpos($pathinfo, '/css/74c9d00')) {
-                // _assetic_74c9d00
-                if ($pathinfo === '/css/74c9d00.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_74c9d00',);
-                }
-
-                // _assetic_74c9d00_0
-                if ($pathinfo === '/css/74c9d00_part_1.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_74c9d00_0',);
-                }
-
+            // _assetic_74c9d00
+            if ($pathinfo === '/css/74c9d00.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_74c9d00',);
             }
 
-            if (0 === strpos($pathinfo, '/css/1886b1b')) {
-                // _assetic_1886b1b
-                if ($pathinfo === '/css/1886b1b.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '1886b1b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_1886b1b',);
-                }
-
-                if (0 === strpos($pathinfo, '/css/1886b1b_part_')) {
-                    // _assetic_1886b1b_0
-                    if ($pathinfo === '/css/1886b1b_part_1.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '1886b1b',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_1886b1b_0',);
-                    }
-
-                    // _assetic_1886b1b_1
-                    if ($pathinfo === '/css/1886b1b_part_2.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '1886b1b',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_1886b1b_1',);
-                    }
-
-                }
-
+            // _assetic_1886b1b
+            if ($pathinfo === '/css/1886b1b.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '1886b1b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_1886b1b',);
             }
 
-            if (0 === strpos($pathinfo, '/css/93b3f23')) {
-                // _assetic_93b3f23
-                if ($pathinfo === '/css/93b3f23.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '93b3f23',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_93b3f23',);
-                }
-
-                if (0 === strpos($pathinfo, '/css/93b3f23_part_')) {
-                    // _assetic_93b3f23_0
-                    if ($pathinfo === '/css/93b3f23_part_1.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '93b3f23',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_93b3f23_0',);
-                    }
-
-                    // _assetic_93b3f23_1
-                    if ($pathinfo === '/css/93b3f23_part_2.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '93b3f23',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_93b3f23_1',);
-                    }
-
-                    // _assetic_93b3f23_2
-                    if ($pathinfo === '/css/93b3f23_part_3.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '93b3f23',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_93b3f23_2',);
-                    }
-
-                    // _assetic_93b3f23_3
-                    if ($pathinfo === '/css/93b3f23_part_4.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '93b3f23',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_93b3f23_3',);
-                    }
-
-                }
-
+            // _assetic_93b3f23
+            if ($pathinfo === '/css/93b3f23.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '93b3f23',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_93b3f23',);
             }
 
         }
 
-        if (0 === strpos($pathinfo, '/js/6de2781')) {
-            // _assetic_6de2781
-            if ($pathinfo === '/js/6de2781.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '6de2781',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_6de2781',);
-            }
-
-            if (0 === strpos($pathinfo, '/js/6de2781_part_')) {
-                // _assetic_6de2781_0
-                if ($pathinfo === '/js/6de2781_part_1.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '6de2781',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_6de2781_0',);
-                }
-
-                // _assetic_6de2781_1
-                if ($pathinfo === '/js/6de2781_part_2.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '6de2781',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_6de2781_1',);
-                }
-
-                // _assetic_6de2781_2
-                if ($pathinfo === '/js/6de2781_part_3.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '6de2781',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_6de2781_2',);
-                }
-
-            }
-
+        // _assetic_6de2781
+        if ($pathinfo === '/js/6de2781.js') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => '6de2781',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_6de2781',);
         }
 
         if (0 === strpos($pathinfo, '/_')) {

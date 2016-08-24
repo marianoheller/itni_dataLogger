@@ -70,7 +70,7 @@ swiftmailer:
 
 # Assetic
 assetic:
-    debug:          '%kernel.debug%'
+    debug:          false
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
