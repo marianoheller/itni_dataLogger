@@ -225,3 +225,8 @@ c7cf45,127.0.0.1,GET,http://localhost:8000/media/js/dygraph-combined.js.map,1472
 ee3c53,127.0.0.1,GET,http://localhost:8000/login,1472060959,,200
 3243e0,127.0.0.1,GET,http://localhost:8000/,1472060965,,302
 952c79,127.0.0.1,GET,http://localhost:8000/login,1472060966,,200
+72adea,127.0.0.1,GET,http://localhost:8000/login,1472061170,,200
+92370a,127.0.0.1,POST,http://localhost:8000/login,1472061178,,302
+cf9497,127.0.0.1,GET,http://localhost:8000/,1472061179,,200
+bc1eab,127.0.0.1,GET,http://localhost:8000/logout,1472061189,,302
+d7b703,127.0.0.1,GET,http://localhost:8000/login,1472061190,,200

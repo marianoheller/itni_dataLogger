@@ -41,19 +41,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            if (0 === strpos($pathinfo, '/assetic/fontawesome_css')) {
-                // _assetic_fontawesome_css
-                if ($pathinfo === '/assetic/fontawesome_css.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css',);
-                }
-
-                // _assetic_fontawesome_css_0
-                if ($pathinfo === '/assetic/fontawesome_css_font-awesome_1.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css_0',);
-                }
-
-            }
-
             if (0 === strpos($pathinfo, '/assetic/jquery_js')) {
                 // _assetic_jquery_js
                 if ($pathinfo === '/assetic/jquery_js.js') {
@@ -89,6 +76,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 // _assetic_bootstrap_js_0
                 if ($pathinfo === '/assetic/bootstrap_js_bootstrap.min_1.js') {
                     return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_0',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/assetic/fontawesome_css')) {
+                // _assetic_fontawesome_css
+                if ($pathinfo === '/assetic/fontawesome_css.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css',);
+                }
+
+                // _assetic_fontawesome_css_0
+                if ($pathinfo === '/assetic/fontawesome_css_font-awesome_1.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css_0',);
                 }
 
             }
@@ -145,6 +145,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/css')) {
+            if (0 === strpos($pathinfo, '/css/74c9d00')) {
+                // _assetic_74c9d00
+                if ($pathinfo === '/css/74c9d00.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_74c9d00',);
+                }
+
+                // _assetic_74c9d00_0
+                if ($pathinfo === '/css/74c9d00_part_1.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_74c9d00_0',);
+                }
+
+            }
+
             if (0 === strpos($pathinfo, '/css/1886b1b')) {
                 // _assetic_1886b1b
                 if ($pathinfo === '/css/1886b1b.css') {
