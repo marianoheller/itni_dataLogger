@@ -17,7 +17,7 @@
 
     <div class="container col-md-1"></div>
     <div class="container-fluid">
-        <ul class="nav nav-tabs" role="tablist">
+        <ul id="content-tab" class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#usuarios" role="tab"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Usuarios</a>
             </li>
@@ -145,7 +145,8 @@
                         </div>
                         <button id="deleteDeviceButton" type="submit" class="btn btn-secondary pull-md-right" disabled>Eliminar</button>
                     </form>
-                </div>
+
+
 
             </div>
 
@@ -179,6 +180,10 @@
         $(document).ready(function() {
             $('#alert-user-existente').hide();
             $('#alert-device-existente').hide();
+
+            $(".content-tab a").click(function(){
+                $(this).tab('show');
+            });
         });
 
         $('#delete-user-select').on('change', function() {

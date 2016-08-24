@@ -74,6 +74,53 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+        yui_js:
+          jar: "%kernel.root_dir%/../vendor/yalesov/yuicompressor/yuicompressor.jar"
+        scssphp:
+          formatter: 'Leafo\ScssPhp\Formatter\Compressed'
+        jsqueeze: ~
+    assets:
+        jquery_js:
+            inputs:
+                - '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'
+            filters: [?yui_js]
+        tether_js:
+            inputs:
+                - "%kernel.root_dir%/../vendor/bordercloud/tether/dist/js/tether.min.js"
+            filters: [?yui_js]
+        bootstrap_js:
+            inputs:
+                - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"
+            filters: [?yui_js]
+        bootstrap_css:
+            inputs:
+                - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.css"
+            filters: [cssrewrite]
+        fontawesome_css:
+            inputs:
+               - "%kernel.root_dir%/../vendor/components/font-awesome/css/font-awesome.css"
+            filters: [cssrewrite]
+        fontawesome_woff2:
+            inputs:
+               - "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.woff2"
+            filters: [cssrewrite]
+            output: 'fonts/fontawesome-webfont.woff2'
+        fontawesome_woff:
+            inputs:
+               - "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.woff"
+            filters: [cssrewrite]
+            output: 'fonts/fontawesome-webfont.woff'
+        fontawesome_ttf:
+            inputs:
+               - "%kernel.root_dir%/../vendor/components/font-awesome/fonts/fontawesome-webfont.ttf"
+            filters: [cssrewrite]
+            output: 'fonts/fontawesome-webfont.ttf'
+        fontawesome_otf:
+            inputs:
+               - "%kernel.root_dir%/../vendor/components/font-awesome/fonts/FontAwesome.otf"
+            filters: [cssrewrite]
+            output: 'fonts/FontAwesome.otf'
+
 
 # Migrations
 doctrine_migrations:

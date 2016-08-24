@@ -227,8 +227,8 @@ class PagesController extends Controller
 }
 
 
-//TODO Migrations (así tmb hago insert data de ADMIN)
-//TODO arreglar tabs en admin
+
+//TODO Arreglar estilo en pantalla login (se cago al pasar a la v4 de bootstrap)
 
 //TODO canales virtuales
 //TODO patron

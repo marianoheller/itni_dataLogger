@@ -2,6 +2,9 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bordercloud/tether" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/font-awesome" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components/jquery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/deployer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/phar-update" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
@@ -13,7 +16,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/herrera-io/phar-update" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/herrera-io/version" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/patchwork/jsqueeze" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/react/cache" />
@@ -28,6 +33,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/react/socket-client" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/react/stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yalesov/yuicompressor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
     </content>
@@ -48,6 +55,9 @@
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bordercloud/tether" />
+          <root url="file://$MODULE_DIR$/vendor/components/font-awesome" />
+          <root url="file://$MODULE_DIR$/vendor/components/jquery" />
           <root url="file://$MODULE_DIR$/vendor/deployer/deployer" />
           <root url="file://$MODULE_DIR$/vendor/deployer/phar-update" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
@@ -59,7 +69,9 @@
           <root url="file://$MODULE_DIR$/vendor/herrera-io/phar-update" />
           <root url="file://$MODULE_DIR$/vendor/herrera-io/version" />
           <root url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+          <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
           <root url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
+          <root url="file://$MODULE_DIR$/vendor/patchwork/jsqueeze" />
           <root url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/react/cache" />
@@ -74,10 +86,15 @@
           <root url="file://$MODULE_DIR$/vendor/react/socket-client" />
           <root url="file://$MODULE_DIR$/vendor/react/stream" />
           <root url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
+          <root url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
+          <root url="file://$MODULE_DIR$/vendor/yalesov/yuicompressor" />
           <root url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
           <root url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
         </CLASSES>
         <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bordercloud/tether" />
+          <root url="file://$MODULE_DIR$/vendor/components/font-awesome" />
+          <root url="file://$MODULE_DIR$/vendor/components/jquery" />
           <root url="file://$MODULE_DIR$/vendor/deployer/deployer" />
           <root url="file://$MODULE_DIR$/vendor/deployer/phar-update" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
@@ -89,7 +106,9 @@
           <root url="file://$MODULE_DIR$/vendor/herrera-io/phar-update" />
           <root url="file://$MODULE_DIR$/vendor/herrera-io/version" />
           <root url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+          <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
           <root url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
+          <root url="file://$MODULE_DIR$/vendor/patchwork/jsqueeze" />
           <root url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/react/cache" />
@@ -104,6 +123,8 @@
           <root url="file://$MODULE_DIR$/vendor/react/socket-client" />
           <root url="file://$MODULE_DIR$/vendor/react/stream" />
           <root url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
+          <root url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
+          <root url="file://$MODULE_DIR$/vendor/yalesov/yuicompressor" />
           <root url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
           <root url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
         </SOURCES>

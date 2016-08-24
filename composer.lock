@@ -4,9 +4,106 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "13aa77bba76570dbe3acdf16fa34855e",
-    "content-hash": "939219cbe3cab9f5eda51d273f0bed34",
+    "hash": "808a032e806bd8f49577b372ceb4ea37",
+    "content-hash": "d674f3222a743f40963fc4e2ced30e9d",
     "packages": [
+        {
+            "name": "bordercloud/tether",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BorderCloud/tether.git",
+                "reference": "71c1c347a14ac545a36376685453633aa14f4b40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BorderCloud/tether/zipball/71c1c347a14ac545a36376685453633aa14f4b40",
+                "reference": "71c1c347a14ac545a36376685453633aa14f4b40",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Clone of hubspot/tether",
+            "homepage": "https://github.com/BorderCloud/tether.git",
+            "time": "2015-12-19 14:41:11"
+        },
+        {
+            "name": "components/font-awesome",
+            "version": "4.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/font-awesome.git",
+                "reference": "daa3ef598620217085dcb13ad11149e89a20a925"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/font-awesome/zipball/daa3ef598620217085dcb13ad11149e89a20a925",
+                "reference": "daa3ef598620217085dcb13ad11149e89a20a925",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "styles": [
+                        "css/font-awesome.css"
+                    ],
+                    "files": [
+                        "css/font-awesome.min.css",
+                        "css/font-awesome.css.map",
+                        "fonts/*"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "OFL-1.1"
+            ],
+            "description": "The iconic font designed for use with Twitter Bootstrap.",
+            "time": "2016-05-18 10:46:59"
+        },
+        {
+            "name": "components/jquery",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/7b1d1104656a092423fbfba13c5920e9bbba290c",
+                "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery-migrate.js",
+                        "jquery-migrate.min.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Resig",
+                    "email": "jeresig@gmail.com"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2015-05-08 05:04:47"
+        },
         {
             "name": "deployer/deployer",
             "version": "v3.3.0",
@@ -1563,6 +1660,52 @@
             "time": "2015-11-12 13:51:40"
         },
         {
+            "name": "leafo/scssphp",
+            "version": "0.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/scssphp.git",
+                "reference": "558357feceb9b932a192966945904414dc372e4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/558357feceb9b932a192966945904414dc372e4d",
+                "reference": "558357feceb9b932a192966945904414dc372e4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "php": ">=5.3.0",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "bin": [
+                "pscss"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "scss.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "scssphp is a compiler for SCSS written in PHP.",
+            "homepage": "http://leafo.net/scssphp/",
+            "time": "2014-04-15 02:25:09"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.20.0",
             "source": {
@@ -1750,6 +1893,53 @@
                 "random"
             ],
             "time": "2016-04-03 06:00:07"
+        },
+        {
+            "name": "patchwork/jsqueeze",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tchwork/jsqueeze.git",
+                "reference": "693d64850eab2ce6a7c8f7cf547e1ab46e69d542"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tchwork/jsqueeze/zipball/693d64850eab2ce6a7c8f7cf547e1ab46e69d542",
+                "reference": "693d64850eab2ce6a7c8f7cf547e1ab46e69d542",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Patchwork\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(Apache-2.0 or GPL-2.0)"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "Efficient JavaScript minification in PHP",
+            "homepage": "https://github.com/tchwork/jsqueeze",
+            "keywords": [
+                "compression",
+                "javascript",
+                "minification"
+            ],
+            "time": "2016-04-19 09:28:22"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -3490,6 +3680,57 @@
             "time": "2016-06-30 15:42:24"
         },
         {
+            "name": "twbs/bootstrap",
+            "version": "v4.0.0-alpha.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "c7de6107a86ebe65a6f5d5b88884256e5094ca92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/c7de6107a86ebe65a6f5d5b88884256e5094ca92",
+                "reference": "c7de6107a86ebe65a6f5d5b88884256e5094ca92",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "mobile-first",
+                "responsive",
+                "sass",
+                "web"
+            ],
+            "time": "2016-07-27 16:40:40"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.24.1",
             "source": {
@@ -3549,6 +3790,33 @@
                 "templating"
             ],
             "time": "2016-05-30 09:11:59"
+        },
+        {
+            "name": "yalesov/yuicompressor",
+            "version": "2.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yalesov/php-yuicompressor.git",
+                "reference": "aec146f30b2a732850645da6516a2c3a1015b577"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yalesov/php-yuicompressor/zipball/aec146f30b2a732850645da6516a2c3a1015b577",
+                "reference": "aec146f30b2a732850645da6516a2c3a1015b577",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "YUI Compressor is a popular CSS and JS minifier.",
+            "homepage": "https://github.com/heartsentwined/yuicompressor",
+            "keywords": [
+                "JS",
+                "compressor",
+                "css",
+                "minifier",
+                "yui"
+            ],
+            "time": "2012-09-02 18:05:33"
         },
         {
             "name": "zendframework/zend-code",
@@ -3768,7 +4036,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "twbs/bootstrap": 15
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -23,7 +23,14 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "symfony/assetic-bundle": "v2.8.0",
         "deployer/deployer": "v3.3.0",
-        "doctrine/doctrine-migrations-bundle": "1.1.1"
+        "doctrine/doctrine-migrations-bundle": "1.1.1",
+        "twbs/bootstrap": "v4.0.0-alpha.3",
+        "components/jquery": "2.1.4",
+        "bordercloud/tether": "1.1.1",
+        "components/font-awesome": "4.6.3",
+        "yalesov/yuicompressor": "2.4.7",
+        "leafo/scssphp": "0.0.10",
+        "patchwork/jsqueeze": "v2.0.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

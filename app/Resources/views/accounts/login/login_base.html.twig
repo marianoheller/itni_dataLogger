@@ -1,7 +1,14 @@
 <html>
     <head>
-        <link rel="stylesheet" href="{{ asset('media/css/bootstrap.min.css') }}">
+        {#CSS#}
+        {% stylesheets  filter="cssrewrite"
+        '@bootstrap_css'
+        %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
         <link rel="stylesheet" type="text/css" href="{{ asset('media/css/login.css') }}">
+
         <title>Ingresar al sistema</title>
 
     </head>
@@ -31,12 +38,7 @@
                             <div class="form-group">
                                 <input type="submit" class="btn btn-default btn-login-submit btn-block m-t-md" value="Ingresar" />
                             </div>
-                            {#
-                            <span class='text-center'><a href="/reset" class="text-sm">Olvidé mi contraseña</a></span>
-                            <div class="form-group">
-                                <p class="text-center m-t-xs text-sm">¿No posee una cuenta?</p>
-                                <a href="/register" class="btn btn-default btn-block m-t-md">Crear una cuenta</a>
-                            </div>#}
+
                         </form>
 
                     </div>

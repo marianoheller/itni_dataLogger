@@ -41,6 +41,9 @@ class appDevDebugProjectContainer extends Container
             'assetic.asset_manager' => 'getAssetic_AssetManagerService',
             'assetic.controller' => 'getAssetic_ControllerService',
             'assetic.filter.cssrewrite' => 'getAssetic_Filter_CssrewriteService',
+            'assetic.filter.jsqueeze' => 'getAssetic_Filter_JsqueezeService',
+            'assetic.filter.scssphp' => 'getAssetic_Filter_ScssphpService',
+            'assetic.filter.yui_js' => 'getAssetic_Filter_YuiJsService',
             'assetic.filter_manager' => 'getAssetic_FilterManagerService',
             'assetic.request_listener' => 'getAssetic_RequestListenerService',
             'assets.context' => 'getAssets_ContextService',
@@ -310,8 +313,9 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('templating.loader');
 
-        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig'), $this->get('monolog.logger.assetic', ContainerInterface::NULL_ON_INVALID_REFERENCE)), new \Assetic\Cache\ConfigCache((__DIR__.'/assetic/config')), true)));
+        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('config' => new \Symfony\Bundle\AsseticBundle\Factory\Loader\ConfigurationLoader(), 'twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig'), $this->get('monolog.logger.assetic', ContainerInterface::NULL_ON_INVALID_REFERENCE)), new \Assetic\Cache\ConfigCache((__DIR__.'/assetic/config')), true)));
 
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\ConfigurationResource(array('jquery_js' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/components/jquery/jquery.min.js')), 1 => array(0 => '?yui_js'), 2 => array()), 'tether_js' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/bordercloud/tether/dist/js/tether.min.js')), 1 => array(0 => '?yui_js'), 2 => array()), 'bootstrap_js' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js')), 1 => array(0 => '?yui_js'), 2 => array()), 'bootstrap_css' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/twbs/bootstrap/dist/css/bootstrap.css')), 1 => array(0 => 'cssrewrite'), 2 => array()), 'fontawesome_css' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/components/font-awesome/css/font-awesome.css')), 1 => array(0 => 'cssrewrite'), 2 => array()), 'fontawesome_woff2' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/components/font-awesome/fonts/fontawesome-webfont.woff2')), 1 => array(0 => 'cssrewrite'), 2 => array('output' => 'fonts/fontawesome-webfont.woff2')), 'fontawesome_woff' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/components/font-awesome/fonts/fontawesome-webfont.woff')), 1 => array(0 => 'cssrewrite'), 2 => array('output' => 'fonts/fontawesome-webfont.woff')), 'fontawesome_ttf' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/components/font-awesome/fonts/fontawesome-webfont.ttf')), 1 => array(0 => 'cssrewrite'), 2 => array('output' => 'fonts/fontawesome-webfont.ttf')), 'fontawesome_otf' => array(0 => array(0 => ($this->targetDirs[2].'/../vendor/components/font-awesome/fonts/FontAwesome.otf')), 1 => array(0 => 'cssrewrite'), 2 => array('output' => 'fonts/FontAwesome.otf')))), 'config');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FrameworkBundle', ($this->targetDirs[2].'/Resources/FrameworkBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FrameworkBundle', ($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SecurityBundle', ($this->targetDirs[2].'/Resources/SecurityBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SecurityBundle', ($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'TwigBundle', ($this->targetDirs[2].'/Resources/TwigBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'TwigBundle', ($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
@@ -358,6 +362,68 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'assetic.filter.jsqueeze' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Assetic\Filter\JSqueezeFilter A Assetic\Filter\JSqueezeFilter instance
+     */
+    protected function getAssetic_Filter_JsqueezeService()
+    {
+        $this->services['assetic.filter.jsqueeze'] = $instance = new \Assetic\Filter\JSqueezeFilter();
+
+        $instance->setSingleLine(true);
+        $instance->keepImportantComments(true);
+        $instance->setSpecialVarRx(false);
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'assetic.filter.scssphp' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Assetic\Filter\ScssphpFilter A Assetic\Filter\ScssphpFilter instance
+     */
+    protected function getAssetic_Filter_ScssphpService()
+    {
+        $this->services['assetic.filter.scssphp'] = $instance = new \Assetic\Filter\ScssphpFilter();
+
+        $instance->enableCompass(false);
+        $instance->setImportPaths(array());
+        $instance->setVariables(array());
+        $instance->setFormatter('Leafo\\ScssPhp\\Formatter\\Compressed');
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'assetic.filter.yui_js' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Assetic\Filter\Yui\JsCompressorFilter A Assetic\Filter\Yui\JsCompressorFilter instance
+     */
+    protected function getAssetic_Filter_YuiJsService()
+    {
+        $this->services['assetic.filter.yui_js'] = $instance = new \Assetic\Filter\Yui\JsCompressorFilter(($this->targetDirs[2].'/../vendor/yalesov/yuicompressor/yuicompressor.jar'), 'C:\\ProgramData\\Oracle\\Java\\javapath\\java.EXE');
+
+        $instance->setCharset('UTF-8');
+        $instance->setTimeout(NULL);
+        $instance->setStackSize(NULL);
+        $instance->setNomunge(NULL);
+        $instance->setPreserveSemi(NULL);
+        $instance->setDisableOptimizations(NULL);
+        $instance->setLineBreak(NULL);
+
+        return $instance;
+    }
+
+    /**
      * Gets the 'assetic.filter_manager' service.
      *
      * This service is shared.
@@ -367,7 +433,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_FilterManagerService()
     {
-        return $this->services['assetic.filter_manager'] = new \Symfony\Bundle\AsseticBundle\FilterManager($this, array('cssrewrite' => 'assetic.filter.cssrewrite'));
+        return $this->services['assetic.filter_manager'] = new \Symfony\Bundle\AsseticBundle\FilterManager($this, array('cssrewrite' => 'assetic.filter.cssrewrite', 'yui_js' => 'assetic.filter.yui_js', 'scssphp' => 'assetic.filter.scssphp', 'jsqueeze' => 'assetic.filter.jsqueeze'));
     }
 
     /**
@@ -2155,7 +2221,7 @@ class appDevDebugProjectContainer extends Container
         $q = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $n, array(), $a);
         $q->setOptions(array('login_path' => 'login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.my_db_provider'), 1 => $m), 'main', $a, $c), 2 => $o, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $n, 'main', $p, $q, array('check_path' => 'login', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '57bb3db9ccb7b9.59352237', $a, $f), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $l, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $n, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $n, 'login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.my_db_provider'), 1 => $m), 'main', $a, $c), 2 => $o, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $n, 'main', $p, $q, array('check_path' => 'login', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '57bddd66ac9e74.63845158', $a, $f), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $l, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $n, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $n, 'login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -3521,7 +3587,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.my_db_provider'), $this->get('security.user_checker.main'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57bb3db9ccb7b9.59352237')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.my_db_provider'), $this->get('security.user_checker.main'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57bddd66ac9e74.63845158')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4172,6 +4238,28 @@ class appDevDebugProjectContainer extends Container
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.reactjsx.bin' => '/usr/bin/jsx',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
+            'assetic.filter.yui_js.class' => 'Assetic\\Filter\\Yui\\JsCompressorFilter',
+            'assetic.filter.yui_js.java' => 'C:\\ProgramData\\Oracle\\Java\\javapath\\java.EXE',
+            'assetic.filter.yui_js.jar' => ($this->targetDirs[2].'/../vendor/yalesov/yuicompressor/yuicompressor.jar'),
+            'assetic.filter.yui_js.charset' => 'UTF-8',
+            'assetic.filter.yui_js.stacksize' => NULL,
+            'assetic.filter.yui_js.timeout' => NULL,
+            'assetic.filter.yui_js.nomunge' => NULL,
+            'assetic.filter.yui_js.preserve_semi' => NULL,
+            'assetic.filter.yui_js.disable_optimizations' => NULL,
+            'assetic.filter.yui_js.linebreak' => NULL,
+            'assetic.filter.scssphp.class' => 'Assetic\\Filter\\ScssphpFilter',
+            'assetic.filter.scssphp.import_paths' => array(
+
+            ),
+            'assetic.filter.scssphp.compass' => false,
+            'assetic.filter.scssphp.variables' => array(
+
+            ),
+            'assetic.filter.scssphp.formatter' => 'Leafo\\ScssPhp\\Formatter\\Compressed',
+            'assetic.filter.jsqueeze.single_line' => true,
+            'assetic.filter.jsqueeze.keep_important_comments' => true,
+            'assetic.filter.jsqueeze.special_var_rx' => false,
             'assetic.twig_extension.functions' => array(
 
             ),

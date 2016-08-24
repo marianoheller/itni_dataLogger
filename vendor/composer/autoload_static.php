@@ -78,6 +78,7 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         array (
             'Pure\\' => 5,
             'Psr\\Http\\Message\\' => 17,
+            'Patchwork\\' => 10,
         ),
         'M' => 
         array (
@@ -256,6 +257,10 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
+        'Patchwork\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/patchwork/jsqueeze/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -411,6 +416,12 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/SessionHandlerInterface.php',
         'SqlFormatter' => __DIR__ . '/..' . '/jdorn/sql-formatter/lib/SqlFormatter.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+        'scss_formatter' => __DIR__ . '/..' . '/leafo/scssphp/scss.inc.php',
+        'scss_formatter_compressed' => __DIR__ . '/..' . '/leafo/scssphp/scss.inc.php',
+        'scss_formatter_nested' => __DIR__ . '/..' . '/leafo/scssphp/scss.inc.php',
+        'scss_parser' => __DIR__ . '/..' . '/leafo/scssphp/scss.inc.php',
+        'scss_server' => __DIR__ . '/..' . '/leafo/scssphp/scss.inc.php',
+        'scssc' => __DIR__ . '/..' . '/leafo/scssphp/scss.inc.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
