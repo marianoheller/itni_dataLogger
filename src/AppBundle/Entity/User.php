@@ -39,17 +39,20 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\Column(name="is_device", type="boolean", options={"default":false})
+     * @Assert\NotBlank()
      */
     private $device;
 
     /**
      * @ORM\Column(name="is_admin", type="boolean", options={"default":false})
+     * @Assert\NotBlank()
      */
     private $admin;
 
 
     /**
      * @ORM\Column(name="is_active", type="boolean", options={"default":true})
+     * @Assert\NotBlank()
      */
     private $active;
 

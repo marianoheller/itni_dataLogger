@@ -227,9 +227,8 @@ class PagesController extends Controller
 }
 
 
+//TODO Migrations (así tmb hago insert data de ADMIN)
 //TODO arreglar tabs en admin
-//TODO arreglar templates en la pagina de admin (herencia y icons)
-//TODO arreglar icon de pagina (con el nuevo)
 
 //TODO canales virtuales
 //TODO patron
