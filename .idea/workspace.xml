@@ -9,72 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/14/_14c5d1fad275f15c4bccaa84101eb24ff5c03b30a38b2614eee636c0ee2b7a51.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/14/_14c5d1fad275f15c4bccaa84101eb24ff5c03b30a38b2614eee636c0ee2b7a51.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/15/_1530df43d251912b878a10c1cf61b43d60cbb0df7e5f631339ac54761550063c.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/15/_1530df43d251912b878a10c1cf61b43d60cbb0df7e5f631339ac54761550063c.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/22/_22ed9e2ac68e54f2755a0213984db2a3d92bb556292a873aab8d18885acd43c4.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/22/_22ed9e2ac68e54f2755a0213984db2a3d92bb556292a873aab8d18885acd43c4.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/34/_34e910e8c99746bb6befb8479654328f5dad418f0de2ee1c641c103764010963.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/34/_34e910e8c99746bb6befb8479654328f5dad418f0de2ee1c641c103764010963.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/35/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223686173405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/35/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223686173405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/40/_4047effceed47d5f32533f3c3970dba5ff627c7871f1fc0622d5f7c7f7d7e89b.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/40/_4047effceed47d5f32533f3c3970dba5ff627c7871f1fc0622d5f7c7f7d7e89b.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4a/_4ad9965cb81d0c4bb3fe9983ff0bc6eeb9a64f23234f3f023338131df834a1f0.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/4a/_4ad9965cb81d0c4bb3fe9983ff0bc6eeb9a64f23234f3f023338131df834a1f0.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/55/_55b65ae7e00ea5d475dd22e9573e66380afa10b625cad5f8893b04ca915a1e08.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/55/_55b65ae7e00ea5d475dd22e9573e66380afa10b625cad5f8893b04ca915a1e08.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/59/_59a2167eed70d978859f0bb50a96062ddb7318612984776d6893de9acdb8ca98.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/59/_59a2167eed70d978859f0bb50a96062ddb7318612984776d6893de9acdb8ca98.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/71/_7121fba3f925a9caf9016215db569d161237cabaaa3e1e1a20e9f029778f3afc.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/71/_7121fba3f925a9caf9016215db569d161237cabaaa3e1e1a20e9f029778f3afc.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/85/_8551a331ba7b42bc57e7190b0cd92f3c9c41374949c84bae185f20274773d0fa.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/85/_8551a331ba7b42bc57e7190b0cd92f3c9c41374949c84bae185f20274773d0fa.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/87/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722372656e646572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/87/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722372656e646572405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/8c/_8c755fe768e134cfc9adb8fe37e310ac0f14a7e14bf5cf64dbacfcb011812ac5.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/8c/_8c755fe768e134cfc9adb8fe37e310ac0f14a7e14bf5cf64dbacfcb011812ac5.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/8d/_8d4c563ff302fd4f0fbda929987e177a77972b814d9f6562f739becd730a599d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/8d/_8d4c563ff302fd4f0fbda929987e177a77972b814d9f6562f739becd730a599d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/96/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722373747265616d405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/96/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722373747265616d405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/a5/_a5fc407885b8c6fac2fa92a418326244e5a5864438afe287642545a2850d091a.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/a5/_a5fc407885b8c6fac2fa92a418326244e5a5864438afe287642545a2850d091a.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/b0/_b02464f3e327c1771507df88d0073ea92e0fb53aefde1c3d66865e4fa344a085.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/b0/_b02464f3e327c1771507df88d0073ea92e0fb53aefde1c3d66865e4fa344a085.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/b8/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223676574405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/b8/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223676574405b416e6e6f745d5d5b315d.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/c7/_c7cf1d29be509604fdc25dc0d1f478da9862ddd16a50fbbd790066a52817b795.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/c7/_c7cf1d29be509604fdc25dc0d1f478da9862ddd16a50fbbd790066a52817b795.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/ec/_ec131a52b4e2d2f4c4b710703c64a6f69313e3d35c398411a19cade8b249ac38.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/ec/_ec131a52b4e2d2f4c4b710703c64a6f69313e3d35c398411a19cade8b249ac38.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/fd/_fddf29d35f1105c6f2ca6a9e5661f3552ed02f4b82a9ca9c50c608f1652c8776.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/fd/_fddf29d35f1105c6f2ca6a9e5661f3552ed02f4b82a9ca9c50c608f1652c8776.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/fe/_fe91721dca635c4a3c4c676c74dd1a8cd40385eff5745bbfcc53de0199c42eb3.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/fe/_fe91721dca635c4a3c4c676c74dd1a8cd40385eff5745bbfcc53de0199c42eb3.doctrinecache.data" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/00/00db04ed1a73281de2f230f8b152f054a6dc83ed04d4615eda35c918a50dc910.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/00/00db04ed1a73281de2f230f8b152f054a6dc83ed04d4615eda35c918a50dc910.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/08/08b4e6f86c3b833f0cbc39ccecc1d1cf05c0f59926b41f7b80bb7b55b7a80013.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/08/08b4e6f86c3b833f0cbc39ccecc1d1cf05c0f59926b41f7b80bb7b55b7a80013.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c6d21a0284e89a6462f643ea486584bcd7ac528970dfb514af65f2eed3b72c5.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c6d21a0284e89a6462f643ea486584bcd7ac528970dfb514af65f2eed3b72c5.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0d/0dedf4e04314370a59f96f2af764028828a05133c7526bec9c8942ec8926f343.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0d/0dedf4e04314370a59f96f2af764028828a05133c7526bec9c8942ec8926f343.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/17/17f61189c96cb8c3aa22a465c448d4ecc3268f500a07ebbb52b245563533b724.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/17/17f61189c96cb8c3aa22a465c448d4ecc3268f500a07ebbb52b245563533b724.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/20/20aa8de2bdebef24c10d9b339429d81ce8a8bc656b360a6b7859ef8e701cf039.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/20/20aa8de2bdebef24c10d9b339429d81ce8a8bc656b360a6b7859ef8e701cf039.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/22/223270526d4bff029fba89df46a5e4e8f0fc236fcae14cf04ab08e9cdcd3b61d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/22/223270526d4bff029fba89df46a5e4e8f0fc236fcae14cf04ab08e9cdcd3b61d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/2d/2de6c6e3c79001c857a39e620d4c61526d20eacf20eb0dc69fabfc24000082e8.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/2d/2de6c6e3c79001c857a39e620d4c61526d20eacf20eb0dc69fabfc24000082e8.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/33/332a70cee8f00e23ea4fea39a6cd388564e3f35413c48ba20ccfdd79e5fd32d3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/33/332a70cee8f00e23ea4fea39a6cd388564e3f35413c48ba20ccfdd79e5fd32d3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/33/33ff98b921703909eddbc4a2d36509d065d873dec35bfa91e88955a8f6b96d0f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/33/33ff98b921703909eddbc4a2d36509d065d873dec35bfa91e88955a8f6b96d0f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/49/4967cc0217fcaa20b23e33d065bdf27249628624abef3f958e8e640ca72e1494.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/49/4967cc0217fcaa20b23e33d065bdf27249628624abef3f958e8e640ca72e1494.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/58/58c661c93f33ad9a3ec23abd0e90ee278a99e423cada9335b43b4282fc5e5c2f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/58/58c661c93f33ad9a3ec23abd0e90ee278a99e423cada9335b43b4282fc5e5c2f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5c/5ccacd98f7db4647b1be7d7c8f4dbf22e6253d70a3f1d80864ad7f46cadb03f9.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5c/5ccacd98f7db4647b1be7d7c8f4dbf22e6253d70a3f1d80864ad7f46cadb03f9.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5f/5ff99f9ec9f3b693bb851c009d2c6ca6e8a16b9610b3857759d948fc462ae7e3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5f/5ff99f9ec9f3b693bb851c009d2c6ca6e8a16b9610b3857759d948fc462ae7e3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/72/72e88184ebba0430cc37424e759efcff773cd2ebf9fa58e03894017cf1260f88.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/72/72e88184ebba0430cc37424e759efcff773cd2ebf9fa58e03894017cf1260f88.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/7e/7e7a807843a8e2f4045b9244545fcbce3b8391a8bd802b34e30f9fb53fefcb72.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/7e/7e7a807843a8e2f4045b9244545fcbce3b8391a8bd802b34e30f9fb53fefcb72.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/94/94094af0c2ed45a16bb83a9f151ea50895568c8fa9e986a09bc6b2dec41260f7.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/94/94094af0c2ed45a16bb83a9f151ea50895568c8fa9e986a09bc6b2dec41260f7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/95/95655b0c0ac1392e2076c6892dbf7bd8ef208edfccf589496bb50fc6d1e6b45f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/95/95655b0c0ac1392e2076c6892dbf7bd8ef208edfccf589496bb50fc6d1e6b45f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/99/997b2c9a089085ee6606d4fcdfe92be3d70187d9b7549a4fc6c75a8e5041b4be.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/99/997b2c9a089085ee6606d4fcdfe92be3d70187d9b7549a4fc6c75a8e5041b4be.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a0/a077d9202e8285836316a553c03f428a2d43515a5ba5746118163fb36e52caef.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a0/a077d9202e8285836316a553c03f428a2d43515a5ba5746118163fb36e52caef.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ac/ac01fc4735562c43ffee480b81444b5110ac32a37df3b5b718cb1ca41a73509c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ac/ac01fc4735562c43ffee480b81444b5110ac32a37df3b5b718cb1ca41a73509c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bb/bbc311b4f0d1e771193ac3fd7db3b4ae633f0cf968ec4649b9fab9db51136686.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bb/bbc311b4f0d1e771193ac3fd7db3b4ae633f0cf968ec4649b9fab9db51136686.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bc/bc601fafc69e736e97acd25fa48d820d09f61f878d83ef5ec790966879679d5a.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bc/bc601fafc69e736e97acd25fa48d820d09f61f878d83ef5ec790966879679d5a.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7169f11e6646d567b8ab00f0d4e141a4b5dc2a3f00cebdc98762d8e0af3a48c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7169f11e6646d567b8ab00f0d4e141a4b5dc2a3f00cebdc98762d8e0af3a48c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/df/dffc371314efaa45376c17d36562aa362139a392b4ae8802cf3f1fc910da3841.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/df/dffc371314efaa45376c17d36562aa362139a392b4ae8802cf3f1fc910da3841.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/e9/e9678daee9c37582e267007387e7fff53690345b02bacfb9baff9708fd90fa0f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/e9/e9678daee9c37582e267007387e7fff53690345b02bacfb9baff9708fd90fa0f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ef/ef942e2e5eb916327b455746bd101a26aae30ee0ecadd73ee487235ca48fe97d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ef/ef942e2e5eb916327b455746bd101a26aae30ee0ecadd73ee487235ca48fe97d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fc/fc8506ad99968fbebf5e687f8a096317792a6477d8ed5d45c5f87b73a94b630f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fc/fc8506ad99968fbebf5e687f8a096317792a6477d8ed5d45c5f87b73a94b630f.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fe/feefa8eba7f087b7d5feb5c69c4ddcd6af5490ce24f82b7c4068d74997b7ec1c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fe/feefa8eba7f087b7d5feb5c69c4ddcd6af5490ce24f82b7c4068d74997b7ec1c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesAdminController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesAdminController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
@@ -101,45 +35,7 @@
     <favorites_list name="DataLogger_INTI_Construcciones" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0329154">
-              <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-              <folding>
-                <element signature="e#40#99#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PagesAdminController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesAdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.5">
-              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-              <folding>
-                <element signature="e#2312#2328#1#PHP" expanded="true" />
-                <element signature="e#2526#2542#1#PHP" expanded="true" />
-                <element signature="e#2611#2627#1#PHP" expanded="true" />
-                <element signature="e#2677#2700#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -507,110 +403,6 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="accounts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -676,12 +468,6 @@
       <created>1465317946316</created>
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Added TODO.">
-      <created>1468346612707</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1468346612707</updated>
     </task>
     <task id="LOCAL-00028" summary="Added scheduler.">
       <created>1468517688949</created>
@@ -971,7 +757,13 @@
       <option name="project" value="LOCAL" />
       <updated>1472132926978</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Added delete device on Admin.">
+      <created>1472134602128</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1472134602128</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TodoView">
@@ -987,13 +779,13 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32655245" sideWeight="0.45948827" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32655245" sideWeight="0.45735607" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25910065" sideWeight="0.5490405" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32655245" sideWeight="0.5426439" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4936034" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.48720682" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25910065" sideWeight="0.45095947" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25910065" sideWeight="0.4488273" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30810234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24411134" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
@@ -1022,7 +814,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Removed FosUserBundle." />
     <MESSAGE value="Added admin controller and pages." />
     <MESSAGE value="Empece a trabajar con el form de crear cuenta." />
     <MESSAGE value="Added user add form." />
@@ -1047,7 +838,8 @@
     <MESSAGE value="Fixed tabs en ensayo y historial." />
     <MESSAGE value="Fixed login screen style." />
     <MESSAGE value="Added TODO." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TODO." />
+    <MESSAGE value="Added delete device on Admin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added delete device on Admin." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1056,13 +848,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/servers.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25914633">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json_test_data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
@@ -1176,13 +961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="27" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_select.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46363637">
-          <caret line="24" column="127" selection-start-line="24" selection-start-column="127" selection-end-line="24" selection-end-column="127" />
         </state>
       </provider>
     </entry>
@@ -1417,9 +1195,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5">
+        <state vertical-scroll-proportion="0.028213166">
           <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding>
             <element signature="e#2312#2328#1#PHP" expanded="true" />
@@ -1430,18 +1216,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_select.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.5736677">
+          <caret line="24" column="127" selection-start-line="24" selection-start-column="127" selection-end-line="24" selection-end-column="127" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0329154">
-          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.69043475">
+          <caret line="229" column="27" selection-start-line="229" selection-start-column="27" selection-end-line="229" selection-end-column="27" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
           </folding>

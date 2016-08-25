@@ -227,6 +227,8 @@ class PagesController extends Controller
 }
 
 
+//TODO custom Errores pages
+
 //TODO canales virtuales
 //TODO patron
 
