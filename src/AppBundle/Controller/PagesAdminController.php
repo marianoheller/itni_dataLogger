@@ -25,14 +25,23 @@ class PagesAdminController extends Controller
         //Remove user
         $usernameDeleteTarget = $request->request->get("username-eliminar");
         $flagUserDeleted = false;
+        $flagDeviceDeleted = false;
         $userDeletedName = "";
         if ( isset($usernameDeleteTarget) && $usernameDeleteTarget != "-1") {
             $em = $this->getDoctrine()->getManager();
             $repo = $em->getRepository('AppBundle:User');
             $userObj2Delete = $repo->findOneByUsername($usernameDeleteTarget);
-            $repo->deleteUser($userObj2Delete);
 
-            $flagUserDeleted = true;
+
+            $isDevice = $request->request->get("is_device");
+            if ($isDevice == "1") {
+                $flagDeviceDeleted= true;
+            }
+            else {
+                $flagUserDeleted = true;
+            }
+
+            $repo->deleteUser($userObj2Delete);
             $userDeletedName = $usernameDeleteTarget;
         }
 
@@ -77,6 +86,7 @@ class PagesAdminController extends Controller
             "flagUserAdded" => $flagUserAdded,
             "flagUserDeleted" => $flagUserDeleted,
             "flagDeviceAdded" => $flagDeviceAdded,
+            "flagDeviceDeleted" => $flagDeviceDeleted,
 
             "userAddedName" => $userAddedName,
             "userDeletedName" => $userDeletedName

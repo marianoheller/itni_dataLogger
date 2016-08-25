@@ -19,10 +19,10 @@
     <div class="container-fluid">
         <ul id="content-tab" class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#usuarios" role="tab"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Usuarios</a>
+                <a class="nav-link {% if flagDeviceAdded == false and flagDeviceDeleted == false %}active{% endif %}" data-toggle="tab" href="#usuarios" role="tab"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Usuarios</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#dispositivos" role="tab"><i class="fa fa-server fa-fw" aria-hidden="true"></i>Dispositivos</a>
+                <a class="nav-link {% if flagDeviceAdded == true or flagDeviceDeleted == true %}active{% endif %}" data-toggle="tab" href="#dispositivos" role="tab"><i class="fa fa-server fa-fw" aria-hidden="true"></i>Dispositivos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" data-toggle="tab" href="#otros" role="tab">Otros</a>
@@ -32,7 +32,7 @@
         <!-- Tab panes -->
         <div class="tab-content">
 
-            <div class="tab-pane active m-t-2" id="usuarios" role="tabpanel">
+            <div class="tab-pane {% if flagDeviceAdded == false and flagDeviceDeleted == false %}active{% endif %} m-t-2" id="usuarios" role="tabpanel">
                 <div class="col-md-5 offset-md-1">
                     {% if flagUserAdded == true %}
                         <div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -84,13 +84,15 @@
                                 {% endfor %}
                             </select>
                         </div>
+                        <input type="hidden" name="is_device" value="0">
+                        <input type="hidden" name="is_admin" value="0">
                         <button id="deleteUserButton" type="submit" class="btn btn-secondary pull-md-right" disabled>Eliminar</button>
                     </form>
                 </div>
             </div>
 
 
-            <div class="tab-pane m-t-2" id="dispositivos" role="tabpanel">
+            <div class="tab-pane {% if flagDeviceAdded == true or flagDeviceDeleted == true %}active{% endif %} m-t-2" id="dispositivos" role="tabpanel">
 
                 <div class="col-md-5 offset-md-1">
                     {% if flagDeviceAdded == true %}
@@ -124,7 +126,7 @@
                     </form>
                 </div>
                 <div class="col-md-5 offset-md-6 m-l-1">
-                    {% if flagUserDeleted == true %}
+                    {% if flagDeviceDeleted == true %}
                         <div class="alert alert-success alert-dismissible fade in" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -136,13 +138,15 @@
                     <form method="post" name="delete-device-form">
                         <div class="form-group row">
                             <label for="delete-device-select" class="col-md-2 col-form-label">Dispositivo: </label>
-                            <select id="delete-device-select" class="custom-select" name="device-eliminar">
+                            <select id="delete-device-select" class="custom-select" name="username-eliminar">
                                 <option  value="-1" selected>Seleccionar dispositivo</option>
                                 {% for device in arrayDevices %}
                                     <option value="{{ device.username }}">{{ device.username }}</option>
                                 {% endfor %}
                             </select>
                         </div>
+                        <input type="hidden" name="is_device" value="1">
+                        <input type="hidden" name="is_admin" value="0">
                         <button id="deleteDeviceButton" type="submit" class="btn btn-secondary pull-md-right" disabled>Eliminar</button>
                     </form>
 
@@ -166,10 +170,20 @@
     <script>
         function validateUserAvailability() {
             var username = document.forms["register_form"]["add-username"].value;
-            var email = document.forms["register_form"]["add-email"].value;
             {% for user in arrayUsers %}
             if (username == "{{ user.username }}") {
                 $('#alert-user-existente').show();
+                return false;
+            }
+            {% endfor %}
+            return true;
+        }
+
+        function validateDeviceAvailability() {
+            var devname = document.forms["register_device_form"]["add-username"].value;
+            {% for device in arrayDevices %}
+            if (devname == "{{ device.username }}") {
+                $('#alert-device-existente').show();
                 return false;
             }
             {% endfor %}
@@ -197,7 +211,7 @@
         });
 
         $('#delete-device-select').on('change', function() {
-            var val = document.forms["delete-device-form"]["device-eliminar"].value;
+            var val = document.forms["delete-device-form"]["username-eliminar"].value;
             if (val == "-1") {
                 $('#deleteDeviceButton').prop('disabled', true);
             }

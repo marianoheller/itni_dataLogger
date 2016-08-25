@@ -227,8 +227,6 @@ class PagesController extends Controller
 }
 
 
-//TODO arreglar validation en admin client side
-
 //TODO canales virtuales
 //TODO patron
 
