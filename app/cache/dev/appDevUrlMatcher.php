@@ -33,21 +33,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
             }
 
-            // _assetic_jquery_js
-            if ($pathinfo === '/assetic/jquery_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
-            }
-
-            // _assetic_tether_js
-            if ($pathinfo === '/assetic/tether_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_tether_js',);
-            }
-
-            // _assetic_bootstrap_js
-            if ($pathinfo === '/assetic/bootstrap_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
-            }
-
             // _assetic_fontawesome_css
             if ($pathinfo === '/assetic/fontawesome_css.css') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css',);
@@ -80,6 +65,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // _assetic_fontawesome_otf
             if ($pathinfo === '/fonts/FontAwesome.otf') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_otf',  'pos' => NULL,  '_format' => 'otf',  '_route' => '_assetic_fontawesome_otf',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/assetic')) {
+            // _assetic_jquery_js
+            if ($pathinfo === '/assetic/jquery_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
+            }
+
+            // _assetic_tether_js
+            if ($pathinfo === '/assetic/tether_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_tether_js',);
+            }
+
+            // _assetic_bootstrap_js
+            if ($pathinfo === '/assetic/bootstrap_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
             }
 
         }

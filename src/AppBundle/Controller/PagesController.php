@@ -227,12 +227,11 @@ class PagesController extends Controller
 }
 
 
-
-//TODO Arreglar estilo en pantalla login (se cago al pasar a la v4 de bootstrap)
-
+//TODO arreglar validation en admin client side
 
 //TODO canales virtuales
 //TODO patron
+
 
 //TODO server Validation on everything
 //TODO lifecycle LOG
