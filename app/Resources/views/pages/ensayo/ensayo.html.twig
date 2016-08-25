@@ -342,6 +342,11 @@
         }
 
         $(document).ready(function(){
+
+            $('.nav').on('show.bs.tab', function (e) {
+                $('.nav li .active').removeClass('active');
+            });
+
             document.getElementById('link-tab-status').click();
 
             {% for i in 1..32 %}

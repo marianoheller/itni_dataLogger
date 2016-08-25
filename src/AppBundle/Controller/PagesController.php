@@ -227,12 +227,6 @@ class PagesController extends Controller
 }
 
 
-//TODO Arreglar la parte de historial y ensayo (las tabs dejan de andar!!!)
-// ES XQ QUEDAN COMO ACTIVE (hay q clerear el active)
-// http://stackoverflow.com/questions/34025624/bootstrap-4-dropdowns-only-work-one-times-with-tabs-menu
-
-
-
 
 //TODO Arreglar estilo en pantalla login (se cago al pasar a la v4 de bootstrap)
 

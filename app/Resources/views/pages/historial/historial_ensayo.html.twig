@@ -481,9 +481,9 @@
         });
 
         $(document).ready(function() {
-            $("a").click(function(event) {
-                console.log(event.target.id);
-            });
+            $('.nav').on('show.bs.tab', function (e) {
+                $('.nav li .active').removeClass('active');
+            })
         });
 
 
