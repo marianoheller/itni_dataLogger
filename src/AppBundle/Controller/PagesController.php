@@ -254,4 +254,4 @@ class PagesController extends Controller
 //TODO patron
 
 //TODO lifecycle LOG
-//TODO Deployer bundle (linux aparentemente)
+//TODO Deployer bundle
