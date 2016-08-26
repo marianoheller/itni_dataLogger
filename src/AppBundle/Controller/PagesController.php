@@ -248,14 +248,10 @@ class PagesController extends Controller
 }
 
 
-//TODO VALIDATION server y client
 //TODO custom Errores pages
-
 
 //TODO canales virtuales
 //TODO patron
 
-
-//TODO server Validation on everything
 //TODO lifecycle LOG
 //TODO Deployer bundle (linux aparentemente)
