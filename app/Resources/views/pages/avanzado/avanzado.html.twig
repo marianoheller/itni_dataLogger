@@ -9,7 +9,7 @@
 
 
         <div class="container-fluid">
-            <form name="exportarEnsayo" id="exportarEnsayo" method="post" action="{{ path('generateCSV') }}" onsubmit="return validateUserAvailability();">
+            <form name="exportarEnsayo" id="exportarEnsayo" method="post" action="{{ path('generateCSV') }}" onsubmit="return validateEnsayoAvailability();">
 
                 <div class="form-group row">
                     <label for="selectEnsayo" class="col-xs-2 col-form-label">Ensayo</label>
@@ -26,7 +26,9 @@
                     <label for="selectIntervalo" class="col-xs-2 col-form-label">Intervalo</label>
                     <div class="col-xs-10">
                         <select name="intervalo" class="form-control col-xs-10" id="selectIntervalo">
-                            <option value="60">60</option>
+                            <option value="60" selected>60</option>
+                            <option value="30">30</option>
+                            <option value="0">0 (Sin intervalo predeterminado)</option>
                         </select>
                     </div>
                 </div>
@@ -52,7 +54,7 @@
 
 {% block javascript %}
     <script>
-        function validateUserAvailability() {
+        function validateEnsayoAvailability() {
             var val = document.forms["exportarEnsayo"]["ensayoID"].value;
             if (val == "-1") {
                 return false;

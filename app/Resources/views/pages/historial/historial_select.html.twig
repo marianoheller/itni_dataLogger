@@ -3,6 +3,16 @@
 {% block selectHistorial %}
 
     <div class="container">
+
+        {% if fErrorOcurred == true %}
+            <div class="tab-content col-md-11">
+                <div class="alert alert-danger" role="alert">
+                    <strong>Error!</strong>El ensayo seleccionado <strong>NO</strong> existe.<br>
+                    Consulte al administrador del sitio.
+                </div>
+            </div>
+        {% endif %}
+
         <h2>Historial de ensayos</h2>
         <br>
 

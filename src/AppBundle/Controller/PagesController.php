@@ -135,7 +135,8 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getManager();
         $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
         return $this->render("pages/historial/historial_select.html.twig", array(
-            "ensayos" => $ensayosAll
+            "ensayos" => $ensayosAll,
+            "fErrorOcurred" => false
         ));
     }
 
@@ -153,11 +154,21 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getManager();
         /**@var $ensayoObj Ensayo*/
         $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
-        return $this->render(":pages/historial:historial_ensayo.html.twig", array(
-            "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
-            "t_fin" => $ensayoObj->getTFin()->format($dateFormat),
-            "titulo" => $ensayoObj->getTitulo()
-        ));
+
+
+        if ( isset($ensayoObj) ) {
+            return $this->render(":pages/historial:historial_ensayo.html.twig", array(
+                "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
+                "t_fin" => $ensayoObj->getTFin()->format($dateFormat),
+                "titulo" => $ensayoObj->getTitulo()
+            ));
+        }
+        else {
+            return $this->render("pages/historial/historial_select.html.twig", array(
+                "fErrorOcurred" => true
+            ));
+        }
+
     }
 
     /**
@@ -168,7 +179,7 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getManager();
         $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
         return $this->render("pages/avanzado/avanzado.html.twig", array(
-            "ensayos" => $ensayosAll
+            "ensayos" => $ensayosAll,
         ));
     }
 
@@ -185,18 +196,28 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getManager();
         /**@var $ensayoObj Ensayo*/
         $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
+
+        if (!isset($ensayoObj)) {
+            return $this->redirectToRoute("avanzado");
+        }
+
         $t_inicio = $ensayoObj->getTInicio()->format('Y-m-d H:i:s');
         $t_fin = $ensayoObj->getTFin()->format('Y-m-d H:i:s');;
 
         $response = new StreamedResponse();
-        $response->setCallback(function () use($t_inicio,$t_fin){
+        $response->setCallback(function () use($t_inicio,$t_fin,$intervalo){
             $handle = fopen('php://output', 'w+');
 
             // Add the header of the CSV file
             fputcsv($handle, array('Canal', 'Medicion', 'Timestamp'), ';');
             // Query data from database
             $em = $this->getDoctrine()->getManager();
-            $results = $em->getRepository('AppBundle:Datalog')->getDataInTimeRange($t_inicio, $t_fin);
+            if ($intervalo == 0) {
+                $results = $em->getRepository('AppBundle:Datalog')->getDataInTimeRange($t_inicio, $t_fin);
+            }
+            else {
+                $results = $em->getRepository('AppBundle:Datalog')->getDataInTimeRangeWithInterval($t_inicio, $t_fin,$intervalo);
+            }
 
             // Add the data queried from database
             $timezoneArg = new \DateTimeZone("America/Argentina/Buenos_Aires");
@@ -227,7 +248,9 @@ class PagesController extends Controller
 }
 
 
+//TODO VALIDATION server y client
 //TODO custom Errores pages
+
 
 //TODO canales virtuales
 //TODO patron

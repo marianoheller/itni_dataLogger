@@ -137,9 +137,22 @@ class DatalogRepository extends EntityRepository
     }
 
 
-    //TODO hacer query con intervalo
     public function getDataInTimeRange($t_inicio, $t_fin) {
         $sqlGetEnsayosInTimeRange = "SELECT sensor_id, medicion, fecha FROM `datalog` WHERE `fecha`>'$t_inicio' AND `fecha`<'$t_fin' ";
+        $em = $this->getEntityManager();
+        $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
+        $stmt->execute();
+        //$arrayQueryResult = $stmt->fetchAll();
+
+        return $stmt;
+    }
+
+    public  function getDataInTimeRangeWithInterval($t_inicio, $t_fin, $intervalo) {
+        $sqlGetEnsayosInTimeRange = " SELECT sensor_id, medicion, fecha
+                                      FROM datalog
+                                      WHERE fecha>'$t_inicio' and fecha<'$t_fin'
+                                      GROUP BY UNIX_TIMESTAMP(fecha) DIV $intervalo, sensor_id
+                                      ORDER BY `datalog`.`fecha` ASC ";
         $em = $this->getEntityManager();
         $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
         $stmt->execute();
