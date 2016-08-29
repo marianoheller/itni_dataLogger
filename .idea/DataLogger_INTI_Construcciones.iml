@@ -17,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/herrera-io/version" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/moment/moment" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/patchwork/jsqueeze" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
@@ -32,6 +33,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/react/socket" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/react/socket-client" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/robloach/component-installer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yalesov/yuicompressor" />
@@ -70,6 +72,7 @@
           <root url="file://$MODULE_DIR$/vendor/herrera-io/version" />
           <root url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
           <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
+          <root url="file://$MODULE_DIR$/vendor/moment/moment" />
           <root url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
           <root url="file://$MODULE_DIR$/vendor/patchwork/jsqueeze" />
           <root url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
@@ -85,6 +88,7 @@
           <root url="file://$MODULE_DIR$/vendor/react/socket" />
           <root url="file://$MODULE_DIR$/vendor/react/socket-client" />
           <root url="file://$MODULE_DIR$/vendor/react/stream" />
+          <root url="file://$MODULE_DIR$/vendor/robloach/component-installer" />
           <root url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
           <root url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/yalesov/yuicompressor" />
@@ -107,6 +111,7 @@
           <root url="file://$MODULE_DIR$/vendor/herrera-io/version" />
           <root url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
           <root url="file://$MODULE_DIR$/vendor/leafo/scssphp" />
+          <root url="file://$MODULE_DIR$/vendor/moment/moment" />
           <root url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
           <root url="file://$MODULE_DIR$/vendor/patchwork/jsqueeze" />
           <root url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
@@ -122,6 +127,7 @@
           <root url="file://$MODULE_DIR$/vendor/react/socket" />
           <root url="file://$MODULE_DIR$/vendor/react/socket-client" />
           <root url="file://$MODULE_DIR$/vendor/react/stream" />
+          <root url="file://$MODULE_DIR$/vendor/robloach/component-installer" />
           <root url="file://$MODULE_DIR$/vendor/seld/jsonlint" />
           <root url="file://$MODULE_DIR$/vendor/twbs/bootstrap" />
           <root url="file://$MODULE_DIR$/vendor/yalesov/yuicompressor" />

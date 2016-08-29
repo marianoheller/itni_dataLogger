@@ -30,7 +30,8 @@
         "components/font-awesome": "4.6.3",
         "yalesov/yuicompressor": "2.4.7",
         "leafo/scssphp": "0.0.10",
-        "patchwork/jsqueeze": "v2.0.5"
+        "patchwork/jsqueeze": "v2.0.5",
+        "moment/moment": "2.13.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

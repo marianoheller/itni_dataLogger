@@ -80,6 +80,10 @@ assetic:
           formatter: 'Leafo\ScssPhp\Formatter\Compressed'
         jsqueeze: ~
     assets:
+        moment_js:
+            inputs:
+                - '%kernel.root_dir%/../vendor/moment/moment/min/moment.min.js'
+            filters: [?yui_js]
         jquery_js:
             inputs:
                 - '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'

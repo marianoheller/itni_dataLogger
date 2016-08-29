@@ -28,6 +28,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $request = $this->request;
 
         if (0 === strpos($pathinfo, '/assetic')) {
+            // _assetic_moment_js
+            if ($pathinfo === '/assetic/moment_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'moment_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_moment_js',);
+            }
+
             // _assetic_jquery_js
             if ($pathinfo === '/assetic/jquery_js.js') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
@@ -88,11 +93,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/css')) {
-            // _assetic_74c9d00
-            if ($pathinfo === '/css/74c9d00.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_74c9d00',);
-            }
-
             // _assetic_1886b1b
             if ($pathinfo === '/css/1886b1b.css') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => '1886b1b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_1886b1b',);
@@ -101,6 +101,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // _assetic_93b3f23
             if ($pathinfo === '/css/93b3f23.css') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => '93b3f23',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_93b3f23',);
+            }
+
+            // _assetic_74c9d00
+            if ($pathinfo === '/css/74c9d00.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_74c9d00',);
             }
 
         }
