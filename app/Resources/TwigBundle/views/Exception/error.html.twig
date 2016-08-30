@@ -11,11 +11,12 @@
 
 
     {#Fonts#}
-    {% stylesheets  '@fontawesome_woff2'
+    {#{% stylesheets  '@fontawesome_woff2'
     '@fontawesome_woff'
     '@fontawesome_ttf'
-    '@fontawesome_otf'%}
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+    '@fontawesome_otf'%}#}
+    {% stylesheets  '@fontawesome_woff2'%}
+    <link rel="stylesheet" type="text/css"  media="screen" href="{{ asset_url }}" />
     {% endstylesheets %}
 
     <style>
@@ -40,12 +41,12 @@
                     <h2>
                         {{ status_code }} {{ status_text }}</h2>
                     <div class="error-details">
-                        Sorry, an error has occured.
+                        Perdón, ha ocurrido un error.
                     </div>
                     <div class="error-actions">
                         <a href="{{ path('homepage') }}" class="btn btn-primary">
                             <span class="fa fa-home"></span>
-                            Take Me Home </a>
+                            Volver </a>
                     </div>
                 </div>
             </div>

@@ -28,11 +28,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $request = $this->request;
 
         if (0 === strpos($pathinfo, '/assetic')) {
-            // _assetic_moment_js
-            if ($pathinfo === '/assetic/moment_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'moment_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_moment_js',);
+            // _assetic_bootstrap_css
+            if ($pathinfo === '/assetic/bootstrap_css.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
             }
 
+            // _assetic_fontawesome_css
+            if ($pathinfo === '/assetic/fontawesome_css.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css',);
+            }
+
+        }
+
+        // _assetic_fontawesome_woff2
+        if ($pathinfo === '/fonts/fontawesome-webfont.woff2') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff2',  'pos' => NULL,  '_format' => 'woff2',  '_route' => '_assetic_fontawesome_woff2',);
+        }
+
+        if (0 === strpos($pathinfo, '/assetic')) {
             // _assetic_jquery_js
             if ($pathinfo === '/assetic/jquery_js.js') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
@@ -43,39 +56,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_tether_js',);
             }
 
-            if (0 === strpos($pathinfo, '/assetic/bootstrap_')) {
-                // _assetic_bootstrap_js
-                if ($pathinfo === '/assetic/bootstrap_js.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
-                }
-
-                // _assetic_bootstrap_css
-                if ($pathinfo === '/assetic/bootstrap_css.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
-                }
-
+            // _assetic_bootstrap_js
+            if ($pathinfo === '/assetic/bootstrap_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
             }
 
-            // _assetic_fontawesome_css
-            if ($pathinfo === '/assetic/fontawesome_css.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_fontawesome_css',);
+            // _assetic_moment_js
+            if ($pathinfo === '/assetic/moment_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'moment_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_moment_js',);
             }
 
         }
 
         if (0 === strpos($pathinfo, '/fonts')) {
             if (0 === strpos($pathinfo, '/fonts/fontawesome-webfont.')) {
-                if (0 === strpos($pathinfo, '/fonts/fontawesome-webfont.woff')) {
-                    // _assetic_fontawesome_woff2
-                    if ($pathinfo === '/fonts/fontawesome-webfont.woff2') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff2',  'pos' => NULL,  '_format' => 'woff2',  '_route' => '_assetic_fontawesome_woff2',);
-                    }
-
-                    // _assetic_fontawesome_woff
-                    if ($pathinfo === '/fonts/fontawesome-webfont.woff') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff',  'pos' => NULL,  '_format' => 'woff',  '_route' => '_assetic_fontawesome_woff',);
-                    }
-
+                // _assetic_fontawesome_woff
+                if ($pathinfo === '/fonts/fontawesome-webfont.woff') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'fontawesome_woff',  'pos' => NULL,  '_format' => 'woff',  '_route' => '_assetic_fontawesome_woff',);
                 }
 
                 // _assetic_fontawesome_ttf
@@ -93,9 +90,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/css')) {
-            // _assetic_1886b1b
-            if ($pathinfo === '/css/1886b1b.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '1886b1b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_1886b1b',);
+            if (0 === strpos($pathinfo, '/css/1')) {
+                // _assetic_1886b1b
+                if ($pathinfo === '/css/1886b1b.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '1886b1b',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_1886b1b',);
+                }
+
+                // _assetic_12e7e09
+                if ($pathinfo === '/css/12e7e09.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '12e7e09',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_12e7e09',);
+                }
+
             }
 
             // _assetic_93b3f23

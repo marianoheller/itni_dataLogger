@@ -23,10 +23,11 @@
 
 
     {#Fonts#}
-    {% stylesheets  '@fontawesome_woff2'
-                    '@fontawesome_woff'
-                    '@fontawesome_ttf'
-                    '@fontawesome_otf'%}
+    {#{% stylesheets  '@fontawesome_woff2'
+    '@fontawesome_woff'
+    '@fontawesome_ttf'
+    '@fontawesome_otf'%}#}
+    {% stylesheets  '@fontawesome_woff2'%}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
     {% endstylesheets %}
 
