@@ -21,7 +21,7 @@ class PagesAdminController extends Controller
      */
     public function adminAction(Request $request)
     {
-
+        $logger = $this->get('logger');
         //Remove user
         $usernameDeleteTarget = $request->request->get("username-eliminar");
         $flagUserDeleted = false;
@@ -36,8 +36,16 @@ class PagesAdminController extends Controller
             $isDevice = $request->request->get("is_device");
             if ($isDevice == "1") {
                 $flagDeviceDeleted= true;
+                $logger->info("Cuenta de dispositivo borrada", array (
+                    "usernameDeleted" => $usernameDeleteTarget,
+                    "userDeleter" => $this->getUser()
+                ));
             }
             else {
+                $logger->info("Cuenta de usuario borrada", array (
+                    "usernameDeleted" => $usernameDeleteTarget,
+                    "userDeleter" => $this->getUser()
+                ));
                 $flagUserDeleted = true;
             }
 
@@ -62,9 +70,17 @@ class PagesAdminController extends Controller
             if ($isDevice == "1") {
                 $userObj->setDevice(true);
                 $flagDeviceAdded = true;
+                $logger->info("Cuenta de dispositivo agregada", array (
+                    "usernameNuevo" => $usernameDeleteTarget,
+                    "userCreador" => $this->getUser()
+                ));
             }
             else {
                 $flagUserAdded = true;
+                $logger->info("Cuenta de usuario agregada", array (
+                    "usernameNuevo" => $usernameDeleteTarget,
+                    "userCreador" => $this->getUser()
+                ));
             }
             $em = $this->getDoctrine()->getManager();
             $em->getRepository('AppBundle:User')->addUser($userObj);

@@ -42,7 +42,11 @@ class SensoresController extends Controller
      */
     public function getGraphDataAction(Request $request)
     {
+        $logger = $this->get('logger');
         if ( $request->getContentType() != "json" ) {
+            $logger->error("Content type incorrecto. Given \"$request->getContentType()\"", array(
+                "contentType" => $request->getContentType()
+            ));
             throw $this->createAccessDeniedException('Acceso prohibido');
         }
         else {
@@ -79,6 +83,8 @@ class SensoresController extends Controller
      */
     public function cancelEnsayoAction()
     {
+        $logger = $this->get('logger');
+        $logger->info("Cancel ALL ensayos");
         $em = $this->getDoctrine()->getManager();
         $count = $em->getRepository('AppBundle:Ensayo')->finishAllEnsayos();
         return new JsonResponse( array(
@@ -93,7 +99,11 @@ class SensoresController extends Controller
      */
     public function getHistGraphDataAction(Request $request)
     {
+        $logger = $this->get('logger');
         if ( $request->getContentType() != "json" ) {
+            $logger->error("Content type incorrecto. Given \"$request->getContentType()\"", array(
+                "contentType" => $request->getContentType()
+            ));
             throw $this->createAccessDeniedException('Acceso prohibido');
         }
         else {
@@ -111,6 +121,7 @@ class SensoresController extends Controller
             }
 
             $em = $this->getDoctrine()->getManager();
+            $logger->info("Sending data to Hist graph");
 
             // GET DATA to send
             $arrayReturn = $em->getRepository('AppBundle:Datalog')->getPacketsInTimeRange($t_inicio, $t_fin);

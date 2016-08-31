@@ -244,14 +244,19 @@ class PagesController extends Controller
 
         return $response;
     }
-
 }
 
+//TODO Logging on PagesController && SensoresController
+//http://symfony.com/doc/2.8/logging.html
+
+//TODO API Authentication
+//symfony.com/doc/2.8/security/api_key_authentication.html
+
+//TODO try/catch on flush
 
 //TODO ver tema dependencias (bower...)
 
 //TODO canales virtuales
 //TODO patron
 
-//TODO lifecycle LOG
 //TODO Deployer bundle

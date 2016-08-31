@@ -20,12 +20,18 @@ class AccountController extends Controller
     public function loginAction(Request $request)
     {
         $authenticationUtils = $this->get('security.authentication_utils');
-
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
+        $logger = $this->get('logger');
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $logger->info("Login", array(
+            "error" => $error
+        ));
+
+
 
         return $this->render("accounts/login/login.html.twig",
             array(

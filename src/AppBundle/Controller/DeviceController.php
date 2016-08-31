@@ -24,14 +24,20 @@ class DeviceController extends Controller
      */
     public function checkEnsayoStartAction(Request $request)
     {
-        //Respuesta
         $response = new Response();
+        $logger = $this->get('logger');
 
         $content = $request->getContent();
         $contentType = $request->getContentType();
 
         if ( $contentType != "json" || empty($content) ) {          //CONTENIDO NOT JSON
-            $response->setContent("Params Empty or not json. Content type: ".$contentType);
+            $stringError = "Wrong content type request or empty content. Given \"$contentType\".";
+            $logger->error($stringError, array (
+                "contentType" => $contentType,
+                "content" => $content
+            ));
+
+            $response->setContent($stringError);
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
         }
         else {
@@ -48,8 +54,13 @@ class DeviceController extends Controller
                 }
             }
             if ($password != passwordDevice) {          //PASSWORD ERRONEO
+                $stringError = "Password device incorrecto. Checkear estructura de $contentType";
+                $logger->error($stringError, array (
+                    "contentType" => $contentType,
+                    "content" => $content
+                ));
                 $response->setStatusCode(Response::HTTP_FORBIDDEN);
-                $response->setContent("Params Empty or not json. Content type: " . $contentType);
+                $response->setContent($stringError);
             }
             else {                    //ELSE -> PARSEO LA DATA
 
@@ -57,10 +68,12 @@ class DeviceController extends Controller
                 $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
 
                 if ( $isEnsayoRunning ) {
-
                     $timezone = new \DateTimeZone("America/Argentina/Buenos_Aires");
                     $now = new \DateTime("now",$timezone);
 
+                    $logger->info("Dispositivo informado de ensayo iniciado.", array (
+                        "fechaActualAnswered" =>  $now->format('H:i:s d-m-Y')
+                    ));
                     $response->setStatusCode(Response::HTTP_OK);
                     $response->setContent($now->format('H:i:s d-m-Y'));
                 }
@@ -81,6 +94,7 @@ class DeviceController extends Controller
 
     public function logDataAction(Request $request)
     {
+        $logger = $this->get('logger');
         //Respuesta
         $response = new Response(
             'Content',
@@ -92,9 +106,13 @@ class DeviceController extends Controller
         $contentType = $request->getContentType();
 
         if ($contentType != "json" || empty($content)) {          //CONTENIDO NOT JSON
-            $params = "Params Empty or not json. Content type: " . $contentType;
-            $response->setContent($params);
+            $stringError = "Wrong content type request or empty content. Given \"$contentType\".";
+            $response->setContent($stringError);
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
+            $logger->error($stringError, array (
+                "contentType" => $contentType,
+                "content" => $content
+            ));
 
         } else {
             $em = $this->getDoctrine()->getManager();
@@ -111,9 +129,13 @@ class DeviceController extends Controller
                 }
             }
             if ($password != passwordDevice) {          //PASSWORD ERRONEO
-                $params = "Params Empty or not json. Content type: " . $contentType;
-                $response->setContent($params);
+                $stringError = "Password device incorrecto. Checkear estructura de $contentType";
+                $response->setContent($stringError);
                 $response->setStatusCode(Response::HTTP_FORBIDDEN);
+                $logger->error($stringError, array (
+                    "contentType" => $contentType,
+                    "content" => $content
+                ));
             }
             else {
                 //ELSE -> checkeo si hay ensayo running
@@ -174,10 +196,14 @@ class DeviceController extends Controller
                     $stringResponse .= 'Recibidas ' . $contItemsAdded . ' mediciones nuevas.';
                     $stringResponse .= "</p>";
                     $response->setContent($stringResponse);
+                    $logger->info("Recibidas $contItemsAdded mediciones nuevas", array (
+                        "cantMedicionesRecibidas" => $contItemsAdded
+                    ));
                 }
                 else {
                     $response->setStatusCode(Response::HTTP_PRECONDITION_FAILED);
                     $response->setContent("Ensayo no iniciado.");
+                    $logger->info("Dispositivo tratando de loguear data. Ensayo no iniciado");
                 }
             }
         }

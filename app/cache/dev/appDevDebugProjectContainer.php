@@ -136,7 +136,10 @@ class appDevDebugProjectContainer extends Container
             'logger' => 'getLoggerService',
             'monolog.handler.console' => 'getMonolog_Handler_ConsoleService',
             'monolog.handler.debug' => 'getMonolog_Handler_DebugService',
+            'monolog.handler.file_log' => 'getMonolog_Handler_FileLogService',
+            'monolog.handler.filter_for_errors' => 'getMonolog_Handler_FilterForErrorsService',
             'monolog.handler.main' => 'getMonolog_Handler_MainService',
+            'monolog.handler.syslog_handler' => 'getMonolog_Handler_SyslogHandlerService',
             'monolog.logger.assetic' => 'getMonolog_Logger_AsseticService',
             'monolog.logger.doctrine' => 'getMonolog_Logger_DoctrineService',
             'monolog.logger.event' => 'getMonolog_Logger_EventService',
@@ -1671,6 +1674,8 @@ class appDevDebugProjectContainer extends Container
 
         $instance->useMicrosecondTimestamps(true);
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1704,6 +1709,32 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'monolog.handler.file_log' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Monolog\Handler\StreamHandler A Monolog\Handler\StreamHandler instance
+     */
+    protected function getMonolog_Handler_FileLogService()
+    {
+        return $this->services['monolog.handler.file_log'] = new \Monolog\Handler\StreamHandler(($this->targetDirs[2].'\\logs/dev.log'), 100, true, NULL);
+    }
+
+    /**
+     * Gets the 'monolog.handler.filter_for_errors' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Monolog\Handler\FingersCrossedHandler A Monolog\Handler\FingersCrossedHandler instance
+     */
+    protected function getMonolog_Handler_FilterForErrorsService()
+    {
+        return $this->services['monolog.handler.filter_for_errors'] = new \Monolog\Handler\FingersCrossedHandler($this->get('monolog.handler.file_log'), 200, 0, true, true, NULL);
+    }
+
+    /**
      * Gets the 'monolog.handler.main' service.
      *
      * This service is shared.
@@ -1714,6 +1745,19 @@ class appDevDebugProjectContainer extends Container
     protected function getMonolog_Handler_MainService()
     {
         return $this->services['monolog.handler.main'] = new \Monolog\Handler\StreamHandler(($this->targetDirs[2].'\\logs/dev.log'), 100, true, NULL);
+    }
+
+    /**
+     * Gets the 'monolog.handler.syslog_handler' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Monolog\Handler\SyslogHandler A Monolog\Handler\SyslogHandler instance
+     */
+    protected function getMonolog_Handler_SyslogHandlerService()
+    {
+        return $this->services['monolog.handler.syslog_handler'] = new \Monolog\Handler\SyslogHandler(false, 'user', 400, true, 1);
     }
 
     /**
@@ -1729,6 +1773,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.assetic'] = $instance = new \Symfony\Bridge\Monolog\Logger('assetic');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1747,6 +1793,8 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['monolog.logger.doctrine'] = $instance = new \Symfony\Bridge\Monolog\Logger('doctrine');
 
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1765,6 +1813,8 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['monolog.logger.event'] = $instance = new \Symfony\Bridge\Monolog\Logger('event');
 
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
         return $instance;
@@ -1783,6 +1833,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.php'] = $instance = new \Symfony\Bridge\Monolog\Logger('php');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1802,6 +1854,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.profiler'] = $instance = new \Symfony\Bridge\Monolog\Logger('profiler');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1821,6 +1875,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.request'] = $instance = new \Symfony\Bridge\Monolog\Logger('request');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1840,6 +1896,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.router'] = $instance = new \Symfony\Bridge\Monolog\Logger('router');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1859,6 +1917,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.security'] = $instance = new \Symfony\Bridge\Monolog\Logger('security');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1878,6 +1938,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.templating'] = $instance = new \Symfony\Bridge\Monolog\Logger('templating');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -1897,6 +1959,8 @@ class appDevDebugProjectContainer extends Container
         $this->services['monolog.logger.translation'] = $instance = new \Symfony\Bridge\Monolog\Logger('translation');
 
         $instance->pushHandler($this->get('monolog.handler.console'));
+        $instance->pushHandler($this->get('monolog.handler.syslog_handler'));
+        $instance->pushHandler($this->get('monolog.handler.filter_for_errors'));
         $instance->pushHandler($this->get('monolog.handler.main'));
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
@@ -2235,7 +2299,7 @@ class appDevDebugProjectContainer extends Container
         $q = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $n, array(), $a);
         $q->setOptions(array('login_path' => 'login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.my_db_provider'), 1 => $m), 'main', $a, $c), 2 => $o, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $n, 'main', $p, $q, array('check_path' => 'login', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '57c5918be39e30.62833050', $a, $f), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $l, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $n, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $n, 'login', false), NULL, NULL, $a, false));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.my_db_provider'), 1 => $m), 'main', $a, $c), 2 => $o, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $n, 'main', $p, $q, array('check_path' => 'login', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '57c6d6c5b11c60.26205526', $a, $f), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $l, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $n, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $n, 'login', false), NULL, NULL, $a, false));
     }
 
     /**
@@ -3602,7 +3666,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.my_db_provider'), $this->get('security.user_checker.main'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57c5918be39e30.62833050')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.my_db_provider'), $this->get('security.user_checker.main'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('57c6d6c5b11c60.26205526')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4143,6 +4207,8 @@ class appDevDebugProjectContainer extends Container
                         1 => 'doctrine',
                     ),
                 ),
+                'monolog.handler.syslog_handler' => NULL,
+                'monolog.handler.filter_for_errors' => NULL,
                 'monolog.handler.main' => array(
                     'type' => 'exclusive',
                     'elements' => array(

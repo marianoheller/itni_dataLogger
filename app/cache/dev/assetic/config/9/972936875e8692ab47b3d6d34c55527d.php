@@ -24,22 +24,19 @@ return array (
       ),
     ),
   ),
-  '93b3f23' => 
+  '12e7e09' => 
   array (
     0 => 
     array (
       0 => '@fontawesome_woff2',
-      1 => '@fontawesome_woff',
-      2 => '@fontawesome_ttf',
-      3 => '@fontawesome_otf',
     ),
     1 => 
     array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/93b3f23.css',
-      'name' => '93b3f23',
+      'output' => '_controller/css/12e7e09.css',
+      'name' => '12e7e09',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 
