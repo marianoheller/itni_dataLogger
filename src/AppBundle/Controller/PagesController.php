@@ -23,6 +23,8 @@ class PagesController extends Controller
      */
     public function homepageAction(Request $request)
     {
+        $logger = $this->get('logger');
+        $logger->debug("/ accesed");
         //Check if ensayo is running
         $em = $this->getDoctrine()->getManager();
         $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
@@ -37,6 +39,8 @@ class PagesController extends Controller
      */
     public function sensoresAction()
     {
+        $logger = $this->get('logger');
+        $logger->debug("/sensores accesed");
         //Check if ensayo is running
         $em = $this->getDoctrine()->getManager();
         $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
@@ -50,6 +54,8 @@ class PagesController extends Controller
      */
     public function ensayoAction()
     {
+        $logger = $this->get('logger');
+        $logger->debug("/ensayo accesed");
         //Check if ensayo is running
         $em = $this->getDoctrine()->getManager();
         $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
@@ -67,6 +73,8 @@ class PagesController extends Controller
      */
     public function ensayoNowAction(Request $request, $slug)
     {
+        $logger = $this->get('logger');
+        $logger->debug("/ensayo/$slug accesed");
         //if resuming ensayo
         if ($slug == 2) {
             //if there is POST data
@@ -77,10 +85,17 @@ class PagesController extends Controller
 
                 //if NO hay ensayo andando
                 if ( !$isEnsayoRunning) {
+                    $logger->info("No hay ensayo andando" , array (
+                        "isEnsayoRunning" => $isEnsayoRunning
+                    ));
                     return $this->redirectToRoute("ensayo");
                 }
                 //else ALL GOOD
                 else {
+                    $logger->info("Ensayo resumido", array (
+                        "lastPing" => $arrayQueryResult[0]["lastPing"],
+                        "t_inicio" => $arrayQueryResult[0]["t_inicio"]
+                    ));
                     return $this->render("pages/ensayo/ensayo.html.twig", array (
                         "lastPing" => $arrayQueryResult[0]["lastPing"],
                         "t_inicio" => $arrayQueryResult[0]["t_inicio"]
@@ -89,6 +104,7 @@ class PagesController extends Controller
             }
             //else probablemente se tipeo la url directamente
             else {
+                $logger->info("\$_POST empty. Redirecting to ensayo.");
                 return $this->redirectToRoute("ensayo");
             }
         }
@@ -96,6 +112,7 @@ class PagesController extends Controller
         else if ( $slug == 1 ) {
             //if there is NO POST data -> redirect (tipeado  a mano
             if ( $request->request->count() == 0 ) {
+                $logger->info("\$_POST empty. Redirecting to ensayo.");
                 return $this->redirectToRoute("ensayo");
             }
             //Generate Ensayo for database % flush
@@ -117,12 +134,19 @@ class PagesController extends Controller
             $em->persist($ensayoObj);
             $em->flush();
 
+            $logger->info("Generando ensayo nuevo", array(
+                "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
+            ));
+
             return $this->render("pages/ensayo/ensayo.html.twig", array (
                 "lastPing" => $dateTimeInicio->format("Y-m-d H:i:s"),
                 "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
             ));
         }
         else {
+            $logger->info("Slug invalido", array(
+                "slug" => $slug
+            ));
             return $this->redirectToRoute("ensayo");
         }
     }
@@ -132,6 +156,8 @@ class PagesController extends Controller
      */
     public function historialAction()
     {
+        $logger = $this->get('logger');
+        $logger->debug("/historial accesed");
         $em = $this->getDoctrine()->getManager();
         $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
         return $this->render("pages/historial/historial_select.html.twig", array(
@@ -146,9 +172,12 @@ class PagesController extends Controller
      */
     public function historialVerAction(Request $request)
     {
+        $logger = $this->get('logger');
+        $logger->debug("/historial/ver accesed");
         $dateFormat = "Y-m-d H:i:s";
         $idEnsayo = $request->request->get("ensayoID");
         if ( !isset($idEnsayo) ) {
+            $logger->error("idEnsayo not set");
             return $this->redirectToRoute("historial");
         }
         $em = $this->getDoctrine()->getManager();
@@ -157,6 +186,9 @@ class PagesController extends Controller
 
 
         if ( isset($ensayoObj) ) {
+            $logger->error("Ensayo ver succesful", array (
+                "idRequested" => $idEnsayo
+            ));
             return $this->render(":pages/historial:historial_ensayo.html.twig", array(
                 "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
                 "t_fin" => $ensayoObj->getTFin()->format($dateFormat),
@@ -164,6 +196,9 @@ class PagesController extends Controller
             ));
         }
         else {
+            $logger->error("Ensayo no encontrado", array (
+                "idRequested" => $idEnsayo
+            ));
             return $this->render("pages/historial/historial_select.html.twig", array(
                 "fErrorOcurred" => true
             ));
@@ -176,6 +211,8 @@ class PagesController extends Controller
      */
     public function exportarAction(Request $request)
     {
+        $logger = $this->get('logger');
+        $logger->debug("/avanzado accesed");
         $em = $this->getDoctrine()->getManager();
         $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
         return $this->render("pages/avanzado/avanzado.html.twig", array(
@@ -188,6 +225,8 @@ class PagesController extends Controller
      */
     public function generateCsvAction(Request $request)
     {
+        $logger = $this->get('logger');
+        $logger->debug("/generateCSV accesed");
         $idEnsayo = $request->request->get("ensayoID");
         $intervalo = $request->request->get("intervalo");
         if ( !isset($idEnsayo) || !isset($intervalo)) {
@@ -198,6 +237,9 @@ class PagesController extends Controller
         $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
 
         if (!isset($ensayoObj)) {
+            $logger->error("Ensayo no encontrado", array (
+                "idRequested" => $idEnsayo
+            ));
             return $this->redirectToRoute("avanzado");
         }
 
@@ -242,14 +284,22 @@ class PagesController extends Controller
         $response->headers->set('Content-Type', 'text/csv; charset=utf-8');
         $response->headers->set('Content-Disposition', "attachment; filename=$filenameExport.csv");
 
+        $logger->error("Ensayo exportado", array (
+            "idRequested" => $idEnsayo,
+            "t_inicio" => $t_inicio,
+            "t_fin" => $t_fin,
+            "intervalo" => $intervalo,
+            "filename" => $filenameExport
+        ));
+
         return $response;
     }
 }
 
-//TODO Logging on PagesController && SensoresController
-//http://symfony.com/doc/2.8/logging.html
+//TODO readme.md
 
 //TODO API Authentication
+//http://symfony.com/doc/2.8/security/guard_authentication.html
 //symfony.com/doc/2.8/security/api_key_authentication.html
 
 //TODO try/catch on flush

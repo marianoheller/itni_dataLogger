@@ -21,11 +21,12 @@ class SensoresController extends Controller
      */
     public function getSensoresStatusAction(Request $request)
     {
+        $logger = $this->get('logger');
         $em = $this->getDoctrine()->getManager();
         $arrayQueryResult = $em->getRepository('AppBundle:Datalog')->getSensoresStatusFormated();
 
         if ( $request->isXmlHttpRequest() ) {
-
+            $logger->info("Sensores status getted");
             $jsonString = json_encode($arrayQueryResult);
             return new JsonResponse(
                 array ( 'jsonStringAjax' => $jsonString)
