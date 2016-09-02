@@ -266,7 +266,8 @@
 
         function cancelarEnsayo() {
             $.ajax({
-                        url: '/ensayo/cancel/all',
+                        //url: '/ensayo/cancel/all',
+                        url: '{{ url("cancelEnsayo") }}',
                         type:'POST',
                         contentType: "application/json; charset=utf-8",
                         //data: jsonToSend,
@@ -398,7 +399,8 @@
 
 
             var jsonData = $.ajax({
-                url: '/getGraphData',
+                //url: '/getGraphData',
+                url: '{{ url("getGraphData") }}',
                 type:'POST',
                 contentType: "application/json; charset=utf-8",
                 data: jsonToSend,

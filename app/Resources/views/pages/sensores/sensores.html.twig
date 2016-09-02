@@ -67,7 +67,8 @@
             toggleTimerById("refreshButton");
 
             $.ajax({
-                        url : '/getSensoresStatus',
+                        //url : '/getSensoresStatus',
+                        url : '{{ url("getSensoresStatus") }}',
                         type: 'POST'
                     })
                     .done(function (response) {
@@ -113,7 +114,8 @@
         var set_delay = 60000,
         getDataFromServer = function () {
             $.ajax({
-                        url : '/getSensoresStatus',
+                        //url : '/getSensoresStatus',
+                        url : '{{ url("getSensoresStatus") }}',
                         type: 'POST'
                     })
                     .done(function (response) {
