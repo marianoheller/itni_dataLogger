@@ -307,7 +307,7 @@ class PagesController extends Controller
 
 //TODO scroll up cuando se clickea una pestaña
 
-//TODO Ver tema google charts api offline...
+//TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
 //TODO Separar JS en archivo aparte.
 
