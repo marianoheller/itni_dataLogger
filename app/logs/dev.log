@@ -2708,3 +2708,4 @@
 [2016-09-01 15:27:17] event.DEBUG: Notified event "kernel.finish_request" to listener "Symfony\Component\Security\Http\Firewall::onKernelFinishRequest". [] []
 [2016-09-01 15:27:17] event.DEBUG: Notified event "kernel.terminate" to listener "Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener::onTerminate". [] []
 [2016-09-01 15:27:17] event.DEBUG: Notified event "kernel.terminate" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelTerminate". [] []
+[2016-09-02 15:48:43] php.DEBUG: fsockopen(): unable to connect to 127.0.0.1:8000 (No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión. ) {"type":2,"file":"D:\\Documentos\\WebDev\\Symfony\\DataLogger_INTI_Construcciones\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Command\\ServerCommand.php","line":59,"level":28928} []

@@ -130,9 +130,16 @@ class PagesController extends Controller
             $ensayoObj->setTFin();
             $ensayoObj->setLastPing($dateTimeInicio);
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($ensayoObj);
-            $em->flush();
+            try {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($ensayoObj);
+                $em->flush();
+            } catch(\Exception $e) {
+                $logger->critical("No se pudo hacer persist del ensayo", array (
+                    "Exception" => $e
+                ));
+                return $this->redirectToRoute("homepage");
+            }
 
             $logger->info("Generando ensayo nuevo", array(
                 "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")

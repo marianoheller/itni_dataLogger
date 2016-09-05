@@ -185,8 +185,15 @@ class DeviceController extends Controller
                                 $datalog->setFecha($fecha);
 
                                 $contItemsAdded++;
-                                $em->persist($datalog);
-                                $em->flush();
+                                try {
+                                    $em->persist($datalog);
+                                    $em->flush();
+                                } catch(\Exception $e) {
+                                    $logger->critical("No se pudo hacer persist de la data recibida", array (
+                                        "Exception" => $e
+                                    ));
+                                    return $this->createNotFoundException($e->getMessage());
+                                }
                             }
                         }
                     }

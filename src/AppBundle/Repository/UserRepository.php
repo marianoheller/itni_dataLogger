@@ -38,15 +38,23 @@ class UserRepository extends EntityRepository
     }
 
     public function addUser($userObj) {
-        $em = $this->getEntityManager();
-        $em->persist($userObj);
-        $em->flush();
+        try {
+            $em = $this->getEntityManager();
+            $em->persist($userObj);
+            $em->flush();
+        } catch(\Exception $e) {
+            unset($e);
+        }
     }
 
     public function deleteUser($userObj) {
-        $em = $this->getEntityManager();
-        $em->remove($userObj);
-        $em->flush();
+        try {
+            $em = $this->getEntityManager();
+            $em->remove($userObj);
+            $em->flush();
+        } catch(\Exception $e) {
+            unset($e);
+        }
     }
 
 }

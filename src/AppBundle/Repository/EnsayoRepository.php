@@ -86,8 +86,13 @@ class EnsayoRepository extends EntityRepository
                                     ) b
                                     ON a.id = b.id
                                     SET a.lastPing = '$lastPingString'";
+        try {
         $em = $this->getEntityManager();
         $count = $em->getConnection()->executeUpdate($sqlUpdateLastPing);
+        } catch(\Exception $e) {
+            unset($e);
+            $count = 0;
+        }
 
         //Affected rows
         return $count;
@@ -96,8 +101,14 @@ class EnsayoRepository extends EntityRepository
     public function finishAllEnsayos() {
         $sqlCancelEnsayos = "UPDATE ensayo
                                 SET t_fin = lastPing";
-        $em = $this->getEntityManager();
-        $count = $em->getConnection()->executeUpdate($sqlCancelEnsayos);
+
+        try {
+            $em = $this->getEntityManager();
+            $count = $em->getConnection()->executeUpdate($sqlCancelEnsayos);
+        } catch(\Exception $e) {
+            unset($e);
+            $count = 0;
+        }
 
         //Affected rows
         return $count;
