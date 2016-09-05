@@ -303,13 +303,15 @@ class PagesController extends Controller
     }
 }
 
-//TODO se rompió el highlight de las pestañas en historial y en ensayo
+
 
 //TODO scroll up cuando se clickea una pestaña
 
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
-//TODO Separar JS en archivo aparte.
+//TODO unificar .css
+
+//TODO Unificar .js
 
 //TODO API Authentication
 //http://symfony.com/doc/2.8/security/guard_authentication.html
