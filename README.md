@@ -1,5 +1,4 @@
 #Instrucciones para apache
-=============
 
 * php app/check.php
 * Crear db inti_datalogger
