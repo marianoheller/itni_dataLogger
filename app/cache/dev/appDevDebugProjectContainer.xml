@@ -1585,13 +1585,12 @@
       <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
       <argument type="service">
         <service class="Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationRequestHandler" public="false">
-          <argument type="service">
-            <service class="Symfony\Component\Form\Util\ServerParams" public="false">
-              <argument type="service" id="request_stack"/>
-            </service>
-          </argument>
+          <argument type="service" id="form.server_params"/>
         </service>
       </argument>
+    </service>
+    <service id="form.server_params" class="Symfony\Component\Form\Util\ServerParams" public="false">
+      <argument type="service" id="request_stack"/>
     </service>
     <service id="form.type_extension.form.validator" class="Symfony\Component\Form\Extension\Validator\Type\FormTypeValidatorExtension">
       <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
@@ -1619,6 +1618,7 @@
       <argument>_token</argument>
       <argument type="service" id="translator.default"/>
       <argument>validators</argument>
+      <argument type="service" id="form.server_params"/>
     </service>
     <service id="security.csrf.token_manager" class="Symfony\Component\Security\Csrf\CsrfTokenManager">
       <argument type="service">
@@ -2147,7 +2147,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57c6d6c5b11c60.26205526</argument>
+            <argument>57cd824fc4c956.96228071</argument>
           </service>
         </argument>
       </argument>
@@ -2498,7 +2498,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57c6d6c5b11c60.26205526</argument>
+            <argument>57cd824fc4c956.96228071</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2991,6 +2991,33 @@
               <argument key="bootstrap_js" type="collection">
                 <argument type="collection">
                   <argument>D:\Documentos\WebDev\Symfony\DataLogger_INTI_Construcciones\app/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js</argument>
+                </argument>
+                <argument type="collection">
+                  <argument>?yui_js</argument>
+                </argument>
+                <argument type="collection"/>
+              </argument>
+              <argument key="dygraphs_js" type="collection">
+                <argument type="collection">
+                  <argument>D:\Documentos\WebDev\Symfony\DataLogger_INTI_Construcciones\app/../vendor/bower-asset/dygraphs/dygraph-combined.js</argument>
+                </argument>
+                <argument type="collection">
+                  <argument>?yui_js</argument>
+                </argument>
+                <argument type="collection"/>
+              </argument>
+              <argument key="raphael_js" type="collection">
+                <argument type="collection">
+                  <argument>D:\Documentos\WebDev\Symfony\DataLogger_INTI_Construcciones\app/../vendor/bower-asset/raphael/raphael.js</argument>
+                </argument>
+                <argument type="collection">
+                  <argument>?yui_js</argument>
+                </argument>
+                <argument type="collection"/>
+              </argument>
+              <argument key="justgage_js" type="collection">
+                <argument type="collection">
+                  <argument>D:\Documentos\WebDev\Symfony\DataLogger_INTI_Construcciones\app/../vendor/bower-asset/justgage-toorshia/justgage.js</argument>
                 </argument>
                 <argument type="collection">
                   <argument>?yui_js</argument>
@@ -3598,6 +3625,12 @@
       <argument type="service">
         <service class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
           <argument type="service" id="service_container"/>
+          <call method="addEventListener">
+            <argument type="collection">
+              <argument>loadClassMetadata</argument>
+            </argument>
+            <argument type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
+          </call>
         </service>
       </argument>
       <argument type="collection"/>
@@ -3635,11 +3668,14 @@
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\ORM\Mapping\DefaultEntityListenerResolver"/>
+    <service id="doctrine.orm.default_listeners.attach_entity_listeners" class="Doctrine\ORM\Tools\AttachEntityListenersListener">
+      <tag name="doctrine.event_listener" event="loadClassMetadata"/>
+    </service>
     <service id="doctrine.orm.default_manager_configurator" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator">
       <argument type="collection"/>
       <argument type="collection"/>
     </service>
-    <service id="doctrine.orm.default_entity_manager" class="Doctrine\ORM\EntityManager">
+    <service id="doctrine.orm.default_entity_manager" class="Doctrine\ORM\EntityManager" lazy="true">
       <argument type="service" id="doctrine.dbal.default_connection"/>
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
@@ -3776,7 +3812,7 @@
     <service id="debug.dump_listener" class="Symfony\Component\HttpKernel\EventListener\DumpListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="var_dumper.cloner"/>
-      <argument type="service" id="data_collector.dump"/>
+      <argument type="service" id="var_dumper.cli_dumper"/>
     </service>
     <service id="var_dumper.cloner" class="Symfony\Component\VarDumper\Cloner\VarCloner">
       <call method="setMaxItems">

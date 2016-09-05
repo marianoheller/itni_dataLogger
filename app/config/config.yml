@@ -98,6 +98,18 @@ assetic:
             inputs:
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"
             filters: [?yui_js]
+        dygraphs_js:
+            inputs:
+                - "%kernel.root_dir%/../vendor/bower-asset/dygraphs/dygraph-combined.js"
+            filters: [?yui_js]
+        raphael_js:
+            inputs:
+                - "%kernel.root_dir%/../vendor/bower-asset/raphael/raphael.js"
+            filters: [?yui_js]
+        justgage_js:
+            inputs:
+                - "%kernel.root_dir%/../vendor/bower-asset/justgage-toorshia/justgage.js"
+            filters: [?yui_js]
         bootstrap_css:
             inputs:
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.css"

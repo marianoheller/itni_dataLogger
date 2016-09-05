@@ -174,19 +174,28 @@
 
 {% block ensayoJavascript %}
 
-    {#<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>#}
-    <script src="{{ asset('media/js/moment/moment.min.js') }}"></script>
-
 
     {#<script type="text/javascript" src="https://www.google.com/jsapi"></script>#}
     <script src="{{ asset('media/js/jsapi.js') }}"></script>
-    {#<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>#}
-    <script src="{{ asset('media/js/dygraph-combined.js') }}"></script>
 
     <script src="{{ asset('media/js/polyfill.js') }}"></script>
 
-    <script src="{{ asset('media/js/justgage-1.2.2/raphael-2.1.4.min.js') }}"></script>
-    <script src="{{ asset('media/js/justgage-1.2.2/justgage.js') }}"></script>
+
+    {#<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>#}
+    {#<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>#}
+    {% javascripts '@moment_js' '@dygraphs_js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+
+    {#<script src="{{ asset('media/js/justgage-1.2.2/raphael-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('media/js/justgage-1.2.2/justgage.js') }}"></script>#}
+    {% javascripts '@raphael_js' '@justgage_js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
 
 
     <script>

@@ -1053,7 +1053,7 @@ return $this->getMethod() === strtoupper($method);
 }
 public function isMethodSafe()
 {
-return in_array($this->getMethod(), array('GET','HEAD'));
+return in_array($this->getMethod(), array('GET','HEAD','OPTIONS','TRACE'));
 }
 public function getContent($asResource = false)
 {
@@ -1079,7 +1079,7 @@ if ($currentContentIsResource) {
 rewind($this->content);
 return stream_get_contents($this->content);
 }
-if (null === $this->content) {
+if (null === $this->content || false === $this->content) {
 $this->content = file_get_contents('php://input');
 }
 return $this->content;
@@ -1523,6 +1523,11 @@ public function send()
 {
 $this->sendHeaders();
 $this->sendContent();
+if (function_exists('fastcgi_finish_request')) {
+fastcgi_finish_request();
+} elseif ('cli'!== PHP_SAPI) {
+static::closeOutputBuffers(0, true);
+}
 return $this;
 }
 public function setContent($content)
@@ -2159,7 +2164,6 @@ for ($i = 2;;) {
 if ('service_container'=== $id
 || isset($this->aliases[$id])
 || isset($this->services[$id])
-|| array_key_exists($id, $this->services)
 ) {
 return true;
 }
@@ -2179,7 +2183,7 @@ return $this;
 if (isset($this->aliases[$id])) {
 $id = $this->aliases[$id];
 }
-if (isset($this->services[$id]) || array_key_exists($id, $this->services)) {
+if (isset($this->services[$id])) {
 return $this->services[$id];
 }
 if (isset($this->loading[$id])) {
@@ -2197,10 +2201,10 @@ if (!$id) {
 throw new ServiceNotFoundException($id);
 }
 $alternatives = array();
-foreach ($this->services as $key => $associatedService) {
-$lev = levenshtein($id, $key);
-if ($lev <= strlen($id) / 3 || false !== strpos($key, $id)) {
-$alternatives[] = $key;
+foreach ($this->getServiceIds() as $knownId) {
+$lev = levenshtein($id, $knownId);
+if ($lev <= strlen($id) / 3 || false !== strpos($knownId, $id)) {
+$alternatives[] = $knownId;
 }
 }
 throw new ServiceNotFoundException($id, null, null, $alternatives);
@@ -2235,7 +2239,7 @@ return true;
 if (isset($this->aliases[$id])) {
 $id = $this->aliases[$id];
 }
-return isset($this->services[$id]) || array_key_exists($id, $this->services);
+return isset($this->services[$id]);
 }
 public function reset()
 {
@@ -2445,11 +2449,11 @@ protected $booted = false;
 protected $name;
 protected $startTime;
 protected $loadClassCache;
-const VERSION ='2.8.8';
-const VERSION_ID = 20808;
+const VERSION ='2.8.10';
+const VERSION_ID = 20810;
 const MAJOR_VERSION = 2;
 const MINOR_VERSION = 8;
-const RELEASE_VERSION = 8;
+const RELEASE_VERSION = 10;
 const EXTRA_VERSION ='';
 const END_OF_MAINTENANCE ='11/2018';
 const END_OF_LIFE ='11/2019';
@@ -2503,13 +2507,6 @@ if (false === $this->booted) {
 return;
 }
 if ($this->getHttpKernel() instanceof TerminableInterface) {
-if (!$this->debug) {
-if (function_exists('fastcgi_finish_request')) {
-fastcgi_finish_request();
-} elseif ('cli'!== PHP_SAPI) {
-Response::closeOutputBuffers(0, true);
-}
-}
 $this->getHttpKernel()->terminate($request, $response);
 }
 }
@@ -2698,8 +2695,8 @@ $name = $directChildren[$name];
 array_unshift($bundleMap, $this->bundles[$name]);
 $hierarchy[] = $name;
 }
-foreach ($hierarchy as $bundle) {
-$this->bundleMap[$bundle] = $bundleMap;
+foreach ($hierarchy as $hierarchyBundle) {
+$this->bundleMap[$hierarchyBundle] = $bundleMap;
 array_pop($bundleMap);
 }
 }

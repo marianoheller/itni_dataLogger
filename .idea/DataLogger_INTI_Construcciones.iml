@@ -3,11 +3,15 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/bordercloud/tether" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/dygraphs" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/justgage-toorshia" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/raphael" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/components/font-awesome" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/components/jquery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/deployer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/phar-update" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/migrations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elfet/pure" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/evenement/evenement" />
@@ -58,11 +62,15 @@
       <library name="PHP">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/bordercloud/tether" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/dygraphs" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/justgage-toorshia" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/raphael" />
           <root url="file://$MODULE_DIR$/vendor/components/font-awesome" />
           <root url="file://$MODULE_DIR$/vendor/components/jquery" />
           <root url="file://$MODULE_DIR$/vendor/deployer/deployer" />
           <root url="file://$MODULE_DIR$/vendor/deployer/phar-update" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/migrations" />
           <root url="file://$MODULE_DIR$/vendor/elfet/pure" />
           <root url="file://$MODULE_DIR$/vendor/evenement/evenement" />
@@ -97,11 +105,15 @@
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bordercloud/tether" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/dygraphs" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/justgage-toorshia" />
+          <root url="file://$MODULE_DIR$/vendor/bower-asset/raphael" />
           <root url="file://$MODULE_DIR$/vendor/components/font-awesome" />
           <root url="file://$MODULE_DIR$/vendor/components/jquery" />
           <root url="file://$MODULE_DIR$/vendor/deployer/deployer" />
           <root url="file://$MODULE_DIR$/vendor/deployer/phar-update" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/migrations" />
           <root url="file://$MODULE_DIR$/vendor/elfet/pure" />
           <root url="file://$MODULE_DIR$/vendor/evenement/evenement" />

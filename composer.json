@@ -31,7 +31,9 @@
         "yalesov/yuicompressor": "2.4.7",
         "leafo/scssphp": "0.0.10",
         "patchwork/jsqueeze": "v2.0.5",
-        "moment/moment": "2.13.0"
+        "moment/moment": "2.13.0",
+        "bower-asset/dygraphs": "1.1.1",
+        "bower-asset/justgage-toorshia": "1.2.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

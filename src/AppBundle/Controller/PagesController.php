@@ -303,13 +303,13 @@ class PagesController extends Controller
     }
 }
 
+//TODO Ver tema google charts api offline...
+
+//TODO Separar JS en archivo aparte.
+
 //TODO API Authentication
 //http://symfony.com/doc/2.8/security/guard_authentication.html
 //symfony.com/doc/2.8/security/api_key_authentication.html
-
-//TODO try/catch on flush
-
-//TODO ver tema dependencias (npm,bower...)
 
 //TODO canales virtuales
 //TODO patron
