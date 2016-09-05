@@ -8,10 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/media/language/spanish.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,24 +36,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37243947">
-              <caret line="285" column="28" selection-start-line="285" selection-start-column="28" selection-end-line="285" selection-end-column="28" />
-              <folding>
-                <element signature="e#6424#6442#1#PHP" expanded="true" />
-                <element signature="e#6500#6544#0#PHP" expanded="true" />
-                <element signature="e#7238#7256#1#PHP" expanded="true" />
-                <element signature="e#7470#7515#0#PHP" expanded="true" />
-                <element signature="e#7916#7960#0#PHP" expanded="true" />
-                <element signature="e#8338#8356#1#PHP" expanded="true" />
-                <element signature="e#8414#8449#0#PHP" expanded="true" />
-                <element signature="e#9092#9110#1#PHP" expanded="true" />
-                <element signature="e#9960#9979#1#PHP" expanded="true" />
-                <element signature="e#10100#10119#1#PHP" expanded="true" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.13385826">
+                <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
+          </provider>
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -654,12 +647,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00044" summary="Added warning de ensayo andando en homepage y sensores.">
-      <created>1470235486997</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1470235486997</updated>
-    </task>
     <task id="LOCAL-00045" summary="Removed TODO de checkeo de flush. No hace falta..">
       <created>1470236036345</created>
       <option name="number" value="00045" />
@@ -948,7 +935,13 @@
       <option name="project" value="LOCAL" />
       <updated>1473095126019</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Fixed readme instructions.">
+      <created>1473095775064</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1473095775064</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView">
@@ -999,7 +992,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Moved admin nav-tab to general tabs" />
     <MESSAGE value="Added creacion de cuentas de devices." />
     <MESSAGE value="Changed favico" />
     <MESSAGE value="Turned autocomplete off on login." />
@@ -1024,7 +1016,8 @@
     <MESSAGE value="Added TODO." />
     <MESSAGE value="Fixed broken nav-pill highlight on ensayo &amp; historial." />
     <MESSAGE value="Scroll to top on nav-pill click." />
-    <option name="LAST_COMMIT_MESSAGE" value="Scroll to top on nav-pill click." />
+    <MESSAGE value="Fixed readme instructions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed readme instructions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1423,23 +1416,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.0">
-            <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37243947">
+        <state vertical-scroll-proportion="0.39851025">
           <caret line="285" column="28" selection-start-line="285" selection-start-column="28" selection-end-line="285" selection-end-column="28" />
           <folding>
             <element signature="e#6424#6442#1#PHP" expanded="true" />
@@ -1454,6 +1433,20 @@
             <element signature="e#10100#10119#1#PHP" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.13385826">
+            <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>
