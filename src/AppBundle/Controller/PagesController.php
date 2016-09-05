@@ -193,7 +193,7 @@ class PagesController extends Controller
 
 
         if ( isset($ensayoObj) ) {
-            $logger->error("Ensayo ver succesful", array (
+            $logger->info("Ensayo ver succesful", array (
                 "idRequested" => $idEnsayo
             ));
             return $this->render(":pages/historial:historial_ensayo.html.twig", array(
@@ -302,6 +302,10 @@ class PagesController extends Controller
         return $response;
     }
 }
+
+//TODO se rompió el highlight de las pestañas en historial y en ensayo
+
+//TODO scroll up cuando se clickea una pestaña
 
 //TODO Ver tema google charts api offline...
 
