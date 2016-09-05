@@ -11,8 +11,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
     </list>
@@ -44,8 +42,8 @@
       <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6169844">
-              <caret line="313" column="19" selection-start-line="313" selection-start-column="19" selection-end-line="313" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.3812825">
+              <caret line="304" column="0" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
               <folding>
                 <element signature="e#6424#6442#1#PHP" expanded="true" />
                 <element signature="e#6500#6544#0#PHP" expanded="true" />
@@ -58,16 +56,6 @@
                 <element signature="e#9960#9979#1#PHP" expanded="true" />
                 <element signature="e#10100#10119#1#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ensayo.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.5">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -667,12 +655,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00042" summary="Changed security.">
-      <created>1470071350563</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1470071350563</updated>
-    </task>
     <task id="LOCAL-00043" summary="Added deployer bundle and config.">
       <created>1470146597502</created>
       <option name="number" value="00043" />
@@ -961,7 +943,13 @@
       <option name="project" value="LOCAL" />
       <updated>1473087632088</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Fixed broken nav-pill highlight on ensayo &amp; historial.">
+      <created>1473094829441</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1473094829441</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TodoView">
@@ -980,7 +968,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33955225" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32441112" sideWeight="0.4402985" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32441112" sideWeight="0.5597015" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32441112" sideWeight="0.5597015" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24411134" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
@@ -1012,7 +1000,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fixed timestamp on export. Ahora figura el tiempo desde 00 y no la fechaHora." />
     <MESSAGE value="Changed User schema. Added is_device.&#10;Changed base.twig location." />
     <MESSAGE value="Moved admin nav-tab to general tabs" />
     <MESSAGE value="Added creacion de cuentas de devices." />
@@ -1037,7 +1024,8 @@
     <MESSAGE value="Added try/catch on flush." />
     <MESSAGE value="Solved bower dependencies (dygraphs and justGage)&#10;Used composer-asset-plugin.&#10;&#10;Solo queda el de google charts api...." />
     <MESSAGE value="Added TODO." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TODO." />
+    <MESSAGE value="Fixed broken nav-pill highlight on ensayo &amp; historial." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed broken nav-pill highlight on ensayo &amp; historial." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1435,24 +1423,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5065177">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="31" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.5943182">
+          <caret line="498" column="12" selection-start-line="498" selection-start-column="12" selection-end-line="498" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.5">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.7284091">
+          <caret line="539" column="50" selection-start-line="539" selection-start-column="50" selection-end-line="539" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6169844">
-          <caret line="313" column="19" selection-start-line="313" selection-start-column="19" selection-end-line="313" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.3812825">
+          <caret line="304" column="0" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
           <folding>
             <element signature="e#6424#6442#1#PHP" expanded="true" />
             <element signature="e#6500#6544#0#PHP" expanded="true" />

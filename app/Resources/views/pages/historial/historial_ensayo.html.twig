@@ -496,7 +496,7 @@
              var targetString = "Chart_"+target;*/
             $(window).trigger('resize');
             window.dispatchEvent(new Event('resize'));
-            //console.log("resize Triggered");
+            window.scrollTo(0, 0); //Scroll to top
         });
 
         $(document).ready(function() {
