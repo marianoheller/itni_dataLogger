@@ -1,13 +1,14 @@
 <html>
     <head>
         {#CSS#}
-        {% stylesheets  filter="cssrewrite"
+        {% stylesheets  filter="cssrewrite" output='css/login.css'
         '@bootstrap_css'
+        'base_assets/css/login.css'
         %}
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
         {% endstylesheets %}
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('media/css/login.css') }}">
+
 
         <title>Ingresar al sistema</title>
 

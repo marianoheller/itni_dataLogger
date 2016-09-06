@@ -1,18 +1,6 @@
 {% extends 'pages/ensayo/ensayo_base.html.twig' %}
 
 
-{% block extraCss %}
-    <style>
-        @media (max-width: 767px) {
-            .modal-footer .btn{
-                margin-left: 0;
-                margin-bottom: 8px;
-                display: block;
-            }
-        }
-
-    </style>
-{% endblock %}
 
 {% block configEnsayo %}
     {% if flagEnsayoRunning == true %}

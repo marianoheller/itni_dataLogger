@@ -2,8 +2,13 @@
 
 
 {% block extraCss %}
+    {% stylesheets
+    'base_assets/css/base.css'
+    'base_assets/css/ensayo.css'
+    filter='cssrewrite' output='css/ensayo.css'%}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 {% endblock %}
-
 
 {% block contentUnderNavBar %}
 

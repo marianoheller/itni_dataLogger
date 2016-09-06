@@ -13,14 +13,13 @@
 
     <!-- Bootstrap core CSS -->
 
-    {#CSS#}
+    {#CSS assets#}
     {% stylesheets  filter="cssrewrite"
                     '@bootstrap_css'
                     '@fontawesome_css'
                     %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
     {% endstylesheets %}
-
 
     {#Fonts#}
     {#{% stylesheets  '@fontawesome_woff2'
@@ -31,38 +30,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
     {% endstylesheets %}
 
-
-
-    <style>
-
-        body {
-            padding-top: 5rem;
-        }
-        .starter-template {
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
-
-        @media (max-width: 767px) {
-            .navbar-nav .nav-item + .nav-item {
-                margin-left: 0;
-            }
-            .navbar-nav .nav-item {
-                float: none;
-            }
-            .navbar-toggler {
-                color: #FFFFFF;
-            }
-        }
-
-        #inti_logo{
-            width:30px;
-            height:30px;
-            display: inline;
-        }
-    </style>
-
+    {#MI CSS#}
     {% block extraCss %}
+        {% stylesheets
+        'base_assets/css/base.css'
+        filter='cssrewrite' output='css/base.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
     {% endblock %}
 </head>
 
@@ -72,7 +46,7 @@
     <button class='navbar-toggler hidden-md-up pull-xs-right' data-target='#collapsenav' data-toggle='collapse' type='button'>
         &#9776;
     </button>
-    <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ asset('media/img/inti_logo.png') }}" id="inti_logo"> INTI - Construcciones</a>
+    <a class="navbar-brand" href="{{ path('homepage') }}"><img src="{{ asset('base_assets/images/inti_logo.png') }}" id="inti_logo"> INTI - Construcciones</a>
     <div class='collapse navbar-toggleable-sm pull-xs-left pull-md-none' id='collapsenav'>
 
 

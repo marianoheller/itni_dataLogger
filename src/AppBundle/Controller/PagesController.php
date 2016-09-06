@@ -306,9 +306,7 @@ class PagesController extends Controller
 
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
-//TODO unificar .css
-
-//TODO Unificar .js
+//TODO Unificar .js (assetic)
 
 //TODO API Authentication
 //http://symfony.com/doc/2.8/security/guard_authentication.html

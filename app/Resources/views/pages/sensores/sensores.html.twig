@@ -1,14 +1,12 @@
 {% extends 'pages/sensores/sensores_base.html.twig' %}
 
 {% block extraCss %}
-    <style>
-        #tablaStatusSensores thead tr th{text-align: center;}   {#Para los headers#}
-        #tablaStatusSensores tbody th{text-align: center;}      {#Para el loading#}
-        #tablaStatusSensores tbody {text-align: center;}        {#Para los items#}
-
-        #refreshButton {margin-bottom: 15px;}
-
-    </style>
+    {% stylesheets
+    'base_assets/css/base.css'
+    'base_assets/css/sensores.css'
+    filter='cssrewrite' output='css/sensores.css'%}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 {% endblock %}
 
 {% block ensayoRunningAlert %}

@@ -1,0 +1,5 @@
+#tablaStatusSensores thead tr th{text-align: center;}   {#Para los headers#}
+#tablaStatusSensores tbody th{text-align: center;}      {#Para el loading#}
+#tablaStatusSensores tbody {text-align: center;}        {#Para los items#}
+
+#refreshButton {margin-bottom: 15px;}
