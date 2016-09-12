@@ -6,6 +6,9 @@ security:
 
 
     providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, my_db_provider]
         my_db_provider:
             entity:
                 class: AppBundle:User
@@ -13,18 +16,13 @@ security:
         in_memory:
             memory:
                 users:
-                    device:
-                        password: INTI1957
-                        roles: 'ROLE_DEVICE'
-                    user:
-                        password: user
-                        roles: 'ROLE_USER'
-                    admin:
-                        password: admin
+                    superadmin:
+                        password: INTI1991
                         roles: 'ROLE_ADMIN'
 
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
         AppBundle\Entity\User:
             algorithm: bcrypt
 
@@ -34,7 +32,16 @@ security:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
 
-        main:
+        api:
+            anonymous: ~
+            pattern:   ^/api
+            provider: my_db_provider
+            guard:
+                authenticators:
+                    - app.token_authenticator
+            stateless: true
+
+        front_end:
             anonymous: ~
             pattern: ^/
             provider: my_db_provider
@@ -46,10 +53,11 @@ security:
                 target: login
 
 
+
     access_control:
             - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-            - { path: ^/logdata, roles: ROLE_DEVICE }
-            - { path: ^/checkEnsayoStart, roles: ROLE_DEVICE }
+            - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/api, roles: ROLE_DEVICE }
             - { path: ^/admin, roles: ROLE_ADMIN }
             - { path: ^/, roles: ROLE_USER }
 

@@ -130,17 +130,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'assetic.controller:render',  'name' => '6de2781',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_6de2781',);
         }
 
-        if (0 === strpos($pathinfo, '/css')) {
-            // _assetic_efa72fb
-            if ($pathinfo === '/css/base.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'efa72fb',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_efa72fb',);
-            }
-
-            // _assetic_74c9d00
-            if ($pathinfo === '/css/74c9d00.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '74c9d00',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_74c9d00',);
-            }
-
+        // _assetic_efa72fb
+        if ($pathinfo === '/css/base.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'efa72fb',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_efa72fb',);
         }
 
         if (0 === strpos($pathinfo, '/js')) {
@@ -252,19 +244,30 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\AccountController::loginAction',  '_route' => 'login',);
         }
 
-        // checkEnsayoStart
-        if ($pathinfo === '/checkEnsayoStart') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DeviceController::checkEnsayoStartAction',  '_route' => 'checkEnsayoStart',);
-        }
+        if (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/api')) {
+                // api_token
+                if ($pathinfo === '/api/token') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ApiController::tokenAction',  '_route' => 'api_token',);
+                }
 
-        // logData
-        if ($pathinfo === '/logdata') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DeviceController::logDataAction',  '_route' => 'logData',);
-        }
+                // checkEnsayoStart
+                if ($pathinfo === '/api/checkEnsayoStart') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ApiController::checkEnsayoStartAction',  '_route' => 'checkEnsayoStart',);
+                }
 
-        // admin
-        if ($pathinfo === '/admin') {
-            return array (  '_controller' => 'AppBundle\\Controller\\PagesAdminController::adminAction',  '_route' => 'admin',);
+                // logData
+                if ($pathinfo === '/api/logdata') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ApiController::logDataAction',  '_route' => 'logData',);
+                }
+
+            }
+
+            // admin
+            if ($pathinfo === '/admin') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PagesAdminController::adminAction',  '_route' => 'admin',);
+            }
+
         }
 
         // homepage
@@ -346,6 +349,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // logout
         if ($pathinfo === '/logout') {
             return array('_route' => 'logout');
+        }
+
+        // api_logout
+        if ($pathinfo === '/api/logout') {
+            return array('_route' => 'api_logout');
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

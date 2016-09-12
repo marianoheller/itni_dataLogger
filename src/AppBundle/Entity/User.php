@@ -13,6 +13,9 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class User implements UserInterface, \Serializable
 {
+
+    const JWT_SECRET_KEY = "dostoievski";
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")

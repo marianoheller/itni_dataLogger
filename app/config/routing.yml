@@ -4,3 +4,6 @@ app:
 
 logout:
     path: /logout
+
+api_logout:
+    path: /api/logout
