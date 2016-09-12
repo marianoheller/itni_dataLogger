@@ -251,14 +251,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'AppBundle\\Controller\\ApiController::tokenAction',  '_route' => 'api_token',);
                 }
 
-                // checkEnsayoStart
+                // api_checkEnsayoStart
                 if ($pathinfo === '/api/checkEnsayoStart') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ApiController::checkEnsayoStartAction',  '_route' => 'checkEnsayoStart',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\ApiController::checkEnsayoStartAction',  '_route' => 'api_checkEnsayoStart',);
                 }
 
-                // logData
+                // api_logData
                 if ($pathinfo === '/api/logdata') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\ApiController::logDataAction',  '_route' => 'logData',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\ApiController::logDataAction',  '_route' => 'api_logData',);
                 }
 
             }
@@ -349,11 +349,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // logout
         if ($pathinfo === '/logout') {
             return array('_route' => 'logout');
-        }
-
-        // api_logout
-        if ($pathinfo === '/api/logout') {
-            return array('_route' => 'api_logout');
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

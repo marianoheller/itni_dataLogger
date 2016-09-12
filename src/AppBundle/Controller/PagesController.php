@@ -306,13 +306,11 @@ class PagesController extends Controller
 
 //TODO Check credentials on tokenAuth. Need to get service (and put password in token)
 
+//TODO usar chain provider en los firewalls
+
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
 //TODO Unificar .js (assetic)
-
-//TODO API Authentication
-//http://symfony.com/doc/2.8/security/guard_authentication.html
-//symfony.com/doc/2.8/security/api_key_authentication.html
 
 //TODO canales virtuales
 //TODO patron

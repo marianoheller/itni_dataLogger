@@ -52,7 +52,7 @@ class ApiController extends Controller
 
 
     /**
-     * @Route("/api/checkEnsayoStart", name="checkEnsayoStart")
+     * @Route("/api/checkEnsayoStart", name="api_checkEnsayoStart")
      */
     public function checkEnsayoStartAction(Request $request)
     {
@@ -121,7 +121,7 @@ class ApiController extends Controller
 
 
     /**
-     * @Route("/api/logdata", name="logData")
+     * @Route("/api/logdata", name="api_logData")
      */
 
     public function logDataAction(Request $request)
