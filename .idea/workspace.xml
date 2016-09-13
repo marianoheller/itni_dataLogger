@@ -9,11 +9,38 @@
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/00/00db04ed1a73281de2f230f8b152f054a6dc83ed04d4615eda35c918a50dc910.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/00/00db04ed1a73281de2f230f8b152f054a6dc83ed04d4615eda35c918a50dc910.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/08/08b4e6f86c3b833f0cbc39ccecc1d1cf05c0f59926b41f7b80bb7b55b7a80013.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/08/08b4e6f86c3b833f0cbc39ccecc1d1cf05c0f59926b41f7b80bb7b55b7a80013.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c6d21a0284e89a6462f643ea486584bcd7ac528970dfb514af65f2eed3b72c5.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0c/0c6d21a0284e89a6462f643ea486584bcd7ac528970dfb514af65f2eed3b72c5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0d/0dedf4e04314370a59f96f2af764028828a05133c7526bec9c8942ec8926f343.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0d/0dedf4e04314370a59f96f2af764028828a05133c7526bec9c8942ec8926f343.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/17/17f61189c96cb8c3aa22a465c448d4ecc3268f500a07ebbb52b245563533b724.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/17/17f61189c96cb8c3aa22a465c448d4ecc3268f500a07ebbb52b245563533b724.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/20/20aa8de2bdebef24c10d9b339429d81ce8a8bc656b360a6b7859ef8e701cf039.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/20/20aa8de2bdebef24c10d9b339429d81ce8a8bc656b360a6b7859ef8e701cf039.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/2d/2de6c6e3c79001c857a39e620d4c61526d20eacf20eb0dc69fabfc24000082e8.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/2d/2de6c6e3c79001c857a39e620d4c61526d20eacf20eb0dc69fabfc24000082e8.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/33/332a70cee8f00e23ea4fea39a6cd388564e3f35413c48ba20ccfdd79e5fd32d3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/33/332a70cee8f00e23ea4fea39a6cd388564e3f35413c48ba20ccfdd79e5fd32d3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/33/33ff98b921703909eddbc4a2d36509d065d873dec35bfa91e88955a8f6b96d0f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/33/33ff98b921703909eddbc4a2d36509d065d873dec35bfa91e88955a8f6b96d0f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/58/58c661c93f33ad9a3ec23abd0e90ee278a99e423cada9335b43b4282fc5e5c2f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/58/58c661c93f33ad9a3ec23abd0e90ee278a99e423cada9335b43b4282fc5e5c2f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5c/5ccacd98f7db4647b1be7d7c8f4dbf22e6253d70a3f1d80864ad7f46cadb03f9.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5c/5ccacd98f7db4647b1be7d7c8f4dbf22e6253d70a3f1d80864ad7f46cadb03f9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5f/5ff99f9ec9f3b693bb851c009d2c6ca6e8a16b9610b3857759d948fc462ae7e3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5f/5ff99f9ec9f3b693bb851c009d2c6ca6e8a16b9610b3857759d948fc462ae7e3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/72/72e88184ebba0430cc37424e759efcff773cd2ebf9fa58e03894017cf1260f88.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/72/72e88184ebba0430cc37424e759efcff773cd2ebf9fa58e03894017cf1260f88.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/7e/7e7a807843a8e2f4045b9244545fcbce3b8391a8bd802b34e30f9fb53fefcb72.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/7e/7e7a807843a8e2f4045b9244545fcbce3b8391a8bd802b34e30f9fb53fefcb72.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/94/94094af0c2ed45a16bb83a9f151ea50895568c8fa9e986a09bc6b2dec41260f7.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/94/94094af0c2ed45a16bb83a9f151ea50895568c8fa9e986a09bc6b2dec41260f7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/95/95655b0c0ac1392e2076c6892dbf7bd8ef208edfccf589496bb50fc6d1e6b45f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/95/95655b0c0ac1392e2076c6892dbf7bd8ef208edfccf589496bb50fc6d1e6b45f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/99/997b2c9a089085ee6606d4fcdfe92be3d70187d9b7549a4fc6c75a8e5041b4be.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/99/997b2c9a089085ee6606d4fcdfe92be3d70187d9b7549a4fc6c75a8e5041b4be.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/a0/a077d9202e8285836316a553c03f428a2d43515a5ba5746118163fb36e52caef.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/a0/a077d9202e8285836316a553c03f428a2d43515a5ba5746118163fb36e52caef.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ac/ac01fc4735562c43ffee480b81444b5110ac32a37df3b5b718cb1ca41a73509c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ac/ac01fc4735562c43ffee480b81444b5110ac32a37df3b5b718cb1ca41a73509c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bb/bbc311b4f0d1e771193ac3fd7db3b4ae633f0cf968ec4649b9fab9db51136686.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bb/bbc311b4f0d1e771193ac3fd7db3b4ae633f0cf968ec4649b9fab9db51136686.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bc/bc601fafc69e736e97acd25fa48d820d09f61f878d83ef5ec790966879679d5a.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bc/bc601fafc69e736e97acd25fa48d820d09f61f878d83ef5ec790966879679d5a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7169f11e6646d567b8ab00f0d4e141a4b5dc2a3f00cebdc98762d8e0af3a48c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c7/c7169f11e6646d567b8ab00f0d4e141a4b5dc2a3f00cebdc98762d8e0af3a48c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/df/dffc371314efaa45376c17d36562aa362139a392b4ae8802cf3f1fc910da3841.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/df/dffc371314efaa45376c17d36562aa362139a392b4ae8802cf3f1fc910da3841.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/e9/e9678daee9c37582e267007387e7fff53690345b02bacfb9baff9708fd90fa0f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/e9/e9678daee9c37582e267007387e7fff53690345b02bacfb9baff9708fd90fa0f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ef/ef942e2e5eb916327b455746bd101a26aae30ee0ecadd73ee487235ca48fe97d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ef/ef942e2e5eb916327b455746bd101a26aae30ee0ecadd73ee487235ca48fe97d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fc/fc8506ad99968fbebf5e687f8a096317792a6477d8ed5d45c5f87b73a94b630f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fc/fc8506ad99968fbebf5e687f8a096317792a6477d8ed5d45c5f87b73a94b630f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fe/feefa8eba7f087b7d5feb5c69c4ddcd6af5490ce24f82b7c4068d74997b7ec1c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fe/feefa8eba7f087b7d5feb5c69c4ddcd6af5490ce24f82b7c4068d74997b7ec1c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
@@ -40,7 +67,41 @@
     <favorites_list name="DataLogger_INTI_Construcciones" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6183074">
+              <caret line="305" column="0" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+              <folding>
+                <element signature="e#892#910#1#PHP" expanded="true" />
+                <element signature="e#1398#1416#1#PHP" expanded="true" />
+                <element signature="e#1895#1913#1#PHP" expanded="true" />
+                <element signature="e#1982#2000#1#PHP" expanded="true" />
+                <element signature="e#2726#2744#1#PHP" expanded="true" />
+                <element signature="e#2821#2839#1#PHP" expanded="true" />
+                <element signature="e#6424#6442#1#PHP" expanded="true" />
+                <element signature="e#7238#7256#1#PHP" expanded="true" />
+                <element signature="e#8338#8356#1#PHP" expanded="true" />
+                <element signature="e#9092#9110#1#PHP" expanded="true" />
+                <element signature="e#9960#9979#1#PHP" expanded="true" />
+                <element signature="e#10100#10119#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,12 +162,12 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DeviceController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/accounts/login/login_base.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Security/TokenAuthenticator.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores/sensores.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
@@ -709,12 +770,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00053" summary="Added user add form.">
-      <created>1470841947745</created>
-      <option name="number" value="00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1470841947761</updated>
-    </task>
     <task id="LOCAL-00054" summary="Added exportar. Falta el tema del intervalo.">
       <created>1471456390917</created>
       <option name="number" value="00054" />
@@ -1003,7 +1058,13 @@
       <option name="project" value="LOCAL" />
       <updated>1473692413512</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Deleted api logour route. Added TODO.">
+      <created>1473699714207</created>
+      <option name="number" value="00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1473699714207</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1019,21 +1080,21 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35820895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32334048" sideWeight="0.43176973" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3619403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32299465" sideWeight="0.43176973" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32334048" sideWeight="0.5682303" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4936034" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3672377" sideWeight="0.42963752" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36684492" sideWeight="0.42963752" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40042827" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4936034" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1054,7 +1115,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added dependencies on composer." />
     <MESSAGE value="Emprolije la carpeta /web/media" />
     <MESSAGE value="Fixed tabs en ensayo y historial." />
     <MESSAGE value="Fixed login screen style." />
@@ -1079,7 +1139,8 @@
     <MESSAGE value="Changed projet phpstorm settings.&#10;Removed spelling inspection." />
     <MESSAGE value="Moved js files on /web/media to /web/base_assets/js" />
     <MESSAGE value="Implemented API section with JWT token and stateless login." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented API section with JWT token and stateless login." />
+    <MESSAGE value="Deleted api logour route. Added TODO." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted api logour route. Added TODO." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1130,13 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="75" selection-start-line="102" selection-start-column="75" selection-end-line="102" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/6de2781.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1152,6 +1206,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
           <first_editor vertical-scroll-proportion="0.36811024">
@@ -1159,9 +1216,6 @@
           </first_editor>
           <second_editor />
         </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/base_assets/css/base.css">
@@ -1330,7 +1384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="40" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,7 +1391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1346,7 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,7 +1405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.192307">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1362,7 +1412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1370,7 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,10 +1434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6349481">
           <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
-          <folding>
-            <element signature="e#86#131#0#PHP" expanded="false" />
-            <element signature="e#1841#1857#1#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1397,7 +1441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09659091">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1405,17 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154">
           <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="47" />
-          <folding>
-            <element signature="e#40#99#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6997793">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,7 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10105758">
           <caret line="68" column="63" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1431,7 +1462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.038636364">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1439,7 +1469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8166863">
           <caret line="295" column="33" selection-start-line="295" selection-start-column="29" selection-end-line="295" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,7 +1476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="9" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1455,7 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33254993">
           <caret line="199" column="18" selection-start-line="199" selection-start-column="14" selection-end-line="199" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1463,10 +1490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3461539">
           <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
-          <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
-            <marker date="1473695883522" expanded="true" signature="6752:6771" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1474,14 +1497,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17056856">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9117972">
+          <caret line="102" column="75" selection-start-line="102" selection-start-column="75" selection-end-line="102" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6626298">
-          <caret line="308" column="43" selection-start-line="308" selection-start-column="43" selection-end-line="308" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.6183074">
+          <caret line="305" column="0" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
           <folding>
             <element signature="e#892#910#1#PHP" expanded="true" />
             <element signature="e#1398#1416#1#PHP" expanded="true" />

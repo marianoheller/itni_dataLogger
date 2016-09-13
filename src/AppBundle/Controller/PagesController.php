@@ -303,11 +303,6 @@ class PagesController extends Controller
     }
 }
 
-
-//TODO Check credentials on tokenAuth. Need to get service (and put password in token)
-
-//TODO usar chain provider en los firewalls
-
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
 //TODO Unificar .js (assetic)

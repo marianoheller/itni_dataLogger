@@ -16,8 +16,8 @@ security:
         in_memory:
             memory:
                 users:
-                    superadmin:
-                        password: INTI1991
+                    root:
+                        password: $2y$13$9.HL9Qtp/r57AgHiHtD3JuiZcCVwOEq6/FihS4H3GoDbGNHCAgsg.
                         roles: 'ROLE_ADMIN'
 
     encoders:
@@ -35,7 +35,7 @@ security:
         api:
             anonymous: ~
             pattern:   ^/api
-            provider: my_db_provider
+            provider: chain_provider
             guard:
                 authenticators:
                     - app.token_authenticator
@@ -44,7 +44,7 @@ security:
         front_end:
             anonymous: ~
             pattern: ^/
-            provider: my_db_provider
+            provider: chain_provider
             form_login:
                 login_path: login
                 check_path: login
