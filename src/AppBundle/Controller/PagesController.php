@@ -303,11 +303,22 @@ class PagesController extends Controller
     }
 }
 
-//TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
+//TODO Simulador!!!
+
+//TODO patron al generar el ensayo (q tmb se muestren en los canales virtuales)
+
+//TODO 10 canales virtuales (q tmb se exporten)
+
+//TODO exportar solo canales seleccionados
+
+//TODO Status device???
+
+//TODO errorBars
 
 //TODO Unificar .js (assetic)
 
-//TODO canales virtuales
-//TODO patron
+//TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
+
+
 
 //TODO Deployer bundle
