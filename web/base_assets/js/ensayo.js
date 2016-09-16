@@ -315,7 +315,7 @@ $(document).ready(function(){
             id: "gauge_"+i,
             value: 67,
             min: 0,
-            max: 1000,
+            max: 1300,
             decimals: 1,
             title: "Temp. actual"
         });

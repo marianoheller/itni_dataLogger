@@ -303,13 +303,14 @@ class PagesController extends Controller
     }
 }
 
-//TODO Simulador!!!
 
 //TODO patron al generar el ensayo (q tmb se muestren en los canales virtuales)
 
 //TODO 10 canales virtuales (q tmb se exporten)
 
 //TODO exportar solo canales seleccionados
+
+//TODO Generar user device solo con el username (q es la mac) y el password se genera automaticamente
 
 //TODO Status device???
 
