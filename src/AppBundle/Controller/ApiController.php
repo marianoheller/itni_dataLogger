@@ -45,7 +45,8 @@ class ApiController extends Controller
             "aud" => "device"
         );
         $jwt = JWT::encode($token, User::JWT_SECRET_KEY);
-        return new Response("$jwt");
+        return new JsonResponse(array (
+            "token" => $jwt));
     }
 
 

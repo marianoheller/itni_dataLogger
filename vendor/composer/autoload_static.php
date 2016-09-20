@@ -77,6 +77,7 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         'P' => 
         array (
             'Pure\\' => 5,
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Patchwork\\' => 10,
         ),
@@ -255,6 +256,10 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         array (
             0 => __DIR__ . '/..' . '/elfet/pure/src',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -338,10 +343,6 @@ class ComposerStaticInit9fa1501aec7345494267c0bb474ec352
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'ProxyManager\\' => 
             array (
                 0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',

@@ -68,6 +68,16 @@ class EnsayoRepository extends EntityRepository
         return $arrayQueryResult;
     }
 
+    public function getAllFinishedOrderedLastFirst() {
+        $sqlGetAll =   "SELECT * from ensayo WHERE t_fin IS NOT NULL ORDER BY t_inicio DESC";
+        $em = $this->getEntityManager();
+        $stmt = $em->getConnection()->prepare($sqlGetAll);
+        $stmt->execute();
+        $arrayQueryResult = $stmt->fetchAll();
+
+        return $arrayQueryResult;
+    }
+
     public function updateLastPing() {
         $lastPingObj = new \DateTime("now",new \DateTimeZone("America/Argentina/Buenos_Aires"));
         $lastPingString = $lastPingObj->format("Y-m-d H:i:s");

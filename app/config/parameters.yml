@@ -10,3 +10,8 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: 88a8e655731c48d516660ff21c21f5ee3846723c
+    dev_database_host: 127.0.0.1
+    dev_database_port: null
+    dev_database_name: inti_datalogger_dev
+    dev_database_user: root
+    dev_database_password: toor

@@ -13,6 +13,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Ensayo
 {
+    /*const CURVA_SIN_CURVA = 'sin_curva';
+    const CURVA_FUEGO_EXT = 'fuego_ext';
+    const CURVA_HIDROCARB = 'hidrocarb';
+    const CURVA_CAL_LENTO = 'cal_lento';*/
+
     /**
      * @var integer
      *
@@ -87,6 +92,15 @@ class Ensayo
      */
     private $lastPing;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Curva")
+     * @ORM\JoinColumn(name="curva_id", referencedColumnName="id")
+     */
+    private $curva_id;
+
+
+
+
 
     /**
      * Get id
@@ -96,6 +110,30 @@ class Ensayo
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get curva_id
+     *
+     * @return integer
+     */
+    public function getCurvaId()
+    {
+        return $this->curva_id;
+    }
+
+    /**
+     * Set curva_id
+     *
+     * @param integer $curva_id
+     *
+     * @return Ensayo
+     */
+    public function setCurvaId($curva_id)
+    {
+        $this->curva_id = $curva_id;
+
+        return $this;
     }
 
     /**

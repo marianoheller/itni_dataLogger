@@ -81,6 +81,16 @@
         </div>
 
         <div class="form-group">
+            <label for="curvaSelect">Curva patrón</label>
+            <select  name="curvaPatron" class="form-control" id="curvaSelect">
+                {# @var curva \AppBundle\Entity\Curva #}
+                {% for curva in listadoCurvas %}
+                    <option value={{ curva.id }}>{{ curva.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="inputDescripcion">Descripcion</label>
             <textarea name="Descripcion" class="form-control" id="inputDescripcion" rows="3" placeholder="Descripcion"></textarea>
         </div>

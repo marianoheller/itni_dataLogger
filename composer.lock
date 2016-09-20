@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b31f675eba5e3e4721e6d16de2c68545",
-    "content-hash": "e4e6e18db42b61c76748a3afcfc2147b",
+    "hash": "effff419e636fcced4ed446678e7dc59",
+    "content-hash": "6c32c7708f70d9c0d2cdb936d2e15738",
     "packages": [
         {
             "name": "bordercloud/tether",
@@ -632,16 +632,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769"
+                "reference": "9f8c05cd5225a320d56d4bfdb4772f10d045a0c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
-                "reference": "abbdfd1cff43a7b99d027af3be709bc8fc7d4769",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/9f8c05cd5225a320d56d4bfdb4772f10d045a0c9",
+                "reference": "9f8c05cd5225a320d56d4bfdb4772f10d045a0c9",
                 "shasum": ""
             },
             "require": {
@@ -650,7 +650,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "4.*",
-                "symfony/console": "2.*"
+                "symfony/console": "2.*||^3.0"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -699,7 +699,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2016-01-05 22:11:12"
+            "time": "2016-09-09 19:13:33"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1178,16 +1178,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab"
+                "reference": "73e4be7c7b3ba26f96b781a40b33feba4dfa6d45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
-                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/73e4be7c7b3ba26f96b781a40b33feba4dfa6d45",
+                "reference": "73e4be7c7b3ba26f96b781a40b33feba4dfa6d45",
                 "shasum": ""
             },
             "require": {
@@ -1250,7 +1250,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-01-05 21:34:58"
+            "time": "2016-09-10 18:51:13"
         },
         {
             "name": "elfet/pure",
@@ -2081,6 +2081,524 @@
             "time": "2016-07-29 03:23:52"
         },
         {
+            "name": "npm-asset/complex.js",
+            "version": "2.0.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/complex.js/-/complex.js-2.0.1.tgz",
+                "reference": null,
+                "shasum": "ea90c7a05aeceaf3a376d2c0f6a78421727d6879"
+            },
+            "require-dev": {
+                "npm-asset/mocha": "*"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/infusion/Complex.js/issues"
+                },
+                "npm-asset-main": "complex",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git://github.com/infusion/Complex.js.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "mocha tests/*.js"
+                },
+                "npm-asset-engines": {
+                    "node": "*"
+                }
+            },
+            "license": [
+                "MIT OR GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Eisele",
+                    "email": "robert@xarg.org",
+                    "url": "http://www.xarg.org/"
+                }
+            ],
+            "description": "A complex number library",
+            "homepage": "https://github.com/infusion/Complex.js",
+            "keywords": [
+                "calculus",
+                "complex",
+                "math",
+                "number",
+                "parser"
+            ]
+        },
+        {
+            "name": "npm-asset/decimal.js",
+            "version": "5.0.8",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/decimal.js/-/decimal.js-5.0.8.tgz",
+                "reference": null,
+                "shasum": "b48c3fb7d73a2d4d4940e0b38f1cd21db5b367ce"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/MikeMcl/decimal.js/issues"
+                },
+                "npm-asset-main": "decimal",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/MikeMcl/decimal.js.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "node ./test/test.js",
+                    "build": "uglifyjs decimal.js --source-map doc/decimal.js.map -c -m -o decimal.min.js --preamble \"/* decimal.js v5.0.8 https://github.com/MikeMcl/decimal.js/LICENCE */\""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mclaughlin",
+                    "email": "M8ch88l@gmail.com"
+                }
+            ],
+            "description": "An arbitrary-precision Decimal type for JavaScript.",
+            "homepage": "https://github.com/MikeMcl/decimal.js#readme",
+            "keywords": [
+                "arbitrary",
+                "arithmetic",
+                "big",
+                "bigdecimal",
+                "bigint",
+                "biginteger",
+                "bignum",
+                "bignumber",
+                "decimal",
+                "float",
+                "number",
+                "precision"
+            ]
+        },
+        {
+            "name": "npm-asset/fraction.js",
+            "version": "3.3.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/fraction.js/-/fraction.js-3.3.1.tgz",
+                "reference": null,
+                "shasum": "5d6a31ff07707294f204ccbb6b53791607771083"
+            },
+            "require-dev": {
+                "npm-asset/mocha": "*"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/infusion/Fraction.js/issues"
+                },
+                "npm-asset-main": "fraction",
+                "npm-asset-directories": {
+                    "example": "examples"
+                },
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git://github.com/infusion/Fraction.js.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "mocha tests/*.js"
+                },
+                "npm-asset-engines": {
+                    "node": "*"
+                },
+                "npm-asset-private": false
+            },
+            "license": [
+                "MIT OR GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Eisele",
+                    "email": "robert@xarg.org",
+                    "url": "http://www.xarg.org/"
+                }
+            ],
+            "description": "A rational number library",
+            "homepage": "http://www.xarg.org/2014/03/precise-calculations-in-javascript/",
+            "keywords": [
+                "fraction",
+                "math",
+                "number",
+                "parser",
+                "rational",
+                "rational numbers",
+                "rationals"
+            ]
+        },
+        {
+            "name": "npm-asset/mathjs",
+            "version": "3.5.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/mathjs/-/mathjs-3.5.1.tgz",
+                "reference": null,
+                "shasum": "2976e831db8415afd32a3b99683c1f37082cc0f8"
+            },
+            "require": {
+                "npm-asset/complex.js": "2.0.1",
+                "npm-asset/decimal.js": "5.0.8",
+                "npm-asset/fraction.js": "3.3.1",
+                "npm-asset/tiny-emitter": "1.0.2",
+                "npm-asset/typed-function": "0.10.4"
+            },
+            "require-dev": {
+                "npm-asset/glob": "7.0.3",
+                "npm-asset/gulp": "3.9.1",
+                "npm-asset/gulp-util": "3.0.7",
+                "npm-asset/istanbul": "0.4.3",
+                "npm-asset/mkdirp": "0.5.1",
+                "npm-asset/mocha": "2.4.5",
+                "npm-asset/q": "1.4.1",
+                "npm-asset/seed-random": "2.2.0",
+                "npm-asset/tar": "2.2.1",
+                "npm-asset/uglify-js": "2.6.2",
+                "npm-asset/underscore": "1.8.3",
+                "npm-asset/webpack": "1.13.0"
+            },
+            "bin": {
+                "mathjs": "./bin/cli.js"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/josdejong/mathjs/issues"
+                },
+                "npm-asset-main": "./index",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/josdejong/mathjs.git"
+                },
+                "npm-asset-scripts": {
+                    "build": "gulp",
+                    "watch": "gulp watch",
+                    "docs": "gulp docs",
+                    "test": "mocha test --recursive",
+                    "coverage": "istanbul cover _mocha -- test --recursive; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+                },
+                "npm-asset-engines": {
+                    "node": ">= 0.1"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jos de Jong",
+                    "email": "wjosdejong@gmail.com",
+                    "url": "https://github.com/josdejong"
+                },
+                {
+                    "name": "Andy Pan",
+                    "url": "https://github.com/andy0130tw"
+                },
+                {
+                    "name": "Bart Kiers",
+                    "url": "https://github.com/bkiers"
+                },
+                {
+                    "name": "Brett Jurgens",
+                    "url": "https://github.com/brettjurgens"
+                },
+                {
+                    "name": "Bryan Cuccioli",
+                    "url": "https://github.com/bcuccioli"
+                },
+                {
+                    "name": "Daniel Levin",
+                    "url": "https://github.com/daniel-levin"
+                },
+                {
+                    "name": "David Simons",
+                    "url": "https://github.com/SwamWithTurtles"
+                },
+                {
+                    "name": "Devan Patel",
+                    "url": "https://github.com/devanp92"
+                },
+                {
+                    "name": "devdevdata222",
+                    "url": "https://github.com/devdevdata222"
+                },
+                {
+                    "name": "Ekin Koc",
+                    "url": "https://github.com/eknkc"
+                },
+                {
+                    "name": "Elijah Insua",
+                    "url": "https://github.com/tmpvar"
+                },
+                {
+                    "name": "Eric Mansfield",
+                    "url": "https://github.com/ericman314"
+                },
+                {
+                    "name": "Fabrice Colas",
+                    "url": "https://github.com/fabricecolas"
+                },
+                {
+                    "name": "Favian Contreras",
+                    "url": "https://github.com/BigFav"
+                },
+                {
+                    "name": "Finn Pauls",
+                    "url": "https://github.com/finnp"
+                },
+                {
+                    "name": "Ganga Christopher",
+                    "url": "https://github.com/gangachris"
+                },
+                {
+                    "name": "Holman Gao",
+                    "url": "https://github.com/golmansax"
+                },
+                {
+                    "name": "Guillermo Indalecio Fernández",
+                    "url": "https://github.com/guillermobox"
+                },
+                {
+                    "name": "hamadu",
+                    "url": "https://github.com/hamadu"
+                },
+                {
+                    "name": "Harsh Gupta",
+                    "url": "https://github.com/hgupta9"
+                },
+                {
+                    "name": "Huseyn Guliyev",
+                    "url": "https://github.com/husayt"
+                },
+                {
+                    "name": "Jim Garrison",
+                    "url": "https://github.com/garrison"
+                },
+                {
+                    "name": "Kenan Yildirim",
+                    "url": "https://github.com/KenanY"
+                },
+                {
+                    "name": "Keunhong Park",
+                    "url": "https://github.com/void42"
+                },
+                {
+                    "name": "Kunal Vyas",
+                    "url": "https://github.com/kv-kunalvyas"
+                },
+                {
+                    "name": "Marcus Andre",
+                    "url": "https://github.com/marcusandre"
+                },
+                {
+                    "name": "Horatiu Lazu",
+                    "url": "https://github.com/MathBunny"
+                },
+                {
+                    "name": "Max Bruckner",
+                    "url": "https://github.com/FSMaxB"
+                },
+                {
+                    "name": "Mitchel Kelonye",
+                    "url": "https://github.com/kelonye"
+                },
+                {
+                    "name": "mtraynham",
+                    "url": "https://github.com/mtraynham"
+                },
+                {
+                    "name": "Niels Heisterkamp",
+                    "url": "https://github.com/nheisterkamp"
+                },
+                {
+                    "name": "Owen Versteeg",
+                    "url": "https://github.com/owenversteeg"
+                },
+                {
+                    "name": "Pavel Panchekha",
+                    "url": "https://github.com/pavpanchekha"
+                },
+                {
+                    "name": "Pete Corey",
+                    "url": "https://github.com/pcorey"
+                },
+                {
+                    "name": "Retsam",
+                    "url": "https://github.com/Retsam"
+                },
+                {
+                    "name": "Robert Eisele",
+                    "url": "https://github.com/infusion"
+                },
+                {
+                    "name": "Rogelio J. Baucells",
+                    "url": "https://github.com/rjbaucells"
+                },
+                {
+                    "name": "Ryan Seys",
+                    "url": "https://github.com/ryanseys"
+                },
+                {
+                    "name": "Sebastien Piquemal",
+                    "url": "https://github.com/sebpiq"
+                },
+                {
+                    "name": "Sergey Romanov",
+                    "url": "https://github.com/saromanov"
+                },
+                {
+                    "name": "Stu Blair",
+                    "url": "https://github.com/stu-blair"
+                },
+                {
+                    "name": "Thomas Brierley",
+                    "url": "https://github.com/ThomasBrierley"
+                },
+                {
+                    "name": "Waldir Pimenta",
+                    "url": "https://github.com/waldyrious"
+                },
+                {
+                    "name": "Zach Zibrat",
+                    "url": "https://github.com/palimpsests"
+                }
+            ],
+            "description": "Math.js is an extensive math library for JavaScript and Node.js. It features a flexible expression parser and offers an integrated solution to work with numbers, big numbers, complex numbers, units, and matrices.",
+            "homepage": "http://mathjs.org",
+            "keywords": [
+                "bignumber",
+                "complex",
+                "expression",
+                "functions",
+                "math",
+                "mathematics",
+                "matrix",
+                "number",
+                "numeric",
+                "parser",
+                "unit"
+            ]
+        },
+        {
+            "name": "npm-asset/tiny-emitter",
+            "version": "1.0.2",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-1.0.2.tgz",
+                "reference": null,
+                "shasum": "8e49470d3f55f89e247210368a6bb9fb51aa1601"
+            },
+            "require-dev": {
+                "npm-asset/@tap-format/spec": "0.2.0",
+                "npm-asset/browserify": ">=11.2.0,<12.0.0",
+                "npm-asset/tape": ">=4.2.1,<5.0.0",
+                "npm-asset/testling": ">=1.7.1,<2.0.0",
+                "npm-asset/uglify-js": ">=2.5.0,<3.0.0"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/scottcorgan/tiny-emitter/issues"
+                },
+                "npm-asset-main": "index.js",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/scottcorgan/tiny-emitter.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "testling | tap-format-spec",
+                    "bundle": "browserify index.js > dist/tinyemitter.js -s TinyEmitter && echo 'Bundled'",
+                    "minify": "uglifyjs dist/tinyemitter.js -o dist/tinyemitter.min.js -m && echo 'Minified'",
+                    "build": "npm test && npm run bundle && npm run minify",
+                    "size": "uglifyjs index.js -o minified.js -m && ls -l && rm minified.js"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Corgan"
+                }
+            ],
+            "description": "A tiny (less than 1k) event emitter library",
+            "homepage": "https://github.com/scottcorgan/tiny-emitter#readme",
+            "keywords": [
+                "bind",
+                "emitter",
+                "event",
+                "events",
+                "pubsub",
+                "tiny"
+            ]
+        },
+        {
+            "name": "npm-asset/typed-function",
+            "version": "0.10.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/typed-function/-/typed-function-0.10.4.tgz",
+                "reference": null,
+                "shasum": "1a015498d38eaf9c402fcce1022a0bd87b7418b2"
+            },
+            "require-dev": {
+                "npm-asset/istanbul": ">=0.3.2,<0.4.0",
+                "npm-asset/mocha": ">=1.21.5,<2.0.0",
+                "npm-asset/uglify-js": ">=2.4.15,<3.0.0"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/josdejong/typed-function/issues"
+                },
+                "npm-asset-main": "./typed-function",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/josdejong/typed-function.git"
+                },
+                "npm-asset-scripts": {
+                    "minify": "uglifyjs typed-function.js -o typed-function.min.js -c -m",
+                    "test": "mocha test --recursive",
+                    "coverage": "istanbul cover _mocha -- test --recursive; echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+                },
+                "npm-asset-engines": {
+                    "node": ">= 0.10"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Jos de Jong",
+                    "email": "wjosdejong@gmail.com",
+                    "url": "https://github.com/josdejong"
+                },
+                {
+                    "name": "Luke Gumbley",
+                    "url": "https://github.com/luke-gumbley"
+                }
+            ],
+            "description": "Type checking for JavaScript functions",
+            "homepage": "https://github.com/josdejong/typed-function",
+            "keywords": [
+                "arguments",
+                "compose",
+                "function",
+                "typed",
+                "types"
+            ]
+        },
+        {
             "name": "ocramius/proxy-manager",
             "version": "1.0.2",
             "source": {
@@ -2382,22 +2900,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2411,12 +2937,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2016-09-19 16:02:08"
         },
         {
             "name": "react/cache",
@@ -2616,16 +3143,16 @@
         },
         {
             "name": "react/http-client",
-            "version": "v0.4.10",
+            "version": "v0.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/http-client.git",
-                "reference": "1a37937274cc7bf7ef194381c83f5a4ad5253575"
+                "reference": "4d367ff9909954bafe6a04762ec68e6b1e12bcf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/http-client/zipball/1a37937274cc7bf7ef194381c83f5a4ad5253575",
-                "reference": "1a37937274cc7bf7ef194381c83f5a4ad5253575",
+                "url": "https://api.github.com/repos/reactphp/http-client/zipball/4d367ff9909954bafe6a04762ec68e6b1e12bcf8",
+                "reference": "4d367ff9909954bafe6a04762ec68e6b1e12bcf8",
                 "shasum": ""
             },
             "require": {
@@ -2639,11 +3166,6 @@
                 "react/stream": "0.4.*"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.5-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "React\\HttpClient\\": "src"
@@ -2657,7 +3179,7 @@
             "keywords": [
                 "http"
             ],
-            "time": "2016-03-21 14:01:16"
+            "time": "2016-09-15 20:59:05"
         },
         {
             "name": "react/promise",
@@ -2933,16 +3455,16 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "66834d3e3566bb5798db7294619388786ae99394"
+                "reference": "e827b5254d3e58c736ea2c5616710983d80b0b70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/66834d3e3566bb5798db7294619388786ae99394",
-                "reference": "66834d3e3566bb5798db7294619388786ae99394",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/e827b5254d3e58c736ea2c5616710983d80b0b70",
+                "reference": "e827b5254d3e58c736ea2c5616710983d80b0b70",
                 "shasum": ""
             },
             "require": {
@@ -2975,20 +3497,20 @@
                 "parser",
                 "validator"
             ],
-            "time": "2015-11-21 02:21:41"
+            "time": "2016-09-14 15:17:56"
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v5.0.8",
+            "version": "v5.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "f8ace5c71ee309492b027ef71215577f5a52b4ea"
+                "reference": "b6dcd04595e4db95ead22ddea58c397864e00c32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/f8ace5c71ee309492b027ef71215577f5a52b4ea",
-                "reference": "f8ace5c71ee309492b027ef71215577f5a52b4ea",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/b6dcd04595e4db95ead22ddea58c397864e00c32",
+                "reference": "b6dcd04595e4db95ead22ddea58c397864e00c32",
                 "shasum": ""
             },
             "require": {
@@ -3027,7 +3549,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2016-08-17 18:16:49"
+            "time": "2016-09-14 20:25:12"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -3889,16 +4411,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.10",
+            "version": "v2.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "84e8eb7690eea267526c3d40050b4c54f1878b7a"
+                "reference": "f588c92c3e263b2eaa2f96a7b1359199eb209b3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/84e8eb7690eea267526c3d40050b4c54f1878b7a",
-                "reference": "84e8eb7690eea267526c3d40050b4c54f1878b7a",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/f588c92c3e263b2eaa2f96a7b1359199eb209b3d",
+                "reference": "f588c92c3e263b2eaa2f96a7b1359199eb209b3d",
                 "shasum": ""
             },
             "require": {
@@ -4019,7 +4541,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-09-02 20:40:06"
+            "time": "2016-09-07 02:04:25"
         },
         {
             "name": "twbs/bootstrap",
@@ -4270,16 +4792,16 @@
     "packages-dev": [
         {
             "name": "sensio/generator-bundle",
-            "version": "v3.0.7",
+            "version": "v3.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892"
+                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/d1be460925376703a470a3ac6ec034eb7eab3892",
-                "reference": "d1be460925376703a470a3ac6ec034eb7eab3892",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/3c20d16512f37d2be159eca0411b99a141b90fa4",
+                "reference": "3c20d16512f37d2be159eca0411b99a141b90fa4",
                 "shasum": ""
             },
             "require": {
@@ -4318,11 +4840,11 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2016-06-20 05:58:05"
+            "time": "2016-09-06 01:30:19"
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v2.8.10",
+            "version": "v2.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",

@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
 
 use AppBundle\Entity\Ensayo;
 use AppBundle\Entity\Datalog;
+use AppBundle\Entity\Curva;
 
 
 class PagesController extends Controller
@@ -60,11 +61,13 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getManager();
         $isEnsayoRunning = $em->getRepository('AppBundle:Ensayo')->isEnsayoRunning();
         $arrayQueryResult = $em->getRepository('AppBundle:Ensayo')->getEnsayoActual();
+        $listadoCurvas = $em->getRepository('AppBundle:Curva')->getListadoCurvas();
 
 
         return $this->render("pages/ensayo/ensayo_config.html.twig", array (
             "flagEnsayoRunning" => $isEnsayoRunning,
-            "arrayQueryResult" => $arrayQueryResult
+            "arrayQueryResult" => $arrayQueryResult,
+            "listadoCurvas" => $listadoCurvas
         ));
     }
 
@@ -166,7 +169,7 @@ class PagesController extends Controller
         $logger = $this->get('logger');
         $logger->debug("/historial accesed");
         $em = $this->getDoctrine()->getManager();
-        $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
+        $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllFinishedOrderedLastFirst();
         return $this->render("pages/historial/historial_select.html.twig", array(
             "ensayos" => $ensayosAll,
             "fErrorOcurred" => false
@@ -221,7 +224,7 @@ class PagesController extends Controller
         $logger = $this->get('logger');
         $logger->debug("/avanzado accesed");
         $em = $this->getDoctrine()->getManager();
-        $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllOrderedLastFirst();
+        $ensayosAll = $em->getRepository('AppBundle:Ensayo')->getAllFinishedOrderedLastFirst();
         return $this->render("pages/avanzado/avanzado.html.twig", array(
             "ensayos" => $ensayosAll,
         ));
@@ -304,15 +307,32 @@ class PagesController extends Controller
 }
 
 
-//TODO patron al generar el ensayo (q tmb se muestren en los canales virtuales)
+
+
+//TODO curva patron al generar el ensayo (q tmb se muestren en los canales virtuales)
+/******ESTA PRIMER OPCION NO XQ TENDRIA Q CAMBIAR LA RCEPCION DE DATOS EN CLIENTE....
+//Crear campo "curva" en ensayo DB
+//El page controller la pasa el campo al template (le pasa q curva es)
+//Y desp el cliente cada ves q pide data especifica la curva
+//Entonces el controllador de Sensores devuelve no solo la data del device sino tmb otra de la curva patron
+ *
+ *
+ * //ESTA ES LA Q VA
+ * //Creo tabla con curvas posibles, id, string de formula
+//El page controller le pasa el string de la formula al template
+//El template se encarga de calcular el el valor patron segun formula
+ * */
+
+
+
+//TODO no resume cuando paso mucho tiempo (ver tema del tiempo de lastPing)
 
 //TODO 10 canales virtuales (q tmb se exporten)
+//Hacer las cuentas clientSide (server siempre manda la misma data)
 
 //TODO exportar solo canales seleccionados
 
 //TODO Generar user device solo con el username (q es la mac) y el password se genera automaticamente
-
-//TODO Status device???
 
 //TODO errorBars
 
@@ -320,6 +340,7 @@ class PagesController extends Controller
 
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
+//TODO Status device???
 
 
 //TODO Deployer bundle
