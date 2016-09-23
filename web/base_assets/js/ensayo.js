@@ -129,13 +129,13 @@ function drawChart() {
         window["dataTable_"+i] = new google.visualization.DataTable();
         window["dataTable_"+i].addColumn('datetime', 'Fecha');
         window["dataTable_"+i].addColumn('number', 'Medicion');
+        window["dataTable_"+i].addColumn('number', 'Patrón');
 
         window["chart_"+i] = new Dygraph(
             document.getElementById("chart_div_"+i),
             window["dataTable_"+i],
             options
         );
-
     }
     getGraphData();
 }
@@ -160,8 +160,8 @@ function getGraphData() {
         //lastTimeStampLocal = moment(lastTimeStampLocal).format("YYYY-MM-DD HH:mm:ss");
     }
 
-    var timetampsToSend = '{ "timeStamp": [' +
-        '{ "lastTimeStamp": "'+lastTimeStampLocal+'", "firstTimeStamp": "'+window.myConfig.t_inicio+'", "currentTime": "01-01-1970 00:00:01"}' +
+    var timetampsToSend = '{ "graphData": [' +
+        '{ "lastTimeStamp": "'+lastTimeStampLocal+'", "firstTimeStamp": "'+t_inicio_unix+'", "curvaID": "'+window.myConfig.patron_id+'"}' +
         ']}';
     var jsonToSend = JSON.stringify(JSON.parse(timetampsToSend));
     console.log("Sending data: ",jsonToSend);
@@ -177,33 +177,43 @@ function getGraphData() {
         })
         .done(function (results) {
             console.log("RX: ",results);
+
+            //Parse RX packets
             var rxObj = {};
             for ( var j=1 ; j<=32 ; j++) {
                 // Split timestamp and data into separate arrays
                 rxObj["labels_"+j] = [];
                 rxObj["data_"+j] = [];
+                rxObj["patron_"+j] = [];
                 if ( ( ("packets_"+j) in results) ) {
                     Object.keys(results["packets_"+j]).forEach(function (key) {
                         var value = results["packets_"+j][key];
                         rxObj["labels_"+j].push(value.timestamp);
                         rxObj["data_"+j].push(parseFloat(value.payloadString));
+                        rxObj["patron_"+j].push(parseFloat(value.curvaPatron));;
                     });
                 }
             }
 
-            //Add data
+            //Add data to datatable
             for ( var j=1 ; j<=32 ; j++) {
                 for (var i=0 ; i< rxObj["data_"+j].length ; i++) {
 
-                    var momentAux = moment.unix(rxObj["labels_"+j][i])
+                    var momentAux = moment.unix(rxObj["labels_"+j][i]);
                     var momentAuxInicio = moment.unix(t_inicio_unix);
                     momentAux.subtract(momentAuxInicio.seconds(),"seconds");
                     momentAux.subtract(momentAuxInicio.minutes(),"minutes");
                     momentAux.subtract(momentAuxInicio.hours(),"hours");
                     var myDate = momentAux.toDate();
 
+                    /*var scope = {
+                        t: moment.duration(momentAux.toString()).asMinutes()
+                    };
+                    var patronData = math.eval( window.myConfig.patron_formula , scope );*/
+
                     var obj = [
-                        [myDate,  rxObj["data_"+j][i]]
+                        //[ myDate,  rxObj["data_"+j][i], patronData]
+                        [ myDate,  rxObj["data_"+j][i], rxObj["patron_"+j][i]]
                     ];
                     window["dataTable_"+j].addRows(obj);
                 }
@@ -213,7 +223,6 @@ function getGraphData() {
             }
 
             //REDRAW
-
             for ( var j=1 ; j<=32 ; j++) {
                 window["chart_"+j].updateOptions( { 'file': window["dataTable_"+j] } );
             }
@@ -231,7 +240,8 @@ function getGraphData() {
 
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
-            console.log("Failed AJAX request.");
+            //SI TIRA NOT FOUND PUEDE SER XQ NO HAY REGISTROS CON ESE TIMESTAMP
+            console.log(window.myConfig.url_getGraphData);
             console.log("Status: "+textStatus);
             console.log("Error thrown: "+errorThrown);
             console.log("--------------");

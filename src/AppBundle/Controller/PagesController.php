@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\AppBundle;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -78,8 +79,8 @@ class PagesController extends Controller
     {
         $logger = $this->get('logger');
         $logger->debug("/ensayo/$slug accesed");
-        //if resuming ensayo
-        if ($slug == 2) {
+
+        if ($slug == 2) {  //ENSAYO RESUMIDO
             //if there is POST data
             if ( $request->request->count() != 0) {
                 $em = $this->getDoctrine()->getManager();
@@ -95,13 +96,20 @@ class PagesController extends Controller
                 }
                 //else ALL GOOD
                 else {
+
+                    $em = $this->getDoctrine()->getManager();
+                    /** @var Curva $curvaObj */
+                    $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($arrayQueryResult[0]["curva_id"]);
+
                     $logger->info("Ensayo resumido", array (
                         "lastPing" => $arrayQueryResult[0]["lastPing"],
-                        "t_inicio" => $arrayQueryResult[0]["t_inicio"]
+                        "t_inicio" => $arrayQueryResult[0]["t_inicio"],
+                        "curvaObj" => $curvaObj
                     ));
                     return $this->render("pages/ensayo/ensayo.html.twig", array (
                         "lastPing" => $arrayQueryResult[0]["lastPing"],
-                        "t_inicio" => $arrayQueryResult[0]["t_inicio"]
+                        "t_inicio" => $arrayQueryResult[0]["t_inicio"],
+                        "curvaObj" => $curvaObj
                     ));
                 }
             }
@@ -111,12 +119,12 @@ class PagesController extends Controller
                 return $this->redirectToRoute("ensayo");
             }
         }
-        //else if es ensayo nuevo
-        else if ( $slug == 1 ) {
-            //if there is NO POST data -> redirect (tipeado  a mano
+        else if ( $slug == 1 ) { //ENSAYO NUEVO
+            //if there is NO POST data -> redirect (tipeado  a mano)
             if ( $request->request->count() == 0 ) {
                 $logger->info("\$_POST empty. Redirecting to ensayo.");
-                return $this->redirectToRoute("ensayo");
+                //return $this->redirectToRoute("ensayo");
+                return $this->createNotFoundException("Acceda correctamente al recurso.");
             }
             //Generate Ensayo for database % flush
             $ensayoObj = new Ensayo();
@@ -126,6 +134,7 @@ class PagesController extends Controller
             $ensayoObj->setOT($request->request->get("OT"));
             $ensayoObj->setSOT($request->request->get("SOT"));
             $ensayoObj->setDescripcion($request->request->get("Descripcion"));
+            //$ensayoObj->setCurvaId(intval($request->request->get("curvaPatron")));
             $timezone = new \DateTimeZone("America/Argentina/Buenos_Aires");
             $dateTimeInicio = new \DateTime("now",$timezone);
             //echo $dateTimeInicio->format('Y-m-d H:i:s');  //Time debug
@@ -133,15 +142,22 @@ class PagesController extends Controller
             $ensayoObj->setTFin();
             $ensayoObj->setLastPing($dateTimeInicio);
 
+
+            $em = $this->getDoctrine()->getManager();
+            $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($request->request->get("curvaPatron"));
+            $ensayoObj->setCurvaId($curvaObj);
+
             try {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($ensayoObj);
                 $em->flush();
+
             } catch(\Exception $e) {
                 $logger->critical("No se pudo hacer persist del ensayo", array (
-                    "Exception" => $e
+                    "Exception" => $e->getMessage()
                 ));
-                return $this->redirectToRoute("homepage");
+                //return $this->redirectToRoute("homepage");
+                return $this->createNotFoundException("Error al persistir datos.");
             }
 
             $logger->info("Generando ensayo nuevo", array(
@@ -150,7 +166,8 @@ class PagesController extends Controller
 
             return $this->render("pages/ensayo/ensayo.html.twig", array (
                 "lastPing" => $dateTimeInicio->format("Y-m-d H:i:s"),
-                "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
+                "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s"),
+                "curvaObj" => $curvaObj
             ));
         }
         else {
@@ -290,7 +307,7 @@ class PagesController extends Controller
         });
 
         $filenameExport = $ensayoObj->getTFin()->format('Ymd_His');
-        $response->setStatusCode(200);
+        $response->setStatusCode(Response::HTTP_OK);
         $response->headers->set('Content-Type', 'text/csv; charset=utf-8');
         $response->headers->set('Content-Disposition', "attachment; filename=$filenameExport.csv");
 
@@ -317,7 +334,7 @@ class PagesController extends Controller
 //Entonces el controllador de Sensores devuelve no solo la data del device sino tmb otra de la curva patron
  *
  *
- * //ESTA ES LA Q VA
+ * //ANDA LENTO DEL LADO DEL CLIENTE!!!!!
  * //Creo tabla con curvas posibles, id, string de formula
 //El page controller le pasa el string de la formula al template
 //El template se encarga de calcular el el valor patron segun formula
@@ -326,6 +343,8 @@ class PagesController extends Controller
 
 
 //TODO no resume cuando paso mucho tiempo (ver tema del tiempo de lastPing)
+
+//TODO retocar la migration q crea la tabla de curvas (esta comentada la creacion de la tabla) sino no va a andar en prod.
 
 //TODO 10 canales virtuales (q tmb se exporten)
 //Hacer las cuentas clientSide (server siempre manda la misma data)

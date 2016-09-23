@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * DatalogRepository
@@ -105,6 +106,10 @@ class DatalogRepository extends EntityRepository
         $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
         $stmt->execute();
         $arrayQueryResult = $stmt->fetchAll();
+
+        if (empty($arrayQueryResult)) {
+            throw new NotFoundHttpException("No se encontraron registros en datalog con timestamp: $lastTimeStamp");
+        }
 
         for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
             $d1 = new \DateTime($arrayQueryResult[$i]['fecha'],new \DateTimeZone("America/Argentina/Buenos_Aires"));

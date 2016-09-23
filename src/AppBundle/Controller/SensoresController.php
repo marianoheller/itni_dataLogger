@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 use AppBundle\Entity\Ensayo;
@@ -44,9 +45,10 @@ class SensoresController extends Controller
     public function getGraphDataAction(Request $request)
     {
         $logger = $this->get('logger');
-        if ( $request->getContentType() != "json" ) {
-            $logger->error("Content type incorrecto. Given \"$request->getContentType()\"", array(
-                "contentType" => $request->getContentType()
+        $contentType = $request->getContentType();
+        if ( $contentType != "json" ) {
+            $logger->error("Content type incorrecto.", array(
+                "contentType" => $contentType
             ));
             throw $this->createAccessDeniedException('Acceso prohibido');
         }
@@ -56,13 +58,16 @@ class SensoresController extends Controller
             $data = json_decode($content);
 
             foreach ($data as $name => $value) {
-                if ($name == "timeStamp") {
+                if ($name == "graphData") {
                     foreach ($value as $entry) {
                         $lastTimeStamp = $entry->lastTimeStamp;
-                        $firstTimeStamp = $entry->firstTimeStamp;   //unused -> its initial t_inicio
-                        $currentTime = $entry->currentTime;     //unused
+                        $firstTimeStamp = $entry->firstTimeStamp;
+                        $curvaID = $entry->curvaID;
                     }
                 }
+            }
+            if ( !isset($curvaID) || !isset($lastTimeStamp) ||!isset($firstTimeStamp)) {
+                throw new NotFoundHttpException("Error al parsear json de de ajax request");
             }
 
             $em = $this->getDoctrine()->getManager();
@@ -70,8 +75,12 @@ class SensoresController extends Controller
             //UPDATE lastPing
             $count = $em->getRepository('AppBundle:Ensayo')->updateLastPing();
 
-            // GET DATA to send
-            $arrayReturn = $em->getRepository('AppBundle:Datalog')->getPacketsData($lastTimeStamp);
+            // GET datalog data to send (as packets)
+            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->getPacketsData($lastTimeStamp);
+
+            // Append Curva packets
+            $arrayReturn = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($curvaID,$arrayPacketsDatalog, $firstTimeStamp);
+
 
             //Ready to send
             $ret = new JsonResponse($arrayReturn);

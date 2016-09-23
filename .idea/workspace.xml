@@ -8,8 +8,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0b/0b9a39e0131e95ba231183901c26428c3c2092da8b55896e58fdb6c55130339d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/4d/4d6add87c3b1e27098633d651832b5c24c128f2d372568d3ca53928c626d02ea.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/57/57b88494445947e819f62c8474ac33492e4405c8d0fa46981201931be1b1d1ea.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/68/6816a5aac485a58b4caae35c4561fb21efcea5c61d188bd47eddd229d170deb4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/82/82e0ecdd5e5e44057482413c895d60ac1adc708c92b1f5ae997d95348508f519.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae1bdfba1def5a1e018b76be9f1df1ae64841de9b7751fe0d78ad9e41d5b0c54.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/ae/ae2c09876be39085b12d62dcfb6b6daaae8eb820cbeedcfb560616a2d0aa7a00.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c8/c8c77c4c49588389c8da47eb454d01b6155b68b97cd163222a896bf39ef0dbbf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d2/d2af7bd997133ed7256f09968302186aa8ee89b1b36fd64db19b237bdd2a0374.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d8/d896366f082dabbfa4dd3c4797f231259da0614e9163bd9e5eb2114faf2f7b98.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base_assets/js/ensayo.js" afterPath="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +57,97 @@
     <favorites_list name="DataLogger_INTI_Construcciones" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-118.42308">
+              <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#64#0#PHP" expanded="true" />
+                <element signature="e#945#963#1#PHP" expanded="true" />
+                <element signature="e#1451#1469#1#PHP" expanded="true" />
+                <element signature="e#1948#1966#1#PHP" expanded="true" />
+                <element signature="e#2035#2053#1#PHP" expanded="true" />
+                <element signature="e#2119#2136#1#PHP" expanded="true" />
+                <element signature="e#2901#2919#1#PHP" expanded="true" />
+                <element signature="e#2996#3014#1#PHP" expanded="true" />
+                <element signature="e#3572#3589#1#PHP" expanded="true" />
+                <element signature="e#5940#5957#1#PHP" expanded="true" />
+                <element signature="e#7453#7471#1#PHP" expanded="true" />
+                <element signature="e#8275#8293#1#PHP" expanded="true" />
+                <element signature="e#9375#9393#1#PHP" expanded="true" />
+                <element signature="e#10137#10155#1#PHP" expanded="true" />
+                <element signature="e#11005#11024#1#PHP" expanded="true" />
+                <element signature="e#11145#11164#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SensoresController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-29.26923">
+              <caret line="85" column="48" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="48" />
+              <folding>
+                <element signature="e#838#857#1#PHP" expanded="true" />
+                <element signature="e#2564#2582#1#PHP" expanded="true" />
+                <element signature="e#2711#2730#1#PHP" expanded="true" />
+                <element signature="e#2848#2865#1#PHP" expanded="true" />
+                <element signature="e#3352#3370#1#PHP" expanded="true" />
+                <element signature="e#4609#4628#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CurvaRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.461538">
+              <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
+              <folding>
+                <element signature="e#40#74#0#PHP" expanded="true" />
+                <marker date="1474639882387" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatalogRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.653847">
+              <caret line="133" column="69" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="69" />
+              <folding>
+                <element signature="e#40#74#0#PHP" expanded="true" />
+                <marker date="1474636041258" expanded="true" signature="399:877" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="550:689" placeholder="SELECT senso..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="1188:1666" placeholder="SELECT a.* F..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="1339:1478" placeholder="SELECT senso..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="2614:2700" placeholder="SELECT * FRO..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="3208:3294" placeholder="SELECT * FRO..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="4051:4137" placeholder="SELECT * FRO..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="5696:5791" placeholder="SELECT senso..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="6138:6467" placeholder="SELECT senso..datalog..." />
+                <marker date="1474636041258" expanded="true" signature="7152:7265" placeholder="SELECT senso..datalog..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ensayo.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6147427">
+              <caret line="236" column="31" selection-start-line="236" selection-start-column="31" selection-end-line="236" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,13 +167,11 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_select.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/avanzado/avanzado_base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/avanzado/avanzado.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/translations/security.es.xlf" />
         <option value="$PROJECT_DIR$/app/Resources/views/accounts/login/login.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesAdminController.php" />
         <option value="$PROJECT_DIR$/app/logs/dev.log" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
         <option value="$PROJECT_DIR$/db_backup_dev.sql" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -88,8 +198,6 @@
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sensores/sensores.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
-        <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Curva.php" />
@@ -98,11 +206,15 @@
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160920153440.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
+        <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
       </list>
     </option>
   </component>
@@ -254,6 +366,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -283,20 +397,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataLogger_INTI_Construcciones" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -672,8 +772,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -735,12 +833,6 @@
       <created>1465317946316</created>
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Added historial form. Falta la vista del ensayo.">
-      <created>1471614208361</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1471614208361</updated>
     </task>
     <task id="LOCAL-00059" summary="Added vista de ensayo en historial.">
       <created>1471618248601</created>
@@ -1030,7 +1122,13 @@
       <option name="project" value="LOCAL" />
       <updated>1474381704022</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Added mathjs to assets.">
+      <created>1474381930588</created>
+      <option name="number" value="00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1474381930589</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1046,23 +1144,23 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38699362" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39978677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32119915" sideWeight="0.43176973" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.79978585" sideWeight="0.5714286" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.496788" sideWeight="0.42857143" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20106952" sideWeight="0.42857143" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40042827" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4936034" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1081,7 +1179,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added TODO" />
     <MESSAGE value="Added some server validation.&#10;Added interval query." />
     <MESSAGE value="Finished server validation on forms." />
     <MESSAGE value="Added error page (para todos los errores)." />
@@ -1106,7 +1203,8 @@
     <MESSAGE value="Puse el javascript del ensayo en archivo separado.&#10;Tuve q retocar variables de twig para poder usarlas en el archivo js." />
     <MESSAGE value="Changed max del gauge en ensayo." />
     <MESSAGE value="Agregué curva patron en la base de datos y en el formulario.&#10;Falta implementarlo en el ensayo en si." />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregué curva patron en la base de datos y en el formulario.&#10;Falta implementarlo en el ensayo en si." />
+    <MESSAGE value="Added mathjs to assets." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added mathjs to assets." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1122,20 +1220,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/avanzado/avanzado_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/avanzado/avanzado.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.4014869">
@@ -1305,45 +1389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.576923">
-          <caret line="131" column="24" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64239484">
-          <caret line="317" column="22" selection-start-line="317" selection-start-column="22" selection-end-line="317" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.730769">
-          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-          <folding>
-            <marker date="1474035105582" expanded="true" signature="335:958" placeholder="SELECT *,TIM..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="567:904" placeholder="SELECT MIN(T..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="1280:1903" placeholder="SELECT *,TIM..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="1512:1849" placeholder="SELECT MIN(T..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="2192:2212" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="2501:2544" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="2841:2908" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="3356:4176" placeholder="UPDATE ensay..." />
-            <marker date="1474035105582" expanded="true" signature="4523:4589" placeholder="UPDATE ensay..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.423077">
@@ -1362,23 +1407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.615385">
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="55" />
-          <folding>
-            <marker date="1474293021434" expanded="true" signature="584:634" placeholder="ALTER TABLE ensayo..." />
-            <marker date="1474293021434" expanded="true" signature="987:1016" placeholder="ALTER TABLE ensayo..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60714287">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-          <folding>
-            <element signature="e#1093#1109#1#PHP" expanded="true" />
-            <element signature="e#3568#3586#1#PHP" expanded="true" />
-            <element signature="e#6402#6420#1#PHP" expanded="true" />
-            <marker date="1474296891644" expanded="true" signature="6786:6805" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1414,7 +1442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.038462">
           <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1422,7 +1449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1430,15 +1456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8173077">
-          <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,12 +1463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.423077">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <marker date="1474380045607" expanded="true" signature="584:632" placeholder="ALTER TABLE ensayo..." />
-            <marker date="1474380045607" expanded="true" signature="659:757" placeholder="ALTER TABLE ensayo..." />
-            <marker date="1474380045607" expanded="true" signature="1307:1362" placeholder="ALTER TABLE ensayo..." />
-            <marker date="1474380045607" expanded="true" signature="1457:1489" placeholder="ALTER TABLE ensayo..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1459,46 +1470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5706897">
           <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding>
-            <marker date="1474381003871" expanded="true" signature="586:788" placeholder="CREATE TABLE..curva..." />
-            <marker date="1474381003871" expanded="true" signature="817:846" placeholder="ALTER TABLE ensayo..." />
-            <marker date="1474381003871" expanded="true" signature="1205:1278" placeholder="INSERT INTO curva..." />
-            <marker date="1474381003871" expanded="true" signature="1305:1414" placeholder="INSERT INTO curva..." />
-            <marker date="1474381003871" expanded="true" signature="1441:1550" placeholder="INSERT INTO curva..." />
-            <marker date="1474381003871" expanded="true" signature="1579:1697" placeholder="INSERT INTO curva..." />
-            <marker date="1474381003871" expanded="true" signature="1724:1842" placeholder="INSERT INTO curva..." />
-            <marker date="1474381003871" expanded="true" signature="2199:2215" placeholder="DROP TABLE c..." />
-            <marker date="1474381003871" expanded="true" signature="2244:2345" placeholder="ALTER TABLE ensayo..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73275864">
-          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-          <folding>
-            <marker date="1472218021782" expanded="true" signature="333:811" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="484:623" placeholder="SELECT senso..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="1122:1600" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="1273:1412" placeholder="SELECT senso..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="2548:2634" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="3142:3228" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="3985:4071" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="5462:5557" placeholder="SELECT senso..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="5904:6233" placeholder="SELECT senso..datalog..." />
-            <marker date="1472218021782" expanded="true" signature="6918:7031" placeholder="SELECT senso..datalog..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5862069">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-          <folding>
-            <marker date="1474380830119" expanded="true" signature="356:407" placeholder="SELECT * FRO..curva..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1506,38 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4706897">
           <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.153846">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-          <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#920#938#1#PHP" expanded="true" />
-            <element signature="e#1426#1444#1#PHP" expanded="true" />
-            <element signature="e#1923#1941#1#PHP" expanded="true" />
-            <element signature="e#2010#2028#1#PHP" expanded="true" />
-            <element signature="e#2094#2111#1#PHP" expanded="true" />
-            <element signature="e#2885#2903#1#PHP" expanded="true" />
-            <element signature="e#2980#2998#1#PHP" expanded="true" />
-            <element signature="e#6583#6601#1#PHP" expanded="true" />
-            <element signature="e#7405#7423#1#PHP" expanded="true" />
-            <element signature="e#8505#8523#1#PHP" expanded="true" />
-            <element signature="e#9267#9285#1#PHP" expanded="true" />
-            <element signature="e#10135#10154#1#PHP" expanded="true" />
-            <element signature="e#10275#10294#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34318182">
-          <caret line="84" column="78" selection-start-line="84" selection-start-column="78" selection-end-line="84" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1545,14 +1484,155 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.11258278">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/bower-asset/raphael/raphael.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5901876">
+          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+          <folding>
+            <marker date="1474035105582" expanded="true" signature="335:958" placeholder="SELECT *,TIM..ensayo..." />
+            <marker date="1474035105582" expanded="true" signature="567:904" placeholder="SELECT MIN(T..ensayo..." />
+            <marker date="1474035105582" expanded="true" signature="1280:1903" placeholder="SELECT *,TIM..ensayo..." />
+            <marker date="1474035105582" expanded="true" signature="1512:1849" placeholder="SELECT MIN(T..ensayo..." />
+            <marker date="1474035105582" expanded="true" signature="2192:2212" placeholder="SELECT * fro..ensayo..." />
+            <marker date="1474035105582" expanded="true" signature="2501:2544" placeholder="SELECT * fro..ensayo..." />
+            <marker date="1474035105582" expanded="true" signature="2841:2908" placeholder="SELECT * fro..ensayo..." />
+            <marker date="1474035105582" expanded="true" signature="3356:4176" placeholder="UPDATE ensay..." />
+            <marker date="1474035105582" expanded="true" signature="4523:4589" placeholder="UPDATE ensay..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76046175">
+          <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17171717">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7186147">
+          <caret line="113" column="65" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5066225">
-          <caret line="114" column="81" selection-start-line="114" selection-start-column="81" selection-end-line="114" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.02364395">
+          <caret line="110" column="79" selection-start-line="110" selection-start-column="79" selection-end-line="110" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47330448">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.653847">
+          <caret line="133" column="69" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="69" />
+          <folding>
+            <element signature="e#40#74#0#PHP" expanded="true" />
+            <marker date="1474636041258" expanded="true" signature="399:877" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="550:689" placeholder="SELECT senso..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="1188:1666" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="1339:1478" placeholder="SELECT senso..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="2614:2700" placeholder="SELECT * FRO..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="3208:3294" placeholder="SELECT * FRO..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="4051:4137" placeholder="SELECT * FRO..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="5696:5791" placeholder="SELECT senso..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="6138:6467" placeholder="SELECT senso..datalog..." />
+            <marker date="1474636041258" expanded="true" signature="7152:7265" placeholder="SELECT senso..datalog..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.461538">
+          <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
+          <folding>
+            <element signature="e#40#74#0#PHP" expanded="true" />
+            <marker date="1474639882387" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-118.42308">
+          <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#64#0#PHP" expanded="true" />
+            <element signature="e#945#963#1#PHP" expanded="true" />
+            <element signature="e#1451#1469#1#PHP" expanded="true" />
+            <element signature="e#1948#1966#1#PHP" expanded="true" />
+            <element signature="e#2035#2053#1#PHP" expanded="true" />
+            <element signature="e#2119#2136#1#PHP" expanded="true" />
+            <element signature="e#2901#2919#1#PHP" expanded="true" />
+            <element signature="e#2996#3014#1#PHP" expanded="true" />
+            <element signature="e#3572#3589#1#PHP" expanded="true" />
+            <element signature="e#5940#5957#1#PHP" expanded="true" />
+            <element signature="e#7453#7471#1#PHP" expanded="true" />
+            <element signature="e#8275#8293#1#PHP" expanded="true" />
+            <element signature="e#9375#9393#1#PHP" expanded="true" />
+            <element signature="e#10137#10155#1#PHP" expanded="true" />
+            <element signature="e#11005#11024#1#PHP" expanded="true" />
+            <element signature="e#11145#11164#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6695527">
+          <caret line="137" column="42" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.26923">
+          <caret line="85" column="48" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="48" />
+          <folding>
+            <element signature="e#838#857#1#PHP" expanded="true" />
+            <element signature="e#2564#2582#1#PHP" expanded="true" />
+            <element signature="e#2711#2730#1#PHP" expanded="true" />
+            <element signature="e#2848#2865#1#PHP" expanded="true" />
+            <element signature="e#3352#3370#1#PHP" expanded="true" />
+            <element signature="e#4609#4628#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6147427">
+          <caret line="236" column="31" selection-start-line="236" selection-start-column="31" selection-end-line="236" selection-end-column="31" />
           <folding />
         </state>
       </provider>

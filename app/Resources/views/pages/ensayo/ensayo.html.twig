@@ -103,6 +103,10 @@
         window.myConfig.lastPing = "{{ lastPing }}";
         window.myConfig.url_cancelEnsayo = "{{ url("cancelEnsayo") }}";
         window.myConfig.url_getGraphData = "{{ url("getGraphData") }}";
+        {# @var curvaObj \AppBundle\Entity\Curva #}
+        window.myConfig.patron_id = "{{ curvaObj.id }}";
+        window.myConfig.patron_nombre = "{{ curvaObj.nombre }}";
+        window.myConfig.patron_formula = "{{ curvaObj.formula }}";
     </script>
 
 
@@ -126,10 +130,16 @@
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
 
+    {% javascripts '@mathjs_js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
 
     {% javascripts 'base_assets/js/ensayo.js'%}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
+
+
 
 
 {% endblock %}
