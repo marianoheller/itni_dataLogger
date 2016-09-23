@@ -124,17 +124,26 @@ class SensoresController extends Controller
             foreach ($data as $name => $value) {
                 if ($name == "timeStamp") {
                     foreach ($value as $entry) {
+                        $curvaID = $entry->curvaID;
                         $t_inicio = $entry->t_inicio;
                         $t_fin = $entry->t_fin;
+                        $firstTimeStamp = $entry->firstTimeStamp;
                     }
                 }
+            }
+
+            if ( !isset($curvaID) || !isset($t_inicio) ||!isset($t_fin) ||!isset($firstTimeStamp)) {
+                throw new NotFoundHttpException("Error al parsear json de de ajax request");
             }
 
             $em = $this->getDoctrine()->getManager();
             $logger->info("Sending data to Hist graph");
 
             // GET DATA to send
-            $arrayReturn = $em->getRepository('AppBundle:Datalog')->getPacketsInTimeRange($t_inicio, $t_fin);
+            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->getPacketsInTimeRange($t_inicio, $t_fin);
+
+            // Append Curva packets
+            $arrayReturn = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($curvaID,$arrayPacketsDatalog, $firstTimeStamp);
 
             //Ready to send
             $ret = new JsonResponse($arrayReturn);

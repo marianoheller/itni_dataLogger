@@ -211,6 +211,8 @@ class PagesController extends Controller
         /**@var $ensayoObj Ensayo*/
         $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
 
+        $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($ensayoObj->getCurvaId());
+
 
         if ( isset($ensayoObj) ) {
             $logger->info("Ensayo ver succesful", array (
@@ -219,7 +221,8 @@ class PagesController extends Controller
             return $this->render(":pages/historial:historial_ensayo.html.twig", array(
                 "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
                 "t_fin" => $ensayoObj->getTFin()->format($dateFormat),
-                "titulo" => $ensayoObj->getTitulo()
+                "titulo" => $ensayoObj->getTitulo(),
+                "curvaObj" => $curvaObj
             ));
         }
         else {
@@ -326,23 +329,11 @@ class PagesController extends Controller
 
 
 
-//TODO curva patron al generar el ensayo (q tmb se muestren en los canales virtuales)
-/******ESTA PRIMER OPCION NO XQ TENDRIA Q CAMBIAR LA RCEPCION DE DATOS EN CLIENTE....
-//Crear campo "curva" en ensayo DB
-//El page controller la pasa el campo al template (le pasa q curva es)
-//Y desp el cliente cada ves q pide data especifica la curva
-//Entonces el controllador de Sensores devuelve no solo la data del device sino tmb otra de la curva patron
- *
- *
- * //ANDA LENTO DEL LADO DEL CLIENTE!!!!!
- * //Creo tabla con curvas posibles, id, string de formula
-//El page controller le pasa el string de la formula al template
-//El template se encarga de calcular el el valor patron segun formula
- * */
-
 
 
 //TODO no resume cuando paso mucho tiempo (ver tema del tiempo de lastPing)
+
+//TODO poner en 0 el SNR del simulador y comparar valores patrones a ver cual esta mal....
 
 //TODO retocar la migration q crea la tabla de curvas (esta comentada la creacion de la tabla) sino no va a andar en prod.
 

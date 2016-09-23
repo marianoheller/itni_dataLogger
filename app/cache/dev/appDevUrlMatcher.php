@@ -153,17 +153,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/css')) {
-            // _assetic_ad3dba0
-            if ($pathinfo === '/css/ensayo.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'ad3dba0',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_ad3dba0',);
-            }
+        // _assetic_ad3dba0
+        if ($pathinfo === '/css/ensayo.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ad3dba0',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_ad3dba0',);
+        }
 
-            // _assetic_b328138
-            if ($pathinfo === '/css/sensores.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'b328138',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_b328138',);
-            }
+        // _assetic_f849998
+        if ($pathinfo === '/js/f849998.js') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'f849998',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_f849998',);
+        }
 
+        // _assetic_b328138
+        if ($pathinfo === '/css/sensores.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'b328138',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_b328138',);
         }
 
         if (0 === strpos($pathinfo, '/_')) {
