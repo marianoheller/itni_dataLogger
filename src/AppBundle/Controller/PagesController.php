@@ -328,29 +328,26 @@ class PagesController extends Controller
 
 
 
-
-
-
-//TODO no resume cuando paso mucho tiempo (ver tema del tiempo de lastPing)
-
-//TODO poner en 0 el SNR del simulador y comparar valores patrones a ver cual esta mal....
-
-//TODO retocar la migration q crea la tabla de curvas (esta comentada la creacion de la tabla) sino no va a andar en prod.
+//TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
 //TODO 10 canales virtuales (q tmb se exporten)
-//Hacer las cuentas clientSide (server siempre manda la misma data)
+/**
+ * ServerSide:
+ */
 
 //TODO exportar solo canales seleccionados
 
+//TODO Separar .js (assetic)
+
+
+
+
 //TODO Generar user device solo con el username (q es la mac) y el password se genera automaticamente
 
-//TODO errorBars
+//TODO no resume cuando paso mucho tiempo (ver tema del tiempo de lastPing)
 
-//TODO Unificar .js (assetic)
-
-//TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
+//TODO retocar la migration q crea la tabla de curvas (esta comentada la creacion de la tabla) sino no va a andar en prod.
 
 //TODO Status device???
-
 
 //TODO Deployer bundle
