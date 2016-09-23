@@ -110,10 +110,6 @@ assetic:
             inputs:
                 - "%kernel.root_dir%/../vendor/bower-asset/justgage-toorshia/justgage.js"
             filters: [?yui_js]
-        mathjs_js:
-            inputs:
-                - "%kernel.root_dir%/../vendor/npm-asset/mathjs/dist/math.min.js"
-            filters: [?yui_js]
         bootstrap_css:
             inputs:
                 - "%kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.css"
