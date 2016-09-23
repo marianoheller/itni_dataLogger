@@ -241,10 +241,16 @@ function getGraphData() {
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             //SI TIRA NOT FOUND PUEDE SER XQ NO HAY REGISTROS CON ESE TIMESTAMP
-            console.log(window.myConfig.url_getGraphData);
-            console.log("Status: "+textStatus);
-            console.log("Error thrown: "+errorThrown);
-            console.log("--------------");
+            if ( errorThrown == "Not Found") {
+                console.log("Esperando datos...");
+            }
+            else {
+                console.log(window.myConfig.url_getGraphData);
+                console.log("Status: "+textStatus);
+                console.log("Error thrown: "+errorThrown);
+                console.log("--------------");
+            }
+
         })
         .always(function () {
             setTimeout(getGraphData, set_delay);
