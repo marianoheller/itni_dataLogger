@@ -9,6 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
     </list>
@@ -40,8 +44,8 @@
       <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71022725">
-              <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8126984">
+              <caret line="333" column="111" selection-start-line="333" selection-start-column="111" selection-end-line="333" selection-end-column="111" />
               <folding>
                 <element signature="e#40#64#0#PHP" expanded="true" />
                 <element signature="e#945#963#1#PHP" expanded="true" />
@@ -54,7 +58,6 @@
                 <element signature="e#3572#3589#1#PHP" expanded="true" />
                 <element signature="e#5940#5957#1#PHP" expanded="true" />
                 <element signature="e#7453#7471#1#PHP" expanded="true" />
-                <element signature="e#7537#7581#0#PHP" expanded="true" />
                 <element signature="e#8275#8293#1#PHP" expanded="true" />
                 <element signature="e#8360#8377#1#PHP" expanded="true" />
                 <element signature="e#9518#9536#1#PHP" expanded="true" />
@@ -62,36 +65,6 @@
                 <element signature="e#11148#11167#1#PHP" expanded="true" />
                 <element signature="e#11288#11307#1#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SensoresController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.269231">
-              <caret line="125" column="48" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="historial.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/base_assets/js/historial.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ensayo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="163" column="134" selection-start-line="163" selection-start-column="50" selection-end-line="163" selection-end-column="134" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,13 +129,13 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
         <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
         <option value="$PROJECT_DIR$/web/base_assets/js/historial.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
@@ -309,8 +282,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -785,6 +756,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -846,12 +819,6 @@
       <created>1465317946316</created>
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Fixed timestamp on export. Ahora figura el tiempo desde 00 y no la fechaHora.">
-      <created>1471873119823</created>
-      <option name="number" value="00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1471873119838</updated>
     </task>
     <task id="LOCAL-00064" summary="Changed User schema. Added is_device.&#10;Changed base.twig location.">
       <created>1471875896468</created>
@@ -1141,7 +1108,13 @@
       <option name="project" value="LOCAL" />
       <updated>1474649281020</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Added TODO">
+      <created>1474652132782</created>
+      <option name="number" value="00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1474652132782</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1155,25 +1128,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39978677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32119915" sideWeight="0.43176973" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.79978585" sideWeight="0.5714286" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48507464" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26873663" sideWeight="0.42857143" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2684492" sideWeight="0.42857143" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40042827" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.4936034" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1469,17 +1442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5901876">
           <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-          <folding>
-            <marker date="1474035105582" expanded="true" signature="335:958" placeholder="SELECT *,TIM..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="567:904" placeholder="SELECT MIN(T..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="1280:1903" placeholder="SELECT *,TIM..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="1512:1849" placeholder="SELECT MIN(T..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="2192:2212" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="2501:2544" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="2841:2908" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1474035105582" expanded="true" signature="3356:4176" placeholder="UPDATE ensay..." />
-            <marker date="1474035105582" expanded="true" signature="4523:4589" placeholder="UPDATE ensay..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1518,7 +1480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8108108">
           <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1526,19 +1487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="11.115385">
           <caret line="133" column="69" selection-start-line="133" selection-start-column="60" selection-end-line="133" selection-end-column="69" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-            <marker date="1474636041258" expanded="true" signature="399:877" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="550:689" placeholder="SELECT senso..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="1188:1666" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="1339:1478" placeholder="SELECT senso..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="2614:2700" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="3208:3294" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="4051:4137" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="5696:5791" placeholder="SELECT senso..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="6138:6467" placeholder="SELECT senso..datalog..." />
-            <marker date="1474636041258" expanded="true" signature="7152:7265" placeholder="SELECT senso..datalog..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1546,10 +1494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.461538">
           <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-            <marker date="1474639882387" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1557,7 +1501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1565,7 +1508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1573,7 +1515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1581,23 +1522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2610687">
           <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7977273">
-          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="135" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.875">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1611,7 +1535,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.269231">
+        <state vertical-scroll-proportion="0.055555556">
           <caret line="125" column="48" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
           <folding />
         </state>
@@ -1619,16 +1543,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/base_assets/js/historial.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.206897">
+          <caret line="141" column="17" selection-start-line="141" selection-start-column="15" selection-end-line="141" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5">
+          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="68" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1968254">
+          <caret line="58" column="88" selection-start-line="58" selection-start-column="88" selection-end-line="58" selection-end-column="88" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71022725">
-          <caret line="343" column="0" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8126984">
+          <caret line="333" column="111" selection-start-line="333" selection-start-column="111" selection-end-line="333" selection-end-column="111" />
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
             <element signature="e#945#963#1#PHP" expanded="true" />
@@ -1641,7 +1581,6 @@
             <element signature="e#3572#3589#1#PHP" expanded="true" />
             <element signature="e#5940#5957#1#PHP" expanded="true" />
             <element signature="e#7453#7471#1#PHP" expanded="true" />
-            <element signature="e#7537#7581#0#PHP" expanded="true" />
             <element signature="e#8275#8293#1#PHP" expanded="true" />
             <element signature="e#8360#8377#1#PHP" expanded="true" />
             <element signature="e#9518#9536#1#PHP" expanded="true" />

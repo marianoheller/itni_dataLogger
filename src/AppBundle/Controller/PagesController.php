@@ -327,8 +327,11 @@ class PagesController extends Controller
 }
 
 
+//TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
+
+//TODO Agregar esperando datos encima de graficos cuando no llegue nada (asi no aparece en blanco como si nada)
 
 //TODO 10 canales virtuales (q tmb se exporten)
 /**
