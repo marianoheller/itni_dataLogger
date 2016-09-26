@@ -41,7 +41,7 @@
                         </tr>
                         </thead>
                         <tbody id="dataStatusSensores">
-                        <th colspan="4">Esperando datos...</th>
+                        <th colspan="4">Esperando datos<span id="wait">.</span></th>
                         </tbody>
                     </table>
                 </small>
@@ -54,12 +54,19 @@
 
     {% for i in 1..32 %}
         <div class="tab-pane" id="tab_{{i}}">
-            <h4>Canal {{i}}</h4>
+
+            <div class="container-fluid m-l-0 p-l-0">
+                <h4 class="pull-md-left d-inline">Canal {{i}}</h4>
+                {#<h5 id="wait_{{ i }}" class="m-x-auto" style="width: 200px;" >Esperando datos...</h5>#}
+            </div>
             {# @var curvaObj \AppBundle\Entity\Curva #}
-            <small class="text-muted pull-md-left">Patrón: {{ curvaObj.nombre }}</small>
+            <small class="text-muted pull-md-left d-inline">Patrón: {{ curvaObj.nombre }}</small>
+
             <div class="container col-md-1">
 
             </div>
+
+
             <div class="container col-md-10">
                 <div id="chart_div_{{ i }}" class="chart"></div>
             </div>
