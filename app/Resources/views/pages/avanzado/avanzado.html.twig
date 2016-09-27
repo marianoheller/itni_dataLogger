@@ -53,51 +53,21 @@
 
 
 {% block javascript %}
+
     <script>
-        function validateEnsayoAvailability() {
-            var val = document.forms["exportarEnsayo"]["ensayoID"].value;
-            if (val == "-1") {
-                return false;
-            }
-            else{
-                return true;
-            }
-        }
 
-        $(document).ready(function() {
-            $('#ensayoDetails').hide();
-            $('#exportButton').prop('disabled', true);
-        });
-
-        $('#selectEnsayo').on('change', function() {
-            var val = document.forms["exportarEnsayo"]["ensayoID"].value;
-            if (val == "-1") {
-                $('#ensayoDetails').hide();
-                $('#exportButton').prop('disabled', true);
-            }
-            else{
-                $('#ensayoDetails').show();
-                $('#ensayoDetails').html("");
-                $('#exportButton').prop('disabled', false);
-                {% for ensayo in ensayos %}
-                    if( val == {{ ensayo.id }} ) {
-                        var htmlDetalles = "";
-                        htmlDetalles  += '<ul class="list-group">';
-                        htmlDetalles  += '<li class="list-group-item list-group-item-info">Iniciado: {{ ensayo.t_inicio }}</li>';
-                        htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Finalizado: {{ ensayo.t_fin }}</li>';
-                        htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Titulo: {{ ensayo.titulo }}</li>';
-                        htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Responsable: {{ ensayo.responsable }}</li>';
-                        htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Cliente: {{ ensayo.cliente }}</li>';
-                        htmlDetalles  +=  '<li class="list-group-item list-group-item-info">OT: {{ ensayo.OT }}</li>';
-                        htmlDetalles  +=  '<li class="list-group-item list-group-item-info">SOT: {{ ensayo.SOT }}</li>';
-                        htmlDetalles  +=  '<li class="list-group-item list-group-item-info">Descripción: {{ ensayo.descripcion }}</li>';
-                        htmlDetalles  +=  '</ul>';
-                        $('#ensayoDetails').html(htmlDetalles);
-                    }
-                {% endfor %}
-            }
-        });
-
+        window.myConfig = {};
+        window.myConfig.ensayos_cant = "{{ ensayos|length }}";
+        window.myConfig.ensayo = {};
+        {% for ensayo in ensayos %}
+        window.myConfig.ensayo["{{ ensayo.id }}"] = {{ ensayo|json_encode|raw }};
+        {% endfor %}
 
     </script>
+
+    {% javascripts 'base_assets/js/avanzado.js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
 {% endblock %}
