@@ -159,6 +159,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/js')) {
+            // _assetic_0797730
+            if ($pathinfo === '/js/0797730.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '0797730',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_0797730',);
+            }
+
             // _assetic_f849998
             if ($pathinfo === '/js/f849998.js') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'f849998',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_f849998',);
