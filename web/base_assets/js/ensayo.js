@@ -350,3 +350,4 @@ var dots = window.setInterval( function() {
             wait.innerHTML += ".";
     }
 }, 1000);
+

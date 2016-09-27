@@ -327,7 +327,8 @@ class PagesController extends Controller
 }
 
 
-//TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
+
+//TODO Separar todo los js (assetic)
 
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 
@@ -336,10 +337,10 @@ class PagesController extends Controller
  * ServerSide:
  */
 
+
 //TODO exportar solo canales seleccionados
 
-//TODO Separar .js (assetic)
-
+//TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 
 
 
