@@ -328,7 +328,7 @@ class PagesController extends Controller
 
 
 
-//TODO Separar todo los js (assetic)
+//TODO Al agregar usuarios acepta "admin" aunque ya exista.
 
 //TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
 

@@ -157,58 +157,26 @@
 
 {% block javascript %}
     <script>
-        function validateUserAvailability() {
-            var username = document.forms["register_form"]["add-username"].value;
-            {% for user in arrayUsers %}
-            if (username == "{{ user.username }}") {
-                $('#alert-user-existente').show();
-                return false;
-            }
-            {% endfor %}
-            return true;
-        }
 
-        function validateDeviceAvailability() {
-            var devname = document.forms["register_device_form"]["add-username"].value;
-            {% for device in arrayDevices %}
-            if (devname == "{{ device.username }}") {
-                $('#alert-device-existente').show();
-                return false;
-            }
-            {% endfor %}
-            return true;
-        }
+        window.myConfig = {};
+        window.myConfig.usuarios = {};
+        {# @var user \AppBundle\Entity\User #}
+        {% for user in arrayUsers %}
+        window.myConfig.usuarios["{{ user.username }}"] = {{ user|json_encode|raw }};
+        {% endfor %}
 
-
-        $(document).ready(function() {
-            $('#alert-user-existente').hide();
-            $('#alert-device-existente').hide();
-
-            $(".content-tab a").click(function(){
-                $(this).tab('show');
-            });
-        });
-
-        $('#delete-user-select').on('change', function() {
-            var val = document.forms["delete-form"]["username-eliminar"].value;
-            if (val == "-1") {
-                $('#deleteUserButton').prop('disabled', true);
-            }
-            else{
-                $('#deleteUserButton').prop('disabled', false);
-            }
-        });
-
-        $('#delete-device-select').on('change', function() {
-            var val = document.forms["delete-device-form"]["username-eliminar"].value;
-            if (val == "-1") {
-                $('#deleteDeviceButton').prop('disabled', true);
-            }
-            else{
-                $('#deleteDeviceButton').prop('disabled', false);
-            }
-        });
-
+        window.myConfig.devices = {};
+        {# @var device \AppBundle\Entity\User #}
+        {% for device in arrayDevices %}
+        window.myConfig.devices["{{ device.username }}"] = {{ device|json_encode|raw }};
+        {% endfor %}
 
     </script>
+
+
+    {% javascripts 'base_assets/js/admin.js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
 {% endblock %}
