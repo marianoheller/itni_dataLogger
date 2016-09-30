@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    if (window.myConfig.flagEnsayoRunning = "True") {
+    if (window.myConfig.flagEnsayoRunning == "True") {
 
         $('#modalEnsayoRunning').modal({
             backdrop: 'static',

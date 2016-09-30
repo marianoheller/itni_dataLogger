@@ -199,6 +199,7 @@ class PagesController extends Controller
      */
     public function historialVerAction(Request $request)
     {
+
         $logger = $this->get('logger');
         $logger->debug("/historial/ver accesed");
         $dateFormat = "Y-m-d H:i:s";
@@ -208,10 +209,19 @@ class PagesController extends Controller
             return $this->redirectToRoute("historial");
         }
         $em = $this->getDoctrine()->getManager();
-        /**@var $ensayoObj Ensayo*/
-        $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
 
-        $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($ensayoObj->getCurvaId());
+
+        try {
+            /**@var $ensayoObj Ensayo*/
+            $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
+        } catch ( \Exception $e) {
+            return $this->createNotFoundException("Ensayo no encontrado");
+        }
+        try {
+            $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($ensayoObj->getCurvaId());
+        } catch ( \Exception $e) {
+            return $this->createNotFoundException("Patrón no encontrado");
+        }
 
 
         if ( isset($ensayoObj) ) {
@@ -327,16 +337,13 @@ class PagesController extends Controller
 }
 
 
-
-//TODO Al agregar usuarios acepta "admin" aunque ya exista.
-
-//TODO Ver tema google charts api offline...(quizas pasar a CSV temporal para saltear DataTable)
-
 //TODO 10 canales virtuales (q tmb se exporten)
 /**
  * ServerSide:
  */
 
+
+//TODO Al agregar usuarios acepta "admin" aunque ya exista.
 
 //TODO exportar solo canales seleccionados
 
@@ -350,6 +357,6 @@ class PagesController extends Controller
 
 //TODO retocar la migration q crea la tabla de curvas (esta comentada la creacion de la tabla) sino no va a andar en prod.
 
-//TODO Status device???
+//TODO Status device??
 
 //TODO Deployer bundle

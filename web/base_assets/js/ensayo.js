@@ -9,32 +9,15 @@ var t_inicio_unix = moment(window.myConfig.t_inicio).unix();
 var timeFormat = 'HH:mm:ss';
 
 var options = {
-    //both dygraphs and Google
+    //Dimensions
     width: 1200,
     height: 500,
 
     //dygraphs
+    labels: [ "Fecha", "Medicion", "Patrón" ],
     rollPeriod: 1,
     showRoller: false,
-    fillGraph: true,
-
-    //Google charts
-    curveType: "function",
-    hAxis: {
-        format: timeFormat,
-        gridlines: {count: 8}
-    },
-    vAxis: {
-        //minValue: 0,
-        gridlines: {count: 8},
-        viewWindow: {
-            min: 0
-        }
-    },
-    explorer: {
-        actions: ['dragToZoom', 'rightClickToReset'],
-        axis: 'vertical'
-    }
+    fillGraph: true
 };
 
 
@@ -126,10 +109,12 @@ function cancelarEnsayo() {
 
 function drawChart() {
     for ( var i=1 ; i<=32 ; i++) {
-        window["dataTable_"+i] = new google.visualization.DataTable();
+        /*window["dataTable_"+i] = new google.visualization.DataTable();
         window["dataTable_"+i].addColumn('datetime', 'Fecha');
         window["dataTable_"+i].addColumn('number', 'Medicion');
-        window["dataTable_"+i].addColumn('number', 'Patrón');
+        window["dataTable_"+i].addColumn('number', 'Patrón');*/
+
+        window["dataTable_"+i] = [];
 
         window["chart_"+i] = new Dygraph(
             document.getElementById("chart_div_"+i),
@@ -143,12 +128,14 @@ function drawChart() {
 
 function getGraphData() {
     var lastTimeStampLocal = "";
-    var len = window.dataTable_1.getNumberOfRows();
+    //var len = window.dataTable_1.getNumberOfRows();
+    var len = window.dataTable_1.length;
     if ( len == 0 ) {
         lastTimeStampLocal = window.myConfig.t_inicio;
     }
     else {
-        lastTimeStampLocal = window.dataTable_1.getValue(len-1, 0) //get fecha
+        //lastTimeStampLocal = window.dataTable_1.getValue(len-1, 0); //get last fecha
+        lastTimeStampLocal = window.dataTable_1[len-1][0];//get last fecha
 
         var momentAux = moment(lastTimeStampLocal);
         var momentAuxInicio = moment.unix(t_inicio_unix);
@@ -206,16 +193,12 @@ function getGraphData() {
                     momentAux.subtract(momentAuxInicio.hours(),"hours");
                     var myDate = momentAux.toDate();
 
-                    /*var scope = {
-                        t: moment.duration(momentAux.toString()).asMinutes()
-                    };
-                    var patronData = math.eval( window.myConfig.patron_formula , scope );*/
-
-                    var obj = [
-                        //[ myDate,  rxObj["data_"+j][i], patronData]
+                    /*var obj = [
                         [ myDate,  rxObj["data_"+j][i], rxObj["patron_"+j][i]]
                     ];
-                    window["dataTable_"+j].addRows(obj);
+                    window["dataTable_"+j].addRows(obj);*/
+                    var arrayData = [ myDate,  rxObj["data_"+j][i], rxObj["patron_"+j][i]];
+                    window["dataTable_"+j].push(arrayData);
                 }
                 //Refresh gauge
                 var gaugeValue = rxObj["data_"+j][rxObj["data_"+j].length-1];
@@ -229,8 +212,11 @@ function getGraphData() {
 
             var lenAux = 0;
             for ( var j=1 ; j<=32 ; j++) {
-                if (window["dataTable_"+j].getNumberOfRows() > lenAux) {
+                /*if (window["dataTable_"+j].getNumberOfRows() > lenAux) {
                     lenAux = window["dataTable_"+j].getNumberOfRows();
+                }*/
+                if (window["dataTable_"+j].length > lenAux) {
+                    lenAux = window["dataTable_"+j].length;
                 }
             }
 
@@ -263,9 +249,12 @@ function updateStatusInfo(  )  {
     var trHTML = '';
 
     for ( var j=1 ; j<=32 ; j++) {
-        var lenAux = window["dataTable_"+j].getNumberOfRows();
-        var lastLabel = window["dataTable_"+j].getValue(lenAux-1, 0)
-        var medicion = window["dataTable_"+j].getValue(lenAux-1, 1);
+        /*var lenAux = window["dataTable_"+j].getNumberOfRows();
+        var lastLabel = window["dataTable_"+j].getValue(lenAux-1, 0);
+        var medicion = window["dataTable_"+j].getValue(lenAux-1, 1);*/
+        var lenAux = window["dataTable_"+j].length;
+        var lastLabel = window["dataTable_"+j][lenAux-1][0];
+        var medicion = window["dataTable_"+j][lenAux-1][1];
         //get fecha
         trHTML += "<tr "
         if (medicion < 30) {
@@ -301,8 +290,8 @@ function updateStatusInfo(  )  {
  * Do stuff
  */
 
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawChart);
+/*google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);*/
 
 
 
@@ -338,6 +327,7 @@ $(document).ready(function(){
     }
 
 
+    drawChart();
 });
 
 

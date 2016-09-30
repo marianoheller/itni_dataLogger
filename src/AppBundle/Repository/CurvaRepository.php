@@ -45,16 +45,17 @@ class CurvaRepository extends EntityRepository
 
         //$json_a = json_decode($arrayPackets, true);
         $arrayPacketsCompleto = $arrayPackets;
-
-        foreach ($arrayPacketsCompleto as $packet_ID => $dataArray) {
-            foreach ($dataArray as $key => $data) {
-                $tiempoEnMinutos = (floatval($data["timestamp"]) - floatval($firstTimeStamp)) / 60;
-                $stringEvaluar = str_replace("t", strval($tiempoEnMinutos), $curvaObj->getFormula());
-                eval("\$auxVal = $stringEvaluar;");
-                //$arrayPacketsCompleto[$packet_ID][$key]["timestamp"] = strval(floatval($data["timestamp"]));
-                //$arrayPacketsCompleto[$packet_ID][$key]["t_inicial"] = strval(floatval($firstTimeStamp));
-                //$arrayPacketsCompleto[$packet_ID][$key]["minutos"] = $tiempoEnMinutos;
-                $arrayPacketsCompleto[$packet_ID][$key]["curvaPatron"] = $auxVal;
+        if ($curvaObj->getNombre() != "Sin Curva") {
+            foreach ($arrayPacketsCompleto as $packet_ID => $dataArray) {
+                foreach ($dataArray as $key => $data) {
+                    $tiempoEnMinutos = (floatval($data["timestamp"]) - floatval($firstTimeStamp)) / 60;
+                    $stringEvaluar = str_replace("t", strval($tiempoEnMinutos), $curvaObj->getFormula());
+                    eval("\$auxVal = $stringEvaluar;");
+                    //$arrayPacketsCompleto[$packet_ID][$key]["timestamp"] = strval(floatval($data["timestamp"]));
+                    //$arrayPacketsCompleto[$packet_ID][$key]["t_inicial"] = strval(floatval($firstTimeStamp));
+                    //$arrayPacketsCompleto[$packet_ID][$key]["minutos"] = $tiempoEnMinutos;
+                    $arrayPacketsCompleto[$packet_ID][$key]["curvaPatron"] = $auxVal;
+                }
             }
         }
         return $arrayPacketsCompleto;
