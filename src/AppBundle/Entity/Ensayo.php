@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Ensayo
@@ -99,6 +100,14 @@ class Ensayo
     private $curva_id;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="CanalVirtual", mappedBy="ensayo")
+     */
+    private $canalVirtual;
+
+    public function __construct() {
+        $this->canalVirtual = new ArrayCollection();
+    }
 
 
 

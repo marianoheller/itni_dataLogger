@@ -339,7 +339,17 @@ class PagesController extends Controller
 
 //TODO 10 canales virtuales (q tmb se exporten)
 /**
- * ServerSide:
+ * 1)Negreada
+ * Crear tabla de canales virtuales
+ * Cada canal virtual tiene "formula(csv)" de canal virtual
+ * Cada canal virtual tiene fk a ensayo (many to one)              http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
+ *
+ *
+ * 2)
+ * Crear tabla de canales virtuales con fk a ensayo (many to one)
+ * Crear tabla sensores (id, nombre, descripcion)
+ * Many to many canales virtuales & sensores
+ *
  */
 
 
