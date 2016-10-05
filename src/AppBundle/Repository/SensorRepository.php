@@ -15,6 +15,4 @@ use Herrera\Json\Exception\Exception;
  */
 class SensorRepository extends EntityRepository
 {
-
-
 }

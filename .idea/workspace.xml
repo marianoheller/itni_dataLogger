@@ -7,19 +7,12 @@
     <bookmark url="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" line="21" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Sensor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
+    <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="Added migration.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.php" afterPath="$PROJECT_DIR$/app/cache/dev/classes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base_assets/js/ensayo_config.js" afterPath="$PROJECT_DIR$/web/base_assets/js/ensayo_config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,48 +42,34 @@
       <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.703645">
-              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+            <state vertical-scroll-proportion="3.4825397">
+              <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
               <folding>
                 <element signature="e#40#64#0#PHP" expanded="true" />
-                <element signature="e#945#963#1#PHP" expanded="true" />
-                <element signature="e#1451#1469#1#PHP" expanded="true" />
-                <element signature="e#1948#1966#1#PHP" expanded="true" />
-                <element signature="e#2035#2053#1#PHP" expanded="true" />
-                <element signature="e#2119#2136#1#PHP" expanded="true" />
-                <element signature="e#2901#2919#1#PHP" expanded="true" />
-                <element signature="e#2996#3014#1#PHP" expanded="true" />
-                <element signature="e#3572#3589#1#PHP" expanded="true" />
-                <element signature="e#6203#6220#1#PHP" expanded="true" />
-                <element signature="e#7359#7390#0#PHP" expanded="true" />
-                <element signature="e#8072#8090#1#PHP" expanded="true" />
-                <element signature="e#8919#8937#1#PHP" expanded="true" />
-                <element signature="e#9141#9158#1#PHP" expanded="true" />
-                <element signature="e#10419#10437#1#PHP" expanded="true" />
-                <element signature="e#11181#11199#1#PHP" expanded="true" />
-                <element signature="e#12049#12068#1#PHP" expanded="true" />
-                <element signature="e#12189#12208#1#PHP" expanded="true" />
+                <element signature="e#1009#1027#1#PHP" expanded="true" />
+                <element signature="e#1515#1533#1#PHP" expanded="true" />
+                <element signature="e#2012#2030#1#PHP" expanded="true" />
+                <element signature="e#2099#2117#1#PHP" expanded="true" />
+                <element signature="e#2183#2200#1#PHP" expanded="true" />
+                <element signature="e#2965#2983#1#PHP" expanded="true" />
+                <element signature="e#3060#3078#1#PHP" expanded="true" />
+                <element signature="e#3636#3653#1#PHP" expanded="true" />
+                <element signature="e#3840#3864#1#PHP" expanded="true" />
+                <element signature="e#6735#6752#1#PHP" expanded="true" />
+                <element signature="e#8133#8151#1#PHP" expanded="true" />
+                <element signature="e#9279#9310#0#PHP" expanded="true" />
+                <element signature="e#10062#10080#1#PHP" expanded="true" />
+                <element signature="e#10146#10190#0#PHP" expanded="true" />
+                <element signature="e#10909#10927#1#PHP" expanded="true" />
+                <element signature="e#11131#11148#1#PHP" expanded="true" />
+                <element signature="e#11500#11545#0#PHP" expanded="true" />
+                <element signature="e#11987#12031#0#PHP" expanded="true" />
+                <element signature="e#12409#12427#1#PHP" expanded="true" />
+                <element signature="e#12493#12528#0#PHP" expanded="true" />
+                <element signature="e#13171#13189#1#PHP" expanded="true" />
+                <element signature="e#14039#14058#1#PHP" expanded="true" />
+                <element signature="e#14179#14198#1#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ensayo_config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo_config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="61" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ensayo_config.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.115385">
-              <caret line="103" column="113" selection-start-line="103" selection-start-column="113" selection-end-line="103" selection-end-column="119" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -112,9 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db_backup_dev.sql" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/web/base_assets/css/base.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/web/base_assets/css/error.css" />
@@ -162,6 +138,9 @@
         <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" />
         <option value="$PROJECT_DIR$/web/base_assets/js/ensayo_config.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
@@ -816,18 +795,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00072" summary="Added TODO.">
-      <created>1472062334379</created>
-      <option name="number" value="00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1472062334380</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Fixed tabs en ensayo y historial.">
-      <created>1472130212943</created>
-      <option name="number" value="00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1472130212958</updated>
-    </task>
     <task id="LOCAL-00074" summary="Fixed login screen style.">
       <created>1472131192386</created>
       <option name="number" value="00074" />
@@ -1110,7 +1077,19 @@
       <option name="project" value="LOCAL" />
       <updated>1475154241872</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Canales virtuales. Hecho config. Falta ensayo.">
+      <created>1475675479338</created>
+      <option name="number" value="00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1475675479378</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Added migration.">
+      <created>1475675505635</created>
+      <option name="number" value="00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1475675505635</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1128,14 +1107,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26226014" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32085562" sideWeight="0.42750534" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32119915" sideWeight="0.5724947" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26737967" sideWeight="0.4216418" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.4216418" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40042827" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
@@ -1161,8 +1140,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Scroll to top on nav-pill click." />
-    <MESSAGE value="Fixed readme instructions." />
     <MESSAGE value="Re ubique los CSS y ahora cargan con Assetic.&#10;Tmb cambie el bloque de extraCSS (ahora la herencia pisa la base)." />
     <MESSAGE value="Changed projet phpstorm settings.&#10;Removed spelling inspection." />
     <MESSAGE value="Moved js files on /web/media to /web/base_assets/js" />
@@ -1186,7 +1163,9 @@
     <MESSAGE value="Agregué js file de ensayo config." />
     <MESSAGE value="Agregué js file de avanzado." />
     <MESSAGE value="Agregué js file de admin." />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregué js file de admin." />
+    <MESSAGE value="Canales virtuales. Hecho config. Falta ensayo." />
+    <MESSAGE value="Added migration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added migration." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1202,27 +1181,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
@@ -1504,16 +1462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8652932">
-          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.692308">
@@ -1549,7 +1497,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1562,45 +1510,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo_config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.115385">
-          <caret line="103" column="113" selection-start-line="103" selection-start-column="113" selection-end-line="103" selection-end-column="119" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="78" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo_config.js">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="61" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.5126984">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="e#40#74#0#PHP" expanded="true" />
+            <marker date="1475500372434" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35079366">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4047619">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <marker date="1475678848189" expanded="true" signature="485:534" placeholder="SELECT * FRO..curva..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7307692">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1730158">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.703645">
-          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        <state vertical-scroll-proportion="3.4825397">
+          <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
-            <element signature="e#945#963#1#PHP" expanded="true" />
-            <element signature="e#1451#1469#1#PHP" expanded="true" />
-            <element signature="e#1948#1966#1#PHP" expanded="true" />
-            <element signature="e#2035#2053#1#PHP" expanded="true" />
-            <element signature="e#2119#2136#1#PHP" expanded="true" />
-            <element signature="e#2901#2919#1#PHP" expanded="true" />
-            <element signature="e#2996#3014#1#PHP" expanded="true" />
-            <element signature="e#3572#3589#1#PHP" expanded="true" />
-            <element signature="e#6203#6220#1#PHP" expanded="true" />
-            <element signature="e#7359#7390#0#PHP" expanded="true" />
-            <element signature="e#8072#8090#1#PHP" expanded="true" />
-            <element signature="e#8919#8937#1#PHP" expanded="true" />
-            <element signature="e#9141#9158#1#PHP" expanded="true" />
-            <element signature="e#10419#10437#1#PHP" expanded="true" />
-            <element signature="e#11181#11199#1#PHP" expanded="true" />
-            <element signature="e#12049#12068#1#PHP" expanded="true" />
-            <element signature="e#12189#12208#1#PHP" expanded="true" />
+            <element signature="e#1009#1027#1#PHP" expanded="true" />
+            <element signature="e#1515#1533#1#PHP" expanded="true" />
+            <element signature="e#2012#2030#1#PHP" expanded="true" />
+            <element signature="e#2099#2117#1#PHP" expanded="true" />
+            <element signature="e#2183#2200#1#PHP" expanded="true" />
+            <element signature="e#2965#2983#1#PHP" expanded="true" />
+            <element signature="e#3060#3078#1#PHP" expanded="true" />
+            <element signature="e#3636#3653#1#PHP" expanded="true" />
+            <element signature="e#3840#3864#1#PHP" expanded="true" />
+            <element signature="e#6735#6752#1#PHP" expanded="true" />
+            <element signature="e#8133#8151#1#PHP" expanded="true" />
+            <element signature="e#9279#9310#0#PHP" expanded="true" />
+            <element signature="e#10062#10080#1#PHP" expanded="true" />
+            <element signature="e#10146#10190#0#PHP" expanded="true" />
+            <element signature="e#10909#10927#1#PHP" expanded="true" />
+            <element signature="e#11131#11148#1#PHP" expanded="true" />
+            <element signature="e#11500#11545#0#PHP" expanded="true" />
+            <element signature="e#11987#12031#0#PHP" expanded="true" />
+            <element signature="e#12409#12427#1#PHP" expanded="true" />
+            <element signature="e#12493#12528#0#PHP" expanded="true" />
+            <element signature="e#13171#13189#1#PHP" expanded="true" />
+            <element signature="e#14039#14058#1#PHP" expanded="true" />
+            <element signature="e#14179#14198#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

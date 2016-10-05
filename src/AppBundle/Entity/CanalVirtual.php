@@ -53,5 +53,30 @@ class CanalVirtual
         return $this->id;
     }
 
+    public function setEnsayo($ensayo)
+    {
+        $this->ensayo = $ensayo;
+        return $this;
+    }
+
+    public function getEnsayo()
+    {
+        return $this->ensayo;
+    }
+
+
+    public function setSensores($sensores)
+    {
+        $this->sensores = $sensores;
+        return $this;
+    }
+
+
+    public function getSensores()
+    {
+        return $this->sensores;
+    }
+
+
 }
 

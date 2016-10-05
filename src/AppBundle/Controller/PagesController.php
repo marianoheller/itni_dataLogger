@@ -16,6 +16,8 @@ use Symfony\Component\Validator\Constraints\DateTime;
 use AppBundle\Entity\Ensayo;
 use AppBundle\Entity\Datalog;
 use AppBundle\Entity\Curva;
+use AppBundle\Entity\CanalVirtual;
+use AppBundle\Entity\Sensor;
 
 
 class PagesController extends Controller
@@ -100,6 +102,13 @@ class PagesController extends Controller
                     $em = $this->getDoctrine()->getManager();
                     /** @var Curva $curvaObj */
                     $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($arrayQueryResult[0]["curva_id"]);
+                    /** @var CanalVirtual[] $canalesVirtualesArray */
+                    $canalesVirtualesArray = $em->getRepository('AppBundle:CanalVirtual')->getCanalesVirtualesByEnsayoId($arrayQueryResult[0]["id"]);
+                    foreach ($canalesVirtualesArray as $key => $canalVirtual) {
+                        $canalesVirtualesArray[$key]->getSensores();
+                    }
+
+
 
                     $logger->info("Ensayo resumido", array (
                         "lastPing" => $arrayQueryResult[0]["lastPing"],
@@ -109,7 +118,8 @@ class PagesController extends Controller
                     return $this->render("pages/ensayo/ensayo.html.twig", array (
                         "lastPing" => $arrayQueryResult[0]["lastPing"],
                         "t_inicio" => $arrayQueryResult[0]["t_inicio"],
-                        "curvaObj" => $curvaObj
+                        "curvaObj" => $curvaObj,
+                        "canalesVirtualesArray" => $canalesVirtualesArray
                     ));
                 }
             }
@@ -155,21 +165,43 @@ class PagesController extends Controller
 
             //Canales Virtuales
             $arrayPostData = $request->request->all();
-            $pattern = "/^field[0-9]+$/";
-            $arrayFormulas = array();
+            $patternField = "/^field[0-9]+$/";
+            $patternDelimiter = "/[\\s\\\\\\/|:?;.,_*+-]+/";
+            $arrayCanalesVirtualesObj = array();
             foreach($arrayPostData as $key => $value) {
-                if (preg_match($pattern,$key)){
-                    $arrayFormulas[$key] = $value;
+                if (preg_match($patternField,$key)){
+                    $arraySensoresEnFormula = preg_split($patternDelimiter,$value);
+                    //Validacion
+                    foreach ($arraySensoresEnFormula as $sensorIDString) {
+                        $sensorID = filter_var($sensorIDString, FILTER_VALIDATE_INT);
+                        if ( !is_int($sensorID) ) {
+                            return $this->createNotFoundException("Canal virtual invalido");
+                        }
+                    }
+                    //Persist canal virtual & sensores asignados
+                    $canalVirtualObj = new CanalVirtual();
+                    $canalVirtualObj->setEnsayo($ensayoObj);
+                    $arraySensoresObj = array();
+                    foreach ($arraySensoresEnFormula as $sensorIDString) {
+                        $sensorID = filter_var($sensorIDString, FILTER_VALIDATE_INT);
+                        $sensorObj = $em->getRepository('AppBundle:Sensor')->findOneBy(array ( "id" => $sensorID ));
+                        array_push($arraySensoresObj,$sensorObj);
+                    }
+                    $canalVirtualObj->setSensores($arraySensoresObj);
+                    array_push($arrayCanalesVirtualesObj,$canalVirtualObj);
                 }
             }
 
             try {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($ensayoObj);
+                foreach ( $arrayCanalesVirtualesObj as $canalVirtual) {
+                    $em->persist($canalVirtual);
+                }
                 $em->flush();
 
             } catch(\Exception $e) {
-                $logger->critical("No se pudo hacer persist del ensayo", array (
+                $logger->critical("No se persistir en la base de datos.", array (
                     "Exception" => $e->getMessage()
                 ));
                 //return $this->redirectToRoute("homepage");
@@ -184,7 +216,8 @@ class PagesController extends Controller
             return $this->render("pages/ensayo/ensayo.html.twig", array (
                 "lastPing" => $dateTimeInicio->format("Y-m-d H:i:s"),
                 "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s"),
-                "curvaObj" => $curvaObj
+                "curvaObj" => $curvaObj,
+                "canalesVirtualesArray" => $arrayCanalesVirtualesObj
             ));
         }
         else {
