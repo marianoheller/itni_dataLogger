@@ -31,6 +31,19 @@ class CanalVirtual
 
 
     /**
+     * @ORM\ManyToMany(targetEntity="Sensor", inversedBy="canalesVirtuales")
+     * @ORM\JoinTable(name="canalesVirtuales_sensores")
+     */
+    private $sensores;
+
+    public function __construct() {
+        $this->sensores = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+
+
+    /**
      * Get id
      *
      * @return integer

@@ -50,7 +50,7 @@
     <h1>Generar ensayo</h1>
     <p class="lead">Selecciones la configuracion deseada e inicie el ensayo.</p>
 
-    <form class="form-horizontal" method="post" action="/ensayo/1">
+    <form id="form" class="form-horizontal" method="post" action="/ensayo/1" onsubmit="return validarEnsayoForm()">
 
         <div class="form-group">
             <label for="inputTitulo">Titulo ensayo</label>
@@ -81,6 +81,11 @@
         </div>
 
         <div class="form-group">
+            <label for="inputDescripcion">Descripcion</label>
+            <textarea name="Descripcion" class="form-control" id="inputDescripcion" rows="3" placeholder="Descripcion"></textarea>
+        </div>
+
+        <div class="form-group">
             <label for="curvaSelect">Curva patrón</label>
             <select  name="curvaPatron" class="form-control" id="curvaSelect">
                 {# @var curva \AppBundle\Entity\Curva #}
@@ -90,12 +95,22 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="inputDescripcion">Descripcion</label>
-            <textarea name="Descripcion" class="form-control" id="inputDescripcion" rows="3" placeholder="Descripcion"></textarea>
+        <input type="hidden" name="countCanalesVirtuales" value="1" />
+
+        <div class="form-group" id="field">
+            <label for="canalesVirtualesGroup">Canales virtuales</label>
+            <div  id="canalesVirtualesGroup" class="container-fluid p-l-0 p-r-0">
+                <div class="input-group p-b-1">
+                    <input autocomplete="off" class="input form-control canal-virtual-formula" id="field1" name="field1" type="text" placeholder="Ingrese sensores a promediar" data-items="8"/>
+                    <span class="input-group-btn">
+                        <button id="b1" class="btn btn-secondary add-more" type="button">+</button>
+                    </span>
+                </div>
+            </div>
+
         </div>
 
-        <button id="buttonComenzarEnsayo" type="submit" class="btn btn-primary">Comenzar ensayo</button>
+        <button id="buttonComenzarEnsayo" type="submit"  class="btn btn-primary">Comenzar ensayo</button>
     </form>
 {% endblock %}
 

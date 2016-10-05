@@ -128,8 +128,14 @@ class PagesController extends Controller
             }
             //Generate Ensayo for database % flush
             $ensayoObj = new Ensayo();
-            $ensayoObj->setTitulo($request->request->get("Titulo"));
-            $ensayoObj->setResponsable($request->request->get("Responsable"));
+            $titulo = $request->request->get("Titulo");
+            $responsable = $request->request->get("Responsable");
+            if (!isset($titulo) || !isset($responsable)) {
+                return $this->createNotFoundException("Acceda correctamente al recurso.");
+            }
+
+            $ensayoObj->setTitulo($titulo);
+            $ensayoObj->setResponsable($responsable);
             $ensayoObj->setCliente($request->request->get("Cliente"));
             $ensayoObj->setOT($request->request->get("OT"));
             $ensayoObj->setSOT($request->request->get("SOT"));
@@ -142,10 +148,20 @@ class PagesController extends Controller
             $ensayoObj->setTFin();
             $ensayoObj->setLastPing($dateTimeInicio);
 
-
+            //Curva patron
             $em = $this->getDoctrine()->getManager();
             $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($request->request->get("curvaPatron"));
             $ensayoObj->setCurvaId($curvaObj);
+
+            //Canales Virtuales
+            $arrayPostData = $request->request->all();
+            $pattern = "/^field[0-9]+$/";
+            $arrayFormulas = array();
+            foreach($arrayPostData as $key => $value) {
+                if (preg_match($pattern,$key)){
+                    $arrayFormulas[$key] = $value;
+                }
+            }
 
             try {
                 $em = $this->getDoctrine()->getManager();
@@ -159,6 +175,7 @@ class PagesController extends Controller
                 //return $this->redirectToRoute("homepage");
                 return $this->createNotFoundException("Error al persistir datos.");
             }
+
 
             $logger->info("Generando ensayo nuevo", array(
                 "t_inicio" => $dateTimeInicio->format("Y-m-d H:i:s")
@@ -339,7 +356,7 @@ class PagesController extends Controller
 
 //TODO 10 canales virtuales (q tmb se exporten)
 /**
- * 1)Negreada
+ * 1)
  * Crear tabla de canales virtuales
  * Cada canal virtual tiene "formula(csv)" de canal virtual
  * Cada canal virtual tiene fk a ensayo (many to one)              http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
