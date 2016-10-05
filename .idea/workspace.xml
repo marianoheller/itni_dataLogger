@@ -7,12 +7,13 @@
     <bookmark url="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig" line="21" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="Added migration.">
+    <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.4825397">
-              <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
+            <state vertical-scroll-proportion="-12.461538">
+              <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
               <folding>
                 <element signature="e#40#64#0#PHP" expanded="true" />
                 <element signature="e#1009#1027#1#PHP" expanded="true" />
@@ -54,22 +55,42 @@
                 <element signature="e#2965#2983#1#PHP" expanded="true" />
                 <element signature="e#3060#3078#1#PHP" expanded="true" />
                 <element signature="e#3636#3653#1#PHP" expanded="true" />
-                <element signature="e#3840#3864#1#PHP" expanded="true" />
-                <element signature="e#6735#6752#1#PHP" expanded="true" />
-                <element signature="e#8133#8151#1#PHP" expanded="true" />
-                <element signature="e#9279#9310#0#PHP" expanded="true" />
-                <element signature="e#10062#10080#1#PHP" expanded="true" />
-                <element signature="e#10146#10190#0#PHP" expanded="true" />
-                <element signature="e#10909#10927#1#PHP" expanded="true" />
-                <element signature="e#11131#11148#1#PHP" expanded="true" />
-                <element signature="e#11500#11545#0#PHP" expanded="true" />
-                <element signature="e#11987#12031#0#PHP" expanded="true" />
-                <element signature="e#12409#12427#1#PHP" expanded="true" />
-                <element signature="e#12493#12528#0#PHP" expanded="true" />
-                <element signature="e#13171#13189#1#PHP" expanded="true" />
-                <element signature="e#14039#14058#1#PHP" expanded="true" />
-                <element signature="e#14179#14198#1#PHP" expanded="true" />
+                <element signature="e#3992#4016#1#PHP" expanded="true" />
+                <element signature="e#6947#6964#1#PHP" expanded="true" />
+                <element signature="e#8345#8363#1#PHP" expanded="true" />
+                <element signature="e#9491#9522#0#PHP" expanded="true" />
+                <element signature="e#10274#10292#1#PHP" expanded="true" />
+                <element signature="e#10358#10402#0#PHP" expanded="true" />
+                <element signature="e#11121#11139#1#PHP" expanded="true" />
+                <element signature="e#11343#11360#1#PHP" expanded="true" />
+                <element signature="e#11712#11757#0#PHP" expanded="true" />
+                <element signature="e#12199#12243#0#PHP" expanded="true" />
+                <element signature="e#12621#12639#1#PHP" expanded="true" />
+                <element signature="e#12705#12740#0#PHP" expanded="true" />
+                <element signature="e#13383#13401#1#PHP" expanded="true" />
+                <element signature="e#14251#14270#1#PHP" expanded="true" />
+                <element signature="e#14391#14410#1#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ensayo.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.56666666">
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sensor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Sensor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="37.26923">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,7 +134,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Curva.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160920153440.php" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
@@ -123,7 +143,6 @@
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
         <option value="$PROJECT_DIR$/web/base_assets/js/historial.js" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
         <option value="$PROJECT_DIR$/web/base_assets/css/ensayo.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
         <option value="$PROJECT_DIR$/web/base_assets/js/sensores.js" />
@@ -141,7 +160,9 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
       </list>
     </option>
   </component>
@@ -795,12 +816,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00074" summary="Fixed login screen style.">
-      <created>1472131192386</created>
-      <option name="number" value="00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1472131192386</updated>
-    </task>
     <task id="LOCAL-00075" summary="Added TODO.">
       <created>1472132926978</created>
       <option name="number" value="00075" />
@@ -1089,7 +1104,13 @@
       <option name="project" value="LOCAL" />
       <updated>1475675505635</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Canales virtuales se pasan al template.">
+      <created>1475688779402</created>
+      <option name="number" value="00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1475688779402</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1108,11 +1129,11 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26226014" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32085562" sideWeight="0.42750534" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32119915" sideWeight="0.5724947" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.5778252" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.4216418" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26766595" sideWeight="0.42217484" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1140,7 +1161,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Re ubique los CSS y ahora cargan con Assetic.&#10;Tmb cambie el bloque de extraCSS (ahora la herencia pisa la base)." />
     <MESSAGE value="Changed projet phpstorm settings.&#10;Removed spelling inspection." />
     <MESSAGE value="Moved js files on /web/media to /web/base_assets/js" />
     <MESSAGE value="Implemented API section with JWT token and stateless login." />
@@ -1165,7 +1185,8 @@
     <MESSAGE value="Agregué js file de admin." />
     <MESSAGE value="Canales virtuales. Hecho config. Falta ensayo." />
     <MESSAGE value="Added migration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added migration." />
+    <MESSAGE value="Canales virtuales se pasan al template." />
+    <option name="LAST_COMMIT_MESSAGE" value="Canales virtuales se pasan al template." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1447,13 +1468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66877973">
-          <caret line="142" column="42" selection-start-line="142" selection-start-column="42" selection-end-line="142" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Curva.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.0">
@@ -1476,14 +1490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Sensor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2931855">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33222592">
@@ -1499,14 +1505,6 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6307449">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1537,16 +1535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4047619">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <marker date="1475678848189" expanded="true" signature="485:534" placeholder="SELECT * FRO..curva..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo_config.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7307692">
@@ -1555,18 +1543,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Ensayo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15714286">
+          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4047619">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <marker date="1475678848189" expanded="true" signature="485:534" placeholder="SELECT * FRO..curva..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/CanalVirtual.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1730158">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.18888889">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.4825397">
-          <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
+        <state vertical-scroll-proportion="-12.461538">
+          <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
             <element signature="e#1009#1027#1#PHP" expanded="true" />
@@ -1577,22 +1583,38 @@
             <element signature="e#2965#2983#1#PHP" expanded="true" />
             <element signature="e#3060#3078#1#PHP" expanded="true" />
             <element signature="e#3636#3653#1#PHP" expanded="true" />
-            <element signature="e#3840#3864#1#PHP" expanded="true" />
-            <element signature="e#6735#6752#1#PHP" expanded="true" />
-            <element signature="e#8133#8151#1#PHP" expanded="true" />
-            <element signature="e#9279#9310#0#PHP" expanded="true" />
-            <element signature="e#10062#10080#1#PHP" expanded="true" />
-            <element signature="e#10146#10190#0#PHP" expanded="true" />
-            <element signature="e#10909#10927#1#PHP" expanded="true" />
-            <element signature="e#11131#11148#1#PHP" expanded="true" />
-            <element signature="e#11500#11545#0#PHP" expanded="true" />
-            <element signature="e#11987#12031#0#PHP" expanded="true" />
-            <element signature="e#12409#12427#1#PHP" expanded="true" />
-            <element signature="e#12493#12528#0#PHP" expanded="true" />
-            <element signature="e#13171#13189#1#PHP" expanded="true" />
-            <element signature="e#14039#14058#1#PHP" expanded="true" />
-            <element signature="e#14179#14198#1#PHP" expanded="true" />
+            <element signature="e#3992#4016#1#PHP" expanded="true" />
+            <element signature="e#6947#6964#1#PHP" expanded="true" />
+            <element signature="e#8345#8363#1#PHP" expanded="true" />
+            <element signature="e#9491#9522#0#PHP" expanded="true" />
+            <element signature="e#10274#10292#1#PHP" expanded="true" />
+            <element signature="e#10358#10402#0#PHP" expanded="true" />
+            <element signature="e#11121#11139#1#PHP" expanded="true" />
+            <element signature="e#11343#11360#1#PHP" expanded="true" />
+            <element signature="e#11712#11757#0#PHP" expanded="true" />
+            <element signature="e#12199#12243#0#PHP" expanded="true" />
+            <element signature="e#12621#12639#1#PHP" expanded="true" />
+            <element signature="e#12705#12740#0#PHP" expanded="true" />
+            <element signature="e#13383#13401#1#PHP" expanded="true" />
+            <element signature="e#14251#14270#1#PHP" expanded="true" />
+            <element signature="e#14391#14410#1#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Sensor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="37.26923">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56666666">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

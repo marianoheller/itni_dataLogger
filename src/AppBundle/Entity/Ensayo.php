@@ -131,13 +131,7 @@ class Ensayo
         return $this->curva_id;
     }
 
-    /**
-     * Set curva_id
-     *
-     * @param integer $curva_id
-     *
-     * @return Ensayo
-     */
+
     public function setCurvaId($curva_id)
     {
         $this->curva_id = $curva_id;
