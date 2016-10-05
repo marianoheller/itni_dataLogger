@@ -16,20 +16,6 @@ use Herrera\Json\Exception\Exception;
 class CanalVirtualRepository extends EntityRepository
 {
 
-    function getCanalesVirtualesByEnsayoId($id) {
-        $sqlCanalVirtual = "SELECT * FROM canal_virtual WHERE ensayo_id='$id'";
-
-        try {
-            $em = $this->getEntityManager();
-            $stmt = $em->getConnection()->prepare($sqlCanalVirtual);
-            $stmt->execute();
-            $arrayQueryResult = $stmt->fetchAll();
-        }catch (\Exception $e) {
-            throw new NotFoundHttpException("Error en recolección de canales virtuales");
-        }
-
-        return $arrayQueryResult;
-    }
 
 
 }

@@ -103,7 +103,6 @@ class PagesController extends Controller
                     /** @var Curva $curvaObj */
                     $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($arrayQueryResult[0]["curva_id"]);
                     /** @var CanalVirtual[] $canalesVirtualesArray */
-                    //$canalesVirtualesArray = $em->getRepository('AppBundle:CanalVirtual')->getCanalesVirtualesByEnsayoId($arrayQueryResult[0]["id"]);
                     $canalesVirtualesArray = $em->getRepository('AppBundle:CanalVirtual')->findBy( array( "ensayo" => $arrayQueryResult[0]["id"] ) );
                     for ($i=0 ; $i<sizeof($canalesVirtualesArray) ; $i++) {
                         $canalesVirtualesArray[$i]->getSensores();
