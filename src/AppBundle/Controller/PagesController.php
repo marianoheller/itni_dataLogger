@@ -175,11 +175,13 @@ class PagesController extends Controller
                     //Acá si el input esta vacio te devuelve un array con un elemento string vacio =>    array(1) { [0]=> string(0) "" }
                     $arraySensoresEnFormula = preg_split($patternDelimiter,$value); //value = texto del input
                     //Validacion
+                    //1) Remuevo string vacias
                     foreach ($arraySensoresEnFormula as $keyAux => $sensorIDString) {
                         if ( empty($sensorIDString) ) {
                             unset($arraySensoresEnFormula[$keyAux]);
                         }
                     }
+                    //2)Valido sensores. Si no es un INT explota
                     foreach ($arraySensoresEnFormula as $sensorIDString) {
                         $sensorID = filter_var($sensorIDString, FILTER_VALIDATE_INT);
                         if ( !is_int($sensorID) ) {
@@ -187,7 +189,14 @@ class PagesController extends Controller
                                 "ArraySensores" => implode(";",$arraySensoresEnFormula),
                                 "SensorCausanteError" => $sensorIDString
                             ));
-                            return $this->createNotFoundException("Canal virtual invalido");
+                            return $this->createNotFoundException("Canal virtual invalido. Sensor invalido.");
+                        }
+                        if ( $sensorID > 32 ||$sensorID < 1) {
+                            $logger->critical("Sensor no valido.", array(
+                                "ArraySensores" => implode(";",$arraySensoresEnFormula),
+                                "SensorCausanteError" => $sensorIDString
+                            ));
+                            return $this->createNotFoundException("Canal virtual invalido. Sensor fuera de rango.");
                         }
                     }
                     //Persist canal virtual & sensores asignados

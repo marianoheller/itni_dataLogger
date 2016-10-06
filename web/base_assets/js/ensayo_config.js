@@ -86,6 +86,10 @@ function validarCanalesVirtuales() {
                 //alert("Canales no validos: "+this.id.charAt(this.id.length-1) );
                 toReturn = false;
             }
+            else if ( $.isNumeric(sensorNum) && (sensorNum > 32 || sensorNum<1) ) {
+                $(this).parent().addClass("has-danger");
+                toReturn = false;
+            }
         }
     });
     return toReturn;
