@@ -172,25 +172,38 @@ class PagesController extends Controller
             $arrayCanalesVirtualesObj = array();
             foreach($arrayPostData as $key => $value) {
                 if (preg_match($patternField,$key)){
-                    $arraySensoresEnFormula = preg_split($patternDelimiter,$value);
+                    //Acá si el input esta vacio te devuelve un array con un elemento string vacio =>    array(1) { [0]=> string(0) "" }
+                    $arraySensoresEnFormula = preg_split($patternDelimiter,$value); //value = texto del input
                     //Validacion
+                    foreach ($arraySensoresEnFormula as $keyAux => $sensorIDString) {
+                        if ( empty($sensorIDString) ) {
+                            unset($arraySensoresEnFormula[$keyAux]);
+                        }
+                    }
                     foreach ($arraySensoresEnFormula as $sensorIDString) {
                         $sensorID = filter_var($sensorIDString, FILTER_VALIDATE_INT);
                         if ( !is_int($sensorID) ) {
+                            $logger->critical("Sensor no valido.", array(
+                                "ArraySensores" => implode(";",$arraySensoresEnFormula),
+                                "SensorCausanteError" => $sensorIDString
+                            ));
                             return $this->createNotFoundException("Canal virtual invalido");
                         }
                     }
                     //Persist canal virtual & sensores asignados
-                    $canalVirtualObj = new CanalVirtual();
-                    $canalVirtualObj->setEnsayo($ensayoObj);
-                    $arraySensoresObj = array();
-                    foreach ($arraySensoresEnFormula as $sensorIDString) {
-                        $sensorID = filter_var($sensorIDString, FILTER_VALIDATE_INT);
-                        $sensorObj = $em->getRepository('AppBundle:Sensor')->findOneBy(array ( "id" => $sensorID ));
-                        array_push($arraySensoresObj,$sensorObj);
+                    //Si no hay sensores en canal virtual, se ignora dicho canal
+                    if ( !empty($arraySensoresEnFormula)) {
+                        $canalVirtualObj = new CanalVirtual();
+                        $canalVirtualObj->setEnsayo($ensayoObj);
+                        $arraySensoresObj = array();
+                        foreach ($arraySensoresEnFormula as $sensorIDString) {
+                            $sensorID = filter_var($sensorIDString, FILTER_VALIDATE_INT);
+                            $sensorObj = $em->getRepository('AppBundle:Sensor')->findOneBy(array ( "id" => $sensorID ));
+                            array_push($arraySensoresObj,$sensorObj);
+                        }
+                        $canalVirtualObj->setSensores($arraySensoresObj);
+                        array_push($arrayCanalesVirtualesObj,$canalVirtualObj);
                     }
-                    $canalVirtualObj->setSensores($arraySensoresObj);
-                    array_push($arrayCanalesVirtualesObj,$canalVirtualObj);
                 }
             }
 
