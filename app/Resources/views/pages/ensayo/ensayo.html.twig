@@ -57,7 +57,7 @@
 
         </div> <!-- status content -->
 
-    {% for i in 1..32 %}
+        {% for i in 1..32 %}
         <div class="tab-pane" id="tab_{{i}}">
 
             <div class="container-fluid m-l-0 p-l-0">
@@ -80,7 +80,29 @@
             </div>
 
         </div>
-    {% endfor %}
+        {% endfor %}
+
+        {# @var canalVirtual \AppBundle\Entity\CanalVirtual #}
+        {% for canalVirtual in canalesVirtualesArray %}
+        <div class="tab-pane" id="tab_v_{{loop.index}}">
+
+            <div class="container-fluid m-l-0 p-l-0">
+                <h4 class="pull-md-left d-inline">Canal Virtual {{ loop.index }}</h4>
+                {#<h5 id="wait_{{ i }}" class="m-x-auto" style="width: 200px;" >Esperando datos...</h5>#}
+            </div>
+            {# @var curvaObj \AppBundle\Entity\Curva #}
+            <small class="text-muted pull-md-left d-inline">Patrón: {{ curvaObj.nombre }}</small>
+
+
+            <div class="container col-md-10">
+                <div id="chart_div_v_{{ loop.index }}" class="chart"></div>
+            </div>
+            <div class="container pull-md-right col-md-2">
+                <div id="gauge_v_{{ loop.index }}" class="gauge"></div>
+            </div>
+
+        </div>
+        {% endfor %}
 
         <div class="tab-pane" id="tab_config">
             <div id="alert-finalize-fail" class="alert alert-warning col-md-10 offset-md-1 hidden" role="alert">
@@ -121,6 +143,15 @@
         window.myConfig.patron_id = "{{ curvaObj.id }}";
         window.myConfig.patron_nombre = "{{ curvaObj.nombre }}";
         window.myConfig.patron_formula = "{{ curvaObj.formula }}";
+
+
+        window.myConfig.canalesVirtuales = {};
+        {# @var canalVirtual \AppBundle\Entity\CanalVirtual #}
+        {% for canalVirtual in canalesVirtualesArray %}
+        window.myConfig.canalesVirtuales["{{ loop.index }}"] = {{ canalVirtual|json_encode|raw }};
+        {#canalVirtual.sensores#}
+        {% endfor %}
+        window.myConfig.canalesVirtuales["length"] = {{ canalesVirtualesArray|length }};
     </script>
 
 

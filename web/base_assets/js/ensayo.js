@@ -8,6 +8,9 @@ var t_inicio_unix = moment(window.myConfig.t_inicio).unix();
 
 var timeFormat = 'HH:mm:ss';
 
+var gaugeMaxTemp = 1200;
+var gaugeMinTemp = 0;
+
 var options = {
     //Dimensions
     width: 1200,
@@ -109,18 +112,23 @@ function cancelarEnsayo() {
 
 function drawChart() {
     for ( var i=1 ; i<=32 ; i++) {
-        /*window["dataTable_"+i] = new google.visualization.DataTable();
-        window["dataTable_"+i].addColumn('datetime', 'Fecha');
-        window["dataTable_"+i].addColumn('number', 'Medicion');
-        window["dataTable_"+i].addColumn('number', 'Patrón');*/
 
+        //Canales originales
         window["dataTable_"+i] = [];
-
         window["chart_"+i] = new Dygraph(
             document.getElementById("chart_div_"+i),
             window["dataTable_"+i],
             options
         );
+
+        //Canales virtuales
+        window["dataTable_v_"+i] = [];
+        window["chart_v_"+i] = new Dygraph(
+            document.getElementById("chart_div_v_"+i),
+            window["dataTable_"+i],
+            options
+        );
+
     }
     getGraphData();
 }
@@ -193,10 +201,6 @@ function getGraphData() {
                     momentAux.subtract(momentAuxInicio.hours(),"hours");
                     var myDate = momentAux.toDate();
 
-                    /*var obj = [
-                        [ myDate,  rxObj["data_"+j][i], rxObj["patron_"+j][i]]
-                    ];
-                    window["dataTable_"+j].addRows(obj);*/
                     var arrayData = [ myDate,  rxObj["data_"+j][i], rxObj["patron_"+j][i]];
                     window["dataTable_"+j].push(arrayData);
                 }
@@ -212,9 +216,6 @@ function getGraphData() {
 
             var lenAux = 0;
             for ( var j=1 ; j<=32 ; j++) {
-                /*if (window["dataTable_"+j].getNumberOfRows() > lenAux) {
-                    lenAux = window["dataTable_"+j].getNumberOfRows();
-                }*/
                 if (window["dataTable_"+j].length > lenAux) {
                     lenAux = window["dataTable_"+j].length;
                 }
@@ -249,14 +250,11 @@ function updateStatusInfo(  )  {
     var trHTML = '';
 
     for ( var j=1 ; j<=32 ; j++) {
-        /*var lenAux = window["dataTable_"+j].getNumberOfRows();
-        var lastLabel = window["dataTable_"+j].getValue(lenAux-1, 0);
-        var medicion = window["dataTable_"+j].getValue(lenAux-1, 1);*/
         var lenAux = window["dataTable_"+j].length;
         var lastLabel = window["dataTable_"+j][lenAux-1][0];
         var medicion = window["dataTable_"+j][lenAux-1][1];
         //get fecha
-        trHTML += "<tr "
+        trHTML += "<tr ";
         if (medicion < 30) {
             trHTML += "class='table-info'";
         }
@@ -279,8 +277,9 @@ function updateStatusInfo(  )  {
         trHTML +="</td>";
         trHTML +="</tr>";
     }
-    $('#dataStatusSensores').empty();
-    $('#dataStatusSensores').append(trHTML);
+    var dataStatusSensores = $('#dataStatusSensores');
+    dataStatusSensores.empty();
+    dataStatusSensores.append(trHTML);
 }
 
 
@@ -318,9 +317,21 @@ $(document).ready(function(){
     for ( var i=1 ; i<=32 ; i++) {
         window["gauge_"+i] = new JustGage({
             id: "gauge_"+i,
-            value: 67,
-            min: 0,
-            max: 1200,
+            value: 0,
+            min: gaugeMinTemp,
+            max: gaugeMaxTemp,
+            decimals: 1,
+            title: "Temp. actual"
+        });
+    }
+
+    var auxSize = window.myConfig.canalesVirtuales["length"];
+    for ( var i=1 ; i<=auxSize ; i++) {
+        window["gauge_v_"+i] = new JustGage({
+            id: "gauge_v_"+i,
+            value: 0,
+            min: gaugeMinTemp,
+            max: gaugeMaxTemp,
             decimals: 1,
             title: "Temp. actual"
         });
