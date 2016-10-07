@@ -33,21 +33,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'moment_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_moment_js',);
             }
 
-            // _assetic_jquery_js
-            if ($pathinfo === '/assetic/jquery_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
-            }
-
-            // _assetic_tether_js
-            if ($pathinfo === '/assetic/tether_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_tether_js',);
-            }
-
-            // _assetic_bootstrap_js
-            if ($pathinfo === '/assetic/bootstrap_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
-            }
-
             // _assetic_dygraphs_js
             if ($pathinfo === '/assetic/dygraphs_js.js') {
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'dygraphs_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_dygraphs_js',);
@@ -58,14 +43,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'raphael_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_raphael_js',);
             }
 
-            // _assetic_justgage_js
-            if ($pathinfo === '/assetic/justgage_js.js') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'justgage_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_justgage_js',);
+            if (0 === strpos($pathinfo, '/assetic/j')) {
+                // _assetic_justgage_js
+                if ($pathinfo === '/assetic/justgage_js.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'justgage_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_justgage_js',);
+                }
+
+                // _assetic_jquery_js
+                if ($pathinfo === '/assetic/jquery_js.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery_js',);
+                }
+
             }
 
-            // _assetic_bootstrap_css
-            if ($pathinfo === '/assetic/bootstrap_css.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
+            // _assetic_tether_js
+            if ($pathinfo === '/assetic/tether_js.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'tether_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_tether_js',);
+            }
+
+            if (0 === strpos($pathinfo, '/assetic/bootstrap_')) {
+                // _assetic_bootstrap_js
+                if ($pathinfo === '/assetic/bootstrap_js.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
+                }
+
+                // _assetic_bootstrap_css
+                if ($pathinfo === '/assetic/bootstrap_css.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
+                }
+
             }
 
             // _assetic_fontawesome_css

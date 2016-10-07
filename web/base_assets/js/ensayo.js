@@ -120,16 +120,24 @@ function drawChart() {
             window["dataTable_"+i],
             options
         );
+    }
 
+
+    var auxSize = window.myConfig.canalesVirtuales["length"];
+    for ( var i=1 ; i<=auxSize ; i++) {
         //Canales virtuales
         window["dataTable_v_"+i] = [];
         window["chart_v_"+i] = new Dygraph(
             document.getElementById("chart_div_v_"+i),
-            window["dataTable_"+i],
+            window["dataTable_v_"+i],
             options
         );
-
     }
+
+    /*console.log("Log canales virtuales:");
+    console.log(window.myConfig.canalesVirtuales);*/
+
+
     getGraphData();
 }
 
@@ -339,6 +347,8 @@ $(document).ready(function(){
 
 
     drawChart();
+
+
 });
 
 

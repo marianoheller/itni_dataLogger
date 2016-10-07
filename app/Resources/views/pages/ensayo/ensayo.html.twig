@@ -148,10 +148,18 @@
         window.myConfig.canalesVirtuales = {};
         {# @var canalVirtual \AppBundle\Entity\CanalVirtual #}
         {% for canalVirtual in canalesVirtualesArray %}
-        window.myConfig.canalesVirtuales["{{ loop.index }}"] = {{ canalVirtual|json_encode|raw }};
-        {#canalVirtual.sensores#}
+
+            window.myConfig.canalesVirtuales["{{ loop.index }}"] = {};
+            window.myConfig.canalesVirtuales["{{ loop.index }}"]["sensores"] = []; //Array de sensores
+            {# @var sensores[] \AppBundle\Entity\Sensor  #}
+            {% set sensoresArray = canalVirtual.sensores %}
+            {% for sensor in sensoresArray %}
+                window.myConfig.canalesVirtuales["{{ loop.parent.loop.index }}"]["sensores"].push({{ sensor.id }});
+            {% endfor%}
         {% endfor %}
+        //console.log(window.myConfig.canalesVirtuales);
         window.myConfig.canalesVirtuales["length"] = {{ canalesVirtualesArray|length }};
+
     </script>
 
 
