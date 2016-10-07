@@ -426,6 +426,7 @@ class PagesController extends Controller
  *
  */
 
+//TODO Al recibir hora erronea en json data, que tire un error (ahora esta crasheando con 500)
 
 //TODO Al agregar usuarios acepta "admin" aunque ya exista.
 
