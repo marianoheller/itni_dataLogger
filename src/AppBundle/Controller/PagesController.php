@@ -411,26 +411,17 @@ class PagesController extends Controller
 }
 
 
-//TODO 10 canales virtuales (q tmb se exporten)
-/**
- * 1)
- * Crear tabla de canales virtuales
- * Cada canal virtual tiene "formula(csv)" de canal virtual
- * Cada canal virtual tiene fk a ensayo (many to one)              http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html
- *
- *
- * 2)
- * Crear tabla de canales virtuales con fk a ensayo (many to one)
- * Crear tabla sensores (id, nombre, descripcion)
- * Many to many canales virtuales & sensores
- *
- */
+//TODO Arreglar alineacion (se cago con el texto de canales virtuales)
+
+//TODO Optimizar el tema del timestamp en RECEPCION (q solo haga falta una...)
+
+//TODO EXportar canales virtuales
+
+//TODO exportar solo canales seleccionados
 
 //TODO Al recibir hora erronea en json data, que tire un error (ahora esta crasheando con 500)
 
 //TODO Al agregar usuarios acepta "admin" aunque ya exista.
-
-//TODO exportar solo canales seleccionados
 
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 

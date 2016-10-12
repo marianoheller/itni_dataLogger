@@ -57,17 +57,25 @@ class SensoresController extends Controller
             $content = $request->getContent();
             $data = json_decode($content);
 
-            foreach ($data as $name => $value) {
-                if ($name == "graphData") {
-                    foreach ($value as $entry) {
-                        $lastTimeStamp = $entry->lastTimeStamp;
-                        $firstTimeStamp = $entry->firstTimeStamp;
-                        $curvaID = $entry->curvaID;
-                    }
+            //Get params
+            $canalesVirtuales = [];
+            $params=[];
+            $params["lastTimeStamp"] = $data->graphData->lastTimeStamp;
+            $params["firstTimeStamp"] = $data->graphData->firstTimeStamp;
+            $params["curvaID"] = $data->graphData->curvaID;
+            $params["cantCanalesVirtuales"] = $data->graphData->cantCanalesVirtuales;
+            foreach ($data->graphData->canalesVirtuales as $key => $canalVirtual) {
+                $canalesVirtuales[$canalVirtual->id] = [];
+                foreach ($canalVirtual->sensores as $sensor) {
+                    array_push($canalesVirtuales[$canalVirtual->id], $sensor);
                 }
             }
-            if ( !isset($curvaID) || !isset($lastTimeStamp) ||!isset($firstTimeStamp)) {
-                throw new NotFoundHttpException("Error al parsear json de de ajax request");
+
+            //Check if everything is set
+            foreach ($params as $param) {
+                if ( !isset($param) ) {
+                    throw new NotFoundHttpException("Error al parsear json de de ajax request");
+                }
             }
 
             $em = $this->getDoctrine()->getManager();
@@ -75,15 +83,25 @@ class SensoresController extends Controller
             //UPDATE lastPing
             $count = $em->getRepository('AppBundle:Ensayo')->updateLastPing();
 
-            // GET datalog data to send (as packets)
-            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->getPacketsData($lastTimeStamp);
+            // Get datalog data to send (as packets)
+            //Dividido en dos partes asi tengo $arrayDataFormatted y es mas facil mas adelante
+            $arrayDataFormatted = $em->getRepository('AppBundle:Datalog')->getDataFormated($params["lastTimeStamp"]);
+            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->generatePacketsFromDataFormatted($arrayDataFormatted);
 
-            // Append Curva packets
-            $arrayReturn = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($curvaID,$arrayPacketsDatalog, $firstTimeStamp);
+            /*// Append campo patron en cada packet
+            $arrayDataOriginal = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayPacketsDatalog, $params["firstTimeStamp"]);*/
 
+            //Append packets virtuales
+            $arrayPacketsVirtuales = $em->getRepository('AppBundle:Datalog')->getCanalesVirtualesPackets($params["lastTimeStamp"],$canalesVirtuales);
+
+            //Junto Canales virtuales con los originales
+            $arrayReturn = array_merge($arrayPacketsDatalog,$arrayPacketsVirtuales);
+
+            // Append campo patron en cada packet
+            $arrayReturn = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayReturn, $params["firstTimeStamp"]);
 
             //Ready to send
-            $ret = new JsonResponse($arrayReturn);
+            $ret = new JsonResponse( $arrayReturn );
             return $ret;
         }
     }

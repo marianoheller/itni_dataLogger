@@ -67,6 +67,8 @@
             {# @var curvaObj \AppBundle\Entity\Curva #}
             <small class="text-muted pull-md-left d-inline">Patrón: {{ curvaObj.nombre }}</small>
 
+
+
             {#<div class="container col-md-1">
 
             </div>#}
@@ -91,7 +93,9 @@
                 {#<h5 id="wait_{{ i }}" class="m-x-auto" style="width: 200px;" >Esperando datos...</h5>#}
             </div>
             {# @var curvaObj \AppBundle\Entity\Curva #}
-            <small class="text-muted pull-md-left d-inline">Patrón: {{ curvaObj.nombre }}</small>
+            <small class="text-muted pull-md-left d-inline">Patrón: {{ curvaObj.nombre }}</small><br>
+            <small class="text-muted pull-md-left d-inline">Promediando</small><br>
+            <small class="text-muted pull-md-left d-inline">Canales: {% for sensor in canalVirtual.sensores %}{{ sensor.id }} {% endfor%}</small>
 
 
             <div class="container col-md-10">

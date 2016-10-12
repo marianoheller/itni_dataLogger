@@ -1,5 +1,6 @@
 
 
+
 //TEST DATA
 
 
@@ -19,7 +20,13 @@
 
 
 //TEST DATA AJAX ENSAYO
-{ "timeStamp": [
-  { "lastTimeStamp": "07/07/2016 10:00:00", "firstTimeStamp": "07/07/2016 09:00:00", "currentTime": "07/07/2016 10:10:23"}
-]
+{ "graphData": {
+  "lastTimeStamp": "2016-10-11 11:37:53",
+  "firstTimeStamp": "1476196673",
+  "curvaID": "3",
+  "cantCanalesVirtuales": "1",
+  "canalesVirtuales": [
+    { "id": "1",  "sensores": ["1","3","4"]}
+  ]
+}
 }

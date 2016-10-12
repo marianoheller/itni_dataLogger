@@ -163,9 +163,34 @@ function getGraphData() {
         //lastTimeStampLocal = moment(lastTimeStampLocal).format("YYYY-MM-DD HH:mm:ss");
     }
 
-    var timetampsToSend = '{ "graphData": [' +
-        '{ "lastTimeStamp": "'+lastTimeStampLocal+'", "firstTimeStamp": "'+t_inicio_unix+'", "curvaID": "'+window.myConfig.patron_id+'"}' +
-        ']}';
+    var timetampsToSend = '{ "graphData": { ' +
+        '"lastTimeStamp": "'+ lastTimeStampLocal +
+        '", "firstTimeStamp": "'+ t_inicio_unix +
+        '", "curvaID": "'+ window.myConfig.patron_id +
+        '", "cantCanalesVirtuales": "'+ window.myConfig.canalesVirtuales["length"] +
+        '", "canalesVirtuales": [ ';
+        for( var i=1 ; i<= window.myConfig.canalesVirtuales["length"] ; i++ ) {
+            timetampsToSend += '{ "id": "' + i + '",  "sensores": [' ;
+
+
+            window.myConfig.canalesVirtuales[String(i)]["sensores"].forEach(function(val, idx, array) {
+                timetampsToSend += '"'+String(val)+'"';
+                if (idx != array.length - 1){
+                    timetampsToSend += ',';
+                }
+                else {
+                    timetampsToSend += ']}';
+                }
+            });
+            if ( i != window.myConfig.canalesVirtuales["length"]) {
+                timetampsToSend += ',';
+            }
+            else {
+                timetampsToSend += ']';
+            }
+        }
+    timetampsToSend += '}}';
+
     var jsonToSend = JSON.stringify(JSON.parse(timetampsToSend));
     console.log("Sending data: ",jsonToSend);
 
@@ -197,8 +222,23 @@ function getGraphData() {
                     });
                 }
             }
+            //Parse RX packets de canales virtuales
+            for ( var j=1 ; j<=window.myConfig.canalesVirtuales["length"] ; j++) {
+                // Split timestamp and data into separate arrays
+                rxObj["labels_v_"+j] = [];
+                rxObj["data_v_"+j] = [];
+                rxObj["patron_v_"+j] = [];
+                if ( ( ("packets_v_"+j) in results) ) {
+                    Object.keys(results["packets_v_"+j]).forEach(function (key) {
+                        var value = results["packets_v_"+j][key];
+                        rxObj["labels_v_"+j].push(value.timestamp);
+                        rxObj["data_v_"+j].push(parseFloat(value.payloadString));
+                        rxObj["patron_v_"+j].push(parseFloat(value.curvaPatron));;
+                    });
+                }
+            }
 
-            //Add data to datatable
+            //Add data to datatable original
             for ( var j=1 ; j<=32 ; j++) {
                 for (var i=0 ; i< rxObj["data_"+j].length ; i++) {
 
@@ -217,10 +257,34 @@ function getGraphData() {
                 window["gauge_"+j].refresh(gaugeValue);
             }
 
+            //Add data to datatable virtual
+            for ( var j=1 ; j<=window.myConfig.canalesVirtuales["length"] ; j++) {
+                for (var i=0 ; i< rxObj["data_v_"+j].length ; i++) {
+
+                    var momentAux = moment.unix(rxObj["labels_v_"+j][i]);
+                    var momentAuxInicio = moment.unix(t_inicio_unix);
+                    momentAux.subtract(momentAuxInicio.seconds(),"seconds");
+                    momentAux.subtract(momentAuxInicio.minutes(),"minutes");
+                    momentAux.subtract(momentAuxInicio.hours(),"hours");
+                    var myDate = momentAux.toDate();
+
+                    var arrayData = [ myDate,  rxObj["data_v_"+j][i], rxObj["patron_v_"+j][i]];
+                    window["dataTable_v_"+j].push(arrayData);
+                }
+                //Refresh gauge
+                var gaugeValue = rxObj["data_v_"+j][rxObj["data_v_"+j].length-1];
+                window["gauge_v_"+j].refresh(gaugeValue);
+            }
+
+
             //REDRAW
             for ( var j=1 ; j<=32 ; j++) {
                 window["chart_"+j].updateOptions( { 'file': window["dataTable_"+j] } );
             }
+            for ( var j=1 ; j<=window.myConfig.canalesVirtuales["length"] ; j++) {
+                window["chart_v_"+j].updateOptions( { 'file': window["dataTable_v_"+j] } );
+            }
+
 
             var lenAux = 0;
             for ( var j=1 ; j<=32 ; j++) {

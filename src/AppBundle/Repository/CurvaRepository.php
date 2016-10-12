@@ -40,7 +40,7 @@ class CurvaRepository extends EntityRepository
         /** @var Curva $curvaObj */
         $curvaObj = $this->findOneBy(array("id" => $id));
         if (!isset($curvaObj)) {
-            throw new NotFoundHttpException("No se pudo encontrar la curva con id: $id");
+            throw new NotFoundHttpException("Generando data patrón. No se pudo encontrar la curva con id: $id");
         }
 
         //$json_a = json_decode($arrayPackets, true);

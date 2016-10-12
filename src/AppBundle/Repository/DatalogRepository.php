@@ -94,8 +94,45 @@ class DatalogRepository extends EntityRepository
             $arrayQueryResult[$i]['fecha'] = $d1->getTimestamp();
         }
 
+        if (empty($arrayQueryResult)) {
+            throw new NotFoundHttpException("No se encontraron registros en datalog con timestamp: $lastTimeStamp");
+        }
+
         return $arrayQueryResult;
     }
+
+    public function generatePacketsFromDataFormatted($arrayQueryResult) {
+
+        if (empty($arrayQueryResult)) {
+            throw new NotFoundHttpException("Error al generar packets de data. Data vacia.");
+        }
+
+        $arrayReturn = [];
+        $arrayPerChannel = [];
+        //Init arrays per channel
+        foreach ($arrayQueryResult as $item) {
+            $arrayPerChannel[$item["sensor_id"]] = [];
+        }
+        //Push data
+        foreach ($arrayQueryResult as $item) {
+            $arrayAux = [];
+            foreach ($item as $key => $value) {
+                if ( $key == "fecha")
+                    $arrayAux["timestamp"] = $value;
+                elseif ( $key == "medicion" )
+                    $arrayAux["payloadString"] = $value;
+            }
+            array_push($arrayPerChannel[$item["sensor_id"]],$arrayAux);
+        }
+        //Final parse of array
+        foreach ($arrayPerChannel as $keyAux => $itemsPerChannel) {
+            $arrayReturn["packets_".$keyAux] = $itemsPerChannel;
+        }
+
+        return $arrayReturn;
+
+    }
+
 
     public function getPacketsData($lastTimeStamp) {
         $lastFecha = new \DateTime();
@@ -140,6 +177,7 @@ class DatalogRepository extends EntityRepository
 
         return $arrayReturn;
     }
+
 
 
     public function getDataInTimeRange($t_inicio, $t_fin) {
@@ -214,4 +252,74 @@ class DatalogRepository extends EntityRepository
         return $arrayReturn;
     }
 
+
+    public function getCanalesVirtualesPackets( $lastTimeStamp, $canalesVirtuales )
+    {
+
+
+        $arrayRet = [];
+        foreach ($canalesVirtuales as $keyCanalVirtual => $canalVirtual) {
+            $sqlQueryCanalVirtualX =    "SELECT fecha, AVG(medicion) as promedio
+                                        FROM datalog
+                                        WHERE fecha>'$lastTimeStamp' AND (";
+
+
+            $numItems = count($canalVirtual);
+            $i = 0;
+            foreach($canalVirtual as $keySensor=>$sensor) {
+                $sqlQueryCanalVirtualX .= "sensor_id=$sensor";
+                if(++$i === $numItems) {
+                    $sqlQueryCanalVirtualX .= ") ";
+                }
+                else {
+                    $sqlQueryCanalVirtualX .= " OR ";
+                }
+            }
+
+
+            $sqlQueryCanalVirtualX .=   "GROUP BY fecha
+                                        ORDER BY sensor_id ASC, fecha ASC";
+
+
+            try {
+                $em = $this->getEntityManager();
+                $stmt = $em->getConnection()->prepare($sqlQueryCanalVirtualX);
+                $stmt->execute();
+            } catch (\Exception $e) {
+                throw new NotFoundHttpException("Error al ejecutar query. $sqlQueryCanalVirtualX");
+            }
+
+            $arrayQueryResult = $stmt->fetchAll();
+
+            if (empty($arrayQueryResult)) {
+                throw new NotFoundHttpException("No se encontraron registros en datalog con timestamp: $lastTimeStamp");
+            }
+
+            for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
+                $d1 = new \DateTime($arrayQueryResult[$i]['fecha'],new \DateTimeZone("America/Argentina/Buenos_Aires"));
+                $arrayQueryResult[$i]['fecha'] = $d1->getTimestamp();
+            }
+
+
+            $arrayChannel = [];
+            //Init arrays per channel
+            $arrayChannel["packets_v_".$keyCanalVirtual] = [];
+
+            //Push data
+            foreach ($arrayQueryResult as $item) {
+                $arrayAux = [];
+                foreach ($item as $key => $value) {
+                    if ( $key == "fecha")
+                        $arrayAux["timestamp"] = $value;
+                    elseif ( $key == "promedio" )
+                        $arrayAux["payloadString"] = $value;
+                }
+                array_push($arrayChannel["packets_v_".$keyCanalVirtual],$arrayAux);
+            }
+
+
+            $arrayRet = array_merge($arrayRet, $arrayChannel);
+        }
+        return $arrayRet;
+    }
 }
