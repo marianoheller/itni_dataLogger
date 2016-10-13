@@ -22,7 +22,7 @@ class Version20160919182339 extends AbstractMigration
         //$this->addSql('ALTER TABLE ensayo DROP curva');
 
         $formulaSinFormula = null;
-        $formulaFuegoExt = "600*(1-0.687*exp(-0.32*t)-0.313*exp(-3.8*t))+20";
+        $formulaFuegoExt = "660*(1-0.687*exp(-0.32*t)-0.313*exp(-3.8*t))+20";
         $formulaHidrocarb = "1080*(1-0.325*exp(-0.167*t)-0.675*exp(-2.5*t))+20";
         $formulaCalentamientoLento_A = "154*pow(t,0.25)+20";
         $formulaCalentamientoLento_B = "345*(log(8*(t-20)+1)/log(10))+20";

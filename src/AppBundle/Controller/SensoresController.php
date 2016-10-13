@@ -83,22 +83,24 @@ class SensoresController extends Controller
             //UPDATE lastPing
             $count = $em->getRepository('AppBundle:Ensayo')->updateLastPing();
 
+            ///Data Original
             // Get datalog data to send (as packets)
-            //Dividido en dos partes asi tengo $arrayDataFormatted y es mas facil mas adelante
-            $arrayDataFormatted = $em->getRepository('AppBundle:Datalog')->getDataFormated($params["lastTimeStamp"]);
-            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->generatePacketsFromDataFormatted($arrayDataFormatted);
-
-            /*// Append campo patron en cada packet
-            $arrayDataOriginal = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayPacketsDatalog, $params["firstTimeStamp"]);*/
-
-            //Append packets virtuales
-            $arrayPacketsVirtuales = $em->getRepository('AppBundle:Datalog')->getCanalesVirtualesPackets($params["lastTimeStamp"],$canalesVirtuales);
-
-            //Junto Canales virtuales con los originales
-            $arrayReturn = array_merge($arrayPacketsDatalog,$arrayPacketsVirtuales);
+            /*//Dividido en dos partes asi tengo $arrayDataFormatted y es mas facil mas adelante
+            $arrayDataFormatted = $em->getRepository('AppBundle:Datalog')->getDataFormated();
+            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->generatePacketsFromDataFormatted($arrayDataFormatted);*/
+            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->getPacketsData($params["lastTimeStamp"]);
 
             // Append campo patron en cada packet
-            $arrayReturn = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayReturn, $params["firstTimeStamp"]);
+            $arrayPacketsDatalog_c_Patron = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayPacketsDatalog, $params["firstTimeStamp"]);
+
+            //Generate packets virtuales
+            $arrayPacketsVirtuales = $em->getRepository('AppBundle:Datalog')->getCanalesVirtualesPackets($params["lastTimeStamp"],$canalesVirtuales);
+
+            // Append campo patron en cada packet
+            $arrayPacketsVirtuales_c_Patron = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayPacketsVirtuales, $params["firstTimeStamp"]);
+
+            //Junto Canales virtuales con los originales
+            $arrayReturn = array_merge($arrayPacketsDatalog_c_Patron,$arrayPacketsVirtuales_c_Patron);
 
             //Ready to send
             $ret = new JsonResponse( $arrayReturn );

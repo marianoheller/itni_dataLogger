@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,12 +34,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SensoresController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SensoresController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
-              <folding />
+            <state vertical-scroll-proportion="0.64659274">
+              <caret line="89" column="106" selection-start-line="89" selection-start-column="106" selection-end-line="89" selection-end-column="106" />
+              <folding>
+                <element signature="e#3615#3632#1#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CurvaRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.923077">
+              <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+              <folding>
+                <marker date="1476206621169" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3041237">
+            <state vertical-scroll-proportion="-13.576923">
               <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
               <folding />
             </state>
@@ -104,7 +117,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Curva.php" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160920153440.php" />
-        <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
@@ -130,9 +142,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
         <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
+        <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
       </list>
     </option>
   </component>
@@ -786,12 +799,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00083" summary="Fixed error on fonts. Dejé una sola.&#10;Cuando se juntaban las fonts en un archivo andaba mal.">
-      <created>1472565939354</created>
-      <option name="number" value="00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1472565939354</updated>
-    </task>
     <task id="LOCAL-00084" summary="Added some logging.">
       <created>1472665186864</created>
       <option name="number" value="00084" />
@@ -1080,7 +1087,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476289476359</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Fixed alineacion de texto leyenda de cada canal.">
+      <created>1476364967653</created>
+      <option name="number" value="00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1476364967677</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1097,8 +1110,9 @@
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2793177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3197861" sideWeight="0.42750534" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26737967" sideWeight="0.5794243" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32012847" sideWeight="0.42750534" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26659527" sideWeight="0.5794243" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
@@ -1106,7 +1120,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26737967" sideWeight="0.42057568" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40042827" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
@@ -1131,7 +1144,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Agregué curva patron en la base de datos y en el formulario.&#10;Falta implementarlo en el ensayo en si." />
     <MESSAGE value="Added mathjs to assets." />
     <MESSAGE value="Agregué curva patron en ensayo (calculo en backend)." />
     <MESSAGE value="Removed mathjs from dependencies." />
@@ -1156,7 +1168,8 @@
     <MESSAGE value="Guardo variables twig en js asi las uso en script." />
     <MESSAGE value="Added TODO" />
     <MESSAGE value="Added canales virtuales completo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added canales virtuales completo." />
+    <MESSAGE value="Fixed alineacion de texto leyenda de cada canal." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed alineacion de texto leyenda de cada canal." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1232,20 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.076923">
           <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="22" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160920153440.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.423077">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5706897">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1445,13 +1444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20161003191441.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9429477">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6164818">
@@ -1515,16 +1507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9615383">
-          <caret line="38" column="59" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="59" />
-          <folding>
-            <marker date="1476206621169" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846">
@@ -1533,19 +1515,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+        <state vertical-scroll-proportion="-13.576923">
+          <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3041237">
-          <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-13.923077">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding>
+            <marker date="1476206621169" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20161003191441.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78446907">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <marker date="1475759277365" expanded="true" signature="584:801" placeholder="CREATE TABLE..canal_virtual..." />
+            <marker date="1475759277365" expanded="true" signature="828:1124" placeholder="CREATE TABLE..canalesVirtuales_sensores..." />
+            <marker date="1475759277365" expanded="true" signature="1151:1358" placeholder="CREATE TABLE..sensor..." />
+            <marker date="1475759277365" expanded="true" signature="1385:1492" placeholder="ALTER TABLE canal_virtual..." />
+            <marker date="1475759277365" expanded="true" signature="1519:1670" placeholder="ALTER TABLE canalesVirtuales_sensores..." />
+            <marker date="1475759277365" expanded="true" signature="1697:1834" placeholder="ALTER TABLE canalesVirtuales_sensores..." />
+            <marker date="1475759277365" expanded="true" signature="1903:1981" placeholder="INSERT INTO sensor..." />
+            <marker date="1475759277365" expanded="true" signature="2344:2418" placeholder="ALTER TABLE canalesVirtuales_sensores..." />
+            <marker date="1475759277365" expanded="true" signature="2445:2519" placeholder="ALTER TABLE canalesVirtuales_sensores..." />
+            <marker date="1475759277365" expanded="true" signature="2546:2570" placeholder="DROP TABLE c..." />
+            <marker date="1475759277365" expanded="true" signature="2597:2633" placeholder="DROP TABLE c..." />
+            <marker date="1475759277365" expanded="true" signature="2660:2677" placeholder="DROP TABLE s..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160920153440.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44849446">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1474380045607" expanded="true" signature="584:632" placeholder="ALTER TABLE ensayo..." />
+            <marker date="1474380045607" expanded="true" signature="659:757" placeholder="ALTER TABLE ensayo..." />
+            <marker date="1474380045607" expanded="true" signature="1307:1362" placeholder="ALTER TABLE ensayo..." />
+            <marker date="1474380045607" expanded="true" signature="1457:1489" placeholder="ALTER TABLE ensayo..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37876385">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding>
+            <marker date="1476365387708" expanded="true" signature="1205:1278" placeholder="INSERT INTO curva..." />
+            <marker date="1476365387708" expanded="true" signature="1305:1414" placeholder="INSERT INTO curva..." />
+            <marker date="1476365387708" expanded="true" signature="1441:1550" placeholder="INSERT INTO curva..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64659274">
+          <caret line="89" column="106" selection-start-line="89" selection-start-column="106" selection-end-line="89" selection-end-column="106" />
+          <folding>
+            <element signature="e#3615#3632#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
