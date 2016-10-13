@@ -418,13 +418,12 @@ class PagesController extends Controller
 
 //TODO exportar solo canales seleccionados
 
-//TODO Al recibir hora erronea en json data, que tire un error (ahora esta crasheando con 500)
-
 //TODO Al agregar usuarios acepta "admin" aunque ya exista.
 
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 
 //TODO hacer que el sensor_id de tabla ensayo sea FK a tabla sensor
+
 
 
 //TODO Generar user device solo con el username (q es la mac) y el password se genera automaticamente

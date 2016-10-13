@@ -24,6 +24,26 @@ return array (
       ),
     ),
   ),
+  '17e5087' => 
+  array (
+    0 => 
+    array (
+      0 => 'base_assets/js/admin.js',
+    ),
+    1 => 
+    array (
+    ),
+    2 => 
+    array (
+      'output' => '_controller/js/17e5087.js',
+      'name' => '17e5087',
+      'debug' => NULL,
+      'combine' => NULL,
+      'vars' => 
+      array (
+      ),
+    ),
+  ),
   '1886b1b' => 
   array (
     0 => 

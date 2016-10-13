@@ -5,9 +5,99 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/14/_14c5d1fad275f15c4bccaa84101eb24ff5c03b30a38b2614eee636c0ee2b7a51.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/14/_14c5d1fad275f15c4bccaa84101eb24ff5c03b30a38b2614eee636c0ee2b7a51.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/15/_1530df43d251912b878a10c1cf61b43d60cbb0df7e5f631339ac54761550063c.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/15/_1530df43d251912b878a10c1cf61b43d60cbb0df7e5f631339ac54761550063c.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/22/_22ed9e2ac68e54f2755a0213984db2a3d92bb556292a873aab8d18885acd43c4.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/22/_22ed9e2ac68e54f2755a0213984db2a3d92bb556292a873aab8d18885acd43c4.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/34/_34e910e8c99746bb6befb8479654328f5dad418f0de2ee1c641c103764010963.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/34/_34e910e8c99746bb6befb8479654328f5dad418f0de2ee1c641c103764010963.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/35/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223686173405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/35/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223686173405b416e6e6f745d5d5b315d.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/40/_4047effceed47d5f32533f3c3970dba5ff627c7871f1fc0622d5f7c7f7d7e89b.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/40/_4047effceed47d5f32533f3c3970dba5ff627c7871f1fc0622d5f7c7f7d7e89b.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4a/_4ad9965cb81d0c4bb3fe9983ff0bc6eeb9a64f23234f3f023338131df834a1f0.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/4a/_4ad9965cb81d0c4bb3fe9983ff0bc6eeb9a64f23234f3f023338131df834a1f0.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/55/_55b65ae7e00ea5d475dd22e9573e66380afa10b625cad5f8893b04ca915a1e08.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/55/_55b65ae7e00ea5d475dd22e9573e66380afa10b625cad5f8893b04ca915a1e08.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/59/_59a2167eed70d978859f0bb50a96062ddb7318612984776d6893de9acdb8ca98.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/59/_59a2167eed70d978859f0bb50a96062ddb7318612984776d6893de9acdb8ca98.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/71/_7121fba3f925a9caf9016215db569d161237cabaaa3e1e1a20e9f029778f3afc.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/71/_7121fba3f925a9caf9016215db569d161237cabaaa3e1e1a20e9f029778f3afc.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/85/_8551a331ba7b42bc57e7190b0cd92f3c9c41374949c84bae185f20274773d0fa.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/85/_8551a331ba7b42bc57e7190b0cd92f3c9c41374949c84bae185f20274773d0fa.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/87/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722372656e646572405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/87/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722372656e646572405b416e6e6f745d5d5b315d.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/8c/_8c755fe768e134cfc9adb8fe37e310ac0f14a7e14bf5cf64dbacfcb011812ac5.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/8c/_8c755fe768e134cfc9adb8fe37e310ac0f14a7e14bf5cf64dbacfcb011812ac5.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/8d/_8d4c563ff302fd4f0fbda929987e177a77972b814d9f6562f739becd730a599d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/8d/_8d4c563ff302fd4f0fbda929987e177a77972b814d9f6562f739becd730a599d.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/96/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722373747265616d405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/96/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722373747265616d405b416e6e6f745d5d5b315d.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/a5/_a5fc407885b8c6fac2fa92a418326244e5a5864438afe287642545a2850d091a.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/a5/_a5fc407885b8c6fac2fa92a418326244e5a5864438afe287642545a2850d091a.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/b0/_b02464f3e327c1771507df88d0073ea92e0fb53aefde1c3d66865e4fa344a085.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/b0/_b02464f3e327c1771507df88d0073ea92e0fb53aefde1c3d66865e4fa344a085.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/b8/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223676574405b416e6e6f745d5d5b315d.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/b8/5b5b435d53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223676574405b416e6e6f745d5d5b315d.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/c7/_c7cf1d29be509604fdc25dc0d1f478da9862ddd16a50fbbd790066a52817b795.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/c7/_c7cf1d29be509604fdc25dc0d1f478da9862ddd16a50fbbd790066a52817b795.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/ec/_ec131a52b4e2d2f4c4b710703c64a6f69313e3d35c398411a19cade8b249ac38.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/ec/_ec131a52b4e2d2f4c4b710703c64a6f69313e3d35c398411a19cade8b249ac38.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/fd/_fddf29d35f1105c6f2ca6a9e5661f3552ed02f4b82a9ca9c50c608f1652c8776.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/fd/_fddf29d35f1105c6f2ca6a9e5661f3552ed02f4b82a9ca9c50c608f1652c8776.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/fe/_fe91721dca635c4a3c4c676c74dd1a8cd40385eff5745bbfcc53de0199c42eb3.doctrinecache.data" afterPath="$PROJECT_DIR$/app/cache/dev/annotations/fe/_fe91721dca635c4a3c4c676c74dd1a8cd40385eff5745bbfcc53de0199c42eb3.doctrinecache.data" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainerCompiler.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/02f50290330c0d999a89cf23578cee2f.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/02f50290330c0d999a89cf23578cee2f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/04222b6a417e0eb814a13fb50260f865.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/04222b6a417e0eb814a13fb50260f865.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/05d2e9607d7073dec41a8b3d890885fa.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/05d2e9607d7073dec41a8b3d890885fa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/0d1894798c4287272044698633eab46b.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/0/0d1894798c4287272044698633eab46b.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/1/105ce083893e42fa59416b76fdd4d62c.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/1/105ce083893e42fa59416b76fdd4d62c.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/1/12c9c645a5f2257bfa29c57068a6599a.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/1/12c9c645a5f2257bfa29c57068a6599a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/1/1dc782bac176682783c157846b52c03d.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/1/1dc782bac176682783c157846b52c03d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/213a949e693921766ca9245f70f9728b.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/213a949e693921766ca9245f70f9728b.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/2516301f2a2755f2453d8c32b5427d83.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/2516301f2a2755f2453d8c32b5427d83.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/29817d198dd437c9307a781ef7a271c6.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/29817d198dd437c9307a781ef7a271c6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/2fa7551bfab221ba0e68c366310f59a5.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/2/2fa7551bfab221ba0e68c366310f59a5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/3/303352bc44f729db39951d00b533095a.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/3/303352bc44f729db39951d00b533095a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/3/30feba70240d1c52cf398bdba25c9185.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/3/30feba70240d1c52cf398bdba25c9185.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/43432dbb3b30b00fcc8cba6ec5f76b2a.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/43432dbb3b30b00fcc8cba6ec5f76b2a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/44d87dd993a5302b8e85a78484809e62.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/44d87dd993a5302b8e85a78484809e62.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/4c9158cc2847181c8bbaa02504323622.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/4c9158cc2847181c8bbaa02504323622.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/4f2b5b5c94964b5655a7c9e0cf0bb0bb.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/4/4f2b5b5c94964b5655a7c9e0cf0bb0bb.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/5/534263e7465ce50c4e054fb8e59dc093.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/5/534263e7465ce50c4e054fb8e59dc093.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/5/551619d55268618c70f7e17477821aac.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/5/551619d55268618c70f7e17477821aac.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/5/5a3e6ec4a3bb4beae2f2162555b60719.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/5/5a3e6ec4a3bb4beae2f2162555b60719.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/62305dbb87a350c340ba3cabd218530f.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/62305dbb87a350c340ba3cabd218530f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/64373f4aaca326b672953de02b47680e.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/64373f4aaca326b672953de02b47680e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/65dd6a2f92ed9327935674bd4c1fa09a.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/65dd6a2f92ed9327935674bd4c1fa09a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/68bf982ba8edf22773ad3aa6e6b88bf0.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/6/68bf982ba8edf22773ad3aa6e6b88bf0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/718ff53c88c49d7be0df27a95fba5320.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/718ff53c88c49d7be0df27a95fba5320.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7270ba9166fc02586957689b3b035be1.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7270ba9166fc02586957689b3b035be1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/76d68d5e8afd1360790999b1fb0dce75.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/76d68d5e8afd1360790999b1fb0dce75.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7dc2bedaecf0d9a157e92d8195aecec5.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7dc2bedaecf0d9a157e92d8195aecec5.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7e45379282c1e7d2e81ad3a951ac5ba0.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7e45379282c1e7d2e81ad3a951ac5ba0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7fb808e9cd091bf9a6c3088bb6c13132.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/7/7fb808e9cd091bf9a6c3088bb6c13132.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/84b5882962e5189f93d32b99d83b7e14.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/84b5882962e5189f93d32b99d83b7e14.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/84e52b0ae50195d81347708819671c2a.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/84e52b0ae50195d81347708819671c2a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/871e405a5156202dee9ff59db4fa2054.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/871e405a5156202dee9ff59db4fa2054.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/8794b71e8efc59026f63073c989ba29d.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/8794b71e8efc59026f63073c989ba29d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/8c90f01042d5e5dad417a3b82fc60f6a.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/8c90f01042d5e5dad417a3b82fc60f6a.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/8e34611dc9b92bfc524aa4659f065994.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/8/8e34611dc9b92bfc524aa4659f065994.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/9104bfdff35f03258de867ade740c864.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/9104bfdff35f03258de867ade740c864.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/91cbe467da0eb225943e05e43a7f3892.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/91cbe467da0eb225943e05e43a7f3892.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/934dac7b563a6d9c60ce3d3715ba364f.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/934dac7b563a6d9c60ce3d3715ba364f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/972936875e8692ab47b3d6d34c55527d.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/972936875e8692ab47b3d6d34c55527d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/99abfd65df4c33bd39953d64512f1090.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/99abfd65df4c33bd39953d64512f1090.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/99bcd3ae3a8a174fd5ae02c3e5c3d4c1.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/9/99bcd3ae3a8a174fd5ae02c3e5c3d4c1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/a/ab789fc609f451be934e66043d5d2283.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/a/ab789fc609f451be934e66043d5d2283.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/a/ae1b290dcfca1cdecd87a85bbe4b1164.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/a/ae1b290dcfca1cdecd87a85bbe4b1164.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/b/b17b6d1de1c621b758a969f74aeff5dd.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/b/b17b6d1de1c621b758a969f74aeff5dd.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/b/b3822763dbd808444ec755afca2bb677.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/b/b3822763dbd808444ec755afca2bb677.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/c767bd3432c61b1eac49ed82658f8f5d.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/c767bd3432c61b1eac49ed82658f8f5d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/cbee869fba800e9a93a5660237cea005.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/cbee869fba800e9a93a5660237cea005.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/cc72613807f8fa93720c46be059710b3.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/cc72613807f8fa93720c46be059710b3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/cebda65d2fc8e2152919b3e2666faff7.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/c/cebda65d2fc8e2152919b3e2666faff7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/d/d13ac79e65483cad23e45d276b81a927.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/d/d13ac79e65483cad23e45d276b81a927.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/d/d1da77e3f6f9f7133c572e713621c0ca.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/d/d1da77e3f6f9f7133c572e713621c0ca.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/d/d892013687bc0160987864f7673fa292.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/d/d892013687bc0160987864f7673fa292.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/e219ed11ea27e5d6348393989452a4b2.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/e219ed11ea27e5d6348393989452a4b2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/e6021f5f6beb685e4eced147dbf8d9a6.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/e6021f5f6beb685e4eced147dbf8d9a6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/ecbbee369b6c7095294f8f3d96b05758.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/ecbbee369b6c7095294f8f3d96b05758.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/ed57fe8c0ab519733867e3a8bbdf9657.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/ed57fe8c0ab519733867e3a8bbdf9657.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/ef594b297372010ba696bc922b02d6cf.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/e/ef594b297372010ba696bc922b02d6cf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/f/f31e03a8eae6961cc021fa25cc3b0fae.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/f/f31e03a8eae6961cc021fa25cc3b0fae.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/f/f39efdcaff5f5203f9cf122ad906f7a6.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/f/f39efdcaff5f5203f9cf122ad906f7a6.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/config/f/f6d63d96bbf986e5e45ccc6c9843b86b.php" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/config/f/f6d63d96bbf986e5e45ccc6c9843b86b.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/assetic/routing.yml" afterPath="$PROJECT_DIR$/app/cache/dev/assetic/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.map" afterPath="$PROJECT_DIR$/app/cache/dev/classes.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,18 +124,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SensoresController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64659274">
-              <caret line="89" column="106" selection-start-line="89" selection-start-column="106" selection-end-line="89" selection-end-column="106" />
-              <folding>
-                <element signature="e#3615#3632#1#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CurvaRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,11 +146,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.576923">
-              <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5689382">
+              <caret line="418" column="42" selection-start-line="418" selection-start-column="42" selection-end-line="418" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.884615">
+              <caret line="205" column="59" selection-start-line="205" selection-start-column="59" selection-end-line="205" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -113,7 +201,6 @@
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Curva.php" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160920153440.php" />
@@ -143,9 +230,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
         <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
   </component>
@@ -799,12 +887,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00084" summary="Added some logging.">
-      <created>1472665186864</created>
-      <option name="number" value="00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1472665186886</updated>
-    </task>
     <task id="LOCAL-00085" summary="Finished logging on the controllers.">
       <created>1472823086294</created>
       <option name="number" value="00085" />
@@ -1093,7 +1175,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476364967677</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="Fixed curva patron erronea.">
+      <created>1476365487006</created>
+      <option name="number" value="00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1476365487008</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1112,12 +1200,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2793177" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32012847" sideWeight="0.42750534" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26659527" sideWeight="0.5794243" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26659527" sideWeight="0.58102345" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26737967" sideWeight="0.42057568" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26659527" sideWeight="0.41897655" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1144,7 +1232,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added mathjs to assets." />
     <MESSAGE value="Agregué curva patron en ensayo (calculo en backend)." />
     <MESSAGE value="Removed mathjs from dependencies." />
     <MESSAGE value="Cambié mensaje de consola al no tener datos en datalog (asi no tira error)" />
@@ -1169,7 +1256,8 @@
     <MESSAGE value="Added TODO" />
     <MESSAGE value="Added canales virtuales completo." />
     <MESSAGE value="Fixed alineacion de texto leyenda de cada canal." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed alineacion de texto leyenda de cada canal." />
+    <MESSAGE value="Fixed curva patron erronea." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed curva patron erronea." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1185,13 +1273,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/homepage/homepage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.038636364">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17056856">
@@ -1252,13 +1333,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17171717">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1465,13 +1539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3771791">
-          <caret line="81" column="48" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json_test_data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.346153">
@@ -1512,24 +1579,6 @@
         <state vertical-scroll-proportion="-9.153846">
           <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.576923">
-          <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.923077">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <marker date="1476206621169" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1581,11 +1630,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64659274">
+        <state vertical-scroll-proportion="0.24247226">
           <caret line="89" column="106" selection-start-line="89" selection-start-column="106" selection-end-line="89" selection-end-column="106" />
           <folding>
             <element signature="e#3615#3632#1#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.923077">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding>
+            <marker date="1476206621169" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34706813">
+          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.884615">
+          <caret line="205" column="59" selection-start-line="205" selection-start-column="59" selection-end-line="205" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5689382">
+          <caret line="418" column="42" selection-start-line="418" selection-start-column="42" selection-end-line="418" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

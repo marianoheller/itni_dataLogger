@@ -57,7 +57,7 @@ class ApiController extends Controller
      */
     public function checkEnsayoStartAction(Request $request)
     {
-        $response = new Response();
+        $response = new JsonResponse();
         $logger = $this->get('logger');
 
         $content = $request->getContent();
@@ -70,7 +70,9 @@ class ApiController extends Controller
                 "content" => $content
             ));
 
-            $response->setContent($stringError);
+            $response->setData( array(
+                "status" => $stringError
+            ));
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
         }
         else {
@@ -93,7 +95,9 @@ class ApiController extends Controller
                     "content" => $content
                 ));
                 $response->setStatusCode(Response::HTTP_FORBIDDEN);
-                $response->setContent($stringError);
+                $response->setData( array(
+                    "status" => $stringError
+                ));
             }
             else {                    //ELSE -> PARSEO LA DATA
 
@@ -108,11 +112,16 @@ class ApiController extends Controller
                         "fechaActualAnswered" =>  $now->format('H:i:s d-m-Y')
                     ));
                     $response->setStatusCode(Response::HTTP_OK);
-                    $response->setContent($now->format('H:i:s d-m-Y'));
+                    $response->setData(array (
+                        "status" => "OK",
+                        "now" => $now->format('H:i:s d-m-Y')
+                    ));
                 }
                 else {
                     $response->setStatusCode(Response::HTTP_PRECONDITION_FAILED);
-                    $response->setContent("Ensayo no iniciado.");
+                    $response->setData( array(
+                        "status" => "Ensayo no iniciado"
+                    ));
                 }
             }
         }
@@ -129,18 +138,18 @@ class ApiController extends Controller
     {
         $logger = $this->get('logger');
         //Respuesta
-        $response = new Response(
-            'Content',
-            Response::HTTP_OK,
-            array('content-type' => 'text/html')
-        );
+        $response = new JsonResponse();
 
         $content = $request->getContent();
         $contentType = $request->getContentType();
 
         if ($contentType != "json" || empty($content)) {          //CONTENIDO NOT JSON
             $stringError = "Wrong content type request or empty content. Given \"$contentType\".";
-            $response->setContent($stringError);
+            $response->setData( array(
+                "status" => $stringError,
+                "contentType" => $contentType,
+                "content" => $content
+            ));
             $response->setStatusCode(Response::HTTP_FORBIDDEN);
             $logger->error($stringError, array (
                 "contentType" => $contentType,
@@ -163,7 +172,11 @@ class ApiController extends Controller
             }
             if ($password != passwordDevice) {          //PASSWORD ERRONEO
                 $stringError = "Password device incorrecto. Checkear estructura de $contentType";
-                $response->setContent($stringError);
+                $response->setData( array(
+                    "status" => $stringError,
+                    "contentType" => $contentType,
+                    "content" => $content
+                ));
                 $response->setStatusCode(Response::HTTP_FORBIDDEN);
                 $logger->error($stringError, array (
                     "contentType" => $contentType,
@@ -177,44 +190,34 @@ class ApiController extends Controller
 
                 //SI HAY ENSAYO CORRIENDO
                 $stringResponse = "";
+                $arrayResponse = array();
                 if ( $isEnsayoRunning ) {
                     $contItemsAdded = 0;
                     foreach ($data as $name => $value) {
                         if ($name == "CANALES") {
-                            $stringResponse .= "<table border='1' style='text-align: center;'>";
-                            $stringResponse .= "<thead>";
-                            $stringResponse .= "<tr>";
-                            $stringResponse .= "<th>";
-                            $stringResponse .= "Fecha";
-                            $stringResponse .= "</th>";
-                            $stringResponse .= "<th>";
-                            $stringResponse .= "Canal";
-                            $stringResponse .= "</th>";
-                            $stringResponse .= "<th>";
-                            $stringResponse .= "Medicion";
-                            $stringResponse .= "</th>";
-                            $stringResponse .= "</tr>";
-                            $stringResponse .= "</thead>";
-                            $stringResponse .= "<tbody>";
                             foreach ($value as $entry) {
+
                                 $datalog = new Datalog();
                                 $datalog->setSensorId(intval($entry->canal));
                                 $datalog->setMedicion($entry->temperatura);
 
-                                $stringResponse .= "<tr>";
-                                $stringResponse .= "<td>";
-                                $stringResponse .=  $entry->fecha;
-                                $stringResponse .= "</td>";
-                                $stringResponse .= "<td>";
-                                $stringResponse .= $entry->canal;
-                                $stringResponse .= "</td>";
-                                $stringResponse .= "<td>";
-                                $stringResponse .= $entry->temperatura;
-                                $stringResponse .= "</td>";
-                                $stringResponse .= "</tr>";
+                                $arrayAuxResponse = array (
+                                  "fecha" =>  $entry->fecha,
+                                  "canal" => $entry->canal,
+                                  "temperatura" => $entry->temperatura
+                                );
+                                array_push($arrayResponse,$arrayAuxResponse);
 
                                 $fecha = new \DateTime();
                                 $fecha = $fecha->createFromFormat('d/m/Y H:i:s', $entry->fecha);
+                                $date_errors = \DateTime::getLastErrors();
+                                if ($date_errors['warning_count'] + $date_errors['error_count'] > 0) {
+                                    $responseError =  new JsonResponse( array(
+                                        "status" => 'Fecha invalida',
+                                        "stringCausante" => $entry->fecha
+                                    ));
+                                    $responseError->setStatusCode(Response::HTTP_CONFLICT);
+                                }
                                 $datalog->setFecha($fecha);
 
                                 $contItemsAdded++;
@@ -230,19 +233,18 @@ class ApiController extends Controller
                             }
                         }
                     }
-                    $stringResponse .= "</tbody>";
-                    $stringResponse .= "</table>";
-                    $stringResponse .= "<p>";
-                    $stringResponse .= 'Recibidas ' . $contItemsAdded . ' mediciones nuevas.';
-                    $stringResponse .= "</p>";
-                    $response->setContent($stringResponse);
+                    $arrayResponse["status"] = 'Recibidas ' . $contItemsAdded . ' mediciones nuevas.';
+
+                    $response->setData($arrayResponse);
                     $logger->info("Recibidas $contItemsAdded mediciones nuevas", array (
                         "cantMedicionesRecibidas" => $contItemsAdded
                     ));
                 }
                 else {
                     $response->setStatusCode(Response::HTTP_PRECONDITION_FAILED);
-                    $response->setContent("Ensayo no iniciado.");
+                    $response->setData( array(
+                        "status" => "Ensayo no iniciado."
+                    ));
                     $logger->info("Dispositivo tratando de loguear data. Ensayo no iniciado");
                 }
             }
