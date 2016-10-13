@@ -411,7 +411,6 @@ class PagesController extends Controller
 }
 
 
-//TODO Arreglar alineacion (se cago con el texto de canales virtuales)
 
 //TODO Optimizar el tema del timestamp en RECEPCION (q solo haga falta una...)
 
@@ -425,6 +424,7 @@ class PagesController extends Controller
 
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 
+//TODO hacer que el sensor_id de tabla ensayo sea FK a tabla sensor
 
 
 //TODO Generar user device solo con el username (q es la mac) y el password se genera automaticamente
