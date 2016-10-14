@@ -13,6 +13,15 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class DatalogRepository extends EntityRepository
 {
+
+
+    /**
+     *
+     * Adquiere la ultima data disponible de cada sensor (el ultimo input en datalog).
+     *
+     * @return array : Devuelve la data cruda.
+     */
+
     public function getSensoresStatus()
     {
         $sqlSensoresStatus = "SELECT  a.*
@@ -26,13 +35,27 @@ class DatalogRepository extends EntityRepository
                                     a.fecha = b.max_fecha
                     GROUP BY sensor_id ORDER BY a.sensor_id  ASC";
 
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlSensoresStatus);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlSensoresStatus);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlSensoresStatus.<br>$e->getMessage()");
+        }
 
         return $arrayQueryResult;
     }
+
+
+    /**
+     *
+     * Adquiere la ultima data disponible de cada sensor (el ultimo input en datalog) y reformatea algunos campos
+     *
+     * @return array : Devuelve la data reformateada.
+     */
 
     public function getSensoresStatusFormated()
     {
@@ -47,10 +70,15 @@ class DatalogRepository extends EntityRepository
                                     a.fecha = b.max_fecha
                     GROUP BY sensor_id ORDER BY a.sensor_id  ASC";
 
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlSensoresStatus);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlSensoresStatus);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlSensoresStatus.<br>$e->getMessage()");
+        }
 
         //ReFormateo la fecha
         for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
@@ -65,18 +93,43 @@ class DatalogRepository extends EntityRepository
         return $arrayQueryResult;
     }
 
+
+    /**
+     *
+     * Getea la data del datalog a partir de $lastTimeStamp
+     *
+     * @param string $lastTimeStamp : String con fecha. A partir de esta fecha se adquiriran los datos
+     * @return array : Devuelve la data cruda. (NOT PACKETS)
+     */
+
     public function getDataFromTimestamp($lastTimeStamp) {
         $lastFecha = new \DateTime();
         $lastFecha = $lastFecha->createFromFormat('Y-m-d H:i:s', $lastTimeStamp);
         $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
         $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY sensor_id ASC, fecha ASC";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetDataFromTimestamp.<br>$e->getMessage()");
+        }
 
         return $arrayQueryResult;
     }
+
+
+    /**
+     *
+     * Getea la data del datalog a partir de $lastTimeStamp y reformatea algunos campos por cuestiones de
+     * compatibilidad.
+     *
+     * @param string $lastTimeStamp : String con fecha. A partir de esta fecha se adquiriran los datos
+     * @return array : Devuelve la data formateada correctamente. (NOT PACKETS)
+     */
 
     public function getDataFormated($lastTimeStamp)
     {
@@ -84,10 +137,16 @@ class DatalogRepository extends EntityRepository
         $lastFecha = $lastFecha->createFromFormat('Y-m-d H:i:s', $lastTimeStamp);
         $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
         $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY sensor_id ASC, fecha ASC";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetDataFromTimestamp.<br>$e->getMessage()");
+        }
+
 
         for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
             $d1 = new \DateTime($arrayQueryResult[$i]['fecha'],new \DateTimeZone("America/Argentina/Buenos_Aires"));
@@ -100,6 +159,15 @@ class DatalogRepository extends EntityRepository
 
         return $arrayQueryResult;
     }
+
+    /**
+     *
+     * Genera packets a partir de $arrayQueryResult.
+     *
+     * @param array $arrayQueryResult : Array de datos correctamente formateados
+     * @return array : Packets generados a partir de la data suministrada
+     */
+
 
     public function generatePacketsFromDataFormatted($arrayQueryResult) {
 
@@ -133,16 +201,31 @@ class DatalogRepository extends EntityRepository
 
     }
 
+    /**
+     *
+     * Getea la data del datalog a partir de $lastTimeStamp y genera los packets.
+     *
+     * @param string $lastTimeStamp : El timespamp del ultimo valor en clientSide
+     * @return array : Devuelve los packets de data.
+     */
+
 
     public function getPacketsData($lastTimeStamp) {
         $lastFecha = new \DateTime();
         $lastFecha = $lastFecha->createFromFormat('Y-m-d H:i:s', $lastTimeStamp);
         $lastFechaString = $lastFecha->format('Y/m/d H:i:s');
         $sqlGetDataFromTimestamp = "SELECT * FROM datalog WHERE fecha>'$lastFechaString' ORDER BY sensor_id ASC, fecha ASC";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetDataFromTimestamp);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetDataFromTimestamp.<br>$e->getMessage()");
+        }
+
+
 
         if (empty($arrayQueryResult)) {
             throw new NotFoundHttpException("No se encontraron registros en datalog con timestamp: $lastTimeStamp");
@@ -179,16 +262,40 @@ class DatalogRepository extends EntityRepository
     }
 
 
+    /**
+     *
+     * Getea la data del datalog dentro de un rango de tiempo.
+     *
+     * @param $t_inicio: Limite inferior del rango de tiempo
+     * @param $t_fin: Limite superior del rango de tiempo
+     * @return \Doctrine\DBAL\Driver\Statement : Retorna el resultado del query SIN fetchear
+     */
 
     public function getDataInTimeRange($t_inicio, $t_fin) {
         $sqlGetEnsayosInTimeRange = "SELECT sensor_id, medicion, fecha FROM `datalog` WHERE `fecha`>'$t_inicio' AND `fecha`<'$t_fin' ";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
-        $stmt->execute();
-        //$arrayQueryResult = $stmt->fetchAll();
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
+            $stmt->execute();
+            //$arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetEnsayosInTimeRange.<br>$e->getMessage()");
+        }
 
         return $stmt;
     }
+
+    /**
+     *
+     * Getea la data del datalog dentro de un rango de tiempo con un intervalo (interespaciado) entre cada dato de
+     * sensor (es decir, GROUPED BY sensor_id)
+     *
+     * @param $t_inicio: Limite inferior del rango de tiempo
+     * @param $t_fin: Limite superior del rango de tiempo
+     * @param $intervalo: Interespaciado entre cada dato de sensor
+     * @return \Doctrine\DBAL\Driver\Statement : Retorna el resultado del query SIN fetchear
+     */
 
     public  function getDataInTimeRangeWithInterval($t_inicio, $t_fin, $intervalo) {
         $sqlGetEnsayosInTimeRange = " SELECT sensor_id, medicion, fecha
@@ -196,14 +303,31 @@ class DatalogRepository extends EntityRepository
                                       WHERE fecha>'$t_inicio' and fecha<'$t_fin'
                                       GROUP BY UNIX_TIMESTAMP(fecha) DIV $intervalo, sensor_id
                                       ORDER BY `datalog`.`fecha` ASC ";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
-        $stmt->execute();
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
+            $stmt->execute();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetEnsayosInTimeRange.<br>$e->getMessage()");
+        }
+
+
         //$arrayQueryResult = $stmt->fetchAll();
 
         return $stmt;
     }
 
+
+    /**
+     *
+     * Genera packets con la data del datalog dentro de un rango de tiempo.
+     * Es decir no solo hace el query correspondiente sino que arma los packets (si se quisiera) listos para mandar.
+     *
+     * @param $t_inicio : Limite inferior del rango de tiempo
+     * @param $t_fin : Limite superior del rango de tiempo
+     * @return array : Devuelve los packets.
+     */
 
 
     public function getPacketsInTimeRange($t_inicio, $t_fin) {
@@ -217,10 +341,16 @@ class DatalogRepository extends EntityRepository
 
 
         $sqlGetEnsayosInTimeRange = "SELECT sensor_id, medicion, fecha FROM `datalog` WHERE `fecha`>'$fechaInicioString' AND `fecha`<'$fechaFinString' ";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetEnsayosInTimeRange);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetEnsayosInTimeRange.<br>$e->getMessage()");
+        }
+
 
         for ($i=0 ; $i< sizeof($arrayQueryResult) ; $i++) {
             $d1 = new \DateTime($arrayQueryResult[$i]['fecha'],new \DateTimeZone("America/Argentina/Buenos_Aires"));
@@ -251,6 +381,20 @@ class DatalogRepository extends EntityRepository
 
         return $arrayReturn;
     }
+
+
+    /**
+     *
+     * Genera packets con los canales virtuales.
+     * Es decir no solo hace el query correspondiente sino que arma los packets (si se quisiera) listos para mandar.
+     *
+     * @param string $lastTimeStamp : El timespamp del ultimo valor en clientSide
+     *
+     * @param array $canalesVirtuales : Array de cada canal virtual. Cada canal virtual, a su vez, consiste en un
+     *                                  array con los sensores que lo comprenden
+     *
+     * @return array : devuelve un array con los packets de los canales virtuales
+     */
 
 
     public function getCanalesVirtualesPackets( $lastTimeStamp, $canalesVirtuales )
@@ -286,7 +430,7 @@ class DatalogRepository extends EntityRepository
                 $stmt = $em->getConnection()->prepare($sqlQueryCanalVirtualX);
                 $stmt->execute();
             } catch (\Exception $e) {
-                throw new NotFoundHttpException("Error al ejecutar query. $sqlQueryCanalVirtualX");
+                throw new NotFoundHttpException("Error al ejecutar query $sqlQueryCanalVirtualX.<br>$e->getMessage()");
             }
 
             $arrayQueryResult = $stmt->fetchAll();

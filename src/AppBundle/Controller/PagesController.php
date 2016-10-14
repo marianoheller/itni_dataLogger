@@ -411,14 +411,13 @@ class PagesController extends Controller
 }
 
 
+//TODO Exportar canales virtuales
 
-//TODO Optimizar el tema del timestamp en RECEPCION (q solo haga falta una...)
-
-//TODO EXportar canales virtuales
-
-//TODO exportar solo canales seleccionados
+//TODO Optimizar el tema del timestamp y patron en RECEPCION (q solo haga falta uno de cada...)
 
 //TODO Al agregar usuarios acepta "admin" aunque ya exista.
+
+//TODO exportar solo canales seleccionados
 
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 

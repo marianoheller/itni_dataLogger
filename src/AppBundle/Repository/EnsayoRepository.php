@@ -3,6 +3,8 @@
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\PreconditionFailedHttpException;
 
 /**
  * EnsayoRepository
@@ -12,6 +14,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class EnsayoRepository extends EntityRepository
 {
+
+    public function findOneByID($id) {
+        return $this->findOneBy(array("id" => $id));
+    }
+
+
     public function isEnsayoRunning() {
         $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
                                                 FROM ensayo
@@ -22,10 +30,17 @@ class EnsayoRepository extends EntityRepository
                                                     AND diffAux>= 0
                                                     AND t_fin IS NULL
                                                     )";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+        try {
+
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlCheckIfEnsayoIsRunning.<br>$e->getMessage()");
+        }
+
 
         return !empty($arrayQueryResult);
     }
@@ -40,40 +55,62 @@ class EnsayoRepository extends EntityRepository
                                                     AND diffAux>= 0
                                                     AND t_fin IS NULL
                                                     )";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlCheckIfEnsayoIsRunning);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlCheckIfEnsayoIsRunning.<br>$e->getMessage()");
+        }
 
         return $arrayQueryResult;
     }
 
     public function getAll() {
         $sqlGetAll =   "SELECT * from ensayo";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetAll);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetAll);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetAll.<br>$e->getMessage()");
+        }
 
         return $arrayQueryResult;
     }
 
     public function getAllOrderedLastFirst() {
         $sqlGetAll =   "SELECT * from ensayo ORDER BY t_inicio DESC";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetAll);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+
+
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetAll);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetAll.<br>$e->getMessage()");
+        }
 
         return $arrayQueryResult;
     }
 
     public function getAllFinishedOrderedLastFirst() {
         $sqlGetAll =   "SELECT * from ensayo WHERE t_fin IS NOT NULL ORDER BY t_inicio DESC";
-        $em = $this->getEntityManager();
-        $stmt = $em->getConnection()->prepare($sqlGetAll);
-        $stmt->execute();
-        $arrayQueryResult = $stmt->fetchAll();
+        try {
+            $em = $this->getEntityManager();
+            $stmt = $em->getConnection()->prepare($sqlGetAll);
+            $stmt->execute();
+            $arrayQueryResult = $stmt->fetchAll();
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException("Error al ejecutar query $sqlGetAll.<br>$e->getMessage()");
+        }
+
 
         return $arrayQueryResult;
     }
@@ -99,9 +136,8 @@ class EnsayoRepository extends EntityRepository
         try {
         $em = $this->getEntityManager();
         $count = $em->getConnection()->executeUpdate($sqlUpdateLastPing);
-        } catch(\Exception $e) {
-            unset($e);
-            $count = 0;
+        } catch (\Exception $e) {
+            throw new PreconditionFailedHttpException("Error al ejecutar query $sqlUpdateLastPing.<br>$e->getMessage()");
         }
 
         //Affected rows
@@ -116,15 +152,11 @@ class EnsayoRepository extends EntityRepository
             $em = $this->getEntityManager();
             $count = $em->getConnection()->executeUpdate($sqlCancelEnsayos);
         } catch(\Exception $e) {
-            unset($e);
-            $count = 0;
+            throw new PreconditionFailedHttpException("Error al ejecutar query $sqlCancelEnsayos.<br>$e->getMessage()");
         }
 
         //Affected rows
         return $count;
     }
 
-    public function findOneByID($id) {
-        return $this->findOneBy(array("id" => $id));
-    }
 }
