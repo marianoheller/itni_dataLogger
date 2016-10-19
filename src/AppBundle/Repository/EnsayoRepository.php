@@ -15,10 +15,25 @@ use Symfony\Component\HttpKernel\Exception\PreconditionFailedHttpException;
 class EnsayoRepository extends EntityRepository
 {
 
+    /**
+     *
+     * Overload de findOneBy->id
+     *
+     * @param string $id : id a buscar
+     * @return null|object : Devuelve null o el objecto encontrado
+     */
     public function findOneByID($id) {
         return $this->findOneBy(array("id" => $id));
     }
 
+
+    /**
+     *
+     * Checkea si hay un ensayo corriendo.
+     * Es decir, checkea si hay algun ensayo SIN el t_fin seteado
+     *
+     * @return bool
+     */
 
     public function isEnsayoRunning() {
         $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
@@ -45,6 +60,14 @@ class EnsayoRepository extends EntityRepository
         return !empty($arrayQueryResult);
     }
 
+    /**
+     *
+     * Adquiere el ultimo ensayo que cumple los requerimientos de ensayo "andando"
+     * Es decir que no tenga t_fin seteado && el ultimo lastPing no haya sido hace tanto.
+     *
+     * @return array : Devuelve el ensayo actual
+     */
+
     public function getEnsayoActual() {
         $sqlCheckIfEnsayoIsRunning =   "SELECT *,TIMESTAMPDIFF(SECOND, lastPing, NOW()) as diff
                                                 FROM ensayo
@@ -68,6 +91,14 @@ class EnsayoRepository extends EntityRepository
         return $arrayQueryResult;
     }
 
+
+    /**
+     *
+     * Getea todos los ensayos
+     *
+     * @return array : Devuelve un Array con todos los ensayos
+     */
+
     public function getAll() {
         $sqlGetAll =   "SELECT * from ensayo";
 
@@ -83,6 +114,13 @@ class EnsayoRepository extends EntityRepository
 
         return $arrayQueryResult;
     }
+
+    /**
+     *
+     * Getea todos los ensayos ordenados
+     *
+     * @return array
+     */
 
     public function getAllOrderedLastFirst() {
         $sqlGetAll =   "SELECT * from ensayo ORDER BY t_inicio DESC";

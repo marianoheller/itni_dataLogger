@@ -9,7 +9,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,22 +35,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EnsayoRepository.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php">
+      <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18829113">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="3.6898735">
+              <caret line="424" column="33" selection-start-line="424" selection-start-column="33" selection-end-line="424" selection-end-column="33" />
               <folding>
-                <element signature="e#40#74#0#PHP" expanded="true" />
-                <marker date="1476456572949" expanded="true" signature="578:1201" placeholder="SELECT *,TIM..ensayo..." />
-                <marker date="1476456572949" expanded="true" signature="810:1147" placeholder="SELECT MIN(T..ensayo..." />
-                <marker date="1476456572949" expanded="true" signature="1720:2343" placeholder="SELECT *,TIM..ensayo..." />
-                <marker date="1476456572949" expanded="true" signature="1952:2289" placeholder="SELECT MIN(T..ensayo..." />
-                <marker date="1476456572949" expanded="true" signature="2827:2847" placeholder="SELECT * fro..ensayo..." />
-                <marker date="1476456572949" expanded="true" signature="3316:3359" placeholder="SELECT * fro..ensayo..." />
-                <marker date="1476456572949" expanded="true" signature="3836:3903" placeholder="SELECT * fro..ensayo..." />
-                <marker date="1476456572949" expanded="true" signature="4530:5350" placeholder="UPDATE ensay..." />
-                <marker date="1476456572949" expanded="true" signature="5773:5839" placeholder="UPDATE ensay..." />
+                <element signature="e#1009#1027#1#PHP" expanded="true" />
+                <element signature="e#1515#1533#1#PHP" expanded="true" />
+                <element signature="e#2012#2030#1#PHP" expanded="true" />
+                <element signature="e#2099#2117#1#PHP" expanded="true" />
+                <element signature="e#2183#2200#1#PHP" expanded="true" />
+                <element signature="e#2965#2983#1#PHP" expanded="true" />
+                <element signature="e#3060#3078#1#PHP" expanded="true" />
+                <element signature="e#3636#3653#1#PHP" expanded="true" />
+                <element signature="e#3840#3864#1#PHP" expanded="true" />
+                <element signature="e#6795#6812#1#PHP" expanded="true" />
+                <element signature="e#9652#9670#1#PHP" expanded="true" />
+                <element signature="e#11619#11637#1#PHP" expanded="true" />
+                <element signature="e#12466#12484#1#PHP" expanded="true" />
+                <element signature="e#12688#12705#1#PHP" expanded="true" />
+                <element signature="e#13966#13984#1#PHP" expanded="true" />
+                <element signature="e#15012#15030#1#PHP" expanded="true" />
+                <element signature="e#15880#15899#1#PHP" expanded="true" />
+                <element signature="e#16020#16039#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,10 +128,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
   </component>
@@ -684,13 +691,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/base_assets/js" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -747,12 +754,6 @@
       <created>1465317946316</created>
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
-    </task>
-    <task id="LOCAL-00086" summary="Changed urls from ajax's to twig's url.&#10;Added readme.md">
-      <created>1472824491360</created>
-      <option name="number" value="00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1472824491360</updated>
     </task>
     <task id="LOCAL-00087" summary="Added try/catch on flush.">
       <created>1473081527157</created>
@@ -1042,7 +1043,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476368565097</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="Docs.">
+      <created>1476456813560</created>
+      <option name="number" value="00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1476456813581</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1058,13 +1065,13 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.282516" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32012847" sideWeight="0.42750534" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26631016" sideWeight="0.5826226" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29530916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31905782" sideWeight="0.42430705" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26631016" sideWeight="0.5906183" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26631016" sideWeight="0.4173774" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26631016" sideWeight="0.40938166" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1093,7 +1100,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Removed mathjs from dependencies." />
     <MESSAGE value="Cambié mensaje de consola al no tener datos en datalog (asi no tira error)" />
     <MESSAGE value="Agregue la curva patron al historial." />
     <MESSAGE value="Agregué nombre de curva a ensayo y a historial." />
@@ -1118,7 +1124,8 @@
     <MESSAGE value="Fixed alineacion de texto leyenda de cada canal." />
     <MESSAGE value="Fixed curva patron erronea." />
     <MESSAGE value="Validacion de fecha en /api/logdata" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validacion de fecha en /api/logdata" />
+    <MESSAGE value="Docs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Docs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1159,9 +1166,9 @@
             <element signature="e#12466#12484#1#PHP" expanded="true" />
             <element signature="e#12688#12705#1#PHP" expanded="true" />
             <element signature="e#13966#13984#1#PHP" expanded="true" />
-            <element signature="e#14728#14746#1#PHP" expanded="true" />
-            <element signature="e#15596#15615#1#PHP" expanded="true" />
-            <element signature="e#15736#15755#1#PHP" expanded="true" />
+            <element signature="e#15012#15030#1#PHP" expanded="true" />
+            <element signature="e#15880#15899#1#PHP" expanded="true" />
+            <element signature="e#16020#16039#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1369,20 +1376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37777779">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Sensor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6164818">
@@ -1422,7 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,9 +1454,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/avanzado/avanzado.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-41.923077">
+          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#74#0#PHP" expanded="false" />
+            <marker date="1476454944700" expanded="true" signature="808:863" placeholder="SELECT * FRO..user..." />
+            <marker date="1476454944700" expanded="true" signature="1333:1371" placeholder="SELECT * FRO..user..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8243671">
+          <caret line="128" column="13" selection-start-line="128" selection-start-column="13" selection-end-line="128" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#74#0#PHP" expanded="true" />
+            <marker date="1476459527208" expanded="true" signature="907:1530" placeholder="SELECT *,TIM..ensayo..." />
+            <marker date="1476459527208" expanded="true" signature="1139:1476" placeholder="SELECT MIN(T..ensayo..." />
+            <marker date="1476459527208" expanded="true" signature="2302:2925" placeholder="SELECT *,TIM..ensayo..." />
+            <marker date="1476459527208" expanded="true" signature="2534:2871" placeholder="SELECT MIN(T..ensayo..." />
+            <marker date="1476459527208" expanded="true" signature="3535:3555" placeholder="SELECT * fro..ensayo..." />
+            <marker date="1476459527208" expanded="true" signature="4117:4160" placeholder="SELECT * fro..ensayo..." />
+            <marker date="1476459527208" expanded="true" signature="4637:4704" placeholder="SELECT * fro..ensayo..." />
+            <marker date="1476459527208" expanded="true" signature="5331:6151" placeholder="UPDATE ensay..." />
+            <marker date="1476459527208" expanded="true" signature="6574:6640" placeholder="UPDATE ensay..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Sensor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.61340207">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54810995">
+          <caret line="96" column="95" selection-start-line="96" selection-start-column="95" selection-end-line="96" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CanalVirtualRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37658226">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1392405">
+        <state vertical-scroll-proportion="0.7531645">
           <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
           <folding>
             <marker date="1476206621169" expanded="true" signature="457:508" placeholder="SELECT * FRO..curva..." />
@@ -1472,18 +1532,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/avanzado/avanzado.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding />
+        <state vertical-scroll-proportion="71.80769">
+          <caret line="307" column="44" selection-start-line="307" selection-start-column="44" selection-end-line="307" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#74#0#PHP" expanded="true" />
+            <marker date="1476881775876" expanded="true" signature="566:1044" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="717:856" placeholder="SELECT senso..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="1743:2221" placeholder="SELECT a.* F..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="1894:2033" placeholder="SELECT senso..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="3612:3698" placeholder="SELECT * FRO..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="4744:4830" placeholder="SELECT * FRO..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="7507:7593" placeholder="SELECT * FRO..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="9653:9748" placeholder="SELECT senso..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="9653:9778" placeholder="SELECT senso..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="10790:11142" placeholder="SELECT senso..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="12409:12522" placeholder="SELECT senso..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="14816:14983" placeholder="SELECT fecha..datalog..." />
+            <marker date="1476881775876" expanded="true" signature="14816:15528" placeholder="SELECT fecha..datalog..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.192308">
-          <caret line="414" column="0" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
+        <state vertical-scroll-proportion="3.6898735">
+          <caret line="424" column="33" selection-start-line="424" selection-start-column="33" selection-end-line="424" selection-end-column="33" />
           <folding>
             <element signature="e#1009#1027#1#PHP" expanded="true" />
             <element signature="e#1515#1533#1#PHP" expanded="true" />
@@ -1500,79 +1575,9 @@
             <element signature="e#12466#12484#1#PHP" expanded="true" />
             <element signature="e#12688#12705#1#PHP" expanded="true" />
             <element signature="e#13966#13984#1#PHP" expanded="true" />
-            <element signature="e#14728#14746#1#PHP" expanded="true" />
-            <element signature="e#15596#15615#1#PHP" expanded="true" />
-            <element signature="e#15736#15755#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.006329">
-          <caret line="96" column="95" selection-start-line="96" selection-start-column="95" selection-end-line="96" selection-end-column="95" />
-          <folding>
-            <element signature="e#3615#3632#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/DatalogRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.8076923">
-          <caret line="432" column="95" selection-start-line="432" selection-start-column="95" selection-end-line="432" selection-end-column="95" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-            <marker date="1476455086788" expanded="true" signature="566:1044" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="717:856" placeholder="SELECT senso..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="1743:2221" placeholder="SELECT a.* F..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="1894:2033" placeholder="SELECT senso..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="3612:3698" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="4744:4830" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="7507:7593" placeholder="SELECT * FRO..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="9653:9748" placeholder="SELECT senso..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="10761:11090" placeholder="SELECT senso..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="12357:12470" placeholder="SELECT senso..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="14764:14931" placeholder="SELECT fecha..datalog..." />
-            <marker date="1476455086788" expanded="true" signature="14764:15476" placeholder="SELECT fecha..datalog..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/SensorRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05379747">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="65" />
-          <folding>
-            <marker date="1476454944700" expanded="true" signature="808:863" placeholder="SELECT * FRO..user..." />
-            <marker date="1476454944700" expanded="true" signature="1333:1371" placeholder="SELECT * FRO..user..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18829113">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-            <marker date="1476456572949" expanded="true" signature="578:1201" placeholder="SELECT *,TIM..ensayo..." />
-            <marker date="1476456572949" expanded="true" signature="810:1147" placeholder="SELECT MIN(T..ensayo..." />
-            <marker date="1476456572949" expanded="true" signature="1720:2343" placeholder="SELECT *,TIM..ensayo..." />
-            <marker date="1476456572949" expanded="true" signature="1952:2289" placeholder="SELECT MIN(T..ensayo..." />
-            <marker date="1476456572949" expanded="true" signature="2827:2847" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1476456572949" expanded="true" signature="3316:3359" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1476456572949" expanded="true" signature="3836:3903" placeholder="SELECT * fro..ensayo..." />
-            <marker date="1476456572949" expanded="true" signature="4530:5350" placeholder="UPDATE ensay..." />
-            <marker date="1476456572949" expanded="true" signature="5773:5839" placeholder="UPDATE ensay..." />
+            <element signature="e#15012#15030#1#PHP" expanded="true" />
+            <element signature="e#15880#15899#1#PHP" expanded="true" />
+            <element signature="e#16020#16039#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

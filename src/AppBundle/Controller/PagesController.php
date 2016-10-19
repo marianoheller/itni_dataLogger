@@ -336,7 +336,13 @@ class PagesController extends Controller
 
     /**
      * @Route("/generateCSV", name="generateCSV")
+     *
+     * Genera un archivo csv con la data especificada en el request.
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|StreamedResponse
      */
+
     public function generateCsvAction(Request $request)
     {
         $logger = $this->get('logger');
@@ -344,7 +350,8 @@ class PagesController extends Controller
         $idEnsayo = $request->request->get("ensayoID");
         $intervalo = $request->request->get("intervalo");
         if ( !isset($idEnsayo) || !isset($intervalo)) {
-            return $this->redirectToRoute("avanzado");
+            //return $this->redirectToRoute("avanzado");
+            return $this->createNotFoundException("Imposible acceder al recurso.");
         }
         $em = $this->getDoctrine()->getManager();
         /**@var $ensayoObj Ensayo*/
@@ -411,8 +418,6 @@ class PagesController extends Controller
 }
 
 
-//TODO Exportar canales virtuales
-
 //TODO Optimizar el tema del timestamp y patron en RECEPCION (q solo haga falta uno de cada...)
 
 //TODO Al agregar usuarios acepta "admin" aunque ya exista.
@@ -423,6 +428,7 @@ class PagesController extends Controller
 
 //TODO hacer que el sensor_id de tabla ensayo sea FK a tabla sensor
 
+//TODO Exportar canales virtuales
 
 
 //TODO Generar user device solo con el username (q es la mac) y el password se genera automaticamente

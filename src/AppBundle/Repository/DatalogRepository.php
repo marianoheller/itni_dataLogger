@@ -272,7 +272,7 @@ class DatalogRepository extends EntityRepository
      */
 
     public function getDataInTimeRange($t_inicio, $t_fin) {
-        $sqlGetEnsayosInTimeRange = "SELECT sensor_id, medicion, fecha FROM `datalog` WHERE `fecha`>'$t_inicio' AND `fecha`<'$t_fin' ";
+        $sqlGetEnsayosInTimeRange = "SELECT sensor_id, medicion, fecha FROM `datalog` WHERE `fecha`>'$t_inicio' AND `fecha`<'$t_fin' ORDER BY fecha, sensor_id ASC";
 
         try {
             $em = $this->getEntityManager();
@@ -302,7 +302,7 @@ class DatalogRepository extends EntityRepository
                                       FROM datalog
                                       WHERE fecha>'$t_inicio' and fecha<'$t_fin'
                                       GROUP BY UNIX_TIMESTAMP(fecha) DIV $intervalo, sensor_id
-                                      ORDER BY `datalog`.`fecha` ASC ";
+                                      ORDER BY `datalog`.`fecha`, `datalog`.`sensor_id` ASC ";
 
         try {
             $em = $this->getEntityManager();
