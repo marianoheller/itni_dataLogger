@@ -418,18 +418,18 @@ class PagesController extends Controller
 }
 
 
-//TODO Optimizar el tema del timestamp y patron en RECEPCION (q solo haga falta uno de cada...)
-
-//TODO Al agregar usuarios acepta "admin" aunque ya exista.
-
-//TODO exportar solo canales seleccionados
-
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
+
+
+
+
+
+
+//TODO Optimizar el tema del timestamp y patron en RECEPCION (q solo haga falta uno de cada...)
 
 //TODO hacer que el sensor_id de tabla ensayo sea FK a tabla sensor
 
 //TODO Exportar canales virtuales
-
 
 //TODO Generar user device solo con el username (q es la mac) y el password se genera automaticamente
 

@@ -171,6 +171,12 @@
         window.myConfig.devices["{{ device.username }}"] = {{ device|json_encode|raw }};
         {% endfor %}
 
+        window.myConfig.todos = {};
+        {# @var user \AppBundle\Entity\User #}
+        {% for user in arrayAll %}
+        window.myConfig.todos["{{ user.username }}"] = {{ user|json_encode|raw }};
+        {% endfor %}
+
     </script>
 
 

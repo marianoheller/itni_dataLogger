@@ -1,7 +1,7 @@
 
 function validateUserAvailability() {
     var username = document.forms["register_form"]["add-username"].value;
-    if ( window.myConfig.usuarios.hasOwnProperty(username) ) {
+    if ( window.myConfig.todos.hasOwnProperty(username) ) {
         $('#alert-user-existente').show();
         return false;
     }
@@ -10,7 +10,7 @@ function validateUserAvailability() {
 
 function validateDeviceAvailability() {
     var devname = document.forms["register_device_form"]["add-username"].value;
-    if ( window.myConfig.devices.hasOwnProperty(devname) ) {
+    if ( window.myConfig.todos.hasOwnProperty(devname) ) {
         $('#alert-device-existente').show();
         return false;
     }

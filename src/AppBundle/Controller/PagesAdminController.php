@@ -92,12 +92,14 @@ class PagesAdminController extends Controller
 
         //Get all for show
         $em = $this->getDoctrine()->getManager();
+        $arrayAll = $em->getRepository('AppBundle:User')->findAll();
         $arrayUsers = $em->getRepository('AppBundle:User')->getAllUsersNonAdmin();
         $arrayDevices = $em->getRepository('AppBundle:User')->getAllDevices();
 
         return $this->render("admin/admin.html.twig", array(
             "arrayUsers" => $arrayUsers,
             "arrayDevices" => $arrayDevices,
+            "arrayAll" => $arrayAll,
 
             "flagUserAdded" => $flagUserAdded,
             "flagUserDeleted" => $flagUserDeleted,
