@@ -255,8 +255,10 @@ function getGraphData() {
                 //Refresh gauge
                 var gaugeValue = rxObj["data_"+j][rxObj["data_"+j].length-1];
                 window["gauge_"+j].refresh(gaugeValue);
-                var gaugePatronValue = rxObj["patron_"+j][rxObj["patron_"+j].length-1];
-                window["gauge_p_"+j].refresh(gaugePatronValue);
+                if ( window.myConfig.patron_nombre != "Sin Curva") {
+                    var gaugePatronValue = rxObj["patron_" + j][rxObj["patron_" + j].length - 1];
+                    window["gauge_p_" + j].refresh(gaugePatronValue);
+                }
             }
 
             //Add data to datatable virtual
@@ -276,8 +278,11 @@ function getGraphData() {
                 //Refresh gauge
                 var gaugeValue = rxObj["data_v_"+j][rxObj["data_v_"+j].length-1];
                 window["gauge_v_"+j].refresh(gaugeValue);
-                var gaugePatronValue = rxObj["patron_v_"+j][rxObj["patron_v_"+j].length-1];
-                window["gauge_v_p_"+j].refresh(gaugePatronValue);
+                if ( window.myConfig.patron_nombre != "Sin Curva") {
+                    var gaugePatronValue = rxObj["patron_v_"+j][rxObj["patron_v_"+j].length-1];
+                    window["gauge_v_p_"+j].refresh(gaugePatronValue);
+                }
+
 
             }
 
@@ -401,14 +406,18 @@ $(document).ready(function(){
             title: "Temp. actual"
         });
 
-        window["gauge_p_"+i] = new JustGage({
-            id: "gauge_p_"+i,
-            value: 0,
-            min: gaugeMinTemp,
-            max: gaugeMaxTemp,
-            decimals: 1,
-            title: "Patrón"
-        });
+
+        if ( window.myConfig.patron_nombre != "Sin Curva") {
+
+            window["gauge_p_" + i] = new JustGage({
+                id: "gauge_p_" + i,
+                value: 0,
+                min: gaugeMinTemp,
+                max: gaugeMaxTemp,
+                decimals: 1,
+                title: "Patrón"
+            });
+        }
     }
 
     var auxSize = window.myConfig.canalesVirtuales["length"];
@@ -422,14 +431,18 @@ $(document).ready(function(){
             title: "Temp. actual"
         });
 
-        window["gauge_v_p_"+i] = new JustGage({
-            id: "gauge_v_p_"+i,
-            value: 0,
-            min: gaugeMinTemp,
-            max: gaugeMaxTemp,
-            decimals: 1,
-            title: "Patrón"
-        });
+        if ( window.myConfig.patron_nombre != "Sin Curva") {
+            window["gauge_v_p_"+i] = new JustGage({
+                id: "gauge_v_p_"+i,
+                value: 0,
+                min: gaugeMinTemp,
+                max: gaugeMaxTemp,
+                decimals: 1,
+                title: "Patrón"
+            });
+        }
+
+
     }
 
 

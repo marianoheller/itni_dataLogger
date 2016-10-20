@@ -419,8 +419,6 @@ class PagesController extends Controller
     }
 }
 
-//TODO No mostrar gauges de patron en ensayo SI NO HAY CURVA
-
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 
 //TODO Bug $exception->getMesagge() no existe.. (o eso dice)
