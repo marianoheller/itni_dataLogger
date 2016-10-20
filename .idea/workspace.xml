@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="69ac1869-ece3-4c79-9fb5-d897b8da317e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base_assets/js/historial.js" afterPath="$PROJECT_DIR$/web/base_assets/js/historial.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/base_assets/js/ensayo.js" afterPath="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
     </list>
     <ignored path="DataLogger_INTI_Construcciones.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,13 +40,52 @@
       <file leaf-file-name="PagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39108062">
-              <caret line="423" column="33" selection-start-line="423" selection-start-column="33" selection-end-line="423" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.5835962">
+              <caret line="421" column="60" selection-start-line="421" selection-start-column="60" selection-end-line="421" selection-end-column="60" />
               <folding>
                 <element signature="e#40#64#0#PHP" expanded="true" />
+                <element signature="e#1009#1027#1#PHP" expanded="true" />
+                <element signature="e#1515#1533#1#PHP" expanded="true" />
+                <element signature="e#2012#2030#1#PHP" expanded="true" />
+                <element signature="e#2099#2117#1#PHP" expanded="true" />
+                <element signature="e#2183#2200#1#PHP" expanded="true" />
+                <element signature="e#2965#2983#1#PHP" expanded="true" />
+                <element signature="e#3060#3078#1#PHP" expanded="true" />
+                <element signature="e#3636#3653#1#PHP" expanded="true" />
+                <element signature="e#3840#3864#1#PHP" expanded="true" />
+                <element signature="e#6795#6812#1#PHP" expanded="true" />
+                <element signature="e#9652#9670#1#PHP" expanded="true" />
+                <element signature="e#11619#11637#1#PHP" expanded="true" />
+                <element signature="e#12467#12485#1#PHP" expanded="true" />
+                <element signature="e#12729#12746#1#PHP" expanded="true" />
+                <element signature="e#13048#13072#1#PHP" expanded="true" />
                 <element signature="e#13703#13748#0#PHP" expanded="true" />
+                <element signature="e#14359#14377#1#PHP" expanded="true" />
                 <element signature="e#14443#14478#0#PHP" expanded="true" />
+                <element signature="e#15405#15423#1#PHP" expanded="true" />
+                <element signature="e#16273#16292#1#PHP" expanded="true" />
+                <element signature="e#16413#16432#1#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ensayo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="293" column="27" selection-start-line="293" selection-start-column="27" selection-end-line="293" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ensayo.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-68.65385">
+              <caret line="198" column="39" selection-start-line="198" selection-start-column="39" selection-end-line="198" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,8 +142,6 @@
         <option value="$PROJECT_DIR$/web/base_assets/js/ensayo_config.js" />
         <option value="$PROJECT_DIR$/json_test_data.json" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CurvaRepository.php" />
-        <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160919182339.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/EnsayoRepository.php" />
@@ -119,6 +155,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SensoresController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/historial/historial_ensayo.html.twig" />
         <option value="$PROJECT_DIR$/web/base_assets/js/historial.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig" />
+        <option value="$PROJECT_DIR$/web/base_assets/js/ensayo.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php" />
       </list>
     </option>
@@ -833,12 +871,6 @@
       <option name="number" value="Default" />
       <updated>1465317946316</updated>
     </task>
-    <task id="LOCAL-00090" summary="Added TODO.">
-      <created>1473087632088</created>
-      <option name="number" value="00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1473087632088</updated>
-    </task>
     <task id="LOCAL-00091" summary="Fixed broken nav-pill highlight on ensayo &amp; historial.">
       <created>1473094829441</created>
       <option name="number" value="00091" />
@@ -1127,7 +1159,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476888533865</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="Agregué vista de canales virtuales al historial.">
+      <created>1476968758314</created>
+      <option name="number" value="00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1476968758316</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1144,16 +1182,16 @@
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29850745" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3187166" sideWeight="0.4227079" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31798714" sideWeight="0.4227079" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31905782" sideWeight="0.5772921" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24385026" sideWeight="0.48294243" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32834226" sideWeight="0.48294243" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26524064" sideWeight="0.40938166" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2633833" sideWeight="0.40938166" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40042827" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
@@ -1178,7 +1216,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Agregué animacion en &quot;Esperando datos...&quot;" />
     <MESSAGE value="Alinié mejor el grafico en ensayo y en Historial." />
     <MESSAGE value="Cambié temp max del gauge." />
     <MESSAGE value="Agregué js file de historial select." />
@@ -1203,7 +1240,8 @@
     <MESSAGE value="Fixed query de exportar. Ahora ordena mejor." />
     <MESSAGE value="Fixed bug add user &quot;admin&quot;." />
     <MESSAGE value="Cambié nombre a AVRT y modifique homepage." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambié nombre a AVRT y modifique homepage." />
+    <MESSAGE value="Agregué vista de canales virtuales al historial." />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregué vista de canales virtuales al historial." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1551,6 +1589,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.27689874">
           <caret line="49" column="144" selection-start-line="49" selection-start-column="144" selection-end-line="49" selection-end-column="144" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1581,21 +1620,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4778481">
           <caret line="190" column="122" selection-start-line="190" selection-start-column="122" selection-end-line="190" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="45.76923">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025796661">
-          <caret line="321" column="4" selection-start-line="321" selection-start-column="4" selection-end-line="353" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="e#6910#6929#1#PHP" expanded="false" />
+            <element signature="e#7093#7110#1#PHP" expanded="false" />
+            <element signature="e#7374#7393#1#PHP" expanded="false" />
+            <element signature="e#7578#7595#1#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1615,14 +1645,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/ensayo/ensayo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-68.65385">
+          <caret line="198" column="39" selection-start-line="198" selection-start-column="39" selection-end-line="198" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/base_assets/js/ensayo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="293" column="27" selection-start-line="293" selection-start-column="27" selection-end-line="293" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39108062">
-          <caret line="423" column="33" selection-start-line="423" selection-start-column="33" selection-end-line="423" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.5835962">
+          <caret line="421" column="60" selection-start-line="421" selection-start-column="60" selection-end-line="421" selection-end-column="60" />
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
+            <element signature="e#1009#1027#1#PHP" expanded="true" />
+            <element signature="e#1515#1533#1#PHP" expanded="true" />
+            <element signature="e#2012#2030#1#PHP" expanded="true" />
+            <element signature="e#2099#2117#1#PHP" expanded="true" />
+            <element signature="e#2183#2200#1#PHP" expanded="true" />
+            <element signature="e#2965#2983#1#PHP" expanded="true" />
+            <element signature="e#3060#3078#1#PHP" expanded="true" />
+            <element signature="e#3636#3653#1#PHP" expanded="true" />
+            <element signature="e#3840#3864#1#PHP" expanded="true" />
+            <element signature="e#6795#6812#1#PHP" expanded="true" />
+            <element signature="e#9652#9670#1#PHP" expanded="true" />
+            <element signature="e#11619#11637#1#PHP" expanded="true" />
+            <element signature="e#12467#12485#1#PHP" expanded="true" />
+            <element signature="e#12729#12746#1#PHP" expanded="true" />
+            <element signature="e#13048#13072#1#PHP" expanded="true" />
             <element signature="e#13703#13748#0#PHP" expanded="true" />
+            <element signature="e#14359#14377#1#PHP" expanded="true" />
             <element signature="e#14443#14478#0#PHP" expanded="true" />
+            <element signature="e#15405#15423#1#PHP" expanded="true" />
+            <element signature="e#16273#16292#1#PHP" expanded="true" />
+            <element signature="e#16413#16432#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -419,7 +419,7 @@ class PagesController extends Controller
     }
 }
 
-//TODO Gauges de patron en ensayo
+//TODO No mostrar gauges de patron en ensayo SI NO HAY CURVA
 
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 
