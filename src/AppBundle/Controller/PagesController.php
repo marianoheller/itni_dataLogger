@@ -420,7 +420,7 @@ class PagesController extends Controller
 }
 
 
-//TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
+//TODO Agregar comentarios, norma, etc en DB de curvas para mostrar en tooltip
 
 //TODO Bug $exception->getMesagge() no existe.. (o eso dice)
 
