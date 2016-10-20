@@ -24,3 +24,25 @@ body {
     display: inline;
 }
 
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 59px; /* 58 = 51(tamaño de la imagen) + padding-top + padding-bottom */
+    background-color: #1e1e1e;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+

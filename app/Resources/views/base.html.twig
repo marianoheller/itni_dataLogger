@@ -87,6 +87,17 @@
 {% endblock %}
 
 
+{% if app.request.attributes.get('_route') matches '/homepage.*$/' %}
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="container pull-left">
+            <img src="{{ asset('base_assets/images/ministerio-nuevo.png') }}" alt="Logo Ministerio de Producción" title="Ministerio de Producción">
+        </div>
+    </div>
+</footer>
+{% endif %}
+
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 
