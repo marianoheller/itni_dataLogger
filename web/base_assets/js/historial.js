@@ -10,34 +10,16 @@ var t_inicio_unix = moment(window.myConfig.t_inicio).unix();
 var timeFormat = 'HH:mm:ss';
 
 var options = {
-    //both dygraphs and Google
+    //Dimensions
     width: 1200,
     height: 500,
 
     //dygraphs
+    labels: [ "Fecha", "Medicion", "Patrón" ],
     rollPeriod: 1,
     showRoller: false,
-    fillGraph: true,
-
-    //Google charts
-    curveType: "function",
-    hAxis: {
-        format: timeFormat,
-        gridlines: {count: 8}
-    },
-    vAxis: {
-        //minValue: 0,
-        gridlines: {count: 8},
-        viewWindow: {
-            min: 0
-        }
-    },
-    explorer: {
-        actions: ['dragToZoom', 'rightClickToReset'],
-        axis: 'vertical'
-    }
+    fillGraph: true
 };
-
 
 
 /***************************************************
@@ -119,26 +101,64 @@ function toTimeString( secs ) {
 function drawChart() {
 
     for ( var i=1 ; i<=32 ; i++) {
-        window["dataTable_"+i] = new google.visualization.DataTable();
-        window["dataTable_"+i].addColumn('datetime', 'Fecha');
-        window["dataTable_"+i].addColumn('number', 'Medicion');
-        window["dataTable_"+i].addColumn('number', 'Patrón');
 
+        //Canales originales
+        window["dataTable_"+i] = [];
         window["chart_"+i] = new Dygraph(
             document.getElementById("chart_div_"+i),
             window["dataTable_"+i],
             options
         );
     }
+
+
+    var auxSize = window.myConfig.canalesVirtuales["length"];
+    for ( var i=1 ; i<=auxSize ; i++) {
+        //Canales virtuales
+        window["dataTable_v_"+i] = [];
+        window["chart_v_"+i] = new Dygraph(
+            document.getElementById("chart_div_v_"+i),
+            window["dataTable_v_"+i],
+            options
+        );
+    }
+
+
     getGraphData();
 }
 
 function getGraphData() {
-    var lastTimeStampLocal =  window.myConfig.t_inicio;
 
-    var timetampsToSend = '{ "timeStamp": [' +
-        '{ "t_inicio": "'+window.myConfig.t_inicio+'", "t_fin": "'+window.myConfig.t_fin+'", "firstTimeStamp": "'+t_inicio_unix+'", "curvaID": "'+window.myConfig.patron_id+'"}' +
-        ']}';
+    var timetampsToSend = '{ "graphData": { ' +
+        '"t_inicio": "'+ window.myConfig.t_inicio +
+        '", "t_fin": "'+ window.myConfig.t_fin +
+        '", "firstTimeStamp": "'+ t_inicio_unix +
+        '", "curvaID": "'+ window.myConfig.patron_id +
+        '", "cantCanalesVirtuales": "'+ window.myConfig.canalesVirtuales["length"] +
+        '", "canalesVirtuales": [ ';
+    for( var i=1 ; i<= window.myConfig.canalesVirtuales["length"] ; i++ ) {
+        timetampsToSend += '{ "id": "' + i + '",  "sensores": [' ;
+
+
+        window.myConfig.canalesVirtuales[String(i)]["sensores"].forEach(function(val, idx, array) {
+            timetampsToSend += '"'+String(val)+'"';
+            if (idx != array.length - 1){
+                timetampsToSend += ',';
+            }
+            else {
+                timetampsToSend += ']}';
+            }
+        });
+        if ( i != window.myConfig.canalesVirtuales["length"]) {
+            timetampsToSend += ',';
+        }
+        else {
+            timetampsToSend += ']';
+        }
+    }
+    timetampsToSend += '}}';
+
+
     var jsonToSend = JSON.stringify(JSON.parse(timetampsToSend));
     console.log("Sending data: ",jsonToSend);
 
@@ -172,9 +192,25 @@ function getGraphData() {
                 }
             }
 
+            //Parse RX packets de canales virtuales
+            for ( var j=1 ; j<=window.myConfig.canalesVirtuales["length"] ; j++) {
+                // Split timestamp and data into separate arrays
+                rxObj["labels_v_"+j] = [];
+                rxObj["data_v_"+j] = [];
+                rxObj["patron_v_"+j] = [];
+                if ( ( ("packets_v_"+j) in results) ) {
+                    Object.keys(results["packets_v_"+j]).forEach(function (key) {
+                        var value = results["packets_v_"+j][key];
+                        rxObj["labels_v_"+j].push(value.timestamp);
+                        rxObj["data_v_"+j].push(parseFloat(value.payloadString));
+                        rxObj["patron_v_"+j].push(parseFloat(value.curvaPatron));;
+                    });
+                }
+            }
+
             //console.log("Adding data");
 
-            //Add data to datatable
+            //Add data to datatable original
             for ( var j=1 ; j<=32 ; j++) {
                 for (var i=0 ; i< rxObj["data_"+j].length ; i++) {
 
@@ -185,16 +221,24 @@ function getGraphData() {
                     momentAux.subtract(momentAuxInicio.hours(),"hours");
                     var myDate = momentAux.toDate();
 
-                    /*var scope = {
-                     t: moment.duration(momentAux.toString()).asMinutes()
-                     };
-                     var patronData = math.eval( window.myConfig.patron_formula , scope );*/
+                    var arrayData = [ myDate,  rxObj["data_"+j][i], rxObj["patron_"+j][i]];
+                    window["dataTable_"+j].push(arrayData);
+                }
+            }
 
-                    var obj = [
-                        //[ myDate,  rxObj["data_"+j][i], patronData]
-                        [ myDate,  rxObj["data_"+j][i], rxObj["patron_"+j][i]]
-                    ];
-                    window["dataTable_"+j].addRows(obj);
+            //Add data to datatable virtual
+            for ( var j=1 ; j<=window.myConfig.canalesVirtuales["length"] ; j++) {
+                for (var i=0 ; i< rxObj["data_v_"+j].length ; i++) {
+
+                    var momentAux = moment.unix(rxObj["labels_v_"+j][i]);
+                    var momentAuxInicio = moment.unix(t_inicio_unix);
+                    momentAux.subtract(momentAuxInicio.seconds(),"seconds");
+                    momentAux.subtract(momentAuxInicio.minutes(),"minutes");
+                    momentAux.subtract(momentAuxInicio.hours(),"hours");
+                    var myDate = momentAux.toDate();
+
+                    var arrayData = [ myDate,  rxObj["data_v_"+j][i], rxObj["patron_v_"+j][i]];
+                    window["dataTable_v_"+j].push(arrayData);
                 }
             }
 
@@ -202,11 +246,14 @@ function getGraphData() {
             for ( var j=1 ; j<=32 ; j++) {
                 window["chart_"+j].updateOptions( { 'file': window["dataTable_"+j] } );
             }
+            for ( var j=1 ; j<=window.myConfig.canalesVirtuales["length"] ; j++) {
+                window["chart_v_"+j].updateOptions( { 'file': window["dataTable_v_"+j] } );
+            }
 
             var lenAux = 0;
             for ( var j=1 ; j<=32 ; j++) {
-                if (window["dataTable_"+j].getNumberOfRows() > lenAux) {
-                    lenAux = window["dataTable_"+j].getNumberOfRows();
+                if (window["dataTable_"+j].length > lenAux) {
+                    lenAux = window["dataTable_"+j].length;
                 }
             }
 
@@ -239,11 +286,11 @@ function updateStatusInfo(  )  {
     var trHTML = '';
 
     for ( var j=1 ; j<=32 ; j++) {
-        var lenAux = window["dataTable_"+j].getNumberOfRows();
-        var lastLabel = window["dataTable_"+j].getValue(lenAux-1, 0)
-        var medicion = window["dataTable_"+j].getValue(lenAux-1, 1);
+        var lenAux = window["dataTable_"+j].length;
+        var lastLabel = window["dataTable_"+j][lenAux-1][0];
+        var medicion = window["dataTable_"+j][lenAux-1][1];
         //get fecha
-        trHTML += "<tr "
+        trHTML += "<tr ";
         if (medicion < 30) {
             trHTML += "class='table-info'";
         }
@@ -266,8 +313,9 @@ function updateStatusInfo(  )  {
         trHTML +="</td>";
         trHTML +="</tr>";
     }
-    $('#dataStatusSensores').empty();
-    $('#dataStatusSensores').append(trHTML);
+    var dataStatusSensores = $('#dataStatusSensores');
+    dataStatusSensores.empty();
+    dataStatusSensores.append(trHTML);
 }
 
 
@@ -275,14 +323,7 @@ function updateStatusInfo(  )  {
  * Do stuff
  */
 
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(drawChart);
 
-
-
-$(document).ready(function(){
-    document.getElementById('link-tab-status').click();
-});
 
 
 
@@ -295,9 +336,13 @@ $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
 });
 
 $(document).ready(function() {
+    document.getElementById('link-tab-status').click();
+
     $('.nav').on('show.bs.tab', function (e) {
         $('.nav li .active').removeClass('active');
-    })
+    });
+
+    drawChart();
 });
 
 

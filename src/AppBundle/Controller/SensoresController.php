@@ -141,32 +141,63 @@ class SensoresController extends Controller
             $content = $request->getContent();
             $data = json_decode($content);
 
-            foreach ($data as $name => $value) {
-                if ($name == "timeStamp") {
-                    foreach ($value as $entry) {
-                        $curvaID = $entry->curvaID;
-                        $t_inicio = $entry->t_inicio;
-                        $t_fin = $entry->t_fin;
-                        $firstTimeStamp = $entry->firstTimeStamp;
-                    }
+
+            //Get params
+            $canalesVirtuales = [];
+            $params=[];
+            $params["firstTimeStamp"] = $data->graphData->firstTimeStamp;
+            $params["curvaID"] = $data->graphData->curvaID;
+            $params["t_inicio"] = $data->graphData->t_inicio;
+            $params["t_fin"] = $data->graphData->t_fin;
+
+            $params["cantCanalesVirtuales"] = $data->graphData->cantCanalesVirtuales;
+            foreach ($data->graphData->canalesVirtuales as $key => $canalVirtual) {
+                $canalesVirtuales[$canalVirtual->id] = [];
+                foreach ($canalVirtual->sensores as $sensor) {
+                    array_push($canalesVirtuales[$canalVirtual->id], $sensor);
                 }
             }
 
-            if ( !isset($curvaID) || !isset($t_inicio) ||!isset($t_fin) ||!isset($firstTimeStamp)) {
-                throw new NotFoundHttpException("Error al parsear json de de ajax request");
+
+            //Check if everything is set
+            foreach ($params as $param) {
+                if ( !isset($param) ) {
+                    throw new NotFoundHttpException("Error al parsear json de de ajax request");
+                }
             }
+
 
             $em = $this->getDoctrine()->getManager();
             $logger->info("Sending data to Hist graph");
 
-            // GET DATA to send
-            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->getPacketsInTimeRange($t_inicio, $t_fin);
+            /*********************************************************************************************
+             *  Get data
+             */
 
+            /*
+             * Data original de los sensores
+             */
+
+            //GET DATA to send
+            $arrayPacketsDatalog = $em->getRepository('AppBundle:Datalog')->getPacketsInTimeRange($params["t_inicio"], $params["t_fin"]);
             // Append Curva packets
-            $arrayReturn = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($curvaID,$arrayPacketsDatalog, $firstTimeStamp);
+            $arrayPacketsDatalog_c_Patron = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayPacketsDatalog, $params["firstTimeStamp"]);
 
+            /*
+             * Data de canales virtuales
+             */
+
+            //Generate packets virtuales
+            $arrayPacketsVirtuales = $em->getRepository('AppBundle:Datalog')->getCanalesVirtualesPackets($params["t_inicio"],$canalesVirtuales);
+            // Append campo patron en cada packet
+            $arrayPacketsVirtuales_c_Patron = $em->getRepository('AppBundle:Curva')->generateCurvaPackets($params["curvaID"],$arrayPacketsVirtuales, $params["firstTimeStamp"]);
+
+
+
+            //Junto Canales virtuales con los originales
+            $arrayReturn = array_merge($arrayPacketsDatalog_c_Patron,$arrayPacketsVirtuales_c_Patron);
             //Ready to send
-            $ret = new JsonResponse($arrayReturn);
+            $ret = new JsonResponse( $arrayReturn );
             return $ret;
         }
     }

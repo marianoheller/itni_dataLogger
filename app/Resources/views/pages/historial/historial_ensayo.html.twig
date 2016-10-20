@@ -16,6 +16,13 @@
             <li><a class="channel-number-selector" id="{{i}}" href="#tab_{{i}}" data-toggle="pill"><small>Nº {{i}}</small></a></li>
         {% endfor %}
 
+
+        {# @var canalVirtual \AppBundle\Entity\CanalVirtual #}
+        {% for canalVirtual in canalesVirtualesArray %}
+            <li><a class="channel-number-selector" id="v_{{loop.index}}" href="#tab_v_{{loop.index}}" data-toggle="pill"><small>Canal Virtual Nº{{ loop.index }}</small></a></li>
+        {% endfor %}
+
+
         <li class="divider-vertical"></li>
 
         <li><a href="#tab_config" data-toggle="pill">Configuracion</a></li>
@@ -81,6 +88,32 @@
             </div>
         {% endfor %}
 
+
+        {# @var canalVirtual \AppBundle\Entity\CanalVirtual #}
+        {% for canalVirtual in canalesVirtualesArray %}
+            <div class="tab-pane" id="tab_v_{{loop.index}}">
+
+                <div class="container-fluid m-l-0 p-l-0">
+                    <h4 class="pull-md-left d-inline">Canal Virtual {{ loop.index }}</h4>
+                    {#<h5 id="wait_{{ i }}" class="m-x-auto" style="width: 200px;" >Esperando datos...</h5>#}
+                </div>
+                {# @var curvaObj \AppBundle\Entity\Curva #}
+                <div class="container pull-md-left col-md-1">
+                    <small class="text-muted pull-md-left d-inline">Patrón: {{ curvaObj.nombre }}</small><br>
+                    <small class="text-muted pull-md-left d-inline">Promediando</small><br>
+                    <small class="text-muted pull-md-left d-inline">Canales: {% for sensor in canalVirtual.sensores %}{{ sensor.id }}{% if not loop.last %}/{% endif %}{% endfor%}</small>
+                </div>
+
+
+
+                <div class="container col-md-10">
+                    <div id="chart_div_v_{{ loop.index }}" class="chart"></div>
+                </div>
+
+            </div>
+        {% endfor %}
+
+
         <div class="tab-pane" id="tab_config">
             <div id="alert-finalize-fail" class="alert alert-warning col-md-10 offset-md-1 hidden" role="alert">
                 <strong>Error de finalizacion!</strong> Vuelva a intentarlo en 1 min.
@@ -125,6 +158,21 @@
         window.myConfig.patron_id = "{{ curvaObj.id }}";
         window.myConfig.patron_nombre = "{{ curvaObj.nombre }}";
         window.myConfig.patron_formula = "{{ curvaObj.formula }}";
+
+        window.myConfig.canalesVirtuales = {};
+        {# @var canalVirtual \AppBundle\Entity\CanalVirtual #}
+        {% for canalVirtual in canalesVirtualesArray %}
+
+        window.myConfig.canalesVirtuales["{{ loop.index }}"] = {};
+        window.myConfig.canalesVirtuales["{{ loop.index }}"]["sensores"] = []; //Array de sensores
+        {# @var sensores[] \AppBundle\Entity\Sensor  #}
+        {% set sensoresArray = canalVirtual.sensores %}
+        {% for sensor in sensoresArray %}
+        window.myConfig.canalesVirtuales["{{ loop.parent.loop.index }}"]["sensores"].push({{ sensor.id }});
+        {% endfor%}
+        {% endfor %}
+        //console.log(window.myConfig.canalesVirtuales);
+        window.myConfig.canalesVirtuales["length"] = {{ canalesVirtualesArray|length }};
     </script>
 
     {#<script type="text/javascript" src="https://www.google.com/jsapi"></script>#}

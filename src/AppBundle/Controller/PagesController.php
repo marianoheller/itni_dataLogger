@@ -285,39 +285,41 @@ class PagesController extends Controller
         $em = $this->getDoctrine()->getManager();
 
 
+
         try {
             /**@var $ensayoObj Ensayo*/
             $ensayoObj = $em->getRepository('AppBundle:Ensayo')->findOneByID($idEnsayo);
-        } catch ( \Exception $e) {
-            return $this->createNotFoundException("Ensayo no encontrado");
-        }
-        try {
+            if ( !isset($ensayoObj) ) {
+                return $this->createNotFoundException("Ensayo no encontrado.");
+            }
+            /** @var Curva $curvaObj */
             $curvaObj = $em->getRepository('AppBundle:Curva')->getCurvaWithID($ensayoObj->getCurvaId());
+            if ( !isset($curvaObj) ) {
+                return $this->createNotFoundException("Curva patron no encontrada.");
+            }
+            /** @var CanalVirtual[] $canalesVirtualesArray */
+            $canalesVirtualesArray = $em->getRepository('AppBundle:CanalVirtual')->findBy( array( "ensayo" => $ensayoObj->getId() ) );
+            for ($i=0 ; $i<sizeof($canalesVirtualesArray) ; $i++) {
+                $canalesVirtualesArray[$i]->getSensores();
+                $canalesVirtualesArray[$i]->getEnsayo();
+            }
         } catch ( \Exception $e) {
-            return $this->createNotFoundException("Patrón no encontrado");
-        }
-
-
-        if ( isset($ensayoObj) ) {
-            $logger->info("Ensayo ver succesful", array (
-                "idRequested" => $idEnsayo
-            ));
-            return $this->render(":pages/historial:historial_ensayo.html.twig", array(
-                "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
-                "t_fin" => $ensayoObj->getTFin()->format($dateFormat),
-                "titulo" => $ensayoObj->getTitulo(),
-                "curvaObj" => $curvaObj
-            ));
-        }
-        else {
-            $logger->error("Ensayo no encontrado", array (
-                "idRequested" => $idEnsayo
-            ));
-            return $this->render("pages/historial/historial_select.html.twig", array(
-                "fErrorOcurred" => true
+            return $this->createNotFoundException("Resumir ensayo failed." , array (
+                "errorMessage" => $e->getMessage(),
+                "errorCode" => $e->getCode()
             ));
         }
 
+        $logger->info("Ensayo ver succesful", array (
+            "idRequested" => $idEnsayo
+        ));
+        return $this->render(":pages/historial:historial_ensayo.html.twig", array(
+            "t_inicio" => $ensayoObj->getTInicio()->format($dateFormat),
+            "t_fin" => $ensayoObj->getTFin()->format($dateFormat),
+            "titulo" => $ensayoObj->getTitulo(),
+            "curvaObj" => $curvaObj,
+            "canalesVirtualesArray" => $canalesVirtualesArray
+        ));
     }
 
     /**
@@ -417,6 +419,7 @@ class PagesController extends Controller
     }
 }
 
+//TODO Gauges de patron en ensayo
 
 //TODO Agregar comentarios, norma, etc en tabla de curvas para mostrar en tooltip
 
